@@ -1,0 +1,1895 @@
+{
+  "name": "dolar-y-monedas",
+  "origin": "voxgig-sdk",
+  "def": "dólar-y-monedas_0.1.0.json",
+  "main": {
+    "kit": {
+      "info": {
+        "description": "<div class=:flex flex-col:>\n\nAPI desarrollada en <a href=:https://es.js.org?ref=dolarapi.com: target=:_blank:>EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\n¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=:https://github.com/enzonotario/esjs-dolar-api: alt=:GitHub: target=:_blank:>GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)",
+        "servers": [
+          {
+            "description": "Producción",
+            "url": "https://dolarapi.com"
+          }
+        ],
+        "title": "DolarApi.com",
+        "version": "1.1.0"
+      },
+      "config": {
+        "auth": {
+          "prefix": "Bearer"
+        },
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "blue": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "blue",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/blue",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "blue"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "bolsa": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "bolsa",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/bolsa",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "bolsa"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "brl": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "brl",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/cotizaciones/brl",
+                  "parts": [
+                    "v1",
+                    "cotizaciones",
+                    "brl"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "clp": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "clp",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/cotizaciones/clp",
+                  "parts": [
+                    "v1",
+                    "cotizaciones",
+                    "clp"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contadoconliqui": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "contadoconliqui",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/contadoconliqui",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "contadoconliqui"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "cotizacion_ambito": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "variacion",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "cotizacion_ambito",
+          "op": {
+            "list": {
+              "name": "list",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            },
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/blue",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "blue"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/bolsa",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "bolsa"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/contadoconliqui",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "contadoconliqui"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/cripto",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "cripto"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/mayorista",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "mayorista"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/oficial",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "oficial"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                },
+                {
+                  "method": "GET",
+                  "orig": "/v1/ambito/dolares/tarjeta",
+                  "parts": [
+                    "v1",
+                    "ambito",
+                    "dolares",
+                    "tarjeta"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "cotizacione": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "cotizacione",
+          "op": {
+            "list": {
+              "name": "list",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/cotizaciones",
+                  "parts": [
+                    "v1",
+                    "cotizaciones"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "cripto": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "cripto",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/cripto",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "cripto"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "dolare": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "dolare",
+          "op": {
+            "list": {
+              "name": "list",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares",
+                  "parts": [
+                    "v1",
+                    "dolares"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "estado": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "aleatorio",
+              "req": false,
+              "type": "`$INTEGER`",
+              "active": true
+            },
+            {
+              "name": "estado",
+              "req": false,
+              "type": "`$STRING`",
+              "active": true
+            }
+          ],
+          "name": "estado",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/estado",
+                  "parts": [
+                    "v1",
+                    "estado"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "eur": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "eur",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/cotizaciones/eur",
+                  "parts": [
+                    "v1",
+                    "cotizaciones",
+                    "eur"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "mayorista": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "mayorista",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/mayorista",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "mayorista"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "oficial": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "oficial",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/oficial",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "oficial"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "tarjeta": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "tarjeta",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/dolares/tarjeta",
+                  "parts": [
+                    "v1",
+                    "dolares",
+                    "tarjeta"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "uyu": {
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "name": "casa",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "compra",
+              "req": false,
+              "type": "`$NUMBER`",
+              "active": true
+            },
+            {
+              "name": "fecha_actualizacion",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "moneda",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "nombre",
+              "req": true,
+              "type": "`$STRING`",
+              "active": true
+            },
+            {
+              "name": "venta",
+              "req": true,
+              "type": "`$NUMBER`",
+              "active": true
+            }
+          ],
+          "name": "uyu",
+          "op": {
+            "load": {
+              "name": "load",
+              "points": [
+                {
+                  "method": "GET",
+                  "orig": "/v1/cotizaciones/uyu",
+                  "parts": [
+                    "v1",
+                    "cotizaciones",
+                    "uyu"
+                  ],
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  },
+                  "active": true,
+                  "args": {},
+                  "select": {}
+                }
+              ],
+              "input": "data"
+            }
+          },
+          "active": true,
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "name": "test",
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1",
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            }
+          },
+          "target": {
+            "ts": {
+              "deps": {}
+            },
+            "go": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            }
+          }
+        }
+      },
+      "flow": {
+        "BasicBlueFlow": {
+          "entity": "blue",
+          "kind": "basic",
+          "name": "BasicBlueFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "blue_ref01",
+                "srcdatavar": "blue_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-blue_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicBlueFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicBolsaFlow": {
+          "entity": "bolsa",
+          "kind": "basic",
+          "name": "BasicBolsaFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "bolsa_ref01",
+                "srcdatavar": "bolsa_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-bolsa_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicBolsaFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicBrlFlow": {
+          "entity": "brl",
+          "kind": "basic",
+          "name": "BasicBrlFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "brl_ref01",
+                "srcdatavar": "brl_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-brl_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicBrlFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicClpFlow": {
+          "entity": "clp",
+          "kind": "basic",
+          "name": "BasicClpFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "clp_ref01",
+                "srcdatavar": "clp_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-clp_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicClpFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicContadoconliquiFlow": {
+          "entity": "contadoconliqui",
+          "kind": "basic",
+          "name": "BasicContadoconliquiFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "contadoconliqui_ref01",
+                "srcdatavar": "contadoconliqui_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-contadoconliqui_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicContadoconliquiFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicCotizacionAmbitoFlow": {
+          "entity": "cotizacion_ambito",
+          "kind": "basic",
+          "name": "BasicCotizacionAmbitoFlow",
+          "step": [
+            {
+              "op": "list",
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "cotizacion_ambito_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "input": {},
+              "spec": []
+            },
+            {
+              "input": {
+                "ref": "cotizacion_ambito_ref01",
+                "srcdatavar": "cotizacion_ambito_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-cotizacion_ambito_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicCotizacionAmbitoFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicCotizacioneFlow": {
+          "entity": "cotizacione",
+          "kind": "basic",
+          "name": "BasicCotizacioneFlow",
+          "step": [
+            {
+              "op": "list",
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "cotizacione_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "input": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicCotizacioneFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicCriptoFlow": {
+          "entity": "cripto",
+          "kind": "basic",
+          "name": "BasicCriptoFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "cripto_ref01",
+                "srcdatavar": "cripto_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-cripto_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicCriptoFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicDolareFlow": {
+          "entity": "dolare",
+          "kind": "basic",
+          "name": "BasicDolareFlow",
+          "step": [
+            {
+              "op": "list",
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "dolare_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "input": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicDolareFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicEstadoFlow": {
+          "entity": "estado",
+          "kind": "basic",
+          "name": "BasicEstadoFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "estado_ref01",
+                "srcdatavar": "estado_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-estado_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicEstadoFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicEurFlow": {
+          "entity": "eur",
+          "kind": "basic",
+          "name": "BasicEurFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "eur_ref01",
+                "srcdatavar": "eur_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-eur_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicEurFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicMayoristaFlow": {
+          "entity": "mayorista",
+          "kind": "basic",
+          "name": "BasicMayoristaFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "mayorista_ref01",
+                "srcdatavar": "mayorista_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-mayorista_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicMayoristaFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicOficialFlow": {
+          "entity": "oficial",
+          "kind": "basic",
+          "name": "BasicOficialFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "oficial_ref01",
+                "srcdatavar": "oficial_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-oficial_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicOficialFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicTarjetaFlow": {
+          "entity": "tarjeta",
+          "kind": "basic",
+          "name": "BasicTarjetaFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "tarjeta_ref01",
+                "srcdatavar": "tarjeta_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-tarjeta_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicTarjetaFlow",
+          "active": true,
+          "param": {}
+        },
+        "BasicUyuFlow": {
+          "entity": "uyu",
+          "kind": "basic",
+          "name": "BasicUyuFlow",
+          "step": [
+            {
+              "input": {
+                "ref": "uyu_ref01",
+                "srcdatavar": "uyu_ref01_data",
+                "suffix": "_dt0"
+              },
+              "op": "load",
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-uyu_ref01"
+                  }
+                }
+              ],
+              "active": true,
+              "match": {},
+              "data": {},
+              "spec": []
+            }
+          ],
+          "key$": "BasicUyuFlow",
+          "active": true,
+          "param": {}
+        }
+      },
+      "target": {
+        "ts": {
+          "title": "TypeScript",
+          "ext": "ts",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "deps": {
+            "dotenv": {
+              "active": true,
+              "version": "^17.4.2",
+              "kind": "dev"
+            },
+            "typescript": {
+              "active": true,
+              "version": "^5.9.3",
+              "kind": "dev"
+            },
+            "@types/node": {
+              "active": true,
+              "version": "^25.6.0",
+              "kind": "dev"
+            }
+          },
+          "name": "ts",
+          "active": true
+        },
+        "go": {
+          "title": "Golang",
+          "ext": "go",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "srcfeature": false,
+          "deps": {
+            "github.com/voxgig/struct": {
+              "active": true,
+              "version": "v0.0.0",
+              "replace": "./utility/struct",
+              "kind": "prod"
+            }
+          },
+          "name": "go",
+          "active": true
+        },
+        "lua": {
+          "title": "Lua",
+          "ext": "lua",
+          "comment": {
+            "line": "--"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "srcfeature": false,
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "version": "2.5",
+              "kind": "prod"
+            }
+          },
+          "name": "lua",
+          "active": true
+        },
+        "php": {
+          "title": "PHP",
+          "ext": "php",
+          "comment": {
+            "line": "//"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "srcfeature": false,
+          "deps": {},
+          "name": "php",
+          "active": true
+        },
+        "py": {
+          "title": "Python",
+          "ext": "py",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "srcfeature": false,
+          "deps": {
+            "requests": {
+              "active": true,
+              "version": "2.33",
+              "kind": "prod"
+            }
+          },
+          "name": "py",
+          "active": true
+        },
+        "rb": {
+          "title": "Ruby",
+          "ext": "rb",
+          "comment": {
+            "line": "#"
+          },
+          "module": {
+            "name": "dolar-y-monedas"
+          },
+          "srcfeature": false,
+          "deps": {
+            "voxgig-struct": {
+              "active": true,
+              "version": "0.0.10",
+              "kind": "prod"
+            },
+            "json": {
+              "active": true,
+              "version": "0",
+              "kind": "prod"
+            }
+          },
+          "name": "rb",
+          "active": true
+        }
+      },
+      "option": {}
+    },
+    "def": {
+      "desc": ""
+    }
+  }
+}

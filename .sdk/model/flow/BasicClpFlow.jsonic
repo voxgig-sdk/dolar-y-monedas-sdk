@@ -1,0 +1,28 @@
+# BasicClpFlow
+
+main: kit: flow: BasicClpFlow:
+{
+  entity: "clp",
+  kind: "basic",
+  name: "BasicClpFlow",
+  step: [
+    {
+      input: {
+        ref: "clp_ref01",
+        srcdatavar: "clp_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-clp_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicClpFlow"
+}

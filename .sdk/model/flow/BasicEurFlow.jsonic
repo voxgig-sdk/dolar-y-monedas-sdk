@@ -1,0 +1,28 @@
+# BasicEurFlow
+
+main: kit: flow: BasicEurFlow:
+{
+  entity: "eur",
+  kind: "basic",
+  name: "BasicEurFlow",
+  step: [
+    {
+      input: {
+        ref: "eur_ref01",
+        srcdatavar: "eur_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-eur_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEurFlow"
+}

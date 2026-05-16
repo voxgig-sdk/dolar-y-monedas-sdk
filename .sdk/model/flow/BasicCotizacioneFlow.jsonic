@@ -1,0 +1,22 @@
+# BasicCotizacioneFlow
+
+main: kit: flow: BasicCotizacioneFlow:
+{
+  entity: "cotizacione",
+  kind: "basic",
+  name: "BasicCotizacioneFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cotizacione_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCotizacioneFlow"
+}

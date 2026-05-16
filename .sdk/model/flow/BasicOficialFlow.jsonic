@@ -1,0 +1,28 @@
+# BasicOficialFlow
+
+main: kit: flow: BasicOficialFlow:
+{
+  entity: "oficial",
+  kind: "basic",
+  name: "BasicOficialFlow",
+  step: [
+    {
+      input: {
+        ref: "oficial_ref01",
+        srcdatavar: "oficial_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-oficial_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOficialFlow"
+}

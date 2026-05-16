@@ -1,0 +1,40 @@
+# BasicCotizacionAmbitoFlow
+
+main: kit: flow: BasicCotizacionAmbitoFlow:
+{
+  entity: "cotizacion_ambito",
+  kind: "basic",
+  name: "BasicCotizacionAmbitoFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cotizacion_ambito_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "cotizacion_ambito_ref01",
+        srcdatavar: "cotizacion_ambito_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cotizacion_ambito_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCotizacionAmbitoFlow"
+}

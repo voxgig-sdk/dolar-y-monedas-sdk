@@ -1,0 +1,28 @@
+# BasicBlueFlow
+
+main: kit: flow: BasicBlueFlow:
+{
+  entity: "blue",
+  kind: "basic",
+  name: "BasicBlueFlow",
+  step: [
+    {
+      input: {
+        ref: "blue_ref01",
+        srcdatavar: "blue_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-blue_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBlueFlow"
+}

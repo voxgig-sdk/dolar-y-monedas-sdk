@@ -1,0 +1,64 @@
+# Entity: tarjeta
+
+main: kit: entity: tarjeta: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "casa"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "compra"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fecha_actualizacion"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "moneda"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "nombre"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "venta"
+      req: true
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "tarjeta"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/dolares/tarjeta"
+          parts: [
+            "v1"
+            "dolares"
+            "tarjeta"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,45 @@
+{
+  "existing": {
+    "oficial": {
+      "OFICIAL00": {
+        "casa": "s3c",
+        "compra": 61,
+        "fecha_actualizacion": "s3e",
+        "moneda": "s3f",
+        "nombre": "s40",
+        "venta": 65,
+        "id": "OFICIAL00"
+      },
+      "OFICIAL01": {
+        "casa": "s78",
+        "compra": 121,
+        "fecha_actualizacion": "s7a",
+        "moneda": "s7b",
+        "nombre": "s7c",
+        "venta": 125,
+        "id": "OFICIAL01"
+      },
+      "OFICIAL02": {
+        "casa": "sb4",
+        "compra": 181,
+        "fecha_actualizacion": "sb6",
+        "moneda": "sb7",
+        "nombre": "sb8",
+        "venta": 185,
+        "id": "OFICIAL02"
+      }
+    }
+  },
+  "new": {
+    "oficial": {
+      "oficial_ref01": {
+        "casa": "sf0",
+        "compra": 241,
+        "fecha_actualizacion": "sf2",
+        "moneda": "sf3",
+        "nombre": "sf4",
+        "venta": 245
+      }
+    }
+  }
+}

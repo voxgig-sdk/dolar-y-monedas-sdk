@@ -1,0 +1,64 @@
+# Entity: brl
+
+main: kit: entity: brl: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "casa"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "compra"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fecha_actualizacion"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "moneda"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "nombre"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "venta"
+      req: true
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "brl"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/cotizaciones/brl"
+          parts: [
+            "v1"
+            "cotizaciones"
+            "brl"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

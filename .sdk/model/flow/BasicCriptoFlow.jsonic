@@ -1,0 +1,28 @@
+# BasicCriptoFlow
+
+main: kit: flow: BasicCriptoFlow:
+{
+  entity: "cripto",
+  kind: "basic",
+  name: "BasicCriptoFlow",
+  step: [
+    {
+      input: {
+        ref: "cripto_ref01",
+        srcdatavar: "cripto_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cripto_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCriptoFlow"
+}

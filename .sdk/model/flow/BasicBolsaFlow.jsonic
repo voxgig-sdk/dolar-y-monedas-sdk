@@ -1,0 +1,28 @@
+# BasicBolsaFlow
+
+main: kit: flow: BasicBolsaFlow:
+{
+  entity: "bolsa",
+  kind: "basic",
+  name: "BasicBolsaFlow",
+  step: [
+    {
+      input: {
+        ref: "bolsa_ref01",
+        srcdatavar: "bolsa_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-bolsa_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBolsaFlow"
+}

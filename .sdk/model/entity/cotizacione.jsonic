@@ -1,0 +1,63 @@
+# Entity: cotizacione
+
+main: kit: entity: cotizacione: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "casa"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "compra"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "fecha_actualizacion"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "moneda"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "nombre"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "venta"
+      req: true
+      type: "`$NUMBER`"
+    }
+  ]
+
+  name: "cotizacione"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/cotizaciones"
+          parts: [
+            "v1"
+            "cotizaciones"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,28 @@
+# BasicUyuFlow
+
+main: kit: flow: BasicUyuFlow:
+{
+  entity: "uyu",
+  kind: "basic",
+  name: "BasicUyuFlow",
+  step: [
+    {
+      input: {
+        ref: "uyu_ref01",
+        srcdatavar: "uyu_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-uyu_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUyuFlow"
+}
