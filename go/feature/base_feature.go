@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 )
 
 type BaseFeature struct {

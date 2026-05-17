@@ -1,10 +1,10 @@
 package voxgigdolarymonedassdk
 
 import (
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/entity"
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/feature"
-	_ "github.com/voxgig-sdk/dolar-y-monedas-sdk/utility"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/entity"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/feature"
+	_ "github.com/voxgig-sdk/dolar-y-monedas-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

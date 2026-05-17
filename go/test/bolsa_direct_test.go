@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk"
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+	sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk/go"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 )
 
 func TestBolsaDirect(t *testing.T) {

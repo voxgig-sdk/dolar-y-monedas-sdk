@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+import "github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 
 func featureAddUtil(ctx *core.Context, f core.Feature) {
 	client := ctx.Client

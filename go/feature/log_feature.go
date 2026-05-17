@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 )
 
 type LogFeature struct {

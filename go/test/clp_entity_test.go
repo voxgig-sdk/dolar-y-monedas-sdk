@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk"
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+	sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk/go"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/dolar-y-monedas-sdk/go/utility/struct"
 )
 
 func TestClpEntity(t *testing.T) {

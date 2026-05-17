@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"math/rand"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/dolar-y-monedas-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/dolar-y-monedas-sdk/core"
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 )
 
 type TestFeature struct {
