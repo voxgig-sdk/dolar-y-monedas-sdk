@@ -91,7 +91,6 @@ def _blue_basic_setup(extra):
         "DOLARYMONEDAS_TEST_BLUE_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +101,6 @@ def _blue_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

@@ -26,9 +26,7 @@ loading a specific record.
 ```lua
 local sdk = require("dolar-y-monedas_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("DOLAR-Y-MONEDAS_APIKEY"),
-})
+local client = sdk.new({})
 ```
 
 ### 3. Load a blue
@@ -118,7 +116,6 @@ Create a `.env.local` file at the project root:
 
 ```
 DOLAR-Y-MONEDAS_TEST_LIVE=TRUE
-DOLAR-Y-MONEDAS_APIKEY=<your-key>
 ```
 
 Then run:
@@ -141,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

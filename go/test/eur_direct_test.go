@@ -99,14 +99,12 @@ func eurDirectSetup(mockres any) *eurDirectSetupResult {
 	env := envOverride(map[string]any{
 		"DOLARYMONEDAS_TEST_EUR_ENTID": map[string]any{},
 		"DOLARYMONEDAS_TEST_LIVE":    "FALSE",
-		"DOLARYMONEDAS_APIKEY":       "NONE",
 	})
 
 	live := env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["DOLARYMONEDAS_APIKEY"],
 		}
 		client := sdk.NewDolarYMonedasSDK(mergedOpts)
 

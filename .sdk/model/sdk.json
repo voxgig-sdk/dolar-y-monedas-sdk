@@ -13,7 +13,31 @@
           }
         ],
         "title": "DolarApi.com",
-        "version": "1.1.0"
+        "version": "1.1.0",
+        "tagline": "Up-to-date quotations for the US dollar in Argentina, plus other Latin American currency exchange rates",
+        "homepage": "https://dolarapi.com",
+        "docs_url": "https://dolarapi.com/docs/argentina/",
+        "license_short": "MIT License",
+        "license_md": "- Released under the [MIT License](https://opensource.org/licenses/MIT).\n- Free to use for personal and commercial projects with attribution to the upstream project.\n- Data is aggregated from public sources; the maintainer makes no warranties about accuracy or availability.",
+        "about_md": "[DolarApi.com](https://dolarapi.com) is an open API that publishes the many parallel US dollar quotations used in Argentina (oficial, blue, MEP/bolsa, contado con liqui, mayorista, tarjeta, cripto) along with other Latin American currency exchange rates. It is built on the EsJS framework and maintained by [Enzo Notario](https://github.com/enzonotario) as a free public service.\n\nWhat you get from the API:\n\n- All Argentine dollar variants in one call (`/dolares`) or individually under `/dolar/{tipo}`.\n- Cross-rates against the Argentine peso for Euro, Brazilian real, Chilean peso, Uruguayan peso, and more under `/cotizaciones` and `/cotizacion/{moneda}`.\n- Snapshots from [Ámbito Financiero](https://www.ambito.com) (`/ambito`) and an API health endpoint (`/estado`).\n\nThe service is HTTP-only with no authentication required. Data is sourced from publicly available financial sites and refreshed periodically; consult the docs for the current refresh cadence before relying on it in production.",
+        "entity_desc": {
+          "blue": "Blue (informal/parallel) dollar quotation in Argentina, served from `/dolar/blue`.",
+          "bolsa": "MEP / Bolsa dollar (stock-exchange-derived rate), served from `/dolar/bolsa`.",
+          "brl": "Brazilian real cross-rate against the Argentine peso, served from `/cotizacion/brl`.",
+          "clp": "Chilean peso cross-rate against the Argentine peso, served from `/cotizacion/clp`.",
+          "contadoconliqui": "Contado Con Liquidación (CCL) dollar rate, served from `/dolar/contadoconliqui`.",
+          "cotizacion_ambito": "Quotations sourced from Ámbito Financiero, exposed under `/ambito`.",
+          "cotizacione": "Aggregated currency quotations (USD plus others) against the Argentine peso, available via `/cotizaciones`.",
+          "cripto": "Cryptocurrency-implied dollar rate, served from `/dolar/cripto`.",
+          "dolare": "Collection of all Argentine dollar variants returned by `/dolares`.",
+          "estado": "API health / status endpoint at `/estado`.",
+          "eur": "Euro cross-rate against the Argentine peso, served from `/cotizacion/eur`.",
+          "mayorista": "Wholesale (mayorista) dollar rate, served from `/dolar/mayorista`.",
+          "oficial": "Official dollar rate published by the central bank, served from `/dolar/oficial`.",
+          "tarjeta": "Card / tourist dollar rate (oficial plus surcharges), served from `/dolar/tarjeta`.",
+          "uyu": "Uruguayan peso cross-rate against the Argentine peso, served from `/cotizacion/uyu`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -21,7 +45,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "blue": {

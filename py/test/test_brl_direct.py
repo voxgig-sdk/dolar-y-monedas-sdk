@@ -59,14 +59,12 @@ def _brl_direct_setup(mockres):
     env = runner.env_override({
         "DOLARYMONEDAS_TEST_BRL_ENTID": {},
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     live = env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("DOLARYMONEDAS_APIKEY"),
         }
         client = DolarYMonedasSDK(merged_opts)
         return {
