@@ -91,6 +91,7 @@ function eur_basic_setup(extra)
     ["DOLARYMONEDAS_TEST_EUR_ENTID"] = idmap,
     ["DOLARYMONEDAS_TEST_LIVE"] = "FALSE",
     ["DOLARYMONEDAS_TEST_EXPLAIN"] = "FALSE",
+    ["DOLARYMONEDAS_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function eur_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["DOLARYMONEDAS_APIKEY"],
       },
       extra or {},
     })

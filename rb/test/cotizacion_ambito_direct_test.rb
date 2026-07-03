@@ -106,12 +106,14 @@ def cotizacion_ambito_direct_setup(mockres)
   env = Runner.env_override({
     "DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID" => {},
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
+    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   live = env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["DOLARYMONEDAS_APIKEY"],
     }
     client = DolarYMonedasSDK.new(merged_opts)
     return {

@@ -1,20 +1,8 @@
 # DolarYMonedas SDK
 
-Up-to-date quotations for the US dollar in Argentina, plus other Latin American currency exchange rates
+DolarApi.com client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About DolarApi.com
-
-[DolarApi.com](https://dolarapi.com) is an open API that publishes the many parallel US dollar quotations used in Argentina (oficial, blue, MEP/bolsa, contado con liqui, mayorista, tarjeta, cripto) along with other Latin American currency exchange rates. It is built on the EsJS framework and maintained by [Enzo Notario](https://github.com/enzonotario) as a free public service.
-
-What you get from the API:
-
-- All Argentine dollar variants in one call (`/dolares`) or individually under `/dolar/{tipo}`.
-- Cross-rates against the Argentine peso for Euro, Brazilian real, Chilean peso, Uruguayan peso, and more under `/cotizaciones` and `/cotizacion/{moneda}`.
-- Snapshots from [Ámbito Financiero](https://www.ambito.com) (`/ambito`) and an API health endpoint (`/estado`).
-
-The service is HTTP-only with no authentication required. Data is sourced from publicly available financial sites and refreshed periodically; consult the docs for the current refresh cadence before relying on it in production.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install dolar-y-monedas-sdk
 luarocks install dolar-y-monedas-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { DolarYMonedasSDK } from 'dolar-y-monedas'
 
-const client = new DolarYMonedasSDK({})
+const client = new DolarYMonedasSDK({
+  apikey: process.env.DOLAR-Y-MONEDAS_APIKEY,
+})
 
+// Load blue data
+const blue = await client.Blue().load({})
+console.log(blue.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,21 +90,21 @@ The API exposes 15 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Blue** | Blue (informal/parallel) dollar quotation in Argentina, served from `/dolar/blue`. | `/v1/dolares/blue` |
-| **Bolsa** | MEP / Bolsa dollar (stock-exchange-derived rate), served from `/dolar/bolsa`. | `/v1/dolares/bolsa` |
-| **Brl** | Brazilian real cross-rate against the Argentine peso, served from `/cotizacion/brl`. | `/v1/cotizaciones/brl` |
-| **Clp** | Chilean peso cross-rate against the Argentine peso, served from `/cotizacion/clp`. | `/v1/cotizaciones/clp` |
-| **Contadoconliqui** | Contado Con Liquidación (CCL) dollar rate, served from `/dolar/contadoconliqui`. | `/v1/dolares/contadoconliqui` |
-| **CotizacionAmbito** | Quotations sourced from Ámbito Financiero, exposed under `/ambito`. | `/v1/ambito/dolares` |
-| **Cotizacione** | Aggregated currency quotations (USD plus others) against the Argentine peso, available via `/cotizaciones`. | `/v1/cotizaciones` |
-| **Cripto** | Cryptocurrency-implied dollar rate, served from `/dolar/cripto`. | `/v1/dolares/cripto` |
-| **Dolare** | Collection of all Argentine dollar variants returned by `/dolares`. | `/v1/dolares` |
-| **Estado** | API health / status endpoint at `/estado`. | `/v1/estado` |
-| **Eur** | Euro cross-rate against the Argentine peso, served from `/cotizacion/eur`. | `/v1/cotizaciones/eur` |
-| **Mayorista** | Wholesale (mayorista) dollar rate, served from `/dolar/mayorista`. | `/v1/dolares/mayorista` |
-| **Oficial** | Official dollar rate published by the central bank, served from `/dolar/oficial`. | `/v1/dolares/oficial` |
-| **Tarjeta** | Card / tourist dollar rate (oficial plus surcharges), served from `/dolar/tarjeta`. | `/v1/dolares/tarjeta` |
-| **Uyu** | Uruguayan peso cross-rate against the Argentine peso, served from `/cotizacion/uyu`. | `/v1/cotizaciones/uyu` |
+| **Blue** |  | `/v1/dolares/blue` |
+| **Bolsa** |  | `/v1/dolares/bolsa` |
+| **Brl** |  | `/v1/cotizaciones/brl` |
+| **Clp** |  | `/v1/cotizaciones/clp` |
+| **Contadoconliqui** |  | `/v1/dolares/contadoconliqui` |
+| **CotizacionAmbito** |  | `/v1/ambito/dolares` |
+| **Cotizacione** |  | `/v1/cotizaciones` |
+| **Cripto** |  | `/v1/dolares/cripto` |
+| **Dolare** |  | `/v1/dolares` |
+| **Estado** |  | `/v1/estado` |
+| **Eur** |  | `/v1/cotizaciones/eur` |
+| **Mayorista** |  | `/v1/dolares/mayorista` |
+| **Oficial** |  | `/v1/dolares/oficial` |
+| **Tarjeta** |  | `/v1/dolares/tarjeta` |
+| **Uyu** |  | `/v1/cotizaciones/uyu` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -122,15 +114,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from dolarymonedas_sdk import DolarYMonedasSDK
 
-client = DolarYMonedasSDK({})
+client = DolarYMonedasSDK({
+    "apikey": os.environ.get("DOLAR-Y-MONEDAS_APIKEY"),
+})
 
 
 # Load a specific blue
-blue, err = client.Blue(None).load(
-    {"id": "example_id"}, None
-)
+blue, err = client.Blue().load({"id": "example_id"})
+print(blue)
 ```
 
 ### PHP
@@ -139,13 +133,14 @@ blue, err = client.Blue(None).load(
 <?php
 require_once 'dolarymonedas_sdk.php';
 
-$client = new DolarYMonedasSDK([]);
+$client = new DolarYMonedasSDK([
+    "apikey" => getenv("DOLAR-Y-MONEDAS_APIKEY"),
+]);
 
 
 // Load a specific blue
-[$blue, $err] = $client->Blue(null)->load(
-    ["id" => "example_id"], null
-);
+[$blue, $err] = $client->Blue()->load(["id" => "example_id"]);
+print_r($blue);
 ```
 
 ### Golang
@@ -153,8 +148,13 @@ $client = new DolarYMonedasSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk/go"
 
-client := sdk.NewDolarYMonedasSDK(map[string]any{})
+client := sdk.NewDolarYMonedasSDK(map[string]any{
+    "apikey": os.Getenv("DOLAR-Y-MONEDAS_APIKEY"),
+})
 
+// Load blue data
+blue, err := client.Blue(nil).Load(map[string]any{}, nil)
+fmt.Println(blue)
 ```
 
 ### Ruby
@@ -162,13 +162,14 @@ client := sdk.NewDolarYMonedasSDK(map[string]any{})
 ```ruby
 require_relative "DolarYMonedas_sdk"
 
-client = DolarYMonedasSDK.new({})
+client = DolarYMonedasSDK.new({
+  "apikey" => ENV["DOLAR-Y-MONEDAS_APIKEY"],
+})
 
 
 # Load a specific blue
-blue, err = client.Blue(nil).load(
-  { "id" => "example_id" }, nil
-)
+blue, err = client.Blue().load({ "id" => "example_id" })
+puts blue
 ```
 
 ### Lua
@@ -176,13 +177,14 @@ blue, err = client.Blue(nil).load(
 ```lua
 local sdk = require("dolar-y-monedas_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("DOLAR-Y-MONEDAS_APIKEY"),
+})
 
 
 -- Load a specific blue
-local blue, err = client:Blue(nil):load(
-  { id = "example_id" }, nil
-)
+local blue, err = client:Blue():load({ id = "example_id" })
+print(blue)
 ```
 
 ## Unit testing in offline mode
@@ -201,25 +203,21 @@ const result = await client.Blue().load({ id: 'test01' })
 ### Python
 
 ```python
-client = DolarYMonedasSDK.test(None, None)
-result, err = client.Blue(None).load(
-    {"id": "test01"}, None
-)
+client = DolarYMonedasSDK.test()
+result, err = client.Blue().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = DolarYMonedasSDK::test(null, null);
-[$result, $err] = $client->Blue(null)->load(
-    ["id" => "test01"], null
-);
+$client = DolarYMonedasSDK::test();
+[$result, $err] = $client->Blue()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Blue(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -228,19 +226,15 @@ result, err := client.Blue(nil).Load(
 ### Ruby
 
 ```ruby
-client = DolarYMonedasSDK.test(nil, nil)
-result, err = client.Blue(nil).load(
-  { "id" => "test01" }, nil
-)
+client = DolarYMonedasSDK.test
+result, err = client.Blue().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Blue(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Blue():load({ id = "test01" })
 ```
 
 ## How it works
@@ -344,15 +338,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the DolarApi.com
-
-- Upstream: [https://dolarapi.com](https://dolarapi.com)
-- API docs: [https://dolarapi.com/docs/argentina/](https://dolarapi.com/docs/argentina/)
-
-- Released under the [MIT License](https://opensource.org/licenses/MIT).
-- Free to use for personal and commercial projects with attribution to the upstream project.
-- Data is aggregated from public sources; the maintainer makes no warranties about accuracy or availability.
 
 ---
 

@@ -1,6 +1,11 @@
 # DolarYMonedas Python SDK
 
-The Python SDK for the DolarYMonedas API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the DolarYMonedas API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from dolarymonedas_sdk import DolarYMonedasSDK
 
-client = DolarYMonedasSDK({})
+client = DolarYMonedasSDK({
+    "apikey": os.environ.get("DOLAR-Y-MONEDAS_APIKEY"),
+})
 ```
 
 ### 3. Load a blue
 
 ```python
-result, err = client.Blue(None).load({"id": "example_id"}, None)
+result, err = client.Blue().load({"id": "example_id"})
 if err:
     raise Exception(err)
 print(result)
@@ -79,11 +87,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = DolarYMonedasSDK.test(None, None)
+client = DolarYMonedasSDK.test()
 
-result, err = client.DolarYMonedas(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.DolarYMonedas().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -114,6 +120,7 @@ Create a `.env.local` file at the project root:
 
 ```
 DOLAR-Y-MONEDAS_TEST_LIVE=TRUE
+DOLAR-Y-MONEDAS_APIKEY=<your-key>
 ```
 
 Then run:
@@ -137,6 +144,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

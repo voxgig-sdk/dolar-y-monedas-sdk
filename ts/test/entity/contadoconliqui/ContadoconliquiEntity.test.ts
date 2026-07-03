@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'DOLAR_Y_MONEDAS_TEST_CONTADOCONLIQUI_ENTID': idmap,
     'DOLAR_Y_MONEDAS_TEST_LIVE': 'FALSE',
     'DOLAR_Y_MONEDAS_TEST_EXPLAIN': 'FALSE',
+    'DOLAR_Y_MONEDAS_APIKEY': 'NONE',
   })
 
   idmap = env['DOLAR_Y_MONEDAS_TEST_CONTADOCONLIQUI_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new DolarYMonedasSDK(merge([
       {
+        apikey: env.DOLAR_Y_MONEDAS_APIKEY,
       },
       extra
     ]))

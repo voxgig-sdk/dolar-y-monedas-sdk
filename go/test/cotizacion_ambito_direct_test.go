@@ -164,12 +164,14 @@ func cotizacion_ambitoDirectSetup(mockres any) *cotizacion_ambitoDirectSetupResu
 	env := envOverride(map[string]any{
 		"DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID": map[string]any{},
 		"DOLARYMONEDAS_TEST_LIVE":    "FALSE",
+		"DOLARYMONEDAS_APIKEY":       "NONE",
 	})
 
 	live := env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["DOLARYMONEDAS_APIKEY"],
 		}
 		client := sdk.NewDolarYMonedasSDK(mergedOpts)
 

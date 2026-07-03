@@ -38,6 +38,10 @@ class Config {
   options = {
     base: 'https://dolarapi.com',
 
+    auth: {
+      prefix: 'Bearer',
+    },
+
     headers: {
       "content-type": "application/json"
     },
@@ -97,54 +101,57 @@ class Config {
     "blue": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "blue",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/blue",
               "parts": [
@@ -152,17 +159,14 @@ class Config {
                 "dolares",
                 "blue"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -173,54 +177,57 @@ class Config {
     "bolsa": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "bolsa",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/bolsa",
               "parts": [
@@ -228,17 +235,14 @@ class Config {
                 "dolares",
                 "bolsa"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -249,54 +253,57 @@ class Config {
     "brl": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "brl",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/cotizaciones/brl",
               "parts": [
@@ -304,17 +311,14 @@ class Config {
                 "cotizaciones",
                 "brl"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -325,54 +329,57 @@ class Config {
     "clp": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "clp",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/cotizaciones/clp",
               "parts": [
@@ -380,17 +387,14 @@ class Config {
                 "cotizaciones",
                 "clp"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -401,54 +405,57 @@ class Config {
     "contadoconliqui": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "contadoconliqui",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/contadoconliqui",
               "parts": [
@@ -456,17 +463,14 @@ class Config {
                 "dolares",
                 "contadoconliqui"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -477,61 +481,64 @@ class Config {
     "cotizacion_ambito": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "variacion",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 6
         }
       ],
       "name": "cotizacion_ambito",
       "op": {
         "list": {
+          "input": "data",
           "name": "list",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares",
               "parts": [
@@ -539,23 +546,23 @@ class Config {
                 "ambito",
                 "dolares"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "list"
         },
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/blue",
               "parts": [
@@ -564,16 +571,16 @@ class Config {
                 "dolares",
                 "blue"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/bolsa",
               "parts": [
@@ -582,16 +589,16 @@ class Config {
                 "dolares",
                 "bolsa"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 1
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/contadoconliqui",
               "parts": [
@@ -600,16 +607,16 @@ class Config {
                 "dolares",
                 "contadoconliqui"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 2
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/cripto",
               "parts": [
@@ -618,16 +625,16 @@ class Config {
                 "dolares",
                 "cripto"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 3
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/mayorista",
               "parts": [
@@ -636,16 +643,16 @@ class Config {
                 "dolares",
                 "mayorista"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 4
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/oficial",
               "parts": [
@@ -654,16 +661,16 @@ class Config {
                 "dolares",
                 "oficial"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 5
             },
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/ambito/dolares/tarjeta",
               "parts": [
@@ -672,17 +679,14 @@ class Config {
                 "dolares",
                 "tarjeta"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 6
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -693,71 +697,71 @@ class Config {
     "cotizacione": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "cotizacione",
       "op": {
         "list": {
+          "input": "data",
           "name": "list",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/cotizaciones",
               "parts": [
                 "v1",
                 "cotizaciones"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "list"
         }
       },
@@ -768,54 +772,57 @@ class Config {
     "cripto": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "cripto",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/cripto",
               "parts": [
@@ -823,17 +830,14 @@ class Config {
                 "dolares",
                 "cripto"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -844,71 +848,71 @@ class Config {
     "dolare": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "dolare",
       "op": {
         "list": {
+          "input": "data",
           "name": "list",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares",
               "parts": [
                 "v1",
                 "dolares"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "list"
         }
       },
@@ -919,43 +923,43 @@ class Config {
     "estado": {
       "fields": [
         {
+          "active": true,
           "name": "aleatorio",
           "req": false,
           "type": "`$INTEGER`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "estado",
           "req": false,
           "type": "`$STRING`",
-          "active": true,
           "index$": 1
         }
       ],
       "name": "estado",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/estado",
               "parts": [
                 "v1",
                 "estado"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.estado`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -966,54 +970,57 @@ class Config {
     "eur": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "eur",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/cotizaciones/eur",
               "parts": [
@@ -1021,17 +1028,14 @@ class Config {
                 "cotizaciones",
                 "eur"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -1042,54 +1046,57 @@ class Config {
     "mayorista": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "mayorista",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/mayorista",
               "parts": [
@@ -1097,17 +1104,14 @@ class Config {
                 "dolares",
                 "mayorista"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -1118,54 +1122,57 @@ class Config {
     "oficial": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "oficial",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/oficial",
               "parts": [
@@ -1173,17 +1180,14 @@ class Config {
                 "dolares",
                 "oficial"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -1194,54 +1198,57 @@ class Config {
     "tarjeta": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "tarjeta",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/dolares/tarjeta",
               "parts": [
@@ -1249,17 +1256,14 @@ class Config {
                 "dolares",
                 "tarjeta"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -1270,54 +1274,57 @@ class Config {
     "uyu": {
       "fields": [
         {
+          "active": true,
           "name": "casa",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "compra",
           "req": false,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "fecha_actualizacion",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "moneda",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "nombre",
           "req": true,
           "type": "`$STRING`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "venta",
           "req": true,
           "type": "`$NUMBER`",
-          "active": true,
           "index$": 5
         }
       ],
       "name": "uyu",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
+              "args": {},
               "method": "GET",
               "orig": "/v1/cotizaciones/uyu",
               "parts": [
@@ -1325,17 +1332,14 @@ class Config {
                 "cotizaciones",
                 "uyu"
               ],
+              "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
-              "args": {},
-              "select": {},
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },

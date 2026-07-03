@@ -86,6 +86,7 @@ function dolare_basic_setup($extra)
         "DOLARYMONEDAS_TEST_DOLARE_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
+        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function dolare_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

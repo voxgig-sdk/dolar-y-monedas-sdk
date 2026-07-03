@@ -62,12 +62,14 @@ function tarjeta_direct_setup(mockres)
   local env = runner.env_override({
     ["DOLARYMONEDAS_TEST_TARJETA_ENTID"] = {},
     ["DOLARYMONEDAS_TEST_LIVE"] = "FALSE",
+    ["DOLARYMONEDAS_APIKEY"] = "NONE",
   })
 
   local live = env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["DOLARYMONEDAS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

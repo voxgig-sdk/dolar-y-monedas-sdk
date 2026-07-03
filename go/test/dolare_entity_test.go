@@ -119,6 +119,7 @@ func dolareBasicSetup(extra map[string]any) *entityTestSetup {
 		"DOLARYMONEDAS_TEST_DOLARE_ENTID": idmap,
 		"DOLARYMONEDAS_TEST_LIVE":      "FALSE",
 		"DOLARYMONEDAS_TEST_EXPLAIN":   "FALSE",
+		"DOLARYMONEDAS_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["DOLARYMONEDAS_TEST_DOLARE_ENTID"])
@@ -129,6 +130,7 @@ func dolareBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["DOLARYMONEDAS_APIKEY"],
 			},
 			extra,
 		})

@@ -59,12 +59,14 @@ def _eur_direct_setup(mockres):
     env = runner.env_override({
         "DOLARYMONEDAS_TEST_EUR_ENTID": {},
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
+        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     live = env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("DOLARYMONEDAS_APIKEY"),
         }
         client = DolarYMonedasSDK(merged_opts)
         return {

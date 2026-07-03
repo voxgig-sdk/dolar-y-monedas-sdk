@@ -67,12 +67,14 @@ function eur_direct_setup($mockres)
     $env = Runner::env_override([
         "DOLARYMONEDAS_TEST_EUR_ENTID" => [],
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
+        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $live = $env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["DOLARYMONEDAS_APIKEY"],
         ];
         $client = new DolarYMonedasSDK($merged_opts);
         return [
