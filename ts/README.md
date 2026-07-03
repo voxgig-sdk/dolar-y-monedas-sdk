@@ -10,7 +10,7 @@ The TypeScript SDK for the DolarYMonedas API — a type-safe, entity-oriented cl
 
 ## Install
 ```bash
-npm install dolar-y-monedas
+npm install @voxgig-sdk/dolar-y-monedas
 ```
 ## Tutorial: your first API call
 

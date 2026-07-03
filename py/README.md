@@ -10,7 +10,7 @@ The Python SDK for the DolarYMonedas API — an entity-oriented client following
 
 ## Install
 ```bash
-pip install dolar-y-monedas-sdk
+pip install voxgig-sdk-dolar-y-monedas
 ```
 
 Or install from source:

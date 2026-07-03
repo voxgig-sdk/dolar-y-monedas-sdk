@@ -8,12 +8,14 @@ source = {
   dir = "dolar-y-monedas-sdk/lua"
 }
 description = {
-  summary = "DolarYMonedas SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the DolarApi.com public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/dolar-y-monedas-sdk",
+  issues_url = "https://github.com/voxgig-sdk/dolar-y-monedas-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "dolar-y-monedas" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

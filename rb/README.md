@@ -10,13 +10,13 @@ The Ruby SDK for the DolarYMonedas API — an entity-oriented client using idiom
 
 ## Install
 ```bash
-gem install dolar-y-monedas-sdk
+gem install voxgig-sdk-dolar-y-monedas
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "dolar-y-monedas-sdk"
+gem "voxgig-sdk-dolar-y-monedas"
 ```
 
 Then run:
