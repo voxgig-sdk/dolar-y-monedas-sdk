@@ -139,7 +139,7 @@ same parameters as `direct()`.
 ## BlueEntity
 
 ```lua
-local blue = client:blue(nil)
+local blue = client:Blue(nil)
 ```
 
 ### Fields
@@ -160,7 +160,7 @@ local blue = client:blue(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:blue():load({ id = "blue_id" })
+local result, err = client:Blue():load({ id = "blue_id" })
 ```
 
 ### Common Methods
@@ -196,7 +196,7 @@ Return the entity name.
 ## BolsaEntity
 
 ```lua
-local bolsa = client:bolsa(nil)
+local bolsa = client:Bolsa(nil)
 ```
 
 ### Fields
@@ -217,7 +217,7 @@ local bolsa = client:bolsa(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:bolsa():load({ id = "bolsa_id" })
+local result, err = client:Bolsa():load({ id = "bolsa_id" })
 ```
 
 ### Common Methods
@@ -253,7 +253,7 @@ Return the entity name.
 ## BrlEntity
 
 ```lua
-local brl = client:brl(nil)
+local brl = client:Brl(nil)
 ```
 
 ### Fields
@@ -274,7 +274,7 @@ local brl = client:brl(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:brl():load({ id = "brl_id" })
+local result, err = client:Brl():load({ id = "brl_id" })
 ```
 
 ### Common Methods
@@ -310,7 +310,7 @@ Return the entity name.
 ## ClpEntity
 
 ```lua
-local clp = client:clp(nil)
+local clp = client:Clp(nil)
 ```
 
 ### Fields
@@ -331,7 +331,7 @@ local clp = client:clp(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:clp():load({ id = "clp_id" })
+local result, err = client:Clp():load({ id = "clp_id" })
 ```
 
 ### Common Methods
@@ -367,7 +367,7 @@ Return the entity name.
 ## ContadoconliquiEntity
 
 ```lua
-local contadoconliqui = client:contadoconliqui(nil)
+local contadoconliqui = client:Contadoconliqui(nil)
 ```
 
 ### Fields
@@ -388,7 +388,7 @@ local contadoconliqui = client:contadoconliqui(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:contadoconliqui():load({ id = "contadoconliqui_id" })
+local result, err = client:Contadoconliqui():load({ id = "contadoconliqui_id" })
 ```
 
 ### Common Methods
@@ -424,7 +424,7 @@ Return the entity name.
 ## CotizacionAmbitoEntity
 
 ```lua
-local cotizacion_ambito = client:cotizacion_ambito(nil)
+local cotizacion_ambito = client:CotizacionAmbito(nil)
 ```
 
 ### Fields
@@ -446,7 +446,7 @@ local cotizacion_ambito = client:cotizacion_ambito(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:cotizacion_ambito():list()
+local results, err = client:CotizacionAmbito():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -454,7 +454,7 @@ local results, err = client:cotizacion_ambito():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:cotizacion_ambito():load({ id = "cotizacion_ambito_id" })
+local result, err = client:CotizacionAmbito():load({ id = "cotizacion_ambito_id" })
 ```
 
 ### Common Methods
@@ -490,7 +490,7 @@ Return the entity name.
 ## CotizacioneEntity
 
 ```lua
-local cotizacione = client:cotizacione(nil)
+local cotizacione = client:Cotizacione(nil)
 ```
 
 ### Fields
@@ -511,7 +511,7 @@ local cotizacione = client:cotizacione(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:cotizacione():list()
+local results, err = client:Cotizacione():list()
 ```
 
 ### Common Methods
@@ -547,7 +547,7 @@ Return the entity name.
 ## CriptoEntity
 
 ```lua
-local cripto = client:cripto(nil)
+local cripto = client:Cripto(nil)
 ```
 
 ### Fields
@@ -568,7 +568,7 @@ local cripto = client:cripto(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:cripto():load({ id = "cripto_id" })
+local result, err = client:Cripto():load({ id = "cripto_id" })
 ```
 
 ### Common Methods
@@ -604,7 +604,7 @@ Return the entity name.
 ## DolareEntity
 
 ```lua
-local dolare = client:dolare(nil)
+local dolare = client:Dolare(nil)
 ```
 
 ### Fields
@@ -625,7 +625,7 @@ local dolare = client:dolare(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:dolare():list()
+local results, err = client:Dolare():list()
 ```
 
 ### Common Methods
@@ -661,7 +661,7 @@ Return the entity name.
 ## EstadoEntity
 
 ```lua
-local estado = client:estado(nil)
+local estado = client:Estado(nil)
 ```
 
 ### Fields
@@ -678,7 +678,7 @@ local estado = client:estado(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:estado():load({ id = "estado_id" })
+local result, err = client:Estado():load({ id = "estado_id" })
 ```
 
 ### Common Methods
@@ -714,7 +714,7 @@ Return the entity name.
 ## EurEntity
 
 ```lua
-local eur = client:eur(nil)
+local eur = client:Eur(nil)
 ```
 
 ### Fields
@@ -735,7 +735,7 @@ local eur = client:eur(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:eur():load({ id = "eur_id" })
+local result, err = client:Eur():load({ id = "eur_id" })
 ```
 
 ### Common Methods
@@ -771,7 +771,7 @@ Return the entity name.
 ## MayoristaEntity
 
 ```lua
-local mayorista = client:mayorista(nil)
+local mayorista = client:Mayorista(nil)
 ```
 
 ### Fields
@@ -792,7 +792,7 @@ local mayorista = client:mayorista(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:mayorista():load({ id = "mayorista_id" })
+local result, err = client:Mayorista():load({ id = "mayorista_id" })
 ```
 
 ### Common Methods
@@ -828,7 +828,7 @@ Return the entity name.
 ## OficialEntity
 
 ```lua
-local oficial = client:oficial(nil)
+local oficial = client:Oficial(nil)
 ```
 
 ### Fields
@@ -849,7 +849,7 @@ local oficial = client:oficial(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:oficial():load({ id = "oficial_id" })
+local result, err = client:Oficial():load({ id = "oficial_id" })
 ```
 
 ### Common Methods
@@ -885,7 +885,7 @@ Return the entity name.
 ## TarjetaEntity
 
 ```lua
-local tarjeta = client:tarjeta(nil)
+local tarjeta = client:Tarjeta(nil)
 ```
 
 ### Fields
@@ -906,7 +906,7 @@ local tarjeta = client:tarjeta(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:tarjeta():load({ id = "tarjeta_id" })
+local result, err = client:Tarjeta():load({ id = "tarjeta_id" })
 ```
 
 ### Common Methods
@@ -942,7 +942,7 @@ Return the entity name.
 ## UyuEntity
 
 ```lua
-local uyu = client:uyu(nil)
+local uyu = client:Uyu(nil)
 ```
 
 ### Fields
@@ -963,7 +963,7 @@ local uyu = client:uyu(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:uyu():load({ id = "uyu_id" })
+local result, err = client:Uyu():load({ id = "uyu_id" })
 ```
 
 ### Common Methods

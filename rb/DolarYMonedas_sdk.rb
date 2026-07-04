@@ -208,195 +208,105 @@ class DolarYMonedasSDK
   end
 
 
-  # Idiomatic facade: client.blue.list / client.blue.load({ "id" => ... })
-  def blue
-    require_relative 'entity/blue_entity'
-    @blue ||= BlueEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.blue instead.
+  # Canonical facade: client.Blue.list / client.Blue.load({ "id" => ... })
   def Blue(data = nil)
     require_relative 'entity/blue_entity'
     BlueEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.bolsa.list / client.bolsa.load({ "id" => ... })
-  def bolsa
-    require_relative 'entity/bolsa_entity'
-    @bolsa ||= BolsaEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.bolsa instead.
+  # Canonical facade: client.Bolsa.list / client.Bolsa.load({ "id" => ... })
   def Bolsa(data = nil)
     require_relative 'entity/bolsa_entity'
     BolsaEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.brl.list / client.brl.load({ "id" => ... })
-  def brl
-    require_relative 'entity/brl_entity'
-    @brl ||= BrlEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.brl instead.
+  # Canonical facade: client.Brl.list / client.Brl.load({ "id" => ... })
   def Brl(data = nil)
     require_relative 'entity/brl_entity'
     BrlEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.clp.list / client.clp.load({ "id" => ... })
-  def clp
-    require_relative 'entity/clp_entity'
-    @clp ||= ClpEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.clp instead.
+  # Canonical facade: client.Clp.list / client.Clp.load({ "id" => ... })
   def Clp(data = nil)
     require_relative 'entity/clp_entity'
     ClpEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.contadoconliqui.list / client.contadoconliqui.load({ "id" => ... })
-  def contadoconliqui
-    require_relative 'entity/contadoconliqui_entity'
-    @contadoconliqui ||= ContadoconliquiEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.contadoconliqui instead.
+  # Canonical facade: client.Contadoconliqui.list / client.Contadoconliqui.load({ "id" => ... })
   def Contadoconliqui(data = nil)
     require_relative 'entity/contadoconliqui_entity'
     ContadoconliquiEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.cotizacion_ambito.list / client.cotizacion_ambito.load({ "id" => ... })
-  def cotizacion_ambito
-    require_relative 'entity/cotizacion_ambito_entity'
-    @cotizacion_ambito ||= CotizacionAmbitoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.cotizacion_ambito instead.
+  # Canonical facade: client.CotizacionAmbito.list / client.CotizacionAmbito.load({ "id" => ... })
   def CotizacionAmbito(data = nil)
     require_relative 'entity/cotizacion_ambito_entity'
     CotizacionAmbitoEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.cotizacione.list / client.cotizacione.load({ "id" => ... })
-  def cotizacione
-    require_relative 'entity/cotizacione_entity'
-    @cotizacione ||= CotizacioneEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.cotizacione instead.
+  # Canonical facade: client.Cotizacione.list / client.Cotizacione.load({ "id" => ... })
   def Cotizacione(data = nil)
     require_relative 'entity/cotizacione_entity'
     CotizacioneEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.cripto.list / client.cripto.load({ "id" => ... })
-  def cripto
-    require_relative 'entity/cripto_entity'
-    @cripto ||= CriptoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.cripto instead.
+  # Canonical facade: client.Cripto.list / client.Cripto.load({ "id" => ... })
   def Cripto(data = nil)
     require_relative 'entity/cripto_entity'
     CriptoEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.dolare.list / client.dolare.load({ "id" => ... })
-  def dolare
-    require_relative 'entity/dolare_entity'
-    @dolare ||= DolareEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.dolare instead.
+  # Canonical facade: client.Dolare.list / client.Dolare.load({ "id" => ... })
   def Dolare(data = nil)
     require_relative 'entity/dolare_entity'
     DolareEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.estado.list / client.estado.load({ "id" => ... })
-  def estado
-    require_relative 'entity/estado_entity'
-    @estado ||= EstadoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.estado instead.
+  # Canonical facade: client.Estado.list / client.Estado.load({ "id" => ... })
   def Estado(data = nil)
     require_relative 'entity/estado_entity'
     EstadoEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.eur.list / client.eur.load({ "id" => ... })
-  def eur
-    require_relative 'entity/eur_entity'
-    @eur ||= EurEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.eur instead.
+  # Canonical facade: client.Eur.list / client.Eur.load({ "id" => ... })
   def Eur(data = nil)
     require_relative 'entity/eur_entity'
     EurEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.mayorista.list / client.mayorista.load({ "id" => ... })
-  def mayorista
-    require_relative 'entity/mayorista_entity'
-    @mayorista ||= MayoristaEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.mayorista instead.
+  # Canonical facade: client.Mayorista.list / client.Mayorista.load({ "id" => ... })
   def Mayorista(data = nil)
     require_relative 'entity/mayorista_entity'
     MayoristaEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.oficial.list / client.oficial.load({ "id" => ... })
-  def oficial
-    require_relative 'entity/oficial_entity'
-    @oficial ||= OficialEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.oficial instead.
+  # Canonical facade: client.Oficial.list / client.Oficial.load({ "id" => ... })
   def Oficial(data = nil)
     require_relative 'entity/oficial_entity'
     OficialEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.tarjeta.list / client.tarjeta.load({ "id" => ... })
-  def tarjeta
-    require_relative 'entity/tarjeta_entity'
-    @tarjeta ||= TarjetaEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.tarjeta instead.
+  # Canonical facade: client.Tarjeta.list / client.Tarjeta.load({ "id" => ... })
   def Tarjeta(data = nil)
     require_relative 'entity/tarjeta_entity'
     TarjetaEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.uyu.list / client.uyu.load({ "id" => ... })
-  def uyu
-    require_relative 'entity/uyu_entity'
-    @uyu ||= UyuEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.uyu instead.
+  # Canonical facade: client.Uyu.list / client.Uyu.load({ "id" => ... })
   def Uyu(data = nil)
     require_relative 'entity/uyu_entity'
     UyuEntity.new(self, data)

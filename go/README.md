@@ -30,36 +30,30 @@ go mod edit -replace github.com/voxgig-sdk/dolar-y-monedas-sdk/go=../dolar-y-mon
 This tutorial walks through creating a client, listing entities, and
 loading a specific record.
 
-### 1. Create a client
+### Quickstart
+
+A complete program: create a client, then call the entity operations.
+Each operation returns `(value, error)` — the value is the data itself
+(there is no `{ok, data}` wrapper), so check `err` and use the value
+directly.
 
 ```go
 package main
 
 import (
     "fmt"
-
     sdk "github.com/voxgig-sdk/dolar-y-monedas-sdk/go"
-    "github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
 )
 
 func main() {
     client := sdk.New()
-```
 
-### 3. Load a blue
-
-```go
-    result, err = client.Blue(nil).Load(
-        map[string]any{"id": "example_id"}, nil,
-    )
+    // Load a single blue — the value is the loaded record.
+    blue, err := client.Blue(nil).Load(map[string]any{"id": "example_id"}, nil)
     if err != nil {
         panic(err)
     }
-
-    rm = core.ToMapAny(result)
-    if rm["ok"] == true {
-        fmt.Println(rm["data"])
-    }
+    fmt.Println(blue)
 }
 ```
 
@@ -110,10 +104,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-result, err := client.Blue(nil).Load(
+blue, err := client.Blue(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
-// result contains mock response data
+if err != nil {
+    panic(err)
+}
+fmt.Println(blue) // the loaded mock data
 ```
 
 ### Use a custom fetch function
@@ -199,12 +196,12 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `Cotizacione` | `(data map[string]any) DolarYMonedasEntity` | Create a Cotizacione entity instance. |
 | `Cripto` | `(data map[string]any) DolarYMonedasEntity` | Create a Cripto entity instance. |
 | `Dolare` | `(data map[string]any) DolarYMonedasEntity` | Create a Dolare entity instance. |
-| `Estado` | `(data map[string]any) DolarYMonedasEntity` | Create a Estado entity instance. |
-| `Eur` | `(data map[string]any) DolarYMonedasEntity` | Create a Eur entity instance. |
+| `Estado` | `(data map[string]any) DolarYMonedasEntity` | Create an Estado entity instance. |
+| `Eur` | `(data map[string]any) DolarYMonedasEntity` | Create an Eur entity instance. |
 | `Mayorista` | `(data map[string]any) DolarYMonedasEntity` | Create a Mayorista entity instance. |
-| `Oficial` | `(data map[string]any) DolarYMonedasEntity` | Create a Oficial entity instance. |
+| `Oficial` | `(data map[string]any) DolarYMonedasEntity` | Create an Oficial entity instance. |
 | `Tarjeta` | `(data map[string]any) DolarYMonedasEntity` | Create a Tarjeta entity instance. |
-| `Uyu` | `(data map[string]any) DolarYMonedasEntity` | Create a Uyu entity instance. |
+| `Uyu` | `(data map[string]any) DolarYMonedasEntity` | Create an Uyu entity instance. |
 
 ### Entity interface (DolarYMonedasEntity)
 
@@ -224,17 +221,24 @@ All entities implement the `DolarYMonedasEntity` interface.
 
 ### Result shape
 
-Entity operations return `(any, error)`. The `any` value is a
-`map[string]any` with these keys:
+Entity operations return `(value, error)`. The `value` is the
+operation's data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `"ok"` | `bool` | `true` if the HTTP status is 2xx. |
-| `"status"` | `int` | HTTP status code. |
-| `"headers"` | `map[string]any` | Response headers. |
-| `"data"` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `List` | a `[]any` of entity records |
 
-On error, `"ok"` is `false` and `"err"` contains the error value.
+Check `err` first, then use the value directly (or the typed
+`...Typed` variants, which return the entity's model struct and a typed
+slice):
+
+    blue, err := client.Blue(nil).Load(map[string]any{"id": "example_id"}, nil)
+    if err != nil { /* handle */ }
+    // blue is the loaded record
+
+Only `Direct()` returns a response envelope — a `map[string]any` with
+`"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
@@ -489,7 +493,11 @@ Create an instance: `blue := client.Blue(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Blue(nil).Load(map[string]any{"id": "blue_id"}, nil)
+blue, err := client.Blue(nil).Load(map[string]any{"id": "blue_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(blue) // the loaded record
 ```
 
 
@@ -517,7 +525,11 @@ Create an instance: `bolsa := client.Bolsa(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Bolsa(nil).Load(map[string]any{"id": "bolsa_id"}, nil)
+bolsa, err := client.Bolsa(nil).Load(map[string]any{"id": "bolsa_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(bolsa) // the loaded record
 ```
 
 
@@ -545,7 +557,11 @@ Create an instance: `brl := client.Brl(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Brl(nil).Load(map[string]any{"id": "brl_id"}, nil)
+brl, err := client.Brl(nil).Load(map[string]any{"id": "brl_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(brl) // the loaded record
 ```
 
 
@@ -573,7 +589,11 @@ Create an instance: `clp := client.Clp(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Clp(nil).Load(map[string]any{"id": "clp_id"}, nil)
+clp, err := client.Clp(nil).Load(map[string]any{"id": "clp_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(clp) // the loaded record
 ```
 
 
@@ -601,7 +621,11 @@ Create an instance: `contadoconliqui := client.Contadoconliqui(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Contadoconliqui(nil).Load(map[string]any{"id": "contadoconliqui_id"}, nil)
+contadoconliqui, err := client.Contadoconliqui(nil).Load(map[string]any{"id": "contadoconliqui_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(contadoconliqui) // the loaded record
 ```
 
 
@@ -631,13 +655,21 @@ Create an instance: `cotizacion_ambito := client.CotizacionAmbito(nil)`
 #### Example: Load
 
 ```go
-result, err := client.CotizacionAmbito(nil).Load(map[string]any{"id": "cotizacion_ambito_id"}, nil)
+cotizacion_ambito, err := client.CotizacionAmbito(nil).Load(map[string]any{"id": "cotizacion_ambito_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cotizacion_ambito) // the loaded record
 ```
 
 #### Example: List
 
 ```go
-results, err := client.CotizacionAmbito(nil).List(nil, nil)
+cotizacion_ambitos, err := client.CotizacionAmbito(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cotizacion_ambitos) // the array of records
 ```
 
 
@@ -665,7 +697,11 @@ Create an instance: `cotizacione := client.Cotizacione(nil)`
 #### Example: List
 
 ```go
-results, err := client.Cotizacione(nil).List(nil, nil)
+cotizaciones, err := client.Cotizacione(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cotizaciones) // the array of records
 ```
 
 
@@ -693,7 +729,11 @@ Create an instance: `cripto := client.Cripto(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Cripto(nil).Load(map[string]any{"id": "cripto_id"}, nil)
+cripto, err := client.Cripto(nil).Load(map[string]any{"id": "cripto_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cripto) // the loaded record
 ```
 
 
@@ -721,7 +761,11 @@ Create an instance: `dolare := client.Dolare(nil)`
 #### Example: List
 
 ```go
-results, err := client.Dolare(nil).List(nil, nil)
+dolares, err := client.Dolare(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dolares) // the array of records
 ```
 
 
@@ -745,7 +789,11 @@ Create an instance: `estado := client.Estado(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Estado(nil).Load(map[string]any{"id": "estado_id"}, nil)
+estado, err := client.Estado(nil).Load(map[string]any{"id": "estado_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(estado) // the loaded record
 ```
 
 
@@ -773,7 +821,11 @@ Create an instance: `eur := client.Eur(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Eur(nil).Load(map[string]any{"id": "eur_id"}, nil)
+eur, err := client.Eur(nil).Load(map[string]any{"id": "eur_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(eur) // the loaded record
 ```
 
 
@@ -801,7 +853,11 @@ Create an instance: `mayorista := client.Mayorista(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Mayorista(nil).Load(map[string]any{"id": "mayorista_id"}, nil)
+mayorista, err := client.Mayorista(nil).Load(map[string]any{"id": "mayorista_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(mayorista) // the loaded record
 ```
 
 
@@ -829,7 +885,11 @@ Create an instance: `oficial := client.Oficial(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Oficial(nil).Load(map[string]any{"id": "oficial_id"}, nil)
+oficial, err := client.Oficial(nil).Load(map[string]any{"id": "oficial_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(oficial) // the loaded record
 ```
 
 
@@ -857,7 +917,11 @@ Create an instance: `tarjeta := client.Tarjeta(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Tarjeta(nil).Load(map[string]any{"id": "tarjeta_id"}, nil)
+tarjeta, err := client.Tarjeta(nil).Load(map[string]any{"id": "tarjeta_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(tarjeta) // the loaded record
 ```
 
 
@@ -885,7 +949,11 @@ Create an instance: `uyu := client.Uyu(nil)`
 #### Example: Load
 
 ```go
-result, err := client.Uyu(nil).Load(map[string]any{"id": "uyu_id"}, nil)
+uyu, err := client.Uyu(nil).Load(map[string]any{"id": "uyu_id"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(uyu) // the loaded record
 ```
 
 

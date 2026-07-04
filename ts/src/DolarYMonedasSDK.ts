@@ -218,210 +218,105 @@ class DolarYMonedasSDK {
 
 
 
-  _blue?: BlueEntity
-
-  // Idiomatic facade: `client.blue.list()` / `client.blue.load({ id })`.
-  get blue(): BlueEntity {
-    return (this._blue ??= new BlueEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.blue` instead. */
+  // Entity access: `client.Blue().list()` / `client.Blue().load({ id })`.
   Blue(data?: any) {
     const self = this
     return new BlueEntity(self,data)
   }
 
 
-  _bolsa?: BolsaEntity
-
-  // Idiomatic facade: `client.bolsa.list()` / `client.bolsa.load({ id })`.
-  get bolsa(): BolsaEntity {
-    return (this._bolsa ??= new BolsaEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.bolsa` instead. */
+  // Entity access: `client.Bolsa().list()` / `client.Bolsa().load({ id })`.
   Bolsa(data?: any) {
     const self = this
     return new BolsaEntity(self,data)
   }
 
 
-  _brl?: BrlEntity
-
-  // Idiomatic facade: `client.brl.list()` / `client.brl.load({ id })`.
-  get brl(): BrlEntity {
-    return (this._brl ??= new BrlEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.brl` instead. */
+  // Entity access: `client.Brl().list()` / `client.Brl().load({ id })`.
   Brl(data?: any) {
     const self = this
     return new BrlEntity(self,data)
   }
 
 
-  _clp?: ClpEntity
-
-  // Idiomatic facade: `client.clp.list()` / `client.clp.load({ id })`.
-  get clp(): ClpEntity {
-    return (this._clp ??= new ClpEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.clp` instead. */
+  // Entity access: `client.Clp().list()` / `client.Clp().load({ id })`.
   Clp(data?: any) {
     const self = this
     return new ClpEntity(self,data)
   }
 
 
-  _contadoconliqui?: ContadoconliquiEntity
-
-  // Idiomatic facade: `client.contadoconliqui.list()` / `client.contadoconliqui.load({ id })`.
-  get contadoconliqui(): ContadoconliquiEntity {
-    return (this._contadoconliqui ??= new ContadoconliquiEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.contadoconliqui` instead. */
+  // Entity access: `client.Contadoconliqui().list()` / `client.Contadoconliqui().load({ id })`.
   Contadoconliqui(data?: any) {
     const self = this
     return new ContadoconliquiEntity(self,data)
   }
 
 
-  _cotizacion_ambito?: CotizacionAmbitoEntity
-
-  // Idiomatic facade: `client.cotizacion_ambito.list()` / `client.cotizacion_ambito.load({ id })`.
-  get cotizacion_ambito(): CotizacionAmbitoEntity {
-    return (this._cotizacion_ambito ??= new CotizacionAmbitoEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.cotizacion_ambito` instead. */
+  // Entity access: `client.CotizacionAmbito().list()` / `client.CotizacionAmbito().load({ id })`.
   CotizacionAmbito(data?: any) {
     const self = this
     return new CotizacionAmbitoEntity(self,data)
   }
 
 
-  _cotizacione?: CotizacioneEntity
-
-  // Idiomatic facade: `client.cotizacione.list()` / `client.cotizacione.load({ id })`.
-  get cotizacione(): CotizacioneEntity {
-    return (this._cotizacione ??= new CotizacioneEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.cotizacione` instead. */
+  // Entity access: `client.Cotizacione().list()` / `client.Cotizacione().load({ id })`.
   Cotizacione(data?: any) {
     const self = this
     return new CotizacioneEntity(self,data)
   }
 
 
-  _cripto?: CriptoEntity
-
-  // Idiomatic facade: `client.cripto.list()` / `client.cripto.load({ id })`.
-  get cripto(): CriptoEntity {
-    return (this._cripto ??= new CriptoEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.cripto` instead. */
+  // Entity access: `client.Cripto().list()` / `client.Cripto().load({ id })`.
   Cripto(data?: any) {
     const self = this
     return new CriptoEntity(self,data)
   }
 
 
-  _dolare?: DolareEntity
-
-  // Idiomatic facade: `client.dolare.list()` / `client.dolare.load({ id })`.
-  get dolare(): DolareEntity {
-    return (this._dolare ??= new DolareEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.dolare` instead. */
+  // Entity access: `client.Dolare().list()` / `client.Dolare().load({ id })`.
   Dolare(data?: any) {
     const self = this
     return new DolareEntity(self,data)
   }
 
 
-  _estado?: EstadoEntity
-
-  // Idiomatic facade: `client.estado.list()` / `client.estado.load({ id })`.
-  get estado(): EstadoEntity {
-    return (this._estado ??= new EstadoEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.estado` instead. */
+  // Entity access: `client.Estado().list()` / `client.Estado().load({ id })`.
   Estado(data?: any) {
     const self = this
     return new EstadoEntity(self,data)
   }
 
 
-  _eur?: EurEntity
-
-  // Idiomatic facade: `client.eur.list()` / `client.eur.load({ id })`.
-  get eur(): EurEntity {
-    return (this._eur ??= new EurEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.eur` instead. */
+  // Entity access: `client.Eur().list()` / `client.Eur().load({ id })`.
   Eur(data?: any) {
     const self = this
     return new EurEntity(self,data)
   }
 
 
-  _mayorista?: MayoristaEntity
-
-  // Idiomatic facade: `client.mayorista.list()` / `client.mayorista.load({ id })`.
-  get mayorista(): MayoristaEntity {
-    return (this._mayorista ??= new MayoristaEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.mayorista` instead. */
+  // Entity access: `client.Mayorista().list()` / `client.Mayorista().load({ id })`.
   Mayorista(data?: any) {
     const self = this
     return new MayoristaEntity(self,data)
   }
 
 
-  _oficial?: OficialEntity
-
-  // Idiomatic facade: `client.oficial.list()` / `client.oficial.load({ id })`.
-  get oficial(): OficialEntity {
-    return (this._oficial ??= new OficialEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.oficial` instead. */
+  // Entity access: `client.Oficial().list()` / `client.Oficial().load({ id })`.
   Oficial(data?: any) {
     const self = this
     return new OficialEntity(self,data)
   }
 
 
-  _tarjeta?: TarjetaEntity
-
-  // Idiomatic facade: `client.tarjeta.list()` / `client.tarjeta.load({ id })`.
-  get tarjeta(): TarjetaEntity {
-    return (this._tarjeta ??= new TarjetaEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.tarjeta` instead. */
+  // Entity access: `client.Tarjeta().list()` / `client.Tarjeta().load({ id })`.
   Tarjeta(data?: any) {
     const self = this
     return new TarjetaEntity(self,data)
   }
 
 
-  _uyu?: UyuEntity
-
-  // Idiomatic facade: `client.uyu.list()` / `client.uyu.load({ id })`.
-  get uyu(): UyuEntity {
-    return (this._uyu ??= new UyuEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.uyu` instead. */
+  // Entity access: `client.Uyu().list()` / `client.Uyu().load({ id })`.
   Uyu(data?: any) {
     const self = this
     return new UyuEntity(self,data)

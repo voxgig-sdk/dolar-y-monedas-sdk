@@ -233,10 +233,10 @@ class DolarYMonedasSDK
 
     private $_blue = null;
 
-    // Idiomatic facade: $client->blue()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Blue() (PHP method
-    // names are case-insensitive).
-    public function blue($data = null)
+    // Canonical facade: $client->Blue()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->blue()
+    // resolves here too.
+    public function Blue($data = null)
     {
         require_once __DIR__ . '/entity/blue_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class DolarYMonedasSDK
 
     private $_bolsa = null;
 
-    // Idiomatic facade: $client->bolsa()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Bolsa() (PHP method
-    // names are case-insensitive).
-    public function bolsa($data = null)
+    // Canonical facade: $client->Bolsa()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->bolsa()
+    // resolves here too.
+    public function Bolsa($data = null)
     {
         require_once __DIR__ . '/entity/bolsa_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class DolarYMonedasSDK
 
     private $_brl = null;
 
-    // Idiomatic facade: $client->brl()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Brl() (PHP method
-    // names are case-insensitive).
-    public function brl($data = null)
+    // Canonical facade: $client->Brl()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->brl()
+    // resolves here too.
+    public function Brl($data = null)
     {
         require_once __DIR__ . '/entity/brl_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class DolarYMonedasSDK
 
     private $_clp = null;
 
-    // Idiomatic facade: $client->clp()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Clp() (PHP method
-    // names are case-insensitive).
-    public function clp($data = null)
+    // Canonical facade: $client->Clp()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->clp()
+    // resolves here too.
+    public function Clp($data = null)
     {
         require_once __DIR__ . '/entity/clp_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class DolarYMonedasSDK
 
     private $_contadoconliqui = null;
 
-    // Idiomatic facade: $client->contadoconliqui()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Contadoconliqui() (PHP method
-    // names are case-insensitive).
-    public function contadoconliqui($data = null)
+    // Canonical facade: $client->Contadoconliqui()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->contadoconliqui()
+    // resolves here too.
+    public function Contadoconliqui($data = null)
     {
         require_once __DIR__ . '/entity/contadoconliqui_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class DolarYMonedasSDK
 
     private $_cotizacion_ambito = null;
 
-    // Idiomatic facade: $client->cotizacion_ambito()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias CotizacionAmbito() (PHP method
-    // names are case-insensitive).
-    public function cotizacion_ambito($data = null)
+    // Canonical facade: $client->CotizacionAmbito()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->cotizacion_ambito()
+    // resolves here too.
+    public function CotizacionAmbito($data = null)
     {
         require_once __DIR__ . '/entity/cotizacion_ambito_entity.php';
         if ($data === null) {
@@ -341,10 +341,10 @@ class DolarYMonedasSDK
 
     private $_cotizacione = null;
 
-    // Idiomatic facade: $client->cotizacione()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Cotizacione() (PHP method
-    // names are case-insensitive).
-    public function cotizacione($data = null)
+    // Canonical facade: $client->Cotizacione()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->cotizacione()
+    // resolves here too.
+    public function Cotizacione($data = null)
     {
         require_once __DIR__ . '/entity/cotizacione_entity.php';
         if ($data === null) {
@@ -359,10 +359,10 @@ class DolarYMonedasSDK
 
     private $_cripto = null;
 
-    // Idiomatic facade: $client->cripto()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Cripto() (PHP method
-    // names are case-insensitive).
-    public function cripto($data = null)
+    // Canonical facade: $client->Cripto()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->cripto()
+    // resolves here too.
+    public function Cripto($data = null)
     {
         require_once __DIR__ . '/entity/cripto_entity.php';
         if ($data === null) {
@@ -377,10 +377,10 @@ class DolarYMonedasSDK
 
     private $_dolare = null;
 
-    // Idiomatic facade: $client->dolare()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Dolare() (PHP method
-    // names are case-insensitive).
-    public function dolare($data = null)
+    // Canonical facade: $client->Dolare()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->dolare()
+    // resolves here too.
+    public function Dolare($data = null)
     {
         require_once __DIR__ . '/entity/dolare_entity.php';
         if ($data === null) {
@@ -395,10 +395,10 @@ class DolarYMonedasSDK
 
     private $_estado = null;
 
-    // Idiomatic facade: $client->estado()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Estado() (PHP method
-    // names are case-insensitive).
-    public function estado($data = null)
+    // Canonical facade: $client->Estado()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->estado()
+    // resolves here too.
+    public function Estado($data = null)
     {
         require_once __DIR__ . '/entity/estado_entity.php';
         if ($data === null) {
@@ -413,10 +413,10 @@ class DolarYMonedasSDK
 
     private $_eur = null;
 
-    // Idiomatic facade: $client->eur()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Eur() (PHP method
-    // names are case-insensitive).
-    public function eur($data = null)
+    // Canonical facade: $client->Eur()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->eur()
+    // resolves here too.
+    public function Eur($data = null)
     {
         require_once __DIR__ . '/entity/eur_entity.php';
         if ($data === null) {
@@ -431,10 +431,10 @@ class DolarYMonedasSDK
 
     private $_mayorista = null;
 
-    // Idiomatic facade: $client->mayorista()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Mayorista() (PHP method
-    // names are case-insensitive).
-    public function mayorista($data = null)
+    // Canonical facade: $client->Mayorista()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->mayorista()
+    // resolves here too.
+    public function Mayorista($data = null)
     {
         require_once __DIR__ . '/entity/mayorista_entity.php';
         if ($data === null) {
@@ -449,10 +449,10 @@ class DolarYMonedasSDK
 
     private $_oficial = null;
 
-    // Idiomatic facade: $client->oficial()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Oficial() (PHP method
-    // names are case-insensitive).
-    public function oficial($data = null)
+    // Canonical facade: $client->Oficial()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->oficial()
+    // resolves here too.
+    public function Oficial($data = null)
     {
         require_once __DIR__ . '/entity/oficial_entity.php';
         if ($data === null) {
@@ -467,10 +467,10 @@ class DolarYMonedasSDK
 
     private $_tarjeta = null;
 
-    // Idiomatic facade: $client->tarjeta()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Tarjeta() (PHP method
-    // names are case-insensitive).
-    public function tarjeta($data = null)
+    // Canonical facade: $client->Tarjeta()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->tarjeta()
+    // resolves here too.
+    public function Tarjeta($data = null)
     {
         require_once __DIR__ . '/entity/tarjeta_entity.php';
         if ($data === null) {
@@ -485,10 +485,10 @@ class DolarYMonedasSDK
 
     private $_uyu = null;
 
-    // Idiomatic facade: $client->uyu()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Uyu() (PHP method
-    // names are case-insensitive).
-    public function uyu($data = null)
+    // Canonical facade: $client->Uyu()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->uyu()
+    // resolves here too.
+    public function Uyu($data = null)
     {
         require_once __DIR__ . '/entity/uyu_entity.php';
         if ($data === null) {

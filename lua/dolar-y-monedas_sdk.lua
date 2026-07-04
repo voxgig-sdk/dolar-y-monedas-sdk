@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:blue():list() / client:blue():load({ id = ... })
-function DolarYMonedasSDK:blue(data)
+-- Idiomatic facade: client:Blue():list() / client:Blue():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Blue(data)
   local EntityMod = require("entity.blue_entity")
   if data == nil then
     if self._blue == nil then
@@ -256,15 +257,10 @@ function DolarYMonedasSDK:blue(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:blue() instead.
-function DolarYMonedasSDK:Blue(data)
-  local EntityMod = require("entity.blue_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:bolsa():list() / client:bolsa():load({ id = ... })
-function DolarYMonedasSDK:bolsa(data)
+-- Idiomatic facade: client:Bolsa():list() / client:Bolsa():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Bolsa(data)
   local EntityMod = require("entity.bolsa_entity")
   if data == nil then
     if self._bolsa == nil then
@@ -275,15 +271,10 @@ function DolarYMonedasSDK:bolsa(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:bolsa() instead.
-function DolarYMonedasSDK:Bolsa(data)
-  local EntityMod = require("entity.bolsa_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:brl():list() / client:brl():load({ id = ... })
-function DolarYMonedasSDK:brl(data)
+-- Idiomatic facade: client:Brl():list() / client:Brl():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Brl(data)
   local EntityMod = require("entity.brl_entity")
   if data == nil then
     if self._brl == nil then
@@ -294,15 +285,10 @@ function DolarYMonedasSDK:brl(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:brl() instead.
-function DolarYMonedasSDK:Brl(data)
-  local EntityMod = require("entity.brl_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:clp():list() / client:clp():load({ id = ... })
-function DolarYMonedasSDK:clp(data)
+-- Idiomatic facade: client:Clp():list() / client:Clp():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Clp(data)
   local EntityMod = require("entity.clp_entity")
   if data == nil then
     if self._clp == nil then
@@ -313,15 +299,10 @@ function DolarYMonedasSDK:clp(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:clp() instead.
-function DolarYMonedasSDK:Clp(data)
-  local EntityMod = require("entity.clp_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:contadoconliqui():list() / client:contadoconliqui():load({ id = ... })
-function DolarYMonedasSDK:contadoconliqui(data)
+-- Idiomatic facade: client:Contadoconliqui():list() / client:Contadoconliqui():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Contadoconliqui(data)
   local EntityMod = require("entity.contadoconliqui_entity")
   if data == nil then
     if self._contadoconliqui == nil then
@@ -332,15 +313,10 @@ function DolarYMonedasSDK:contadoconliqui(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:contadoconliqui() instead.
-function DolarYMonedasSDK:Contadoconliqui(data)
-  local EntityMod = require("entity.contadoconliqui_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:cotizacion_ambito():list() / client:cotizacion_ambito():load({ id = ... })
-function DolarYMonedasSDK:cotizacion_ambito(data)
+-- Idiomatic facade: client:CotizacionAmbito():list() / client:CotizacionAmbito():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:CotizacionAmbito(data)
   local EntityMod = require("entity.cotizacion_ambito_entity")
   if data == nil then
     if self._cotizacion_ambito == nil then
@@ -351,15 +327,10 @@ function DolarYMonedasSDK:cotizacion_ambito(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:cotizacion_ambito() instead.
-function DolarYMonedasSDK:CotizacionAmbito(data)
-  local EntityMod = require("entity.cotizacion_ambito_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:cotizacione():list() / client:cotizacione():load({ id = ... })
-function DolarYMonedasSDK:cotizacione(data)
+-- Idiomatic facade: client:Cotizacione():list() / client:Cotizacione():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Cotizacione(data)
   local EntityMod = require("entity.cotizacione_entity")
   if data == nil then
     if self._cotizacione == nil then
@@ -370,15 +341,10 @@ function DolarYMonedasSDK:cotizacione(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:cotizacione() instead.
-function DolarYMonedasSDK:Cotizacione(data)
-  local EntityMod = require("entity.cotizacione_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:cripto():list() / client:cripto():load({ id = ... })
-function DolarYMonedasSDK:cripto(data)
+-- Idiomatic facade: client:Cripto():list() / client:Cripto():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Cripto(data)
   local EntityMod = require("entity.cripto_entity")
   if data == nil then
     if self._cripto == nil then
@@ -389,15 +355,10 @@ function DolarYMonedasSDK:cripto(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:cripto() instead.
-function DolarYMonedasSDK:Cripto(data)
-  local EntityMod = require("entity.cripto_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:dolare():list() / client:dolare():load({ id = ... })
-function DolarYMonedasSDK:dolare(data)
+-- Idiomatic facade: client:Dolare():list() / client:Dolare():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Dolare(data)
   local EntityMod = require("entity.dolare_entity")
   if data == nil then
     if self._dolare == nil then
@@ -408,15 +369,10 @@ function DolarYMonedasSDK:dolare(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:dolare() instead.
-function DolarYMonedasSDK:Dolare(data)
-  local EntityMod = require("entity.dolare_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:estado():list() / client:estado():load({ id = ... })
-function DolarYMonedasSDK:estado(data)
+-- Idiomatic facade: client:Estado():list() / client:Estado():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Estado(data)
   local EntityMod = require("entity.estado_entity")
   if data == nil then
     if self._estado == nil then
@@ -427,15 +383,10 @@ function DolarYMonedasSDK:estado(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:estado() instead.
-function DolarYMonedasSDK:Estado(data)
-  local EntityMod = require("entity.estado_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:eur():list() / client:eur():load({ id = ... })
-function DolarYMonedasSDK:eur(data)
+-- Idiomatic facade: client:Eur():list() / client:Eur():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Eur(data)
   local EntityMod = require("entity.eur_entity")
   if data == nil then
     if self._eur == nil then
@@ -446,15 +397,10 @@ function DolarYMonedasSDK:eur(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:eur() instead.
-function DolarYMonedasSDK:Eur(data)
-  local EntityMod = require("entity.eur_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:mayorista():list() / client:mayorista():load({ id = ... })
-function DolarYMonedasSDK:mayorista(data)
+-- Idiomatic facade: client:Mayorista():list() / client:Mayorista():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Mayorista(data)
   local EntityMod = require("entity.mayorista_entity")
   if data == nil then
     if self._mayorista == nil then
@@ -465,15 +411,10 @@ function DolarYMonedasSDK:mayorista(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:mayorista() instead.
-function DolarYMonedasSDK:Mayorista(data)
-  local EntityMod = require("entity.mayorista_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:oficial():list() / client:oficial():load({ id = ... })
-function DolarYMonedasSDK:oficial(data)
+-- Idiomatic facade: client:Oficial():list() / client:Oficial():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Oficial(data)
   local EntityMod = require("entity.oficial_entity")
   if data == nil then
     if self._oficial == nil then
@@ -484,15 +425,10 @@ function DolarYMonedasSDK:oficial(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:oficial() instead.
-function DolarYMonedasSDK:Oficial(data)
-  local EntityMod = require("entity.oficial_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:tarjeta():list() / client:tarjeta():load({ id = ... })
-function DolarYMonedasSDK:tarjeta(data)
+-- Idiomatic facade: client:Tarjeta():list() / client:Tarjeta():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Tarjeta(data)
   local EntityMod = require("entity.tarjeta_entity")
   if data == nil then
     if self._tarjeta == nil then
@@ -503,15 +439,10 @@ function DolarYMonedasSDK:tarjeta(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:tarjeta() instead.
-function DolarYMonedasSDK:Tarjeta(data)
-  local EntityMod = require("entity.tarjeta_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:uyu():list() / client:uyu():load({ id = ... })
-function DolarYMonedasSDK:uyu(data)
+-- Idiomatic facade: client:Uyu():list() / client:Uyu():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function DolarYMonedasSDK:Uyu(data)
   local EntityMod = require("entity.uyu_entity")
   if data == nil then
     if self._uyu == nil then
@@ -519,12 +450,6 @@ function DolarYMonedasSDK:uyu(data)
     end
     return self._uyu
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:uyu() instead.
-function DolarYMonedasSDK:Uyu(data)
-  local EntityMod = require("entity.uyu_entity")
   return EntityMod.new(self, data)
 end
 

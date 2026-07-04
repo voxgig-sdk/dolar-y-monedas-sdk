@@ -34,9 +34,9 @@ local client = sdk.new()
 ### 3. Load a blue
 
 ```lua
-local result, err = client:blue():load({ id = "example_id" })
+local blue, err = client:Blue():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(blue)
 ```
 
 
@@ -82,8 +82,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:blue():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Blue():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -170,12 +170,12 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `Cotizacione` | `(data) -> CotizacioneEntity` | Create a Cotizacione entity instance. |
 | `Cripto` | `(data) -> CriptoEntity` | Create a Cripto entity instance. |
 | `Dolare` | `(data) -> DolareEntity` | Create a Dolare entity instance. |
-| `Estado` | `(data) -> EstadoEntity` | Create a Estado entity instance. |
-| `Eur` | `(data) -> EurEntity` | Create a Eur entity instance. |
+| `Estado` | `(data) -> EstadoEntity` | Create an Estado entity instance. |
+| `Eur` | `(data) -> EurEntity` | Create an Eur entity instance. |
 | `Mayorista` | `(data) -> MayoristaEntity` | Create a Mayorista entity instance. |
-| `Oficial` | `(data) -> OficialEntity` | Create a Oficial entity instance. |
+| `Oficial` | `(data) -> OficialEntity` | Create an Oficial entity instance. |
 | `Tarjeta` | `(data) -> TarjetaEntity` | Create a Tarjeta entity instance. |
-| `Uyu` | `(data) -> UyuEntity` | Create a Uyu entity instance. |
+| `Uyu` | `(data) -> UyuEntity` | Create an Uyu entity instance. |
 
 ### Entity interface
 
@@ -197,17 +197,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local blue, err = client:Blue():load({ id = "example_id" })
+    if err then error(err) end
+    -- blue is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -440,7 +445,7 @@ API path: `/v1/cotizaciones/uyu`
 
 ### Blue
 
-Create an instance: `const blue = client.blue`
+Create an instance: `local blue = client:Blue(nil)`
 
 #### Operations
 
@@ -461,14 +466,14 @@ Create an instance: `const blue = client.blue`
 
 #### Example: Load
 
-```ts
-const blue = await client.blue.load({ id: 'blue_id' })
+```lua
+local blue, err = client:Blue():load({ id = "blue_id" })
 ```
 
 
 ### Bolsa
 
-Create an instance: `const bolsa = client.bolsa`
+Create an instance: `local bolsa = client:Bolsa(nil)`
 
 #### Operations
 
@@ -489,14 +494,14 @@ Create an instance: `const bolsa = client.bolsa`
 
 #### Example: Load
 
-```ts
-const bolsa = await client.bolsa.load({ id: 'bolsa_id' })
+```lua
+local bolsa, err = client:Bolsa():load({ id = "bolsa_id" })
 ```
 
 
 ### Brl
 
-Create an instance: `const brl = client.brl`
+Create an instance: `local brl = client:Brl(nil)`
 
 #### Operations
 
@@ -517,14 +522,14 @@ Create an instance: `const brl = client.brl`
 
 #### Example: Load
 
-```ts
-const brl = await client.brl.load({ id: 'brl_id' })
+```lua
+local brl, err = client:Brl():load({ id = "brl_id" })
 ```
 
 
 ### Clp
 
-Create an instance: `const clp = client.clp`
+Create an instance: `local clp = client:Clp(nil)`
 
 #### Operations
 
@@ -545,14 +550,14 @@ Create an instance: `const clp = client.clp`
 
 #### Example: Load
 
-```ts
-const clp = await client.clp.load({ id: 'clp_id' })
+```lua
+local clp, err = client:Clp():load({ id = "clp_id" })
 ```
 
 
 ### Contadoconliqui
 
-Create an instance: `const contadoconliqui = client.contadoconliqui`
+Create an instance: `local contadoconliqui = client:Contadoconliqui(nil)`
 
 #### Operations
 
@@ -573,14 +578,14 @@ Create an instance: `const contadoconliqui = client.contadoconliqui`
 
 #### Example: Load
 
-```ts
-const contadoconliqui = await client.contadoconliqui.load({ id: 'contadoconliqui_id' })
+```lua
+local contadoconliqui, err = client:Contadoconliqui():load({ id = "contadoconliqui_id" })
 ```
 
 
 ### CotizacionAmbito
 
-Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
+Create an instance: `local cotizacion_ambito = client:CotizacionAmbito(nil)`
 
 #### Operations
 
@@ -603,20 +608,20 @@ Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
 
 #### Example: Load
 
-```ts
-const cotizacion_ambito = await client.cotizacion_ambito.load({ id: 'cotizacion_ambito_id' })
+```lua
+local cotizacion_ambito, err = client:CotizacionAmbito():load({ id = "cotizacion_ambito_id" })
 ```
 
 #### Example: List
 
-```ts
-const cotizacion_ambitos = await client.cotizacion_ambito.list()
+```lua
+local cotizacion_ambitos, err = client:CotizacionAmbito():list()
 ```
 
 
 ### Cotizacione
 
-Create an instance: `const cotizacione = client.cotizacione`
+Create an instance: `local cotizacione = client:Cotizacione(nil)`
 
 #### Operations
 
@@ -637,14 +642,14 @@ Create an instance: `const cotizacione = client.cotizacione`
 
 #### Example: List
 
-```ts
-const cotizaciones = await client.cotizacione.list()
+```lua
+local cotizaciones, err = client:Cotizacione():list()
 ```
 
 
 ### Cripto
 
-Create an instance: `const cripto = client.cripto`
+Create an instance: `local cripto = client:Cripto(nil)`
 
 #### Operations
 
@@ -665,14 +670,14 @@ Create an instance: `const cripto = client.cripto`
 
 #### Example: Load
 
-```ts
-const cripto = await client.cripto.load({ id: 'cripto_id' })
+```lua
+local cripto, err = client:Cripto():load({ id = "cripto_id" })
 ```
 
 
 ### Dolare
 
-Create an instance: `const dolare = client.dolare`
+Create an instance: `local dolare = client:Dolare(nil)`
 
 #### Operations
 
@@ -693,14 +698,14 @@ Create an instance: `const dolare = client.dolare`
 
 #### Example: List
 
-```ts
-const dolares = await client.dolare.list()
+```lua
+local dolares, err = client:Dolare():list()
 ```
 
 
 ### Estado
 
-Create an instance: `const estado = client.estado`
+Create an instance: `local estado = client:Estado(nil)`
 
 #### Operations
 
@@ -717,14 +722,14 @@ Create an instance: `const estado = client.estado`
 
 #### Example: Load
 
-```ts
-const estado = await client.estado.load({ id: 'estado_id' })
+```lua
+local estado, err = client:Estado():load({ id = "estado_id" })
 ```
 
 
 ### Eur
 
-Create an instance: `const eur = client.eur`
+Create an instance: `local eur = client:Eur(nil)`
 
 #### Operations
 
@@ -745,14 +750,14 @@ Create an instance: `const eur = client.eur`
 
 #### Example: Load
 
-```ts
-const eur = await client.eur.load({ id: 'eur_id' })
+```lua
+local eur, err = client:Eur():load({ id = "eur_id" })
 ```
 
 
 ### Mayorista
 
-Create an instance: `const mayorista = client.mayorista`
+Create an instance: `local mayorista = client:Mayorista(nil)`
 
 #### Operations
 
@@ -773,14 +778,14 @@ Create an instance: `const mayorista = client.mayorista`
 
 #### Example: Load
 
-```ts
-const mayorista = await client.mayorista.load({ id: 'mayorista_id' })
+```lua
+local mayorista, err = client:Mayorista():load({ id = "mayorista_id" })
 ```
 
 
 ### Oficial
 
-Create an instance: `const oficial = client.oficial`
+Create an instance: `local oficial = client:Oficial(nil)`
 
 #### Operations
 
@@ -801,14 +806,14 @@ Create an instance: `const oficial = client.oficial`
 
 #### Example: Load
 
-```ts
-const oficial = await client.oficial.load({ id: 'oficial_id' })
+```lua
+local oficial, err = client:Oficial():load({ id = "oficial_id" })
 ```
 
 
 ### Tarjeta
 
-Create an instance: `const tarjeta = client.tarjeta`
+Create an instance: `local tarjeta = client:Tarjeta(nil)`
 
 #### Operations
 
@@ -829,14 +834,14 @@ Create an instance: `const tarjeta = client.tarjeta`
 
 #### Example: Load
 
-```ts
-const tarjeta = await client.tarjeta.load({ id: 'tarjeta_id' })
+```lua
+local tarjeta, err = client:Tarjeta():load({ id = "tarjeta_id" })
 ```
 
 
 ### Uyu
 
-Create an instance: `const uyu = client.uyu`
+Create an instance: `local uyu = client:Uyu(nil)`
 
 #### Operations
 
@@ -857,8 +862,8 @@ Create an instance: `const uyu = client.uyu`
 
 #### Example: Load
 
-```ts
-const uyu = await client.uyu.load({ id: 'uyu_id' })
+```lua
+local uyu, err = client:Uyu():load({ id = "uyu_id" })
 ```
 
 
@@ -933,7 +938,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local blue = client:blue()
+local blue = client:Blue()
 blue:load({ id = "example_id" })
 
 -- blue:data_get() now returns the loaded blue data

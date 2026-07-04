@@ -220,249 +220,99 @@ class DolarYMonedasSDK:
         }
 
 
-    @property
-    def blue(self):
-        """Idiomatic facade: client.blue.list() / client.blue.load({"id": ...})."""
-        from entity.blue_entity import BlueEntity
-        cached = getattr(self, "_blue", None)
-        if cached is None:
-            cached = BlueEntity(self, None)
-            self._blue = cached
-        return cached
-
-    def Blue(self, data=None):
-        # Deprecated: use client.blue instead.
+    def Blue(self, data=None) -> "BlueEntity":
+        """Entity factory: client.Blue().list({}) / client.Blue().load({"id": ...})."""
         from entity.blue_entity import BlueEntity
         return BlueEntity(self, data)
 
 
-    @property
-    def bolsa(self):
-        """Idiomatic facade: client.bolsa.list() / client.bolsa.load({"id": ...})."""
-        from entity.bolsa_entity import BolsaEntity
-        cached = getattr(self, "_bolsa", None)
-        if cached is None:
-            cached = BolsaEntity(self, None)
-            self._bolsa = cached
-        return cached
-
-    def Bolsa(self, data=None):
-        # Deprecated: use client.bolsa instead.
+    def Bolsa(self, data=None) -> "BolsaEntity":
+        """Entity factory: client.Bolsa().list({}) / client.Bolsa().load({"id": ...})."""
         from entity.bolsa_entity import BolsaEntity
         return BolsaEntity(self, data)
 
 
-    @property
-    def brl(self):
-        """Idiomatic facade: client.brl.list() / client.brl.load({"id": ...})."""
-        from entity.brl_entity import BrlEntity
-        cached = getattr(self, "_brl", None)
-        if cached is None:
-            cached = BrlEntity(self, None)
-            self._brl = cached
-        return cached
-
-    def Brl(self, data=None):
-        # Deprecated: use client.brl instead.
+    def Brl(self, data=None) -> "BrlEntity":
+        """Entity factory: client.Brl().list({}) / client.Brl().load({"id": ...})."""
         from entity.brl_entity import BrlEntity
         return BrlEntity(self, data)
 
 
-    @property
-    def clp(self):
-        """Idiomatic facade: client.clp.list() / client.clp.load({"id": ...})."""
-        from entity.clp_entity import ClpEntity
-        cached = getattr(self, "_clp", None)
-        if cached is None:
-            cached = ClpEntity(self, None)
-            self._clp = cached
-        return cached
-
-    def Clp(self, data=None):
-        # Deprecated: use client.clp instead.
+    def Clp(self, data=None) -> "ClpEntity":
+        """Entity factory: client.Clp().list({}) / client.Clp().load({"id": ...})."""
         from entity.clp_entity import ClpEntity
         return ClpEntity(self, data)
 
 
-    @property
-    def contadoconliqui(self):
-        """Idiomatic facade: client.contadoconliqui.list() / client.contadoconliqui.load({"id": ...})."""
-        from entity.contadoconliqui_entity import ContadoconliquiEntity
-        cached = getattr(self, "_contadoconliqui", None)
-        if cached is None:
-            cached = ContadoconliquiEntity(self, None)
-            self._contadoconliqui = cached
-        return cached
-
-    def Contadoconliqui(self, data=None):
-        # Deprecated: use client.contadoconliqui instead.
+    def Contadoconliqui(self, data=None) -> "ContadoconliquiEntity":
+        """Entity factory: client.Contadoconliqui().list({}) / client.Contadoconliqui().load({"id": ...})."""
         from entity.contadoconliqui_entity import ContadoconliquiEntity
         return ContadoconliquiEntity(self, data)
 
 
-    @property
-    def cotizacion_ambito(self):
-        """Idiomatic facade: client.cotizacion_ambito.list() / client.cotizacion_ambito.load({"id": ...})."""
-        from entity.cotizacion_ambito_entity import CotizacionAmbitoEntity
-        cached = getattr(self, "_cotizacion_ambito", None)
-        if cached is None:
-            cached = CotizacionAmbitoEntity(self, None)
-            self._cotizacion_ambito = cached
-        return cached
-
-    def CotizacionAmbito(self, data=None):
-        # Deprecated: use client.cotizacion_ambito instead.
+    def CotizacionAmbito(self, data=None) -> "CotizacionAmbitoEntity":
+        """Entity factory: client.CotizacionAmbito().list({}) / client.CotizacionAmbito().load({"id": ...})."""
         from entity.cotizacion_ambito_entity import CotizacionAmbitoEntity
         return CotizacionAmbitoEntity(self, data)
 
 
-    @property
-    def cotizacione(self):
-        """Idiomatic facade: client.cotizacione.list() / client.cotizacione.load({"id": ...})."""
-        from entity.cotizacione_entity import CotizacioneEntity
-        cached = getattr(self, "_cotizacione", None)
-        if cached is None:
-            cached = CotizacioneEntity(self, None)
-            self._cotizacione = cached
-        return cached
-
-    def Cotizacione(self, data=None):
-        # Deprecated: use client.cotizacione instead.
+    def Cotizacione(self, data=None) -> "CotizacioneEntity":
+        """Entity factory: client.Cotizacione().list({}) / client.Cotizacione().load({"id": ...})."""
         from entity.cotizacione_entity import CotizacioneEntity
         return CotizacioneEntity(self, data)
 
 
-    @property
-    def cripto(self):
-        """Idiomatic facade: client.cripto.list() / client.cripto.load({"id": ...})."""
-        from entity.cripto_entity import CriptoEntity
-        cached = getattr(self, "_cripto", None)
-        if cached is None:
-            cached = CriptoEntity(self, None)
-            self._cripto = cached
-        return cached
-
-    def Cripto(self, data=None):
-        # Deprecated: use client.cripto instead.
+    def Cripto(self, data=None) -> "CriptoEntity":
+        """Entity factory: client.Cripto().list({}) / client.Cripto().load({"id": ...})."""
         from entity.cripto_entity import CriptoEntity
         return CriptoEntity(self, data)
 
 
-    @property
-    def dolare(self):
-        """Idiomatic facade: client.dolare.list() / client.dolare.load({"id": ...})."""
-        from entity.dolare_entity import DolareEntity
-        cached = getattr(self, "_dolare", None)
-        if cached is None:
-            cached = DolareEntity(self, None)
-            self._dolare = cached
-        return cached
-
-    def Dolare(self, data=None):
-        # Deprecated: use client.dolare instead.
+    def Dolare(self, data=None) -> "DolareEntity":
+        """Entity factory: client.Dolare().list({}) / client.Dolare().load({"id": ...})."""
         from entity.dolare_entity import DolareEntity
         return DolareEntity(self, data)
 
 
-    @property
-    def estado(self):
-        """Idiomatic facade: client.estado.list() / client.estado.load({"id": ...})."""
-        from entity.estado_entity import EstadoEntity
-        cached = getattr(self, "_estado", None)
-        if cached is None:
-            cached = EstadoEntity(self, None)
-            self._estado = cached
-        return cached
-
-    def Estado(self, data=None):
-        # Deprecated: use client.estado instead.
+    def Estado(self, data=None) -> "EstadoEntity":
+        """Entity factory: client.Estado().list({}) / client.Estado().load({"id": ...})."""
         from entity.estado_entity import EstadoEntity
         return EstadoEntity(self, data)
 
 
-    @property
-    def eur(self):
-        """Idiomatic facade: client.eur.list() / client.eur.load({"id": ...})."""
-        from entity.eur_entity import EurEntity
-        cached = getattr(self, "_eur", None)
-        if cached is None:
-            cached = EurEntity(self, None)
-            self._eur = cached
-        return cached
-
-    def Eur(self, data=None):
-        # Deprecated: use client.eur instead.
+    def Eur(self, data=None) -> "EurEntity":
+        """Entity factory: client.Eur().list({}) / client.Eur().load({"id": ...})."""
         from entity.eur_entity import EurEntity
         return EurEntity(self, data)
 
 
-    @property
-    def mayorista(self):
-        """Idiomatic facade: client.mayorista.list() / client.mayorista.load({"id": ...})."""
-        from entity.mayorista_entity import MayoristaEntity
-        cached = getattr(self, "_mayorista", None)
-        if cached is None:
-            cached = MayoristaEntity(self, None)
-            self._mayorista = cached
-        return cached
-
-    def Mayorista(self, data=None):
-        # Deprecated: use client.mayorista instead.
+    def Mayorista(self, data=None) -> "MayoristaEntity":
+        """Entity factory: client.Mayorista().list({}) / client.Mayorista().load({"id": ...})."""
         from entity.mayorista_entity import MayoristaEntity
         return MayoristaEntity(self, data)
 
 
-    @property
-    def oficial(self):
-        """Idiomatic facade: client.oficial.list() / client.oficial.load({"id": ...})."""
-        from entity.oficial_entity import OficialEntity
-        cached = getattr(self, "_oficial", None)
-        if cached is None:
-            cached = OficialEntity(self, None)
-            self._oficial = cached
-        return cached
-
-    def Oficial(self, data=None):
-        # Deprecated: use client.oficial instead.
+    def Oficial(self, data=None) -> "OficialEntity":
+        """Entity factory: client.Oficial().list({}) / client.Oficial().load({"id": ...})."""
         from entity.oficial_entity import OficialEntity
         return OficialEntity(self, data)
 
 
-    @property
-    def tarjeta(self):
-        """Idiomatic facade: client.tarjeta.list() / client.tarjeta.load({"id": ...})."""
-        from entity.tarjeta_entity import TarjetaEntity
-        cached = getattr(self, "_tarjeta", None)
-        if cached is None:
-            cached = TarjetaEntity(self, None)
-            self._tarjeta = cached
-        return cached
-
-    def Tarjeta(self, data=None):
-        # Deprecated: use client.tarjeta instead.
+    def Tarjeta(self, data=None) -> "TarjetaEntity":
+        """Entity factory: client.Tarjeta().list({}) / client.Tarjeta().load({"id": ...})."""
         from entity.tarjeta_entity import TarjetaEntity
         return TarjetaEntity(self, data)
 
 
-    @property
-    def uyu(self):
-        """Idiomatic facade: client.uyu.list() / client.uyu.load({"id": ...})."""
-        from entity.uyu_entity import UyuEntity
-        cached = getattr(self, "_uyu", None)
-        if cached is None:
-            cached = UyuEntity(self, None)
-            self._uyu = cached
-        return cached
-
-    def Uyu(self, data=None):
-        # Deprecated: use client.uyu instead.
+    def Uyu(self, data=None) -> "UyuEntity":
+        """Entity factory: client.Uyu().list({}) / client.Uyu().load({"id": ...})."""
         from entity.uyu_entity import UyuEntity
         return UyuEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "DolarYMonedasSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -482,3 +332,23 @@ class DolarYMonedasSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.blue_entity import BlueEntity
+    from entity.bolsa_entity import BolsaEntity
+    from entity.brl_entity import BrlEntity
+    from entity.clp_entity import ClpEntity
+    from entity.contadoconliqui_entity import ContadoconliquiEntity
+    from entity.cotizacion_ambito_entity import CotizacionAmbitoEntity
+    from entity.cotizacione_entity import CotizacioneEntity
+    from entity.cripto_entity import CriptoEntity
+    from entity.dolare_entity import DolareEntity
+    from entity.estado_entity import EstadoEntity
+    from entity.eur_entity import EurEntity
+    from entity.mayorista_entity import MayoristaEntity
+    from entity.oficial_entity import OficialEntity
+    from entity.tarjeta_entity import TarjetaEntity
+    from entity.uyu_entity import UyuEntity

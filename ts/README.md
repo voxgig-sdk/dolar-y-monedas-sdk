@@ -30,11 +30,14 @@ const client = new DolarYMonedasSDK()
 
 ### 3. Load a blue
 
-```ts
-const result = await client.blue.load({ id: 'example_id' })
+`load()` returns the entity directly and throws on failure:
 
-if (result.ok) {
-  console.log(result.data)
+```ts
+try {
+  const blue = await client.Blue().load({ id: 'example_id' })
+  console.log(blue)
+} catch (err) {
+  console.error('load failed:', err)
 }
 ```
 
@@ -52,6 +55,9 @@ const result = await client.direct({
   params: { id: 'example' },
 })
 
+if (result instanceof Error) {
+  throw result
+}
 if (result.ok) {
   console.log(result.status)  // 200
   console.log(result.data)    // response body
@@ -80,9 +86,9 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DolarYMonedasSDK.test()
 
-const result = await client.blue.load({ id: 'test01' })
-// result.ok === true
-// result.data contains mock response data
+const blue = await client.Blue().load({ id: 'test01' })
+// blue is a bare entity populated with mock response data
+console.log(blue)
 ```
 
 You can also use the instance method:
@@ -97,7 +103,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.blue
+const entity = client.Blue()
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -184,12 +190,12 @@ new DolarYMonedasSDK(options?: {
 | `Cotizacione(data?)` | `CotizacioneEntity` | Create a Cotizacione entity instance. |
 | `Cripto(data?)` | `CriptoEntity` | Create a Cripto entity instance. |
 | `Dolare(data?)` | `DolareEntity` | Create a Dolare entity instance. |
-| `Estado(data?)` | `EstadoEntity` | Create a Estado entity instance. |
-| `Eur(data?)` | `EurEntity` | Create a Eur entity instance. |
+| `Estado(data?)` | `EstadoEntity` | Create an Estado entity instance. |
+| `Eur(data?)` | `EurEntity` | Create an Eur entity instance. |
 | `Mayorista(data?)` | `MayoristaEntity` | Create a Mayorista entity instance. |
-| `Oficial(data?)` | `OficialEntity` | Create a Oficial entity instance. |
+| `Oficial(data?)` | `OficialEntity` | Create an Oficial entity instance. |
 | `Tarjeta(data?)` | `TarjetaEntity` | Create a Tarjeta entity instance. |
-| `Uyu(data?)` | `UyuEntity` | Create a Uyu entity instance. |
+| `Uyu(data?)` | `UyuEntity` | Create an Uyu entity instance. |
 | `tester(testopts?, sdkopts?)` | `DolarYMonedasSDK` | Create a test-mode client instance. |
 
 #### Static methods
@@ -206,29 +212,30 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `load(reqmatch?, ctrl?): Promise<Result>` | Load a single entity by match criteria. |
-| `list` | `list(reqmatch?, ctrl?): Promise<Result>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Result>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Result>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<Result>` | Remove an entity. |
+| `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
+| `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
+| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
+| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
+| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
 | `data` | `data(data?): any` | Get or set entity data. |
 | `match` | `match(match?): any` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): DolarYMonedasSDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
 
-#### Result shape
+#### Return values
 
-All entity operations return a Result object:
+Entity operations resolve to the entity data directly — there is no
+result envelope:
 
-```ts
-{
-  ok: boolean      // true if the HTTP status is 2xx
-  status: number   // HTTP status code
-  headers: object  // response headers
-  data: any        // parsed JSON response body
-}
-```
+- `load`, `create` and `update` resolve to a single entity object.
+- `list` resolves to an **array** of entity objects (iterate it directly;
+  there is no `.data` and no `.ok`).
+- `remove` resolves to `void`.
+
+On a failed request these methods **throw**, so wrap calls in
+`try`/`catch` to handle errors. Only `direct()` returns the result
+envelope described below.
 
 ### DirectResult shape
 
@@ -489,7 +496,7 @@ API path: `/v1/cotizaciones/uyu`
 
 ### Blue
 
-Create an instance: `const blue = client.blue`
+Create an instance: `const blue = client.Blue()`
 
 #### Operations
 
@@ -511,13 +518,13 @@ Create an instance: `const blue = client.blue`
 #### Example: Load
 
 ```ts
-const blue = await client.blue.load({ id: 'blue_id' })
+const blue = await client.Blue().load({ id: 'blue_id' })
 ```
 
 
 ### Bolsa
 
-Create an instance: `const bolsa = client.bolsa`
+Create an instance: `const bolsa = client.Bolsa()`
 
 #### Operations
 
@@ -539,13 +546,13 @@ Create an instance: `const bolsa = client.bolsa`
 #### Example: Load
 
 ```ts
-const bolsa = await client.bolsa.load({ id: 'bolsa_id' })
+const bolsa = await client.Bolsa().load({ id: 'bolsa_id' })
 ```
 
 
 ### Brl
 
-Create an instance: `const brl = client.brl`
+Create an instance: `const brl = client.Brl()`
 
 #### Operations
 
@@ -567,13 +574,13 @@ Create an instance: `const brl = client.brl`
 #### Example: Load
 
 ```ts
-const brl = await client.brl.load({ id: 'brl_id' })
+const brl = await client.Brl().load({ id: 'brl_id' })
 ```
 
 
 ### Clp
 
-Create an instance: `const clp = client.clp`
+Create an instance: `const clp = client.Clp()`
 
 #### Operations
 
@@ -595,13 +602,13 @@ Create an instance: `const clp = client.clp`
 #### Example: Load
 
 ```ts
-const clp = await client.clp.load({ id: 'clp_id' })
+const clp = await client.Clp().load({ id: 'clp_id' })
 ```
 
 
 ### Contadoconliqui
 
-Create an instance: `const contadoconliqui = client.contadoconliqui`
+Create an instance: `const contadoconliqui = client.Contadoconliqui()`
 
 #### Operations
 
@@ -623,13 +630,13 @@ Create an instance: `const contadoconliqui = client.contadoconliqui`
 #### Example: Load
 
 ```ts
-const contadoconliqui = await client.contadoconliqui.load({ id: 'contadoconliqui_id' })
+const contadoconliqui = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
 ```
 
 
 ### CotizacionAmbito
 
-Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
+Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
 
 #### Operations
 
@@ -653,19 +660,19 @@ Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
 #### Example: Load
 
 ```ts
-const cotizacion_ambito = await client.cotizacion_ambito.load({ id: 'cotizacion_ambito_id' })
+const cotizacion_ambito = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
 ```
 
 #### Example: List
 
 ```ts
-const cotizacion_ambitos = await client.cotizacion_ambito.list()
+const cotizacion_ambitos = await client.CotizacionAmbito().list()
 ```
 
 
 ### Cotizacione
 
-Create an instance: `const cotizacione = client.cotizacione`
+Create an instance: `const cotizacione = client.Cotizacione()`
 
 #### Operations
 
@@ -687,13 +694,13 @@ Create an instance: `const cotizacione = client.cotizacione`
 #### Example: List
 
 ```ts
-const cotizaciones = await client.cotizacione.list()
+const cotizaciones = await client.Cotizacione().list()
 ```
 
 
 ### Cripto
 
-Create an instance: `const cripto = client.cripto`
+Create an instance: `const cripto = client.Cripto()`
 
 #### Operations
 
@@ -715,13 +722,13 @@ Create an instance: `const cripto = client.cripto`
 #### Example: Load
 
 ```ts
-const cripto = await client.cripto.load({ id: 'cripto_id' })
+const cripto = await client.Cripto().load({ id: 'cripto_id' })
 ```
 
 
 ### Dolare
 
-Create an instance: `const dolare = client.dolare`
+Create an instance: `const dolare = client.Dolare()`
 
 #### Operations
 
@@ -743,13 +750,13 @@ Create an instance: `const dolare = client.dolare`
 #### Example: List
 
 ```ts
-const dolares = await client.dolare.list()
+const dolares = await client.Dolare().list()
 ```
 
 
 ### Estado
 
-Create an instance: `const estado = client.estado`
+Create an instance: `const estado = client.Estado()`
 
 #### Operations
 
@@ -767,13 +774,13 @@ Create an instance: `const estado = client.estado`
 #### Example: Load
 
 ```ts
-const estado = await client.estado.load({ id: 'estado_id' })
+const estado = await client.Estado().load({ id: 'estado_id' })
 ```
 
 
 ### Eur
 
-Create an instance: `const eur = client.eur`
+Create an instance: `const eur = client.Eur()`
 
 #### Operations
 
@@ -795,13 +802,13 @@ Create an instance: `const eur = client.eur`
 #### Example: Load
 
 ```ts
-const eur = await client.eur.load({ id: 'eur_id' })
+const eur = await client.Eur().load({ id: 'eur_id' })
 ```
 
 
 ### Mayorista
 
-Create an instance: `const mayorista = client.mayorista`
+Create an instance: `const mayorista = client.Mayorista()`
 
 #### Operations
 
@@ -823,13 +830,13 @@ Create an instance: `const mayorista = client.mayorista`
 #### Example: Load
 
 ```ts
-const mayorista = await client.mayorista.load({ id: 'mayorista_id' })
+const mayorista = await client.Mayorista().load({ id: 'mayorista_id' })
 ```
 
 
 ### Oficial
 
-Create an instance: `const oficial = client.oficial`
+Create an instance: `const oficial = client.Oficial()`
 
 #### Operations
 
@@ -851,13 +858,13 @@ Create an instance: `const oficial = client.oficial`
 #### Example: Load
 
 ```ts
-const oficial = await client.oficial.load({ id: 'oficial_id' })
+const oficial = await client.Oficial().load({ id: 'oficial_id' })
 ```
 
 
 ### Tarjeta
 
-Create an instance: `const tarjeta = client.tarjeta`
+Create an instance: `const tarjeta = client.Tarjeta()`
 
 #### Operations
 
@@ -879,13 +886,13 @@ Create an instance: `const tarjeta = client.tarjeta`
 #### Example: Load
 
 ```ts
-const tarjeta = await client.tarjeta.load({ id: 'tarjeta_id' })
+const tarjeta = await client.Tarjeta().load({ id: 'tarjeta_id' })
 ```
 
 
 ### Uyu
 
-Create an instance: `const uyu = client.uyu`
+Create an instance: `const uyu = client.Uyu()`
 
 #### Operations
 
@@ -907,7 +914,7 @@ Create an instance: `const uyu = client.uyu`
 #### Example: Load
 
 ```ts
-const uyu = await client.uyu.load({ id: 'uyu_id' })
+const uyu = await client.Uyu().load({ id: 'uyu_id' })
 ```
 
 
@@ -978,7 +985,7 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const blue = client.blue
+const blue = client.Blue()
 await blue.load({ id: "example_id" })
 
 // blue.data() now returns the loaded blue data

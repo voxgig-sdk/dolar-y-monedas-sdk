@@ -4,314 +4,329 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Blue:
+class BlueRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class BlueLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Blue(BlueRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Bolsa:
+class BlueLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class BolsaRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class BolsaLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Bolsa(BolsaRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Brl:
+class BolsaLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class BrlRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class BrlLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Brl(BrlRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Clp:
+class BrlLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class ClpRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class ClpLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Clp(ClpRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Contadoconliqui:
+class ClpLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class ContadoconliquiRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class ContadoconliquiLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Contadoconliqui(ContadoconliquiRequired, total=False):
+    compra: float
 
 
-@dataclass
-class CotizacionAmbito:
+class ContadoconliquiLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class CotizacionAmbitoRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     variacion: float
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class CotizacionAmbitoLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    variacion: Optional[float] = None
-    venta: Optional[float] = None
+class CotizacionAmbito(CotizacionAmbitoRequired, total=False):
+    compra: float
 
 
-@dataclass
-class CotizacionAmbitoListMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    variacion: Optional[float] = None
-    venta: Optional[float] = None
+class CotizacionAmbitoLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    variacion: float
+    venta: float
 
 
-@dataclass
-class Cotizacione:
+class CotizacionAmbitoListMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    variacion: float
+    venta: float
+
+
+class CotizacioneRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class CotizacioneListMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Cotizacione(CotizacioneRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Cripto:
+class CotizacioneListMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class CriptoRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class CriptoLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Cripto(CriptoRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Dolare:
+class CriptoLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class DolareRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class DolareListMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Dolare(DolareRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Estado:
-    aleatorio: Optional[int] = None
-    estado: Optional[str] = None
+class DolareListMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
 
 
-@dataclass
-class EstadoLoadMatch:
-    aleatorio: Optional[int] = None
-    estado: Optional[str] = None
+class Estado(TypedDict, total=False):
+    aleatorio: int
+    estado: str
 
 
-@dataclass
-class Eur:
+class EstadoLoadMatch(TypedDict, total=False):
+    aleatorio: int
+    estado: str
+
+
+class EurRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class EurLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Eur(EurRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Mayorista:
+class EurLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class MayoristaRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class MayoristaLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Mayorista(MayoristaRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Oficial:
+class MayoristaLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class OficialRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class OficialLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Oficial(OficialRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Tarjeta:
+class OficialLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class TarjetaRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class TarjetaLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Tarjeta(TarjetaRequired, total=False):
+    compra: float
 
 
-@dataclass
-class Uyu:
+class TarjetaLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float
+
+
+class UyuRequired(TypedDict):
     casa: str
     fecha_actualizacion: str
     moneda: str
     nombre: str
     venta: float
-    compra: Optional[float] = None
 
 
-@dataclass
-class UyuLoadMatch:
-    casa: Optional[str] = None
-    compra: Optional[float] = None
-    fecha_actualizacion: Optional[str] = None
-    moneda: Optional[str] = None
-    nombre: Optional[str] = None
-    venta: Optional[float] = None
+class Uyu(UyuRequired, total=False):
+    compra: float
 
+
+class UyuLoadMatch(TypedDict, total=False):
+    casa: str
+    compra: float
+    fecha_actualizacion: str
+    moneda: str
+    nombre: str
+    venta: float

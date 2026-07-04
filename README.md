@@ -26,9 +26,9 @@ import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
 
 const client = new DolarYMonedasSDK()
 
-// Load blue data
-const blue = await client.blue.load({})
-console.log(blue.data)
+// Load blue data (returns a Blue)
+const blue = await client.Blue().load()
+console.log(blue)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -98,8 +98,8 @@ from dolarymonedas_sdk import DolarYMonedasSDK
 client = DolarYMonedasSDK()
 
 
-# Load a specific blue
-blue = client.blue.load({"id": "example_id"})
+# Load a specific blue (returns the record, raises on error)
+blue = client.Blue().load({"id": "example_id"})
 print(blue)
 ```
 
@@ -112,8 +112,8 @@ require_once 'dolarymonedas_sdk.php';
 $client = new DolarYMonedasSDK();
 
 
-// Load a specific blue
-$blue = $client->blue()->load(["id" => "example_id"]);
+// Load a specific blue (returns the bare record; throws on error)
+$blue = $client->Blue()->load(["id" => "example_id"]);
 print_r($blue);
 ```
 
@@ -137,8 +137,8 @@ require_relative "DolarYMonedas_sdk"
 client = DolarYMonedasSDK.new
 
 
-# Load a specific blue
-blue = client.blue.load({ "id" => "example_id" })
+# Load a specific blue (returns the bare record; raises on error)
+blue = client.Blue.load({ "id" => "example_id" })
 puts blue
 ```
 
@@ -151,7 +151,7 @@ local client = sdk.new()
 
 
 -- Load a specific blue
-local blue, err = client:blue():load({ id = "example_id" })
+local blue, err = client:Blue():load({ id = "example_id" })
 print(blue)
 ```
 
@@ -164,22 +164,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = DolarYMonedasSDK.test()
-const result = await client.blue.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const blue = await client.Blue().load({ id: 'test01' })
+// blue is a bare Blue populated with mock data
+console.log(blue)
 ```
 
 ### Python
 
 ```python
 client = DolarYMonedasSDK.test()
-result = client.blue.load({"id": "test01"})
+blue = client.Blue().load({"id": "test01"})
+print(blue)
 ```
 
 ### PHP
 
 ```php
-$client = DolarYMonedasSDK::test();
-$result = $client->blue()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = DolarYMonedasSDK::test([
+    "entity" => ["blue" => ["test01" => ["id" => "test01"]]],
+]);
+$blue = $client->Blue()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -194,15 +199,18 @@ result, err := client.Blue(nil).Load(
 ### Ruby
 
 ```ruby
-client = DolarYMonedasSDK.test
-result = client.blue.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = DolarYMonedasSDK.test({
+  "entity" => { "blue" => { "test01" => { "id" => "test01" } } },
+})
+blue = client.Blue.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:blue():load({ id = "test01" })
+local result, err = client:Blue():load({ id = "test01" })
 ```
 
 ## How it works
@@ -250,6 +258,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

@@ -277,7 +277,7 @@ Alias for `DolarYMonedasSDK.test()`.
 ## BlueEntity
 
 ```ts
-const blue = client.blue
+const blue = client.Blue()
 ```
 
 ### Fields
@@ -298,7 +298,7 @@ const blue = client.blue
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.blue.load({ id: 'blue_id' })
+const result = await client.Blue().load({ id: 'blue_id' })
 ```
 
 ### Common Methods
@@ -332,7 +332,7 @@ Return a copy of the entity options.
 ## BolsaEntity
 
 ```ts
-const bolsa = client.bolsa
+const bolsa = client.Bolsa()
 ```
 
 ### Fields
@@ -353,7 +353,7 @@ const bolsa = client.bolsa
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.bolsa.load({ id: 'bolsa_id' })
+const result = await client.Bolsa().load({ id: 'bolsa_id' })
 ```
 
 ### Common Methods
@@ -387,7 +387,7 @@ Return a copy of the entity options.
 ## BrlEntity
 
 ```ts
-const brl = client.brl
+const brl = client.Brl()
 ```
 
 ### Fields
@@ -408,7 +408,7 @@ const brl = client.brl
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.brl.load({ id: 'brl_id' })
+const result = await client.Brl().load({ id: 'brl_id' })
 ```
 
 ### Common Methods
@@ -442,7 +442,7 @@ Return a copy of the entity options.
 ## ClpEntity
 
 ```ts
-const clp = client.clp
+const clp = client.Clp()
 ```
 
 ### Fields
@@ -463,7 +463,7 @@ const clp = client.clp
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.clp.load({ id: 'clp_id' })
+const result = await client.Clp().load({ id: 'clp_id' })
 ```
 
 ### Common Methods
@@ -497,7 +497,7 @@ Return a copy of the entity options.
 ## ContadoconliquiEntity
 
 ```ts
-const contadoconliqui = client.contadoconliqui
+const contadoconliqui = client.Contadoconliqui()
 ```
 
 ### Fields
@@ -518,7 +518,7 @@ const contadoconliqui = client.contadoconliqui
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.contadoconliqui.load({ id: 'contadoconliqui_id' })
+const result = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
 ```
 
 ### Common Methods
@@ -552,7 +552,7 @@ Return a copy of the entity options.
 ## CotizacionAmbitoEntity
 
 ```ts
-const cotizacion_ambito = client.cotizacion_ambito
+const cotizacion_ambito = client.CotizacionAmbito()
 ```
 
 ### Fields
@@ -574,7 +574,7 @@ const cotizacion_ambito = client.cotizacion_ambito
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.cotizacion_ambito.list()
+const results = await client.CotizacionAmbito().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -582,7 +582,7 @@ const results = await client.cotizacion_ambito.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.cotizacion_ambito.load({ id: 'cotizacion_ambito_id' })
+const result = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
 ```
 
 ### Common Methods
@@ -616,7 +616,7 @@ Return a copy of the entity options.
 ## CotizacioneEntity
 
 ```ts
-const cotizacione = client.cotizacione
+const cotizacione = client.Cotizacione()
 ```
 
 ### Fields
@@ -637,7 +637,7 @@ const cotizacione = client.cotizacione
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.cotizacione.list()
+const results = await client.Cotizacione().list()
 ```
 
 ### Common Methods
@@ -671,7 +671,7 @@ Return a copy of the entity options.
 ## CriptoEntity
 
 ```ts
-const cripto = client.cripto
+const cripto = client.Cripto()
 ```
 
 ### Fields
@@ -692,7 +692,7 @@ const cripto = client.cripto
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.cripto.load({ id: 'cripto_id' })
+const result = await client.Cripto().load({ id: 'cripto_id' })
 ```
 
 ### Common Methods
@@ -726,7 +726,7 @@ Return a copy of the entity options.
 ## DolareEntity
 
 ```ts
-const dolare = client.dolare
+const dolare = client.Dolare()
 ```
 
 ### Fields
@@ -747,7 +747,7 @@ const dolare = client.dolare
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.dolare.list()
+const results = await client.Dolare().list()
 ```
 
 ### Common Methods
@@ -781,7 +781,7 @@ Return a copy of the entity options.
 ## EstadoEntity
 
 ```ts
-const estado = client.estado
+const estado = client.Estado()
 ```
 
 ### Fields
@@ -798,7 +798,7 @@ const estado = client.estado
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.estado.load({ id: 'estado_id' })
+const result = await client.Estado().load({ id: 'estado_id' })
 ```
 
 ### Common Methods
@@ -832,7 +832,7 @@ Return a copy of the entity options.
 ## EurEntity
 
 ```ts
-const eur = client.eur
+const eur = client.Eur()
 ```
 
 ### Fields
@@ -853,7 +853,7 @@ const eur = client.eur
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.eur.load({ id: 'eur_id' })
+const result = await client.Eur().load({ id: 'eur_id' })
 ```
 
 ### Common Methods
@@ -887,7 +887,7 @@ Return a copy of the entity options.
 ## MayoristaEntity
 
 ```ts
-const mayorista = client.mayorista
+const mayorista = client.Mayorista()
 ```
 
 ### Fields
@@ -908,7 +908,7 @@ const mayorista = client.mayorista
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.mayorista.load({ id: 'mayorista_id' })
+const result = await client.Mayorista().load({ id: 'mayorista_id' })
 ```
 
 ### Common Methods
@@ -942,7 +942,7 @@ Return a copy of the entity options.
 ## OficialEntity
 
 ```ts
-const oficial = client.oficial
+const oficial = client.Oficial()
 ```
 
 ### Fields
@@ -963,7 +963,7 @@ const oficial = client.oficial
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.oficial.load({ id: 'oficial_id' })
+const result = await client.Oficial().load({ id: 'oficial_id' })
 ```
 
 ### Common Methods
@@ -997,7 +997,7 @@ Return a copy of the entity options.
 ## TarjetaEntity
 
 ```ts
-const tarjeta = client.tarjeta
+const tarjeta = client.Tarjeta()
 ```
 
 ### Fields
@@ -1018,7 +1018,7 @@ const tarjeta = client.tarjeta
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.tarjeta.load({ id: 'tarjeta_id' })
+const result = await client.Tarjeta().load({ id: 'tarjeta_id' })
 ```
 
 ### Common Methods
@@ -1052,7 +1052,7 @@ Return a copy of the entity options.
 ## UyuEntity
 
 ```ts
-const uyu = client.uyu
+const uyu = client.Uyu()
 ```
 
 ### Fields
@@ -1073,7 +1073,7 @@ const uyu = client.uyu
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.uyu.load({ id: 'uyu_id' })
+const result = await client.Uyu().load({ id: 'uyu_id' })
 ```
 
 ### Common Methods
