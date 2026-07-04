@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://dolarapi.com",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },

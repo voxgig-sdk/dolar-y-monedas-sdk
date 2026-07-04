@@ -42,8 +42,7 @@ class ContadoconliquiEntityTest < Minitest::Test
     # LOAD
     contadoconliqui_ref01_ent = client.Contadoconliqui(nil)
     contadoconliqui_ref01_match_dt0 = {}
-    contadoconliqui_ref01_data_dt0_loaded, err = contadoconliqui_ref01_ent.load(contadoconliqui_ref01_match_dt0, nil)
-    assert_nil err
+    contadoconliqui_ref01_data_dt0_loaded = contadoconliqui_ref01_ent.load(contadoconliqui_ref01_match_dt0, nil)
     assert !contadoconliqui_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def contadoconliqui_basic_setup(extra)
     "DOLARYMONEDAS_TEST_CONTADOCONLIQUI_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def contadoconliqui_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

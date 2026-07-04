@@ -42,8 +42,7 @@ class BolsaEntityTest < Minitest::Test
     # LOAD
     bolsa_ref01_ent = client.Bolsa(nil)
     bolsa_ref01_match_dt0 = {}
-    bolsa_ref01_data_dt0_loaded, err = bolsa_ref01_ent.load(bolsa_ref01_match_dt0, nil)
-    assert_nil err
+    bolsa_ref01_data_dt0_loaded = bolsa_ref01_ent.load(bolsa_ref01_match_dt0, nil)
     assert !bolsa_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def bolsa_basic_setup(extra)
     "DOLARYMONEDAS_TEST_BOLSA_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def bolsa_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

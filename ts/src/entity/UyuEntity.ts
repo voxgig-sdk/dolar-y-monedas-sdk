@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Uyu,
+  UyuLoadMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class UyuEntity extends DolarYMonedasEntityBase {
+class UyuEntity extends DolarYMonedasEntityBase<Uyu> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class UyuEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: UyuLoadMatch, ctrl?: Control): Promise<Uyu> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class UyuEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Uyu> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

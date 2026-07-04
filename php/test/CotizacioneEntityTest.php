@@ -50,8 +50,7 @@ class CotizacioneEntityTest extends TestCase
         $cotizacione_ref01_ent = $client->Cotizacione(null);
         $cotizacione_ref01_match = [];
 
-        [$cotizacione_ref01_list_result, $err] = $cotizacione_ref01_ent->list($cotizacione_ref01_match, null);
-        $this->assertNull($err);
+        $cotizacione_ref01_list_result = $cotizacione_ref01_ent->list($cotizacione_ref01_match, null);
         $this->assertIsArray($cotizacione_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function cotizacione_basic_setup($extra)
         "DOLARYMONEDAS_TEST_COTIZACIONE_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function cotizacione_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -55,6 +55,9 @@ class TarjetaEntity
         return new TarjetaEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Tarjeta|array $args Tarjeta data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class TarjetaEntity
         }
     }
 
+    /**
+     * @return Tarjeta|array The current Tarjeta data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Tarjeta fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class TarjetaEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Tarjeta fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -84,7 +96,16 @@ class TarjetaEntity
     }
 
     
-    public function load($reqmatch, $ctrl = null): array
+    /**
+     * Load a single Tarjeta.
+     *
+     * @param TarjetaLoadMatch|array|null $reqmatch Match criteria (id/query
+     *   fields) as an assoc-array; a typed TarjetaLoadMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Tarjeta|array The loaded Tarjeta as an assoc-array at the
+     *   SDK boundary; throws DolarYMonedasError on failure (item-5 convention).
+     */
+    public function load(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -117,7 +138,7 @@ class TarjetaEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

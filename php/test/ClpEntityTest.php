@@ -49,8 +49,7 @@ class ClpEntityTest extends TestCase
         // LOAD
         $clp_ref01_ent = $client->Clp(null);
         $clp_ref01_match_dt0 = [];
-        [$clp_ref01_data_dt0_loaded, $err] = $clp_ref01_ent->load($clp_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $clp_ref01_data_dt0_loaded = $clp_ref01_ent->load($clp_ref01_match_dt0, null);
         $this->assertNotNull($clp_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function clp_basic_setup($extra)
         "DOLARYMONEDAS_TEST_CLP_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function clp_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

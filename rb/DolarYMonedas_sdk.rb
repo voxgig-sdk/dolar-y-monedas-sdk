@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'DolarYMonedas_types'
+
 
 class DolarYMonedasSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class DolarYMonedasSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class DolarYMonedasSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue DolarYMonedasError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = DolarYMonedasHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class DolarYMonedasSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,100 +198,205 @@ class DolarYMonedasSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.blue.list / client.blue.load({ "id" => ... })
+  def blue
+    require_relative 'entity/blue_entity'
+    @blue ||= BlueEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.blue instead.
   def Blue(data = nil)
     require_relative 'entity/blue_entity'
     BlueEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.bolsa.list / client.bolsa.load({ "id" => ... })
+  def bolsa
+    require_relative 'entity/bolsa_entity'
+    @bolsa ||= BolsaEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.bolsa instead.
   def Bolsa(data = nil)
     require_relative 'entity/bolsa_entity'
     BolsaEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.brl.list / client.brl.load({ "id" => ... })
+  def brl
+    require_relative 'entity/brl_entity'
+    @brl ||= BrlEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.brl instead.
   def Brl(data = nil)
     require_relative 'entity/brl_entity'
     BrlEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.clp.list / client.clp.load({ "id" => ... })
+  def clp
+    require_relative 'entity/clp_entity'
+    @clp ||= ClpEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.clp instead.
   def Clp(data = nil)
     require_relative 'entity/clp_entity'
     ClpEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.contadoconliqui.list / client.contadoconliqui.load({ "id" => ... })
+  def contadoconliqui
+    require_relative 'entity/contadoconliqui_entity'
+    @contadoconliqui ||= ContadoconliquiEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.contadoconliqui instead.
   def Contadoconliqui(data = nil)
     require_relative 'entity/contadoconliqui_entity'
     ContadoconliquiEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.cotizacion_ambito.list / client.cotizacion_ambito.load({ "id" => ... })
+  def cotizacion_ambito
+    require_relative 'entity/cotizacion_ambito_entity'
+    @cotizacion_ambito ||= CotizacionAmbitoEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.cotizacion_ambito instead.
   def CotizacionAmbito(data = nil)
     require_relative 'entity/cotizacion_ambito_entity'
     CotizacionAmbitoEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.cotizacione.list / client.cotizacione.load({ "id" => ... })
+  def cotizacione
+    require_relative 'entity/cotizacione_entity'
+    @cotizacione ||= CotizacioneEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.cotizacione instead.
   def Cotizacione(data = nil)
     require_relative 'entity/cotizacione_entity'
     CotizacioneEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.cripto.list / client.cripto.load({ "id" => ... })
+  def cripto
+    require_relative 'entity/cripto_entity'
+    @cripto ||= CriptoEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.cripto instead.
   def Cripto(data = nil)
     require_relative 'entity/cripto_entity'
     CriptoEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.dolare.list / client.dolare.load({ "id" => ... })
+  def dolare
+    require_relative 'entity/dolare_entity'
+    @dolare ||= DolareEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.dolare instead.
   def Dolare(data = nil)
     require_relative 'entity/dolare_entity'
     DolareEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.estado.list / client.estado.load({ "id" => ... })
+  def estado
+    require_relative 'entity/estado_entity'
+    @estado ||= EstadoEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.estado instead.
   def Estado(data = nil)
     require_relative 'entity/estado_entity'
     EstadoEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.eur.list / client.eur.load({ "id" => ... })
+  def eur
+    require_relative 'entity/eur_entity'
+    @eur ||= EurEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.eur instead.
   def Eur(data = nil)
     require_relative 'entity/eur_entity'
     EurEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.mayorista.list / client.mayorista.load({ "id" => ... })
+  def mayorista
+    require_relative 'entity/mayorista_entity'
+    @mayorista ||= MayoristaEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.mayorista instead.
   def Mayorista(data = nil)
     require_relative 'entity/mayorista_entity'
     MayoristaEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.oficial.list / client.oficial.load({ "id" => ... })
+  def oficial
+    require_relative 'entity/oficial_entity'
+    @oficial ||= OficialEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.oficial instead.
   def Oficial(data = nil)
     require_relative 'entity/oficial_entity'
     OficialEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.tarjeta.list / client.tarjeta.load({ "id" => ... })
+  def tarjeta
+    require_relative 'entity/tarjeta_entity'
+    @tarjeta ||= TarjetaEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.tarjeta instead.
   def Tarjeta(data = nil)
     require_relative 'entity/tarjeta_entity'
     TarjetaEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.uyu.list / client.uyu.load({ "id" => ... })
+  def uyu
+    require_relative 'entity/uyu_entity'
+    @uyu ||= UyuEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.uyu instead.
   def Uyu(data = nil)
     require_relative 'entity/uyu_entity'
     UyuEntity.new(self, data)

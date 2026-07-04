@@ -135,14 +135,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID': {},
     'DOLARYMONEDAS_TEST_LIVE': 'FALSE',
-    'DOLARYMONEDAS_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.DOLARYMONEDAS_TEST_LIVE
 
   if (live) {
     const client = new DolarYMonedasSDK({
-      apikey: env.DOLARYMONEDAS_APIKEY,
     })
 
     let idmap: any = env['DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID']

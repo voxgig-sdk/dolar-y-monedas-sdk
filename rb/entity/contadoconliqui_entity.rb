@@ -45,6 +45,7 @@ class ContadoconliquiEntity
     end
   end
 
+  # @return [Contadoconliqui, Hash] the current Contadoconliqui data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class ContadoconliquiEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Contadoconliqui fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Contadoconliqui.
+  #
+  # @param reqmatch [ContadoconliquiLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Contadoconliqui, Hash] the loaded Contadoconliqui; raises DolarYMonedasError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

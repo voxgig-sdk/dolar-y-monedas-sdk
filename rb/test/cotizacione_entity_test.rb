@@ -43,8 +43,7 @@ class CotizacioneEntityTest < Minitest::Test
     cotizacione_ref01_ent = client.Cotizacione(nil)
     cotizacione_ref01_match = {}
 
-    cotizacione_ref01_list_result, err = cotizacione_ref01_ent.list(cotizacione_ref01_match, nil)
-    assert_nil err
+    cotizacione_ref01_list_result = cotizacione_ref01_ent.list(cotizacione_ref01_match, nil)
     assert cotizacione_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def cotizacione_basic_setup(extra)
     "DOLARYMONEDAS_TEST_COTIZACIONE_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def cotizacione_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

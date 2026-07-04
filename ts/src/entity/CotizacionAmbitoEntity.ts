@@ -14,9 +14,14 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  CotizacionAmbito,
+  CotizacionAmbitoLoadMatch,
+  CotizacionAmbitoListMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class CotizacionAmbitoEntity extends DolarYMonedasEntityBase {
+class CotizacionAmbitoEntity extends DolarYMonedasEntityBase<CotizacionAmbito> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +37,7 @@ class CotizacionAmbitoEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: CotizacionAmbitoLoadMatch, ctrl?: Control): Promise<CotizacionAmbito> {
 
     const utility = this._utility
 
@@ -136,14 +141,16 @@ class CotizacionAmbitoEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<CotizacionAmbito> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: CotizacionAmbitoListMatch, ctrl?: Control): Promise<CotizacionAmbito[]> {
 
     const utility = this._utility
 
@@ -243,7 +250,9 @@ class CotizacionAmbitoEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<CotizacionAmbito[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

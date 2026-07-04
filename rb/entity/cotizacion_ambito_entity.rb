@@ -45,6 +45,7 @@ class CotizacionAmbitoEntity
     end
   end
 
+  # @return [CotizacionAmbito, Hash] the current CotizacionAmbito data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class CotizacionAmbitoEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of CotizacionAmbito fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single CotizacionAmbito.
+  #
+  # @param reqmatch [CotizacionAmbitoLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [CotizacionAmbito, Hash] the loaded CotizacionAmbito; raises DolarYMonedasError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
@@ -86,6 +93,11 @@ class CotizacionAmbitoEntity
 
 
   
+  # List CotizacionAmbito items matching the given filter.
+  #
+  # @param reqmatch [CotizacionAmbitoListMatch, Hash, nil] match filter (any subset of CotizacionAmbito fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<CotizacionAmbito>, Array] the matching CotizacionAmbito items; raises DolarYMonedasError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

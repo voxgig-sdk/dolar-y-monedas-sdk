@@ -49,8 +49,7 @@ class TestBrlEntity:
         # LOAD
         brl_ref01_ent = client.Brl(None)
         brl_ref01_match_dt0 = {}
-        brl_ref01_data_dt0_loaded, err = brl_ref01_ent.load(brl_ref01_match_dt0, None)
-        assert err is None
+        brl_ref01_data_dt0_loaded = brl_ref01_ent.load(brl_ref01_match_dt0, None)
         assert brl_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _brl_basic_setup(extra):
         "DOLARYMONEDAS_TEST_BRL_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _brl_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

@@ -45,6 +45,7 @@ class ClpEntity
     end
   end
 
+  # @return [Clp, Hash] the current Clp data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class ClpEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Clp fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Clp.
+  #
+  # @param reqmatch [ClpLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Clp, Hash] the loaded Clp; raises DolarYMonedasError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

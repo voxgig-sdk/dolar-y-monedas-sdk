@@ -49,8 +49,7 @@ class OficialEntityTest extends TestCase
         // LOAD
         $oficial_ref01_ent = $client->Oficial(null);
         $oficial_ref01_match_dt0 = [];
-        [$oficial_ref01_data_dt0_loaded, $err] = $oficial_ref01_ent->load($oficial_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $oficial_ref01_data_dt0_loaded = $oficial_ref01_ent->load($oficial_ref01_match_dt0, null);
         $this->assertNotNull($oficial_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function oficial_basic_setup($extra)
         "DOLARYMONEDAS_TEST_OFICIAL_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function oficial_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

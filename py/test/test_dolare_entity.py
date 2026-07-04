@@ -50,8 +50,7 @@ class TestDolareEntity:
         dolare_ref01_ent = client.Dolare(None)
         dolare_ref01_match = {}
 
-        dolare_ref01_list_result, err = dolare_ref01_ent.list(dolare_ref01_match, None)
-        assert err is None
+        dolare_ref01_list_result = dolare_ref01_ent.list(dolare_ref01_match, None)
         assert isinstance(dolare_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _dolare_basic_setup(extra):
         "DOLARYMONEDAS_TEST_DOLARE_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _dolare_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

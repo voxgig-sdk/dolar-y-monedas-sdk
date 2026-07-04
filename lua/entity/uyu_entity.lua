@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch UyuLoadMatch
+---@param ctrl? table
+---@return Uyu
+---@return string? err
 function UyuEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

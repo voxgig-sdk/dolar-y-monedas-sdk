@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       description: `<div class="flex flex-col">
 
 API desarrollada en <a href="https://es.js.org?ref=dolarapi.com" target="_blank">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.

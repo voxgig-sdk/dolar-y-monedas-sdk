@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch BrlLoadMatch
+---@param ctrl? table
+---@return Brl
+---@return string? err
 function BrlEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

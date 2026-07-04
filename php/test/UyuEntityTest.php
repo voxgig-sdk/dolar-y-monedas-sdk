@@ -49,8 +49,7 @@ class UyuEntityTest extends TestCase
         // LOAD
         $uyu_ref01_ent = $client->Uyu(null);
         $uyu_ref01_match_dt0 = [];
-        [$uyu_ref01_data_dt0_loaded, $err] = $uyu_ref01_ent->load($uyu_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $uyu_ref01_data_dt0_loaded = $uyu_ref01_ent->load($uyu_ref01_match_dt0, null);
         $this->assertNotNull($uyu_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function uyu_basic_setup($extra)
         "DOLARYMONEDAS_TEST_UYU_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function uyu_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

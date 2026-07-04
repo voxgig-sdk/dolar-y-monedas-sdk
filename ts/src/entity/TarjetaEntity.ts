@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Tarjeta,
+  TarjetaLoadMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class TarjetaEntity extends DolarYMonedasEntityBase {
+class TarjetaEntity extends DolarYMonedasEntityBase<Tarjeta> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class TarjetaEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: TarjetaLoadMatch, ctrl?: Control): Promise<Tarjeta> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class TarjetaEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Tarjeta> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

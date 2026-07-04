@@ -50,14 +50,12 @@ class CotizacionAmbitoEntityTest extends TestCase
         $cotizacion_ambito_ref01_ent = $client->CotizacionAmbito(null);
         $cotizacion_ambito_ref01_match = [];
 
-        [$cotizacion_ambito_ref01_list_result, $err] = $cotizacion_ambito_ref01_ent->list($cotizacion_ambito_ref01_match, null);
-        $this->assertNull($err);
+        $cotizacion_ambito_ref01_list_result = $cotizacion_ambito_ref01_ent->list($cotizacion_ambito_ref01_match, null);
         $this->assertIsArray($cotizacion_ambito_ref01_list_result);
 
         // LOAD
         $cotizacion_ambito_ref01_match_dt0 = [];
-        [$cotizacion_ambito_ref01_data_dt0_loaded, $err] = $cotizacion_ambito_ref01_ent->load($cotizacion_ambito_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $cotizacion_ambito_ref01_data_dt0_loaded = $cotizacion_ambito_ref01_ent->load($cotizacion_ambito_ref01_match_dt0, null);
         $this->assertNotNull($cotizacion_ambito_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function cotizacion_ambito_basic_setup($extra)
         "DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function cotizacion_ambito_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

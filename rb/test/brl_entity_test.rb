@@ -42,8 +42,7 @@ class BrlEntityTest < Minitest::Test
     # LOAD
     brl_ref01_ent = client.Brl(nil)
     brl_ref01_match_dt0 = {}
-    brl_ref01_data_dt0_loaded, err = brl_ref01_ent.load(brl_ref01_match_dt0, nil)
-    assert_nil err
+    brl_ref01_data_dt0_loaded = brl_ref01_ent.load(brl_ref01_match_dt0, nil)
     assert !brl_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def brl_basic_setup(extra)
     "DOLARYMONEDAS_TEST_BRL_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def brl_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

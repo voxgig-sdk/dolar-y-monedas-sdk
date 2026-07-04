@@ -42,8 +42,7 @@ class UyuEntityTest < Minitest::Test
     # LOAD
     uyu_ref01_ent = client.Uyu(nil)
     uyu_ref01_match_dt0 = {}
-    uyu_ref01_data_dt0_loaded, err = uyu_ref01_ent.load(uyu_ref01_match_dt0, nil)
-    assert_nil err
+    uyu_ref01_data_dt0_loaded = uyu_ref01_ent.load(uyu_ref01_match_dt0, nil)
     assert !uyu_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def uyu_basic_setup(extra)
     "DOLARYMONEDAS_TEST_UYU_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def uyu_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

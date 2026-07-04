@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ContadoconliquiLoadMatch
+---@param ctrl? table
+---@return Contadoconliqui
+---@return string? err
 function ContadoconliquiEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch EurLoadMatch
+---@param ctrl? table
+---@return Eur
+---@return string? err
 function EurEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

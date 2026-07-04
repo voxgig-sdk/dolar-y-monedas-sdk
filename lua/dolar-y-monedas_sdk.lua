@@ -244,90 +244,285 @@ end
 
 
 
+-- Idiomatic facade: client:blue():list() / client:blue():load({ id = ... })
+function DolarYMonedasSDK:blue(data)
+  local EntityMod = require("entity.blue_entity")
+  if data == nil then
+    if self._blue == nil then
+      self._blue = EntityMod.new(self, nil)
+    end
+    return self._blue
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:blue() instead.
 function DolarYMonedasSDK:Blue(data)
   local EntityMod = require("entity.blue_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:bolsa():list() / client:bolsa():load({ id = ... })
+function DolarYMonedasSDK:bolsa(data)
+  local EntityMod = require("entity.bolsa_entity")
+  if data == nil then
+    if self._bolsa == nil then
+      self._bolsa = EntityMod.new(self, nil)
+    end
+    return self._bolsa
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:bolsa() instead.
 function DolarYMonedasSDK:Bolsa(data)
   local EntityMod = require("entity.bolsa_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:brl():list() / client:brl():load({ id = ... })
+function DolarYMonedasSDK:brl(data)
+  local EntityMod = require("entity.brl_entity")
+  if data == nil then
+    if self._brl == nil then
+      self._brl = EntityMod.new(self, nil)
+    end
+    return self._brl
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:brl() instead.
 function DolarYMonedasSDK:Brl(data)
   local EntityMod = require("entity.brl_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:clp():list() / client:clp():load({ id = ... })
+function DolarYMonedasSDK:clp(data)
+  local EntityMod = require("entity.clp_entity")
+  if data == nil then
+    if self._clp == nil then
+      self._clp = EntityMod.new(self, nil)
+    end
+    return self._clp
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:clp() instead.
 function DolarYMonedasSDK:Clp(data)
   local EntityMod = require("entity.clp_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:contadoconliqui():list() / client:contadoconliqui():load({ id = ... })
+function DolarYMonedasSDK:contadoconliqui(data)
+  local EntityMod = require("entity.contadoconliqui_entity")
+  if data == nil then
+    if self._contadoconliqui == nil then
+      self._contadoconliqui = EntityMod.new(self, nil)
+    end
+    return self._contadoconliqui
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:contadoconliqui() instead.
 function DolarYMonedasSDK:Contadoconliqui(data)
   local EntityMod = require("entity.contadoconliqui_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:cotizacion_ambito():list() / client:cotizacion_ambito():load({ id = ... })
+function DolarYMonedasSDK:cotizacion_ambito(data)
+  local EntityMod = require("entity.cotizacion_ambito_entity")
+  if data == nil then
+    if self._cotizacion_ambito == nil then
+      self._cotizacion_ambito = EntityMod.new(self, nil)
+    end
+    return self._cotizacion_ambito
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:cotizacion_ambito() instead.
 function DolarYMonedasSDK:CotizacionAmbito(data)
   local EntityMod = require("entity.cotizacion_ambito_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:cotizacione():list() / client:cotizacione():load({ id = ... })
+function DolarYMonedasSDK:cotizacione(data)
+  local EntityMod = require("entity.cotizacione_entity")
+  if data == nil then
+    if self._cotizacione == nil then
+      self._cotizacione = EntityMod.new(self, nil)
+    end
+    return self._cotizacione
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:cotizacione() instead.
 function DolarYMonedasSDK:Cotizacione(data)
   local EntityMod = require("entity.cotizacione_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:cripto():list() / client:cripto():load({ id = ... })
+function DolarYMonedasSDK:cripto(data)
+  local EntityMod = require("entity.cripto_entity")
+  if data == nil then
+    if self._cripto == nil then
+      self._cripto = EntityMod.new(self, nil)
+    end
+    return self._cripto
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:cripto() instead.
 function DolarYMonedasSDK:Cripto(data)
   local EntityMod = require("entity.cripto_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:dolare():list() / client:dolare():load({ id = ... })
+function DolarYMonedasSDK:dolare(data)
+  local EntityMod = require("entity.dolare_entity")
+  if data == nil then
+    if self._dolare == nil then
+      self._dolare = EntityMod.new(self, nil)
+    end
+    return self._dolare
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:dolare() instead.
 function DolarYMonedasSDK:Dolare(data)
   local EntityMod = require("entity.dolare_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:estado():list() / client:estado():load({ id = ... })
+function DolarYMonedasSDK:estado(data)
+  local EntityMod = require("entity.estado_entity")
+  if data == nil then
+    if self._estado == nil then
+      self._estado = EntityMod.new(self, nil)
+    end
+    return self._estado
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:estado() instead.
 function DolarYMonedasSDK:Estado(data)
   local EntityMod = require("entity.estado_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:eur():list() / client:eur():load({ id = ... })
+function DolarYMonedasSDK:eur(data)
+  local EntityMod = require("entity.eur_entity")
+  if data == nil then
+    if self._eur == nil then
+      self._eur = EntityMod.new(self, nil)
+    end
+    return self._eur
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:eur() instead.
 function DolarYMonedasSDK:Eur(data)
   local EntityMod = require("entity.eur_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:mayorista():list() / client:mayorista():load({ id = ... })
+function DolarYMonedasSDK:mayorista(data)
+  local EntityMod = require("entity.mayorista_entity")
+  if data == nil then
+    if self._mayorista == nil then
+      self._mayorista = EntityMod.new(self, nil)
+    end
+    return self._mayorista
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:mayorista() instead.
 function DolarYMonedasSDK:Mayorista(data)
   local EntityMod = require("entity.mayorista_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:oficial():list() / client:oficial():load({ id = ... })
+function DolarYMonedasSDK:oficial(data)
+  local EntityMod = require("entity.oficial_entity")
+  if data == nil then
+    if self._oficial == nil then
+      self._oficial = EntityMod.new(self, nil)
+    end
+    return self._oficial
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:oficial() instead.
 function DolarYMonedasSDK:Oficial(data)
   local EntityMod = require("entity.oficial_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:tarjeta():list() / client:tarjeta():load({ id = ... })
+function DolarYMonedasSDK:tarjeta(data)
+  local EntityMod = require("entity.tarjeta_entity")
+  if data == nil then
+    if self._tarjeta == nil then
+      self._tarjeta = EntityMod.new(self, nil)
+    end
+    return self._tarjeta
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:tarjeta() instead.
 function DolarYMonedasSDK:Tarjeta(data)
   local EntityMod = require("entity.tarjeta_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:uyu():list() / client:uyu():load({ id = ... })
+function DolarYMonedasSDK:uyu(data)
+  local EntityMod = require("entity.uyu_entity")
+  if data == nil then
+    if self._uyu == nil then
+      self._uyu = EntityMod.new(self, nil)
+    end
+    return self._uyu
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:uyu() instead.
 function DolarYMonedasSDK:Uyu(data)
   local EntityMod = require("entity.uyu_entity")
   return EntityMod.new(self, data)

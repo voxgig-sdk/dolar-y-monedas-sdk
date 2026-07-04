@@ -49,8 +49,7 @@ class TestBlueEntity:
         # LOAD
         blue_ref01_ent = client.Blue(None)
         blue_ref01_match_dt0 = {}
-        blue_ref01_data_dt0_loaded, err = blue_ref01_ent.load(blue_ref01_match_dt0, None)
-        assert err is None
+        blue_ref01_data_dt0_loaded = blue_ref01_ent.load(blue_ref01_match_dt0, None)
         assert blue_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _blue_basic_setup(extra):
         "DOLARYMONEDAS_TEST_BLUE_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _blue_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

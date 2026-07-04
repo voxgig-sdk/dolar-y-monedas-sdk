@@ -50,8 +50,7 @@ class TestCotizacioneEntity:
         cotizacione_ref01_ent = client.Cotizacione(None)
         cotizacione_ref01_match = {}
 
-        cotizacione_ref01_list_result, err = cotizacione_ref01_ent.list(cotizacione_ref01_match, None)
-        assert err is None
+        cotizacione_ref01_list_result = cotizacione_ref01_ent.list(cotizacione_ref01_match, None)
         assert isinstance(cotizacione_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _cotizacione_basic_setup(extra):
         "DOLARYMONEDAS_TEST_COTIZACIONE_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _cotizacione_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

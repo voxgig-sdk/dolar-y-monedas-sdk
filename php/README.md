@@ -9,9 +9,10 @@ The PHP SDK for the DolarYMonedas API — an entity-oriented client using PHP co
 
 
 ## Install
-```bash
-composer require voxgig-sdk/dolar-y-monedas
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -25,17 +26,18 @@ loading a specific record.
 <?php
 require_once 'dolarymonedas_sdk.php';
 
-$client = new DolarYMonedasSDK([
-    "apikey" => getenv("DOLAR-Y-MONEDAS_APIKEY"),
-]);
+$client = new DolarYMonedasSDK();
 ```
 
 ### 3. Load a blue
 
 ```php
-[$result, $err] = $client->Blue()->load(["id" => "example_id"]);
-if ($err) { throw new \Exception($err); }
-print_r($result);
+try {
+    $result = $client->blue()->load(["id" => "example_id"]);
+    print_r($result);
+} catch (\Exception $err) {
+    echo "Error: " . $err->getMessage();
+}
 ```
 
 
@@ -46,28 +48,31 @@ print_r($result);
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -81,7 +86,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = DolarYMonedasSDK::test();
 
-[$result, $err] = $client->DolarYMonedas()->load(["id" => "test01"]);
+$result = $client->blue()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -115,8 +120,7 @@ $client = new DolarYMonedasSDK([
 Create a `.env.local` file at the project root:
 
 ```
-DOLAR-Y-MONEDAS_TEST_LIVE=TRUE
-DOLAR-Y-MONEDAS_APIKEY=<your-key>
+DOLAR_Y_MONEDAS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -139,7 +143,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -199,8 +202,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -442,7 +449,7 @@ API path: `/v1/cotizaciones/uyu`
 
 ### Blue
 
-Create an instance: `const blue = client.Blue()`
+Create an instance: `const blue = client.blue`
 
 #### Operations
 
@@ -464,13 +471,13 @@ Create an instance: `const blue = client.Blue()`
 #### Example: Load
 
 ```ts
-const blue = await client.Blue().load({ id: 'blue_id' })
+const blue = await client.blue.load({ id: 'blue_id' })
 ```
 
 
 ### Bolsa
 
-Create an instance: `const bolsa = client.Bolsa()`
+Create an instance: `const bolsa = client.bolsa`
 
 #### Operations
 
@@ -492,13 +499,13 @@ Create an instance: `const bolsa = client.Bolsa()`
 #### Example: Load
 
 ```ts
-const bolsa = await client.Bolsa().load({ id: 'bolsa_id' })
+const bolsa = await client.bolsa.load({ id: 'bolsa_id' })
 ```
 
 
 ### Brl
 
-Create an instance: `const brl = client.Brl()`
+Create an instance: `const brl = client.brl`
 
 #### Operations
 
@@ -520,13 +527,13 @@ Create an instance: `const brl = client.Brl()`
 #### Example: Load
 
 ```ts
-const brl = await client.Brl().load({ id: 'brl_id' })
+const brl = await client.brl.load({ id: 'brl_id' })
 ```
 
 
 ### Clp
 
-Create an instance: `const clp = client.Clp()`
+Create an instance: `const clp = client.clp`
 
 #### Operations
 
@@ -548,13 +555,13 @@ Create an instance: `const clp = client.Clp()`
 #### Example: Load
 
 ```ts
-const clp = await client.Clp().load({ id: 'clp_id' })
+const clp = await client.clp.load({ id: 'clp_id' })
 ```
 
 
 ### Contadoconliqui
 
-Create an instance: `const contadoconliqui = client.Contadoconliqui()`
+Create an instance: `const contadoconliqui = client.contadoconliqui`
 
 #### Operations
 
@@ -576,13 +583,13 @@ Create an instance: `const contadoconliqui = client.Contadoconliqui()`
 #### Example: Load
 
 ```ts
-const contadoconliqui = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
+const contadoconliqui = await client.contadoconliqui.load({ id: 'contadoconliqui_id' })
 ```
 
 
 ### CotizacionAmbito
 
-Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
+Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
 
 #### Operations
 
@@ -606,19 +613,19 @@ Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
 #### Example: Load
 
 ```ts
-const cotizacion_ambito = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
+const cotizacion_ambito = await client.cotizacion_ambito.load({ id: 'cotizacion_ambito_id' })
 ```
 
 #### Example: List
 
 ```ts
-const cotizacion_ambitos = await client.CotizacionAmbito().list()
+const cotizacion_ambitos = await client.cotizacion_ambito.list()
 ```
 
 
 ### Cotizacione
 
-Create an instance: `const cotizacione = client.Cotizacione()`
+Create an instance: `const cotizacione = client.cotizacione`
 
 #### Operations
 
@@ -640,13 +647,13 @@ Create an instance: `const cotizacione = client.Cotizacione()`
 #### Example: List
 
 ```ts
-const cotizaciones = await client.Cotizacione().list()
+const cotizaciones = await client.cotizacione.list()
 ```
 
 
 ### Cripto
 
-Create an instance: `const cripto = client.Cripto()`
+Create an instance: `const cripto = client.cripto`
 
 #### Operations
 
@@ -668,13 +675,13 @@ Create an instance: `const cripto = client.Cripto()`
 #### Example: Load
 
 ```ts
-const cripto = await client.Cripto().load({ id: 'cripto_id' })
+const cripto = await client.cripto.load({ id: 'cripto_id' })
 ```
 
 
 ### Dolare
 
-Create an instance: `const dolare = client.Dolare()`
+Create an instance: `const dolare = client.dolare`
 
 #### Operations
 
@@ -696,13 +703,13 @@ Create an instance: `const dolare = client.Dolare()`
 #### Example: List
 
 ```ts
-const dolares = await client.Dolare().list()
+const dolares = await client.dolare.list()
 ```
 
 
 ### Estado
 
-Create an instance: `const estado = client.Estado()`
+Create an instance: `const estado = client.estado`
 
 #### Operations
 
@@ -720,13 +727,13 @@ Create an instance: `const estado = client.Estado()`
 #### Example: Load
 
 ```ts
-const estado = await client.Estado().load({ id: 'estado_id' })
+const estado = await client.estado.load({ id: 'estado_id' })
 ```
 
 
 ### Eur
 
-Create an instance: `const eur = client.Eur()`
+Create an instance: `const eur = client.eur`
 
 #### Operations
 
@@ -748,13 +755,13 @@ Create an instance: `const eur = client.Eur()`
 #### Example: Load
 
 ```ts
-const eur = await client.Eur().load({ id: 'eur_id' })
+const eur = await client.eur.load({ id: 'eur_id' })
 ```
 
 
 ### Mayorista
 
-Create an instance: `const mayorista = client.Mayorista()`
+Create an instance: `const mayorista = client.mayorista`
 
 #### Operations
 
@@ -776,13 +783,13 @@ Create an instance: `const mayorista = client.Mayorista()`
 #### Example: Load
 
 ```ts
-const mayorista = await client.Mayorista().load({ id: 'mayorista_id' })
+const mayorista = await client.mayorista.load({ id: 'mayorista_id' })
 ```
 
 
 ### Oficial
 
-Create an instance: `const oficial = client.Oficial()`
+Create an instance: `const oficial = client.oficial`
 
 #### Operations
 
@@ -804,13 +811,13 @@ Create an instance: `const oficial = client.Oficial()`
 #### Example: Load
 
 ```ts
-const oficial = await client.Oficial().load({ id: 'oficial_id' })
+const oficial = await client.oficial.load({ id: 'oficial_id' })
 ```
 
 
 ### Tarjeta
 
-Create an instance: `const tarjeta = client.Tarjeta()`
+Create an instance: `const tarjeta = client.tarjeta`
 
 #### Operations
 
@@ -832,13 +839,13 @@ Create an instance: `const tarjeta = client.Tarjeta()`
 #### Example: Load
 
 ```ts
-const tarjeta = await client.Tarjeta().load({ id: 'tarjeta_id' })
+const tarjeta = await client.tarjeta.load({ id: 'tarjeta_id' })
 ```
 
 
 ### Uyu
 
-Create an instance: `const uyu = client.Uyu()`
+Create an instance: `const uyu = client.uyu`
 
 #### Operations
 
@@ -860,7 +867,7 @@ Create an instance: `const uyu = client.Uyu()`
 #### Example: Load
 
 ```ts
-const uyu = await client.Uyu().load({ id: 'uyu_id' })
+const uyu = await client.uyu.load({ id: 'uyu_id' })
 ```
 
 
@@ -935,11 +942,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$blue = $client->blue();
+$blue->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $blue->dataGet() now returns the loaded blue data
+// $blue->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

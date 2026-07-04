@@ -85,6 +85,27 @@ func (e *MayoristaEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Mayorista; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *MayoristaEntity) DataTyped(data ...Mayorista) Mayorista {
+	if len(data) > 0 {
+		return typedFrom[Mayorista](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Mayorista](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Mayorista (all fields
+// optional at the wire level).
+func (e *MayoristaEntity) MatchTyped(match ...Mayorista) Mayorista {
+	if len(match) > 0 {
+		return typedFrom[Mayorista](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Mayorista](e.Match())
+}
+
 
 func (e *MayoristaEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *MayoristaEntity) Load(reqmatch map[string]any, ctrl map[string]any) (an
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// MayoristaLoadMatch and returns an Mayorista. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *MayoristaEntity) LoadTyped(reqmatch MayoristaLoadMatch, ctrl map[string]any) (Mayorista, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Mayorista{}, err
+	}
+	return typedFrom[Mayorista](res), nil
 }
 
 

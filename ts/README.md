@@ -9,9 +9,12 @@ The TypeScript SDK for the DolarYMonedas API — a type-safe, entity-oriented cl
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/dolar-y-monedas
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DolarYMonedasSDK } from 'dolar-y-monedas'
+import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
 
-const client = new DolarYMonedasSDK({
-  apikey: process.env.DOLAR-Y-MONEDAS_APIKEY,
-})
+const client = new DolarYMonedasSDK()
 ```
 
 ### 3. Load a blue
 
 ```ts
-const result = await client.Blue().load({ id: 'example_id' })
+const result = await client.blue.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DolarYMonedasSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.blue.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new DolarYMonedasSDK({ apikey: '...' })
+const client = new DolarYMonedasSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.blue
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new DolarYMonedasSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -133,8 +133,7 @@ const client = new DolarYMonedasSDK({
 Create a `.env.local` file at the project root:
 
 ```
-DOLAR-Y-MONEDAS_TEST_LIVE=TRUE
-DOLAR-Y-MONEDAS_APIKEY=<your-key>
+DOLAR_Y_MONEDAS_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new DolarYMonedasSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new DolarYMonedasSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -492,7 +489,7 @@ API path: `/v1/cotizaciones/uyu`
 
 ### Blue
 
-Create an instance: `const blue = client.Blue()`
+Create an instance: `const blue = client.blue`
 
 #### Operations
 
@@ -514,13 +511,13 @@ Create an instance: `const blue = client.Blue()`
 #### Example: Load
 
 ```ts
-const blue = await client.Blue().load({ id: 'blue_id' })
+const blue = await client.blue.load({ id: 'blue_id' })
 ```
 
 
 ### Bolsa
 
-Create an instance: `const bolsa = client.Bolsa()`
+Create an instance: `const bolsa = client.bolsa`
 
 #### Operations
 
@@ -542,13 +539,13 @@ Create an instance: `const bolsa = client.Bolsa()`
 #### Example: Load
 
 ```ts
-const bolsa = await client.Bolsa().load({ id: 'bolsa_id' })
+const bolsa = await client.bolsa.load({ id: 'bolsa_id' })
 ```
 
 
 ### Brl
 
-Create an instance: `const brl = client.Brl()`
+Create an instance: `const brl = client.brl`
 
 #### Operations
 
@@ -570,13 +567,13 @@ Create an instance: `const brl = client.Brl()`
 #### Example: Load
 
 ```ts
-const brl = await client.Brl().load({ id: 'brl_id' })
+const brl = await client.brl.load({ id: 'brl_id' })
 ```
 
 
 ### Clp
 
-Create an instance: `const clp = client.Clp()`
+Create an instance: `const clp = client.clp`
 
 #### Operations
 
@@ -598,13 +595,13 @@ Create an instance: `const clp = client.Clp()`
 #### Example: Load
 
 ```ts
-const clp = await client.Clp().load({ id: 'clp_id' })
+const clp = await client.clp.load({ id: 'clp_id' })
 ```
 
 
 ### Contadoconliqui
 
-Create an instance: `const contadoconliqui = client.Contadoconliqui()`
+Create an instance: `const contadoconliqui = client.contadoconliqui`
 
 #### Operations
 
@@ -626,13 +623,13 @@ Create an instance: `const contadoconliqui = client.Contadoconliqui()`
 #### Example: Load
 
 ```ts
-const contadoconliqui = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
+const contadoconliqui = await client.contadoconliqui.load({ id: 'contadoconliqui_id' })
 ```
 
 
 ### CotizacionAmbito
 
-Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
+Create an instance: `const cotizacion_ambito = client.cotizacion_ambito`
 
 #### Operations
 
@@ -656,19 +653,19 @@ Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
 #### Example: Load
 
 ```ts
-const cotizacion_ambito = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
+const cotizacion_ambito = await client.cotizacion_ambito.load({ id: 'cotizacion_ambito_id' })
 ```
 
 #### Example: List
 
 ```ts
-const cotizacion_ambitos = await client.CotizacionAmbito().list()
+const cotizacion_ambitos = await client.cotizacion_ambito.list()
 ```
 
 
 ### Cotizacione
 
-Create an instance: `const cotizacione = client.Cotizacione()`
+Create an instance: `const cotizacione = client.cotizacione`
 
 #### Operations
 
@@ -690,13 +687,13 @@ Create an instance: `const cotizacione = client.Cotizacione()`
 #### Example: List
 
 ```ts
-const cotizaciones = await client.Cotizacione().list()
+const cotizaciones = await client.cotizacione.list()
 ```
 
 
 ### Cripto
 
-Create an instance: `const cripto = client.Cripto()`
+Create an instance: `const cripto = client.cripto`
 
 #### Operations
 
@@ -718,13 +715,13 @@ Create an instance: `const cripto = client.Cripto()`
 #### Example: Load
 
 ```ts
-const cripto = await client.Cripto().load({ id: 'cripto_id' })
+const cripto = await client.cripto.load({ id: 'cripto_id' })
 ```
 
 
 ### Dolare
 
-Create an instance: `const dolare = client.Dolare()`
+Create an instance: `const dolare = client.dolare`
 
 #### Operations
 
@@ -746,13 +743,13 @@ Create an instance: `const dolare = client.Dolare()`
 #### Example: List
 
 ```ts
-const dolares = await client.Dolare().list()
+const dolares = await client.dolare.list()
 ```
 
 
 ### Estado
 
-Create an instance: `const estado = client.Estado()`
+Create an instance: `const estado = client.estado`
 
 #### Operations
 
@@ -770,13 +767,13 @@ Create an instance: `const estado = client.Estado()`
 #### Example: Load
 
 ```ts
-const estado = await client.Estado().load({ id: 'estado_id' })
+const estado = await client.estado.load({ id: 'estado_id' })
 ```
 
 
 ### Eur
 
-Create an instance: `const eur = client.Eur()`
+Create an instance: `const eur = client.eur`
 
 #### Operations
 
@@ -798,13 +795,13 @@ Create an instance: `const eur = client.Eur()`
 #### Example: Load
 
 ```ts
-const eur = await client.Eur().load({ id: 'eur_id' })
+const eur = await client.eur.load({ id: 'eur_id' })
 ```
 
 
 ### Mayorista
 
-Create an instance: `const mayorista = client.Mayorista()`
+Create an instance: `const mayorista = client.mayorista`
 
 #### Operations
 
@@ -826,13 +823,13 @@ Create an instance: `const mayorista = client.Mayorista()`
 #### Example: Load
 
 ```ts
-const mayorista = await client.Mayorista().load({ id: 'mayorista_id' })
+const mayorista = await client.mayorista.load({ id: 'mayorista_id' })
 ```
 
 
 ### Oficial
 
-Create an instance: `const oficial = client.Oficial()`
+Create an instance: `const oficial = client.oficial`
 
 #### Operations
 
@@ -854,13 +851,13 @@ Create an instance: `const oficial = client.Oficial()`
 #### Example: Load
 
 ```ts
-const oficial = await client.Oficial().load({ id: 'oficial_id' })
+const oficial = await client.oficial.load({ id: 'oficial_id' })
 ```
 
 
 ### Tarjeta
 
-Create an instance: `const tarjeta = client.Tarjeta()`
+Create an instance: `const tarjeta = client.tarjeta`
 
 #### Operations
 
@@ -882,13 +879,13 @@ Create an instance: `const tarjeta = client.Tarjeta()`
 #### Example: Load
 
 ```ts
-const tarjeta = await client.Tarjeta().load({ id: 'tarjeta_id' })
+const tarjeta = await client.tarjeta.load({ id: 'tarjeta_id' })
 ```
 
 
 ### Uyu
 
-Create an instance: `const uyu = client.Uyu()`
+Create an instance: `const uyu = client.uyu`
 
 #### Operations
 
@@ -910,7 +907,7 @@ Create an instance: `const uyu = client.Uyu()`
 #### Example: Load
 
 ```ts
-const uyu = await client.Uyu().load({ id: 'uyu_id' })
+const uyu = await client.uyu.load({ id: 'uyu_id' })
 ```
 
 
@@ -971,7 +968,7 @@ dolar-y-monedas/
 Import the SDK from the package root:
 
 ```ts
-import { DolarYMonedasSDK } from 'dolar-y-monedas'
+import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
 ```
 
 ### Entity state
@@ -981,11 +978,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const blue = client.blue
+await blue.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// blue.data() now returns the loaded blue data
+// blue.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -50,14 +50,12 @@ class TestCotizacionAmbitoEntity:
         cotizacion_ambito_ref01_ent = client.CotizacionAmbito(None)
         cotizacion_ambito_ref01_match = {}
 
-        cotizacion_ambito_ref01_list_result, err = cotizacion_ambito_ref01_ent.list(cotizacion_ambito_ref01_match, None)
-        assert err is None
+        cotizacion_ambito_ref01_list_result = cotizacion_ambito_ref01_ent.list(cotizacion_ambito_ref01_match, None)
         assert isinstance(cotizacion_ambito_ref01_list_result, list)
 
         # LOAD
         cotizacion_ambito_ref01_match_dt0 = {}
-        cotizacion_ambito_ref01_data_dt0_loaded, err = cotizacion_ambito_ref01_ent.load(cotizacion_ambito_ref01_match_dt0, None)
-        assert err is None
+        cotizacion_ambito_ref01_data_dt0_loaded = cotizacion_ambito_ref01_ent.load(cotizacion_ambito_ref01_match_dt0, None)
         assert cotizacion_ambito_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _cotizacion_ambito_basic_setup(extra):
         "DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _cotizacion_ambito_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

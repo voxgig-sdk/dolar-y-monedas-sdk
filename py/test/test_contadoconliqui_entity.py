@@ -49,8 +49,7 @@ class TestContadoconliquiEntity:
         # LOAD
         contadoconliqui_ref01_ent = client.Contadoconliqui(None)
         contadoconliqui_ref01_match_dt0 = {}
-        contadoconliqui_ref01_data_dt0_loaded, err = contadoconliqui_ref01_ent.load(contadoconliqui_ref01_match_dt0, None)
-        assert err is None
+        contadoconliqui_ref01_data_dt0_loaded = contadoconliqui_ref01_ent.load(contadoconliqui_ref01_match_dt0, None)
         assert contadoconliqui_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _contadoconliqui_basic_setup(extra):
         "DOLARYMONEDAS_TEST_CONTADOCONLIQUI_ENTID": idmap,
         "DOLARYMONEDAS_TEST_LIVE": "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN": "FALSE",
-        "DOLARYMONEDAS_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _contadoconliqui_basic_setup(extra):
     if env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("DOLARYMONEDAS_APIKEY"),
             },
             extra or {},
         ])

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ClpLoadMatch
+---@param ctrl? table
+---@return Clp
+---@return string? err
 function ClpEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Bolsa,
+  BolsaLoadMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class BolsaEntity extends DolarYMonedasEntityBase {
+class BolsaEntity extends DolarYMonedasEntityBase<Bolsa> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class BolsaEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: BolsaLoadMatch, ctrl?: Control): Promise<Bolsa> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class BolsaEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Bolsa> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

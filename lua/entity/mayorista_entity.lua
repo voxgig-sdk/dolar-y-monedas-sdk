@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch MayoristaLoadMatch
+---@param ctrl? table
+---@return Mayorista
+---@return string? err
 function MayoristaEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

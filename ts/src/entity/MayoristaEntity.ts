@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Mayorista,
+  MayoristaLoadMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class MayoristaEntity extends DolarYMonedasEntityBase {
+class MayoristaEntity extends DolarYMonedasEntityBase<Mayorista> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class MayoristaEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: MayoristaLoadMatch, ctrl?: Control): Promise<Mayorista> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class MayoristaEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Mayorista> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

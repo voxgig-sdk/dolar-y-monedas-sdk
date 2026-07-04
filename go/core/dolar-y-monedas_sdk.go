@@ -245,76 +245,121 @@ func (sdk *DolarYMonedasSDK) Direct(fetchargs map[string]any) (map[string]any, e
 }
 
 
+// Blue returns a Blue entity bound to this client.
+// Idiomatic usage: client.Blue(nil).List(nil, nil) or
+// client.Blue(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Blue(data map[string]any) DolarYMonedasEntity {
 	return NewBlueEntityFunc(sdk, data)
 }
 
 
+// Bolsa returns a Bolsa entity bound to this client.
+// Idiomatic usage: client.Bolsa(nil).List(nil, nil) or
+// client.Bolsa(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Bolsa(data map[string]any) DolarYMonedasEntity {
 	return NewBolsaEntityFunc(sdk, data)
 }
 
 
+// Brl returns a Brl entity bound to this client.
+// Idiomatic usage: client.Brl(nil).List(nil, nil) or
+// client.Brl(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Brl(data map[string]any) DolarYMonedasEntity {
 	return NewBrlEntityFunc(sdk, data)
 }
 
 
+// Clp returns a Clp entity bound to this client.
+// Idiomatic usage: client.Clp(nil).List(nil, nil) or
+// client.Clp(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Clp(data map[string]any) DolarYMonedasEntity {
 	return NewClpEntityFunc(sdk, data)
 }
 
 
+// Contadoconliqui returns a Contadoconliqui entity bound to this client.
+// Idiomatic usage: client.Contadoconliqui(nil).List(nil, nil) or
+// client.Contadoconliqui(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Contadoconliqui(data map[string]any) DolarYMonedasEntity {
 	return NewContadoconliquiEntityFunc(sdk, data)
 }
 
 
+// CotizacionAmbito returns a CotizacionAmbito entity bound to this client.
+// Idiomatic usage: client.CotizacionAmbito(nil).List(nil, nil) or
+// client.CotizacionAmbito(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) CotizacionAmbito(data map[string]any) DolarYMonedasEntity {
 	return NewCotizacionAmbitoEntityFunc(sdk, data)
 }
 
 
+// Cotizacione returns a Cotizacione entity bound to this client.
+// Idiomatic usage: client.Cotizacione(nil).List(nil, nil) or
+// client.Cotizacione(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Cotizacione(data map[string]any) DolarYMonedasEntity {
 	return NewCotizacioneEntityFunc(sdk, data)
 }
 
 
+// Cripto returns a Cripto entity bound to this client.
+// Idiomatic usage: client.Cripto(nil).List(nil, nil) or
+// client.Cripto(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Cripto(data map[string]any) DolarYMonedasEntity {
 	return NewCriptoEntityFunc(sdk, data)
 }
 
 
+// Dolare returns a Dolare entity bound to this client.
+// Idiomatic usage: client.Dolare(nil).List(nil, nil) or
+// client.Dolare(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Dolare(data map[string]any) DolarYMonedasEntity {
 	return NewDolareEntityFunc(sdk, data)
 }
 
 
+// Estado returns a Estado entity bound to this client.
+// Idiomatic usage: client.Estado(nil).List(nil, nil) or
+// client.Estado(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Estado(data map[string]any) DolarYMonedasEntity {
 	return NewEstadoEntityFunc(sdk, data)
 }
 
 
+// Eur returns a Eur entity bound to this client.
+// Idiomatic usage: client.Eur(nil).List(nil, nil) or
+// client.Eur(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Eur(data map[string]any) DolarYMonedasEntity {
 	return NewEurEntityFunc(sdk, data)
 }
 
 
+// Mayorista returns a Mayorista entity bound to this client.
+// Idiomatic usage: client.Mayorista(nil).List(nil, nil) or
+// client.Mayorista(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Mayorista(data map[string]any) DolarYMonedasEntity {
 	return NewMayoristaEntityFunc(sdk, data)
 }
 
 
+// Oficial returns a Oficial entity bound to this client.
+// Idiomatic usage: client.Oficial(nil).List(nil, nil) or
+// client.Oficial(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Oficial(data map[string]any) DolarYMonedasEntity {
 	return NewOficialEntityFunc(sdk, data)
 }
 
 
+// Tarjeta returns a Tarjeta entity bound to this client.
+// Idiomatic usage: client.Tarjeta(nil).List(nil, nil) or
+// client.Tarjeta(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Tarjeta(data map[string]any) DolarYMonedasEntity {
 	return NewTarjetaEntityFunc(sdk, data)
 }
 
 
+// Uyu returns a Uyu entity bound to this client.
+// Idiomatic usage: client.Uyu(nil).List(nil, nil) or
+// client.Uyu(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *DolarYMonedasSDK) Uyu(data map[string]any) DolarYMonedasEntity {
 	return NewUyuEntityFunc(sdk, data)
 }

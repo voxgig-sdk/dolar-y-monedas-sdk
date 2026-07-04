@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch CotizacionAmbitoLoadMatch
+---@param ctrl? table
+---@return CotizacionAmbito
+---@return string? err
 function CotizacionAmbitoEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch CotizacionAmbitoListMatch
+---@param ctrl? table
+---@return CotizacionAmbito[]
+---@return string? err
 function CotizacionAmbitoEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

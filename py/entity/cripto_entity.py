@@ -1,7 +1,13 @@
 # DolarYMonedas SDK Cripto entity
 
+from __future__ import annotations
+
 from utility.voxgig_struct import voxgig_struct as vs
 from core import helpers
+from dolarymonedas_types import (
+    Cripto,
+    CriptoLoadMatch,
+)
 
 
 class CriptoEntity:
@@ -44,7 +50,7 @@ class CriptoEntity:
             self._data = helpers.to_map(vs.clone(args)) or {}
             self._utility.feature_hook(self._entctx, "SetData")
 
-    def data_get(self):
+    def data_get(self) -> Cripto:
         self._utility.feature_hook(self._entctx, "GetData")
         return vs.clone(self._data)
 
@@ -53,12 +59,12 @@ class CriptoEntity:
             self._match = helpers.to_map(vs.clone(args)) or {}
             self._utility.feature_hook(self._entctx, "SetMatch")
 
-    def match_get(self):
+    def match_get(self) -> Cripto:
         self._utility.feature_hook(self._entctx, "GetMatch")
         return vs.clone(self._match)
 
     
-    def load(self, reqmatch, ctrl=None):
+    def load(self, reqmatch: CriptoLoadMatch, ctrl=None) -> Cripto:
         utility = self._utility
         ctx = utility.make_context({
             "opname": "load",

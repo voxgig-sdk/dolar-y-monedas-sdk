@@ -42,8 +42,7 @@ class EurEntityTest < Minitest::Test
     # LOAD
     eur_ref01_ent = client.Eur(nil)
     eur_ref01_match_dt0 = {}
-    eur_ref01_data_dt0_loaded, err = eur_ref01_ent.load(eur_ref01_match_dt0, nil)
-    assert_nil err
+    eur_ref01_data_dt0_loaded = eur_ref01_ent.load(eur_ref01_match_dt0, nil)
     assert !eur_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def eur_basic_setup(extra)
     "DOLARYMONEDAS_TEST_EUR_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def eur_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

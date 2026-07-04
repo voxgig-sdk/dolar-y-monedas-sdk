@@ -1761,6 +1761,7 @@
         }
       },
       "info": {
+        "auth": false,
         "description": "<div class=\"flex flex-col\">\n\nAPI desarrollada en <a href=\"https://es.js.org?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\n¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)",
         "servers": [
           {
@@ -1789,6 +1790,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1839,6 +1841,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1888,6 +1891,7 @@
               "active": false,
               "name": "",
               "package": "",
+              "state": "pending",
               "url": "",
               "vault": {
                 "alias": "",
@@ -1929,6 +1933,7 @@
               "active": false,
               "name": "luarocks",
               "package": "",
+              "state": "pending",
               "url": "https://luarocks.org",
               "vault": {
                 "alias": "luarocks",
@@ -1965,6 +1970,7 @@
               "active": false,
               "name": "packagist",
               "package": "",
+              "state": "pending",
               "url": "https://packagist.org",
               "vault": {
                 "alias": "packagist",
@@ -2007,6 +2013,7 @@
               "active": false,
               "name": "pypi",
               "package": "",
+              "state": "pending",
               "url": "https://pypi.org",
               "vault": {
                 "alias": "pypi",
@@ -2054,6 +2061,7 @@
               "active": false,
               "name": "rubygems",
               "package": "",
+              "state": "pending",
               "url": "https://rubygems.org",
               "vault": {
                 "alias": "gem",
@@ -2107,6 +2115,7 @@
               "active": false,
               "name": "npm",
               "package": "",
+              "state": "pending",
               "url": "https://registry.npmjs.org",
               "vault": {
                 "alias": "npm",

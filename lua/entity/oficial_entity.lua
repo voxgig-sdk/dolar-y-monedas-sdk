@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch OficialLoadMatch
+---@param ctrl? table
+---@return Oficial
+---@return string? err
 function OficialEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

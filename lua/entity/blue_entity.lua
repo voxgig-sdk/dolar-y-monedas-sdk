@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch BlueLoadMatch
+---@param ctrl? table
+---@return Blue
+---@return string? err
 function BlueEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

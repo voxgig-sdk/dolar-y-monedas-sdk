@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Contadoconliqui,
+  ContadoconliquiLoadMatch,
+} from '../DolarYMonedasTypes'
 
 // TODO: needs Entity superclass
-class ContadoconliquiEntity extends DolarYMonedasEntityBase {
+class ContadoconliquiEntity extends DolarYMonedasEntityBase<Contadoconliqui> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class ContadoconliquiEntity extends DolarYMonedasEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: ContadoconliquiLoadMatch, ctrl?: Control): Promise<Contadoconliqui> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class ContadoconliquiEntity extends DolarYMonedasEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Contadoconliqui> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

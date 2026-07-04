@@ -45,6 +45,7 @@ class EurEntity
     end
   end
 
+  # @return [Eur, Hash] the current Eur data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class EurEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Eur fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Eur.
+  #
+  # @param reqmatch [EurLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Eur, Hash] the loaded Eur; raises DolarYMonedasError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch DolareListMatch
+---@param ctrl? table
+---@return Dolare[]
+---@return string? err
 function DolareEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

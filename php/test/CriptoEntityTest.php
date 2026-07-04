@@ -49,8 +49,7 @@ class CriptoEntityTest extends TestCase
         // LOAD
         $cripto_ref01_ent = $client->Cripto(null);
         $cripto_ref01_match_dt0 = [];
-        [$cripto_ref01_data_dt0_loaded, $err] = $cripto_ref01_ent->load($cripto_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $cripto_ref01_data_dt0_loaded = $cripto_ref01_ent->load($cripto_ref01_match_dt0, null);
         $this->assertNotNull($cripto_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function cripto_basic_setup($extra)
         "DOLARYMONEDAS_TEST_CRIPTO_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function cripto_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

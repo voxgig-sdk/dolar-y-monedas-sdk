@@ -49,8 +49,7 @@ class MayoristaEntityTest extends TestCase
         // LOAD
         $mayorista_ref01_ent = $client->Mayorista(null);
         $mayorista_ref01_match_dt0 = [];
-        [$mayorista_ref01_data_dt0_loaded, $err] = $mayorista_ref01_ent->load($mayorista_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $mayorista_ref01_data_dt0_loaded = $mayorista_ref01_ent->load($mayorista_ref01_match_dt0, null);
         $this->assertNotNull($mayorista_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function mayorista_basic_setup($extra)
         "DOLARYMONEDAS_TEST_MAYORISTA_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function mayorista_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);

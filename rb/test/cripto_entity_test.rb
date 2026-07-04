@@ -42,8 +42,7 @@ class CriptoEntityTest < Minitest::Test
     # LOAD
     cripto_ref01_ent = client.Cripto(nil)
     cripto_ref01_match_dt0 = {}
-    cripto_ref01_data_dt0_loaded, err = cripto_ref01_ent.load(cripto_ref01_match_dt0, nil)
-    assert_nil err
+    cripto_ref01_data_dt0_loaded = cripto_ref01_ent.load(cripto_ref01_match_dt0, nil)
     assert !cripto_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def cripto_basic_setup(extra)
     "DOLARYMONEDAS_TEST_CRIPTO_ENTID" => idmap,
     "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
     "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-    "DOLARYMONEDAS_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def cripto_basic_setup(extra)
   if env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["DOLARYMONEDAS_APIKEY"],
       },
       extra || {},
     ])

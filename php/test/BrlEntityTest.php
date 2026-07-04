@@ -49,8 +49,7 @@ class BrlEntityTest extends TestCase
         // LOAD
         $brl_ref01_ent = $client->Brl(null);
         $brl_ref01_match_dt0 = [];
-        [$brl_ref01_data_dt0_loaded, $err] = $brl_ref01_ent->load($brl_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $brl_ref01_data_dt0_loaded = $brl_ref01_ent->load($brl_ref01_match_dt0, null);
         $this->assertNotNull($brl_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function brl_basic_setup($extra)
         "DOLARYMONEDAS_TEST_BRL_ENTID" => $idmap,
         "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
         "DOLARYMONEDAS_TEST_EXPLAIN" => "FALSE",
-        "DOLARYMONEDAS_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function brl_basic_setup($extra)
     if ($env["DOLARYMONEDAS_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["DOLARYMONEDAS_APIKEY"],
             ],
             $extra ?? [],
         ]);
