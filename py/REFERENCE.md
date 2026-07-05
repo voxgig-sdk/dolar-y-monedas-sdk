@@ -8,7 +8,7 @@ Complete API reference for the DolarYMonedas Python SDK.
 ### Constructor
 
 ```python
-from dolar-y-monedas_sdk import DolarYMonedasSDK
+from dolarymonedas_sdk import DolarYMonedasSDK
 
 client = DolarYMonedasSDK(options)
 ```
@@ -143,12 +143,12 @@ blue = client.Blue()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -157,7 +157,7 @@ blue = client.Blue()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Blue().load({"id": "blue_id"})
+result = client.Blue().load()
 ```
 
 ### Common Methods
@@ -199,12 +199,12 @@ bolsa = client.Bolsa()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -213,7 +213,7 @@ bolsa = client.Bolsa()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Bolsa().load({"id": "bolsa_id"})
+result = client.Bolsa().load()
 ```
 
 ### Common Methods
@@ -255,12 +255,12 @@ brl = client.Brl()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -269,7 +269,7 @@ brl = client.Brl()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Brl().load({"id": "brl_id"})
+result = client.Brl().load()
 ```
 
 ### Common Methods
@@ -311,12 +311,12 @@ clp = client.Clp()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -325,7 +325,7 @@ clp = client.Clp()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Clp().load({"id": "clp_id"})
+result = client.Clp().load()
 ```
 
 ### Common Methods
@@ -367,12 +367,12 @@ contadoconliqui = client.Contadoconliqui()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -381,7 +381,7 @@ contadoconliqui = client.Contadoconliqui()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Contadoconliqui().load({"id": "contadoconliqui_id"})
+result = client.Contadoconliqui().load()
 ```
 
 ### Common Methods
@@ -423,22 +423,22 @@ cotizacion_ambito = client.CotizacionAmbito()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `variacion` | `float` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.CotizacionAmbito().list({})
+results = client.CotizacionAmbito().list()
 for cotizacion_ambito in results:
     print(cotizacion_ambito)
 ```
@@ -448,7 +448,7 @@ for cotizacion_ambito in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.CotizacionAmbito().load({"id": "cotizacion_ambito_id"})
+result = client.CotizacionAmbito().load()
 ```
 
 ### Common Methods
@@ -490,21 +490,21 @@ cotizacione = client.Cotizacione()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Cotizacione().list({})
+results = client.Cotizacione().list()
 for cotizacione in results:
     print(cotizacione)
 ```
@@ -548,12 +548,12 @@ cripto = client.Cripto()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -562,7 +562,7 @@ cripto = client.Cripto()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Cripto().load({"id": "cripto_id"})
+result = client.Cripto().load()
 ```
 
 ### Common Methods
@@ -604,21 +604,21 @@ dolare = client.Dolare()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Dolare().list({})
+results = client.Dolare().list()
 for dolare in results:
     print(dolare)
 ```
@@ -662,8 +662,8 @@ estado = client.Estado()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `int` | No |  |
+| `estado` | `str` | No |  |
 
 ### Operations
 
@@ -672,7 +672,7 @@ estado = client.Estado()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Estado().load({"id": "estado_id"})
+result = client.Estado().load()
 ```
 
 ### Common Methods
@@ -714,12 +714,12 @@ eur = client.Eur()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -728,7 +728,7 @@ eur = client.Eur()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Eur().load({"id": "eur_id"})
+result = client.Eur().load()
 ```
 
 ### Common Methods
@@ -770,12 +770,12 @@ mayorista = client.Mayorista()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -784,7 +784,7 @@ mayorista = client.Mayorista()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Mayorista().load({"id": "mayorista_id"})
+result = client.Mayorista().load()
 ```
 
 ### Common Methods
@@ -826,12 +826,12 @@ oficial = client.Oficial()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -840,7 +840,7 @@ oficial = client.Oficial()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Oficial().load({"id": "oficial_id"})
+result = client.Oficial().load()
 ```
 
 ### Common Methods
@@ -882,12 +882,12 @@ tarjeta = client.Tarjeta()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -896,7 +896,7 @@ tarjeta = client.Tarjeta()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Tarjeta().load({"id": "tarjeta_id"})
+result = client.Tarjeta().load()
 ```
 
 ### Common Methods
@@ -938,12 +938,12 @@ uyu = client.Uyu()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `str` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `str` | Yes |  |
+| `moneda` | `str` | Yes |  |
+| `nombre` | `str` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -952,7 +952,7 @@ uyu = client.Uyu()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Uyu().load({"id": "uyu_id"})
+result = client.Uyu().load()
 ```
 
 ### Common Methods

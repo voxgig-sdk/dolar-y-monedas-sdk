@@ -18,8 +18,7 @@ type Blue struct {
 	Venta float64 `json:"venta"`
 }
 
-// BlueLoadMatch mirrors the blue fields as an all-optional match
-// filter (Go analog of Partial<Blue>).
+// BlueLoadMatch is the typed request payload for Blue.LoadTyped.
 type BlueLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -39,8 +38,7 @@ type Bolsa struct {
 	Venta float64 `json:"venta"`
 }
 
-// BolsaLoadMatch mirrors the bolsa fields as an all-optional match
-// filter (Go analog of Partial<Bolsa>).
+// BolsaLoadMatch is the typed request payload for Bolsa.LoadTyped.
 type BolsaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -60,8 +58,7 @@ type Brl struct {
 	Venta float64 `json:"venta"`
 }
 
-// BrlLoadMatch mirrors the brl fields as an all-optional match
-// filter (Go analog of Partial<Brl>).
+// BrlLoadMatch is the typed request payload for Brl.LoadTyped.
 type BrlLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -81,8 +78,7 @@ type Clp struct {
 	Venta float64 `json:"venta"`
 }
 
-// ClpLoadMatch mirrors the clp fields as an all-optional match
-// filter (Go analog of Partial<Clp>).
+// ClpLoadMatch is the typed request payload for Clp.LoadTyped.
 type ClpLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -102,8 +98,7 @@ type Contadoconliqui struct {
 	Venta float64 `json:"venta"`
 }
 
-// ContadoconliquiLoadMatch mirrors the contadoconliqui fields as an all-optional match
-// filter (Go analog of Partial<Contadoconliqui>).
+// ContadoconliquiLoadMatch is the typed request payload for Contadoconliqui.LoadTyped.
 type ContadoconliquiLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -124,8 +119,7 @@ type CotizacionAmbito struct {
 	Venta float64 `json:"venta"`
 }
 
-// CotizacionAmbitoLoadMatch mirrors the cotizacion_ambito fields as an all-optional match
-// filter (Go analog of Partial<CotizacionAmbito>).
+// CotizacionAmbitoLoadMatch is the typed request payload for CotizacionAmbito.LoadTyped.
 type CotizacionAmbitoLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -136,8 +130,7 @@ type CotizacionAmbitoLoadMatch struct {
 	Venta *float64 `json:"venta,omitempty"`
 }
 
-// CotizacionAmbitoListMatch mirrors the cotizacion_ambito fields as an all-optional match
-// filter (Go analog of Partial<CotizacionAmbito>).
+// CotizacionAmbitoListMatch is the typed request payload for CotizacionAmbito.ListTyped.
 type CotizacionAmbitoListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -158,8 +151,7 @@ type Cotizacione struct {
 	Venta float64 `json:"venta"`
 }
 
-// CotizacioneListMatch mirrors the cotizacione fields as an all-optional match
-// filter (Go analog of Partial<Cotizacione>).
+// CotizacioneListMatch is the typed request payload for Cotizacione.ListTyped.
 type CotizacioneListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -179,8 +171,7 @@ type Cripto struct {
 	Venta float64 `json:"venta"`
 }
 
-// CriptoLoadMatch mirrors the cripto fields as an all-optional match
-// filter (Go analog of Partial<Cripto>).
+// CriptoLoadMatch is the typed request payload for Cripto.LoadTyped.
 type CriptoLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -200,8 +191,7 @@ type Dolare struct {
 	Venta float64 `json:"venta"`
 }
 
-// DolareListMatch mirrors the dolare fields as an all-optional match
-// filter (Go analog of Partial<Dolare>).
+// DolareListMatch is the typed request payload for Dolare.ListTyped.
 type DolareListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -217,8 +207,7 @@ type Estado struct {
 	Estado *string `json:"estado,omitempty"`
 }
 
-// EstadoLoadMatch mirrors the estado fields as an all-optional match
-// filter (Go analog of Partial<Estado>).
+// EstadoLoadMatch is the typed request payload for Estado.LoadTyped.
 type EstadoLoadMatch struct {
 	Aleatorio *int `json:"aleatorio,omitempty"`
 	Estado *string `json:"estado,omitempty"`
@@ -234,8 +223,7 @@ type Eur struct {
 	Venta float64 `json:"venta"`
 }
 
-// EurLoadMatch mirrors the eur fields as an all-optional match
-// filter (Go analog of Partial<Eur>).
+// EurLoadMatch is the typed request payload for Eur.LoadTyped.
 type EurLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -255,8 +243,7 @@ type Mayorista struct {
 	Venta float64 `json:"venta"`
 }
 
-// MayoristaLoadMatch mirrors the mayorista fields as an all-optional match
-// filter (Go analog of Partial<Mayorista>).
+// MayoristaLoadMatch is the typed request payload for Mayorista.LoadTyped.
 type MayoristaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -276,8 +263,7 @@ type Oficial struct {
 	Venta float64 `json:"venta"`
 }
 
-// OficialLoadMatch mirrors the oficial fields as an all-optional match
-// filter (Go analog of Partial<Oficial>).
+// OficialLoadMatch is the typed request payload for Oficial.LoadTyped.
 type OficialLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -297,8 +283,7 @@ type Tarjeta struct {
 	Venta float64 `json:"venta"`
 }
 
-// TarjetaLoadMatch mirrors the tarjeta fields as an all-optional match
-// filter (Go analog of Partial<Tarjeta>).
+// TarjetaLoadMatch is the typed request payload for Tarjeta.LoadTyped.
 type TarjetaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
@@ -318,8 +303,7 @@ type Uyu struct {
 	Venta float64 `json:"venta"`
 }
 
-// UyuLoadMatch mirrors the uyu fields as an all-optional match
-// filter (Go analog of Partial<Uyu>).
+// UyuLoadMatch is the typed request payload for Uyu.LoadTyped.
 type UyuLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`

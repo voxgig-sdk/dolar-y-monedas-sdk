@@ -8,7 +8,7 @@ Complete API reference for the DolarYMonedas PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/dolar-y-monedas_sdk.php';
+require_once __DIR__ . '/dolarymonedas_sdk.php';
 
 $client = new DolarYMonedasSDK($options);
 ```
@@ -101,11 +101,11 @@ Create a new `TarjetaEntity` instance. Pass `null` for no initial data.
 
 Create a new `UyuEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): DolarYMonedasUtility`
 
 Return a copy of the SDK utility object.
 
@@ -148,12 +148,12 @@ $blue = $client->Blue();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -162,24 +162,24 @@ $blue = $client->Blue();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Blue()->load(["id" => "blue_id"]);
+$result = $client->Blue()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -188,7 +188,7 @@ Set the entity match criteria.
 Create a new `BlueEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -205,12 +205,12 @@ $bolsa = $client->Bolsa();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -219,24 +219,24 @@ $bolsa = $client->Bolsa();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Bolsa()->load(["id" => "bolsa_id"]);
+$result = $client->Bolsa()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -245,7 +245,7 @@ Set the entity match criteria.
 Create a new `BolsaEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -262,12 +262,12 @@ $brl = $client->Brl();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -276,24 +276,24 @@ $brl = $client->Brl();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Brl()->load(["id" => "brl_id"]);
+$result = $client->Brl()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -302,7 +302,7 @@ Set the entity match criteria.
 Create a new `BrlEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -319,12 +319,12 @@ $clp = $client->Clp();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -333,24 +333,24 @@ $clp = $client->Clp();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Clp()->load(["id" => "clp_id"]);
+$result = $client->Clp()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -359,7 +359,7 @@ Set the entity match criteria.
 Create a new `ClpEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -376,12 +376,12 @@ $contadoconliqui = $client->Contadoconliqui();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -390,24 +390,24 @@ $contadoconliqui = $client->Contadoconliqui();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Contadoconliqui()->load(["id" => "contadoconliqui_id"]);
+$result = $client->Contadoconliqui()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -416,7 +416,7 @@ Set the entity match criteria.
 Create a new `ContadoconliquiEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -433,22 +433,22 @@ $cotizacion_ambito = $client->CotizacionAmbito();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `variacion` | `float` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->CotizacionAmbito()->list([]);
+$results = $client->CotizacionAmbito()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -456,24 +456,24 @@ $results = $client->CotizacionAmbito()->list([]);
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->CotizacionAmbito()->load(["id" => "cotizacion_ambito_id"]);
+$result = $client->CotizacionAmbito()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -482,7 +482,7 @@ Set the entity match criteria.
 Create a new `CotizacionAmbitoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -499,38 +499,38 @@ $cotizacione = $client->Cotizacione();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Cotizacione()->list([]);
+$results = $client->Cotizacione()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -539,7 +539,7 @@ Set the entity match criteria.
 Create a new `CotizacioneEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -556,12 +556,12 @@ $cripto = $client->Cripto();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -570,24 +570,24 @@ $cripto = $client->Cripto();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Cripto()->load(["id" => "cripto_id"]);
+$result = $client->Cripto()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -596,7 +596,7 @@ Set the entity match criteria.
 Create a new `CriptoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -613,38 +613,38 @@ $dolare = $client->Dolare();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Dolare()->list([]);
+$results = $client->Dolare()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -653,7 +653,7 @@ Set the entity match criteria.
 Create a new `DolareEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -670,8 +670,8 @@ $estado = $client->Estado();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `int` | No |  |
+| `estado` | `string` | No |  |
 
 ### Operations
 
@@ -680,24 +680,24 @@ $estado = $client->Estado();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Estado()->load(["id" => "estado_id"]);
+$result = $client->Estado()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -706,7 +706,7 @@ Set the entity match criteria.
 Create a new `EstadoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -723,12 +723,12 @@ $eur = $client->Eur();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -737,24 +737,24 @@ $eur = $client->Eur();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Eur()->load(["id" => "eur_id"]);
+$result = $client->Eur()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -763,7 +763,7 @@ Set the entity match criteria.
 Create a new `EurEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -780,12 +780,12 @@ $mayorista = $client->Mayorista();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -794,24 +794,24 @@ $mayorista = $client->Mayorista();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Mayorista()->load(["id" => "mayorista_id"]);
+$result = $client->Mayorista()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -820,7 +820,7 @@ Set the entity match criteria.
 Create a new `MayoristaEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -837,12 +837,12 @@ $oficial = $client->Oficial();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -851,24 +851,24 @@ $oficial = $client->Oficial();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Oficial()->load(["id" => "oficial_id"]);
+$result = $client->Oficial()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -877,7 +877,7 @@ Set the entity match criteria.
 Create a new `OficialEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -894,12 +894,12 @@ $tarjeta = $client->Tarjeta();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -908,24 +908,24 @@ $tarjeta = $client->Tarjeta();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Tarjeta()->load(["id" => "tarjeta_id"]);
+$result = $client->Tarjeta()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -934,7 +934,7 @@ Set the entity match criteria.
 Create a new `TarjetaEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -951,12 +951,12 @@ $uyu = $client->Uyu();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float` | Yes |  |
 
 ### Operations
 
@@ -965,24 +965,24 @@ $uyu = $client->Uyu();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Uyu()->load(["id" => "uyu_id"]);
+$result = $client->Uyu()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -991,7 +991,7 @@ Set the entity match criteria.
 Create a new `UyuEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

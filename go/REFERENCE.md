@@ -153,12 +153,12 @@ blue := client.Blue(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -167,7 +167,7 @@ blue := client.Blue(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Blue(nil).Load(map[string]any{"id": "blue_id"}, nil)
+result, err := client.Blue(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -204,12 +204,12 @@ bolsa := client.Bolsa(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -218,7 +218,7 @@ bolsa := client.Bolsa(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Bolsa(nil).Load(map[string]any{"id": "bolsa_id"}, nil)
+result, err := client.Bolsa(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -255,12 +255,12 @@ brl := client.Brl(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -269,7 +269,7 @@ brl := client.Brl(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Brl(nil).Load(map[string]any{"id": "brl_id"}, nil)
+result, err := client.Brl(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -306,12 +306,12 @@ clp := client.Clp(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -320,7 +320,7 @@ clp := client.Clp(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Clp(nil).Load(map[string]any{"id": "clp_id"}, nil)
+result, err := client.Clp(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -357,12 +357,12 @@ contadoconliqui := client.Contadoconliqui(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -371,7 +371,7 @@ contadoconliqui := client.Contadoconliqui(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Contadoconliqui(nil).Load(map[string]any{"id": "contadoconliqui_id"}, nil)
+result, err := client.Contadoconliqui(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -408,13 +408,13 @@ cotizacion_ambito := client.CotizacionAmbito(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `variacion` | `float64` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -431,7 +431,7 @@ results, err := client.CotizacionAmbito(nil).List(nil, nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.CotizacionAmbito(nil).Load(map[string]any{"id": "cotizacion_ambito_id"}, nil)
+result, err := client.CotizacionAmbito(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -468,12 +468,12 @@ cotizacione := client.Cotizacione(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -519,12 +519,12 @@ cripto := client.Cripto(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -533,7 +533,7 @@ cripto := client.Cripto(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Cripto(nil).Load(map[string]any{"id": "cripto_id"}, nil)
+result, err := client.Cripto(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -570,12 +570,12 @@ dolare := client.Dolare(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -621,8 +621,8 @@ estado := client.Estado(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `int` | No |  |
+| `estado` | `string` | No |  |
 
 ### Operations
 
@@ -631,7 +631,7 @@ estado := client.Estado(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Estado(nil).Load(map[string]any{"id": "estado_id"}, nil)
+result, err := client.Estado(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -668,12 +668,12 @@ eur := client.Eur(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -682,7 +682,7 @@ eur := client.Eur(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Eur(nil).Load(map[string]any{"id": "eur_id"}, nil)
+result, err := client.Eur(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -719,12 +719,12 @@ mayorista := client.Mayorista(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -733,7 +733,7 @@ mayorista := client.Mayorista(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Mayorista(nil).Load(map[string]any{"id": "mayorista_id"}, nil)
+result, err := client.Mayorista(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -770,12 +770,12 @@ oficial := client.Oficial(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -784,7 +784,7 @@ oficial := client.Oficial(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Oficial(nil).Load(map[string]any{"id": "oficial_id"}, nil)
+result, err := client.Oficial(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -821,12 +821,12 @@ tarjeta := client.Tarjeta(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -835,7 +835,7 @@ tarjeta := client.Tarjeta(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Tarjeta(nil).Load(map[string]any{"id": "tarjeta_id"}, nil)
+result, err := client.Tarjeta(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -872,12 +872,12 @@ uyu := client.Uyu(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `float64` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `float64` | Yes |  |
 
 ### Operations
 
@@ -886,7 +886,7 @@ uyu := client.Uyu(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Uyu(nil).Load(map[string]any{"id": "uyu_id"}, nil)
+result, err := client.Uyu(nil).Load(nil, nil)
 ```
 
 ### Common Methods

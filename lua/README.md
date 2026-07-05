@@ -4,6 +4,8 @@
 
 The Lua SDK for the DolarYMonedas API — an entity-oriented client using Lua conventions.
 
+It exposes the API as capitalised, semantic **Entities** — e.g. `client:Blue()` — each with the same small set of operations (`list`, `load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -34,9 +36,31 @@ local client = sdk.new()
 ### 3. Load a blue
 
 ```lua
-local blue, err = client:Blue():load({ id = "example_id" })
+local blue, err = client:Blue():load()
 if err then error(err) end
 print(blue)
+```
+
+
+## Error handling
+
+Entity operations return `(value, err)`. Check `err` before using
+the value:
+
+```lua
+local blue, err = client:Blue():load()
+if err then error(err) end
+```
+
+`direct` follows the same `(value, err)` convention:
+
+```lua
+local result, err = client:direct({
+  path = "/api/resource/{id}",
+  method = "GET",
+  params = { id = "example_id" },
+})
+if err then error(err) end
 ```
 
 
@@ -82,8 +106,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Blue():load({ id = "test01" })
--- result is the loaded data; err is set on failure
+local result, err = client:Blue():load()
+-- result is the returned data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -185,9 +209,6 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any, err` | Load a single entity by match criteria. |
 | `list` | `(reqmatch, ctrl) -> any, err` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> any, err` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> any, err` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> any, err` | Remove an entity. |
 | `data_get` | `() -> table` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> table` | Get entity match criteria. |
@@ -202,12 +223,12 @@ data **directly** — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `load` | the entity record (a `table`) |
 | `list` | an array (`table`) of entity records |
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local blue, err = client:Blue():load({ id = "example_id" })
+    local blue, err = client:Blue():load()
     if err then error(err) end
     -- blue is the loaded record
 
@@ -457,17 +478,17 @@ Create an instance: `local blue = client:Blue(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local blue, err = client:Blue():load({ id = "blue_id" })
+local blue, err = client:Blue():load()
 ```
 
 
@@ -485,17 +506,17 @@ Create an instance: `local bolsa = client:Bolsa(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local bolsa, err = client:Bolsa():load({ id = "bolsa_id" })
+local bolsa, err = client:Bolsa():load()
 ```
 
 
@@ -513,17 +534,17 @@ Create an instance: `local brl = client:Brl(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local brl, err = client:Brl():load({ id = "brl_id" })
+local brl, err = client:Brl():load()
 ```
 
 
@@ -541,17 +562,17 @@ Create an instance: `local clp = client:Clp(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local clp, err = client:Clp():load({ id = "clp_id" })
+local clp, err = client:Clp():load()
 ```
 
 
@@ -569,17 +590,17 @@ Create an instance: `local contadoconliqui = client:Contadoconliqui(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local contadoconliqui, err = client:Contadoconliqui():load({ id = "contadoconliqui_id" })
+local contadoconliqui, err = client:Contadoconliqui():load()
 ```
 
 
@@ -598,18 +619,18 @@ Create an instance: `local cotizacion_ambito = client:CotizacionAmbito(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `variacion` | ``$NUMBER`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `variacion` | `number` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local cotizacion_ambito, err = client:CotizacionAmbito():load({ id = "cotizacion_ambito_id" })
+local cotizacion_ambito, err = client:CotizacionAmbito():load()
 ```
 
 #### Example: List
@@ -633,12 +654,12 @@ Create an instance: `local cotizacione = client:Cotizacione(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: List
 
@@ -661,17 +682,17 @@ Create an instance: `local cripto = client:Cripto(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local cripto, err = client:Cripto():load({ id = "cripto_id" })
+local cripto, err = client:Cripto():load()
 ```
 
 
@@ -689,12 +710,12 @@ Create an instance: `local dolare = client:Dolare(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: List
 
@@ -717,13 +738,13 @@ Create an instance: `local estado = client:Estado(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` |  |
-| `estado` | ``$STRING`` |  |
+| `aleatorio` | `number` |  |
+| `estado` | `string` |  |
 
 #### Example: Load
 
 ```lua
-local estado, err = client:Estado():load({ id = "estado_id" })
+local estado, err = client:Estado():load()
 ```
 
 
@@ -741,17 +762,17 @@ Create an instance: `local eur = client:Eur(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local eur, err = client:Eur():load({ id = "eur_id" })
+local eur, err = client:Eur():load()
 ```
 
 
@@ -769,17 +790,17 @@ Create an instance: `local mayorista = client:Mayorista(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local mayorista, err = client:Mayorista():load({ id = "mayorista_id" })
+local mayorista, err = client:Mayorista():load()
 ```
 
 
@@ -797,17 +818,17 @@ Create an instance: `local oficial = client:Oficial(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local oficial, err = client:Oficial():load({ id = "oficial_id" })
+local oficial, err = client:Oficial():load()
 ```
 
 
@@ -825,17 +846,17 @@ Create an instance: `local tarjeta = client:Tarjeta(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local tarjeta, err = client:Tarjeta():load({ id = "tarjeta_id" })
+local tarjeta, err = client:Tarjeta():load()
 ```
 
 
@@ -853,26 +874,30 @@ Create an instance: `local uyu = client:Uyu(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```lua
-local uyu, err = client:Uyu():load({ id = "uyu_id" })
+local uyu, err = client:Uyu():load()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -889,8 +914,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -939,9 +965,9 @@ stores the returned data and match criteria internally.
 
 ```lua
 local blue = client:Blue()
-blue:load({ id = "example_id" })
+blue:load()
 
--- blue:data_get() now returns the loaded blue data
+-- blue:data_get() now returns the blue data from the last load
 -- blue:match_get() returns the last match criteria
 ```
 

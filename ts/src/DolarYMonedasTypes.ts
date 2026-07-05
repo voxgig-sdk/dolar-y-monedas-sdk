@@ -14,7 +14,14 @@ export interface Blue {
   venta: number
 }
 
-export type BlueLoadMatch = Partial<Blue>
+export interface BlueLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Bolsa {
   casa: string
@@ -25,7 +32,14 @@ export interface Bolsa {
   venta: number
 }
 
-export type BolsaLoadMatch = Partial<Bolsa>
+export interface BolsaLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Brl {
   casa: string
@@ -36,7 +50,14 @@ export interface Brl {
   venta: number
 }
 
-export type BrlLoadMatch = Partial<Brl>
+export interface BrlLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Clp {
   casa: string
@@ -47,7 +68,14 @@ export interface Clp {
   venta: number
 }
 
-export type ClpLoadMatch = Partial<Clp>
+export interface ClpLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Contadoconliqui {
   casa: string
@@ -58,7 +86,14 @@ export interface Contadoconliqui {
   venta: number
 }
 
-export type ContadoconliquiLoadMatch = Partial<Contadoconliqui>
+export interface ContadoconliquiLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface CotizacionAmbito {
   casa: string
@@ -70,9 +105,25 @@ export interface CotizacionAmbito {
   venta: number
 }
 
-export type CotizacionAmbitoLoadMatch = Partial<CotizacionAmbito>
+export interface CotizacionAmbitoLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  variacion?: number
+  venta?: number
+}
 
-export type CotizacionAmbitoListMatch = Partial<CotizacionAmbito>
+export interface CotizacionAmbitoListMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  variacion?: number
+  venta?: number
+}
 
 export interface Cotizacione {
   casa: string
@@ -83,7 +134,14 @@ export interface Cotizacione {
   venta: number
 }
 
-export type CotizacioneListMatch = Partial<Cotizacione>
+export interface CotizacioneListMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Cripto {
   casa: string
@@ -94,7 +152,14 @@ export interface Cripto {
   venta: number
 }
 
-export type CriptoLoadMatch = Partial<Cripto>
+export interface CriptoLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Dolare {
   casa: string
@@ -105,14 +170,24 @@ export interface Dolare {
   venta: number
 }
 
-export type DolareListMatch = Partial<Dolare>
+export interface DolareListMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Estado {
   aleatorio?: number
   estado?: string
 }
 
-export type EstadoLoadMatch = Partial<Estado>
+export interface EstadoLoadMatch {
+  aleatorio?: number
+  estado?: string
+}
 
 export interface Eur {
   casa: string
@@ -123,7 +198,14 @@ export interface Eur {
   venta: number
 }
 
-export type EurLoadMatch = Partial<Eur>
+export interface EurLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Mayorista {
   casa: string
@@ -134,7 +216,14 @@ export interface Mayorista {
   venta: number
 }
 
-export type MayoristaLoadMatch = Partial<Mayorista>
+export interface MayoristaLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Oficial {
   casa: string
@@ -145,7 +234,14 @@ export interface Oficial {
   venta: number
 }
 
-export type OficialLoadMatch = Partial<Oficial>
+export interface OficialLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Tarjeta {
   casa: string
@@ -156,7 +252,14 @@ export interface Tarjeta {
   venta: number
 }
 
-export type TarjetaLoadMatch = Partial<Tarjeta>
+export interface TarjetaLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 
 export interface Uyu {
   casa: string
@@ -167,5 +270,12 @@ export interface Uyu {
   venta: number
 }
 
-export type UyuLoadMatch = Partial<Uyu>
+export interface UyuLoadMatch {
+  casa?: string
+  compra?: number
+  fecha_actualizacion?: string
+  moneda?: string
+  nombre?: string
+  venta?: number
+}
 

@@ -284,12 +284,12 @@ const blue = client.Blue()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -298,7 +298,7 @@ const blue = client.Blue()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Blue().load({ id: 'blue_id' })
+const result = await client.Blue().load()
 ```
 
 ### Common Methods
@@ -339,12 +339,12 @@ const bolsa = client.Bolsa()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -353,7 +353,7 @@ const bolsa = client.Bolsa()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Bolsa().load({ id: 'bolsa_id' })
+const result = await client.Bolsa().load()
 ```
 
 ### Common Methods
@@ -394,12 +394,12 @@ const brl = client.Brl()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -408,7 +408,7 @@ const brl = client.Brl()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Brl().load({ id: 'brl_id' })
+const result = await client.Brl().load()
 ```
 
 ### Common Methods
@@ -449,12 +449,12 @@ const clp = client.Clp()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -463,7 +463,7 @@ const clp = client.Clp()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Clp().load({ id: 'clp_id' })
+const result = await client.Clp().load()
 ```
 
 ### Common Methods
@@ -504,12 +504,12 @@ const contadoconliqui = client.Contadoconliqui()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -518,7 +518,7 @@ const contadoconliqui = client.Contadoconliqui()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
+const result = await client.Contadoconliqui().load()
 ```
 
 ### Common Methods
@@ -559,13 +559,13 @@ const cotizacion_ambito = client.CotizacionAmbito()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `variacion` | `number` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -582,7 +582,7 @@ const results = await client.CotizacionAmbito().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
+const result = await client.CotizacionAmbito().load()
 ```
 
 ### Common Methods
@@ -623,12 +623,12 @@ const cotizacione = client.Cotizacione()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -678,12 +678,12 @@ const cripto = client.Cripto()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -692,7 +692,7 @@ const cripto = client.Cripto()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Cripto().load({ id: 'cripto_id' })
+const result = await client.Cripto().load()
 ```
 
 ### Common Methods
@@ -733,12 +733,12 @@ const dolare = client.Dolare()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -788,8 +788,8 @@ const estado = client.Estado()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `number` | No |  |
+| `estado` | `string` | No |  |
 
 ### Operations
 
@@ -798,7 +798,7 @@ const estado = client.Estado()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Estado().load({ id: 'estado_id' })
+const result = await client.Estado().load()
 ```
 
 ### Common Methods
@@ -839,12 +839,12 @@ const eur = client.Eur()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -853,7 +853,7 @@ const eur = client.Eur()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Eur().load({ id: 'eur_id' })
+const result = await client.Eur().load()
 ```
 
 ### Common Methods
@@ -894,12 +894,12 @@ const mayorista = client.Mayorista()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -908,7 +908,7 @@ const mayorista = client.Mayorista()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Mayorista().load({ id: 'mayorista_id' })
+const result = await client.Mayorista().load()
 ```
 
 ### Common Methods
@@ -949,12 +949,12 @@ const oficial = client.Oficial()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -963,7 +963,7 @@ const oficial = client.Oficial()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Oficial().load({ id: 'oficial_id' })
+const result = await client.Oficial().load()
 ```
 
 ### Common Methods
@@ -1004,12 +1004,12 @@ const tarjeta = client.Tarjeta()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -1018,7 +1018,7 @@ const tarjeta = client.Tarjeta()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Tarjeta().load({ id: 'tarjeta_id' })
+const result = await client.Tarjeta().load()
 ```
 
 ### Common Methods
@@ -1059,12 +1059,12 @@ const uyu = client.Uyu()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -1073,7 +1073,7 @@ const uyu = client.Uyu()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Uyu().load({ id: 'uyu_id' })
+const result = await client.Uyu().load()
 ```
 
 ### Common Methods

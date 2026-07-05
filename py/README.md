@@ -4,6 +4,11 @@
 
 The Python SDK for the DolarYMonedas API — an entity-oriented client following Pythonic conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Blue()` — each
+carrying a small, uniform set of operations (`list`, `load`) instead of raw URL
+paths and query strings. You work with named resources and verbs, which
+keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -37,10 +42,38 @@ client = DolarYMonedasSDK()
 
 ```python
 try:
-    blue = client.Blue().load({"id": "example_id"})
+    blue = client.Blue().load()
     print(blue)
 except Exception as err:
     print(f"load failed: {err}")
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so wrap them in `try` / `except`:
+
+```python
+try:
+    blue = client.Blue().load()
+    print(blue)
+except Exception as err:
+    print(f"load failed: {err}")
+```
+
+`direct()` does **not** raise — it returns the result envelope. Branch
+on `ok`; on failure `status` holds the HTTP status (for error responses)
+and `err` holds a transport error, so read both defensively:
+
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example_id"},
+})
+
+if not result["ok"]:
+    print("request failed:", result.get("status"), result.get("err"))
 ```
 
 
@@ -61,7 +94,10 @@ if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
 else:
-    print(result["err"])     # error value
+    # A non-2xx response carries status + data (the error body); a
+    # transport-level failure carries err instead. Only one is present, so
+    # read both with .get() rather than indexing a key that may be absent.
+    print(result.get("status"), result.get("err"))
 ```
 
 ### Prepare a request without sending it
@@ -87,7 +123,7 @@ Create a mock client for unit testing — no server required:
 client = DolarYMonedasSDK.test()
 
 # Entity ops return the bare record and raise on error.
-blue = client.Blue().load({"id": "test01"})
+blue = client.Blue().load()
 # blue contains the mock response record
 ```
 
@@ -188,9 +224,6 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
 | `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -459,17 +492,17 @@ Create an instance: `blue = client.Blue()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-blue = client.Blue().load({"id": "blue_id"})
+blue = client.Blue().load()
 ```
 
 
@@ -487,17 +520,17 @@ Create an instance: `bolsa = client.Bolsa()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-bolsa = client.Bolsa().load({"id": "bolsa_id"})
+bolsa = client.Bolsa().load()
 ```
 
 
@@ -515,17 +548,17 @@ Create an instance: `brl = client.Brl()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-brl = client.Brl().load({"id": "brl_id"})
+brl = client.Brl().load()
 ```
 
 
@@ -543,17 +576,17 @@ Create an instance: `clp = client.Clp()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-clp = client.Clp().load({"id": "clp_id"})
+clp = client.Clp().load()
 ```
 
 
@@ -571,17 +604,17 @@ Create an instance: `contadoconliqui = client.Contadoconliqui()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-contadoconliqui = client.Contadoconliqui().load({"id": "contadoconliqui_id"})
+contadoconliqui = client.Contadoconliqui().load()
 ```
 
 
@@ -593,31 +626,31 @@ Create an instance: `cotizacion_ambito = client.CotizacionAmbito()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `variacion` | ``$NUMBER`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `variacion` | `float` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-cotizacion_ambito = client.CotizacionAmbito().load({"id": "cotizacion_ambito_id"})
+cotizacion_ambito = client.CotizacionAmbito().load()
 ```
 
 #### Example: List
 
 ```python
-cotizacion_ambitos = client.CotizacionAmbito().list({})
+cotizacion_ambitos = client.CotizacionAmbito().list()
 ```
 
 
@@ -629,23 +662,23 @@ Create an instance: `cotizacione = client.Cotizacione()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: List
 
 ```python
-cotizaciones = client.Cotizacione().list({})
+cotizaciones = client.Cotizacione().list()
 ```
 
 
@@ -663,17 +696,17 @@ Create an instance: `cripto = client.Cripto()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-cripto = client.Cripto().load({"id": "cripto_id"})
+cripto = client.Cripto().load()
 ```
 
 
@@ -685,23 +718,23 @@ Create an instance: `dolare = client.Dolare()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: List
 
 ```python
-dolares = client.Dolare().list({})
+dolares = client.Dolare().list()
 ```
 
 
@@ -719,13 +752,13 @@ Create an instance: `estado = client.Estado()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` |  |
-| `estado` | ``$STRING`` |  |
+| `aleatorio` | `int` |  |
+| `estado` | `str` |  |
 
 #### Example: Load
 
 ```python
-estado = client.Estado().load({"id": "estado_id"})
+estado = client.Estado().load()
 ```
 
 
@@ -743,17 +776,17 @@ Create an instance: `eur = client.Eur()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-eur = client.Eur().load({"id": "eur_id"})
+eur = client.Eur().load()
 ```
 
 
@@ -771,17 +804,17 @@ Create an instance: `mayorista = client.Mayorista()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-mayorista = client.Mayorista().load({"id": "mayorista_id"})
+mayorista = client.Mayorista().load()
 ```
 
 
@@ -799,17 +832,17 @@ Create an instance: `oficial = client.Oficial()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-oficial = client.Oficial().load({"id": "oficial_id"})
+oficial = client.Oficial().load()
 ```
 
 
@@ -827,17 +860,17 @@ Create an instance: `tarjeta = client.Tarjeta()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-tarjeta = client.Tarjeta().load({"id": "tarjeta_id"})
+tarjeta = client.Tarjeta().load()
 ```
 
 
@@ -855,26 +888,30 @@ Create an instance: `uyu = client.Uyu()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `str` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `str` |  |
+| `moneda` | `str` |  |
+| `nombre` | `str` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```python
-uyu = client.Uyu().load({"id": "uyu_id"})
+uyu = client.Uyu().load()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -891,8 +928,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return tuple.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -940,9 +978,9 @@ stores the returned data and match criteria internally.
 
 ```python
 blue = client.Blue()
-blue.load({"id": "example_id"})
+blue.load()
 
-# blue.data_get() now returns the loaded blue data
+# blue.data_get() now returns the blue data from the last load
 # blue.match_get() returns the last match criteria
 ```
 

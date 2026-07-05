@@ -4,6 +4,8 @@
 
 The Ruby SDK for the DolarYMonedas API — an entity-oriented client using idiomatic Ruby conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Blue` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -33,11 +35,38 @@ client = DolarYMonedasSDK.new
 ```ruby
 begin
   # load returns the bare Blue record (raises on error).
-  blue = client.Blue.load({ "id" => "example_id" })
+  blue = client.Blue.load()
   puts blue
 rescue => err
   warn "load failed: #{err}"
 end
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so rescue them:
+
+```ruby
+begin
+  blue = client.Blue.load()
+rescue => err
+  warn "load failed: #{err}"
+end
+```
+
+`direct` does **not** raise — it returns the result hash. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```ruby
+result = client.direct({
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => { "id" => "example_id" },
+})
+
+warn "request failed: #{result["err"] || "HTTP #{result["status"]}"}" unless result["ok"]
 ```
 
 
@@ -58,7 +87,9 @@ if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
 else
-  warn result["err"]
+  # On an HTTP error status there is no err (only a transport failure sets
+  # it), so fall back to the status code.
+  warn(result["err"] || "HTTP #{result["status"]}")
 end
 ```
 
@@ -81,16 +112,13 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = DolarYMonedasSDK.test({
-  "entity" => { "blue" => { "test01" => { "id" => "test01" } } },
-})
+client = DolarYMonedasSDK.test
 
-# load returns the bare mock record (raises on error).
-blue = client.Blue.load({ "id" => "test01" })
+# Entity ops return the bare mock record (raises on error).
+blue = client.Blue.load()
 puts blue
 ```
 
@@ -190,10 +218,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -461,18 +486,18 @@ Create an instance: `blue = client.Blue`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Blue record (raises on error).
-blue = client.Blue.load({ "id" => "blue_id" })
+blue = client.Blue.load()
 ```
 
 
@@ -490,18 +515,18 @@ Create an instance: `bolsa = client.Bolsa`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Bolsa record (raises on error).
-bolsa = client.Bolsa.load({ "id" => "bolsa_id" })
+bolsa = client.Bolsa.load()
 ```
 
 
@@ -519,18 +544,18 @@ Create an instance: `brl = client.Brl`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Brl record (raises on error).
-brl = client.Brl.load({ "id" => "brl_id" })
+brl = client.Brl.load()
 ```
 
 
@@ -548,18 +573,18 @@ Create an instance: `clp = client.Clp`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Clp record (raises on error).
-clp = client.Clp.load({ "id" => "clp_id" })
+clp = client.Clp.load()
 ```
 
 
@@ -577,18 +602,18 @@ Create an instance: `contadoconliqui = client.Contadoconliqui`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Contadoconliqui record (raises on error).
-contadoconliqui = client.Contadoconliqui.load({ "id" => "contadoconliqui_id" })
+contadoconliqui = client.Contadoconliqui.load()
 ```
 
 
@@ -607,19 +632,19 @@ Create an instance: `cotizacion_ambito = client.CotizacionAmbito`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `variacion` | ``$NUMBER`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `variacion` | `Float` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare CotizacionAmbito record (raises on error).
-cotizacion_ambito = client.CotizacionAmbito.load({ "id" => "cotizacion_ambito_id" })
+cotizacion_ambito = client.CotizacionAmbito.load()
 ```
 
 #### Example: List
@@ -644,12 +669,12 @@ Create an instance: `cotizacione = client.Cotizacione`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: List
 
@@ -673,18 +698,18 @@ Create an instance: `cripto = client.Cripto`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Cripto record (raises on error).
-cripto = client.Cripto.load({ "id" => "cripto_id" })
+cripto = client.Cripto.load()
 ```
 
 
@@ -702,12 +727,12 @@ Create an instance: `dolare = client.Dolare`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: List
 
@@ -731,14 +756,14 @@ Create an instance: `estado = client.Estado`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` |  |
-| `estado` | ``$STRING`` |  |
+| `aleatorio` | `Integer` |  |
+| `estado` | `String` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Estado record (raises on error).
-estado = client.Estado.load({ "id" => "estado_id" })
+estado = client.Estado.load()
 ```
 
 
@@ -756,18 +781,18 @@ Create an instance: `eur = client.Eur`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Eur record (raises on error).
-eur = client.Eur.load({ "id" => "eur_id" })
+eur = client.Eur.load()
 ```
 
 
@@ -785,18 +810,18 @@ Create an instance: `mayorista = client.Mayorista`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Mayorista record (raises on error).
-mayorista = client.Mayorista.load({ "id" => "mayorista_id" })
+mayorista = client.Mayorista.load()
 ```
 
 
@@ -814,18 +839,18 @@ Create an instance: `oficial = client.Oficial`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Oficial record (raises on error).
-oficial = client.Oficial.load({ "id" => "oficial_id" })
+oficial = client.Oficial.load()
 ```
 
 
@@ -843,18 +868,18 @@ Create an instance: `tarjeta = client.Tarjeta`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Tarjeta record (raises on error).
-tarjeta = client.Tarjeta.load({ "id" => "tarjeta_id" })
+tarjeta = client.Tarjeta.load()
 ```
 
 
@@ -872,27 +897,31 @@ Create an instance: `uyu = client.Uyu`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `String` |  |
+| `compra` | `Float` |  |
+| `fecha_actualizacion` | `String` |  |
+| `moneda` | `String` |  |
+| `nombre` | `String` |  |
+| `venta` | `Float` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Uyu record (raises on error).
-uyu = client.Uyu.load({ "id" => "uyu_id" })
+uyu = client.Uyu.load()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -909,8 +938,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -959,9 +989,9 @@ stores the returned data and match criteria internally.
 
 ```ruby
 blue = client.Blue
-blue.load({ "id" => "example_id" })
+blue.load()
 
-# blue.data_get now returns the loaded blue data
+# blue.data_get now returns the blue data from the last load
 # blue.match_get returns the last match criteria
 ```
 

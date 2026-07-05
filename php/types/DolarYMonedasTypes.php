@@ -23,7 +23,7 @@ class Blue
     public float $venta;
 }
 
-/** Match filter for Blue#load (any subset of Blue fields). */
+/** Request payload for Blue#load. */
 class BlueLoadMatch
 {
     public ?string $casa = null;
@@ -45,7 +45,7 @@ class Bolsa
     public float $venta;
 }
 
-/** Match filter for Bolsa#load (any subset of Bolsa fields). */
+/** Request payload for Bolsa#load. */
 class BolsaLoadMatch
 {
     public ?string $casa = null;
@@ -67,7 +67,7 @@ class Brl
     public float $venta;
 }
 
-/** Match filter for Brl#load (any subset of Brl fields). */
+/** Request payload for Brl#load. */
 class BrlLoadMatch
 {
     public ?string $casa = null;
@@ -89,7 +89,7 @@ class Clp
     public float $venta;
 }
 
-/** Match filter for Clp#load (any subset of Clp fields). */
+/** Request payload for Clp#load. */
 class ClpLoadMatch
 {
     public ?string $casa = null;
@@ -111,7 +111,7 @@ class Contadoconliqui
     public float $venta;
 }
 
-/** Match filter for Contadoconliqui#load (any subset of Contadoconliqui fields). */
+/** Request payload for Contadoconliqui#load. */
 class ContadoconliquiLoadMatch
 {
     public ?string $casa = null;
@@ -134,7 +134,7 @@ class CotizacionAmbito
     public float $venta;
 }
 
-/** Match filter for CotizacionAmbito#load (any subset of CotizacionAmbito fields). */
+/** Request payload for CotizacionAmbito#load. */
 class CotizacionAmbitoLoadMatch
 {
     public ?string $casa = null;
@@ -146,7 +146,7 @@ class CotizacionAmbitoLoadMatch
     public ?float $venta = null;
 }
 
-/** Match filter for CotizacionAmbito#list (any subset of CotizacionAmbito fields). */
+/** Request payload for CotizacionAmbito#list. */
 class CotizacionAmbitoListMatch
 {
     public ?string $casa = null;
@@ -169,7 +169,7 @@ class Cotizacione
     public float $venta;
 }
 
-/** Match filter for Cotizacione#list (any subset of Cotizacione fields). */
+/** Request payload for Cotizacione#list. */
 class CotizacioneListMatch
 {
     public ?string $casa = null;
@@ -191,7 +191,7 @@ class Cripto
     public float $venta;
 }
 
-/** Match filter for Cripto#load (any subset of Cripto fields). */
+/** Request payload for Cripto#load. */
 class CriptoLoadMatch
 {
     public ?string $casa = null;
@@ -213,7 +213,7 @@ class Dolare
     public float $venta;
 }
 
-/** Match filter for Dolare#list (any subset of Dolare fields). */
+/** Request payload for Dolare#list. */
 class DolareListMatch
 {
     public ?string $casa = null;
@@ -231,7 +231,7 @@ class Estado
     public ?string $estado = null;
 }
 
-/** Match filter for Estado#load (any subset of Estado fields). */
+/** Request payload for Estado#load. */
 class EstadoLoadMatch
 {
     public ?int $aleatorio = null;
@@ -249,7 +249,7 @@ class Eur
     public float $venta;
 }
 
-/** Match filter for Eur#load (any subset of Eur fields). */
+/** Request payload for Eur#load. */
 class EurLoadMatch
 {
     public ?string $casa = null;
@@ -271,7 +271,7 @@ class Mayorista
     public float $venta;
 }
 
-/** Match filter for Mayorista#load (any subset of Mayorista fields). */
+/** Request payload for Mayorista#load. */
 class MayoristaLoadMatch
 {
     public ?string $casa = null;
@@ -293,7 +293,7 @@ class Oficial
     public float $venta;
 }
 
-/** Match filter for Oficial#load (any subset of Oficial fields). */
+/** Request payload for Oficial#load. */
 class OficialLoadMatch
 {
     public ?string $casa = null;
@@ -315,7 +315,7 @@ class Tarjeta
     public float $venta;
 }
 
-/** Match filter for Tarjeta#load (any subset of Tarjeta fields). */
+/** Request payload for Tarjeta#load. */
 class TarjetaLoadMatch
 {
     public ?string $casa = null;
@@ -337,7 +337,7 @@ class Uyu
     public float $venta;
 }
 
-/** Match filter for Uyu#load (any subset of Uyu fields). */
+/** Request payload for Uyu#load. */
 class UyuLoadMatch
 {
     public ?string $casa = null;

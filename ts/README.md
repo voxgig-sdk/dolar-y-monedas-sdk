@@ -4,6 +4,11 @@
 
 The TypeScript SDK for the DolarYMonedas API — a type-safe, entity-oriented client with full async/await support.
 
+The API is exposed as capitalised, semantic **Entities** — e.g.
+`client.Blue()` — each with a small set of operations (`list`, `load`)
+instead of raw URL paths and query parameters. This keeps the surface
+predictable and low-friction for both humans and AI agents.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -34,10 +39,39 @@ const client = new DolarYMonedasSDK()
 
 ```ts
 try {
-  const blue = await client.Blue().load({ id: 'example_id' })
+  const blue = await client.Blue().load()
   console.log(blue)
 } catch (err) {
   console.error('load failed:', err)
+}
+```
+
+
+## Error handling
+
+Entity operations reject on failure, so wrap them in `try` / `catch`:
+
+```ts
+try {
+  const blue = await client.Blue().load()
+  console.log(blue)
+} catch (err) {
+  console.error('load failed:', err)
+}
+```
+
+The low-level `direct()` method does **not** throw — it returns the
+value or an `Error`, so check the result before using it:
+
+```ts
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example_id' },
+})
+
+if (result instanceof Error) {
+  throw result
 }
 ```
 
@@ -86,7 +120,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DolarYMonedasSDK.test()
 
-const blue = await client.Blue().load({ id: 'test01' })
+const blue = await client.Blue().load()
 // blue is a bare entity populated with mock response data
 console.log(blue)
 ```
@@ -105,12 +139,12 @@ Entity instances remember their last match and data:
 ```ts
 const entity = client.Blue()
 
-// First call sets internal match
-await entity.load({ id: 'example' })
+// First call runs the operation and stores its result
+await entity.load()
 
-// Subsequent calls reuse the stored match
+// Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data.id) // 'example'
+console.log(data)
 ```
 
 ### Add custom middleware
@@ -214,11 +248,8 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
 | `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
-| `data` | `data(data?): any` | Get or set entity data. |
-| `match` | `match(match?): any` | Get or set entity match criteria. |
+| `data` | `data(data?: Partial<Entity>): Entity` | Get or set entity data. |
+| `match` | `match(match?: Partial<Entity>): Partial<Entity>` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): DolarYMonedasSDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
@@ -228,10 +259,9 @@ All entities share the same interface.
 Entity operations resolve to the entity data directly — there is no
 result envelope:
 
-- `load`, `create` and `update` resolve to a single entity object.
+- `load` resolves to a single entity object.
 - `list` resolves to an **array** of entity objects (iterate it directly;
   there is no `.data` and no `.ok`).
-- `remove` resolves to `void`.
 
 On a failed request these methods **throw**, so wrap calls in
 `try`/`catch` to handle errors. Only `direct()` returns the result
@@ -508,17 +538,17 @@ Create an instance: `const blue = client.Blue()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const blue = await client.Blue().load({ id: 'blue_id' })
+const blue = await client.Blue().load()
 ```
 
 
@@ -536,17 +566,17 @@ Create an instance: `const bolsa = client.Bolsa()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const bolsa = await client.Bolsa().load({ id: 'bolsa_id' })
+const bolsa = await client.Bolsa().load()
 ```
 
 
@@ -564,17 +594,17 @@ Create an instance: `const brl = client.Brl()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const brl = await client.Brl().load({ id: 'brl_id' })
+const brl = await client.Brl().load()
 ```
 
 
@@ -592,17 +622,17 @@ Create an instance: `const clp = client.Clp()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const clp = await client.Clp().load({ id: 'clp_id' })
+const clp = await client.Clp().load()
 ```
 
 
@@ -620,17 +650,17 @@ Create an instance: `const contadoconliqui = client.Contadoconliqui()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const contadoconliqui = await client.Contadoconliqui().load({ id: 'contadoconliqui_id' })
+const contadoconliqui = await client.Contadoconliqui().load()
 ```
 
 
@@ -649,18 +679,18 @@ Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `variacion` | ``$NUMBER`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `variacion` | `number` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const cotizacion_ambito = await client.CotizacionAmbito().load({ id: 'cotizacion_ambito_id' })
+const cotizacion_ambito = await client.CotizacionAmbito().load()
 ```
 
 #### Example: List
@@ -684,12 +714,12 @@ Create an instance: `const cotizacione = client.Cotizacione()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: List
 
@@ -712,17 +742,17 @@ Create an instance: `const cripto = client.Cripto()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const cripto = await client.Cripto().load({ id: 'cripto_id' })
+const cripto = await client.Cripto().load()
 ```
 
 
@@ -740,12 +770,12 @@ Create an instance: `const dolare = client.Dolare()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: List
 
@@ -768,13 +798,13 @@ Create an instance: `const estado = client.Estado()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` |  |
-| `estado` | ``$STRING`` |  |
+| `aleatorio` | `number` |  |
+| `estado` | `string` |  |
 
 #### Example: Load
 
 ```ts
-const estado = await client.Estado().load({ id: 'estado_id' })
+const estado = await client.Estado().load()
 ```
 
 
@@ -792,17 +822,17 @@ Create an instance: `const eur = client.Eur()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const eur = await client.Eur().load({ id: 'eur_id' })
+const eur = await client.Eur().load()
 ```
 
 
@@ -820,17 +850,17 @@ Create an instance: `const mayorista = client.Mayorista()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const mayorista = await client.Mayorista().load({ id: 'mayorista_id' })
+const mayorista = await client.Mayorista().load()
 ```
 
 
@@ -848,17 +878,17 @@ Create an instance: `const oficial = client.Oficial()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const oficial = await client.Oficial().load({ id: 'oficial_id' })
+const oficial = await client.Oficial().load()
 ```
 
 
@@ -876,17 +906,17 @@ Create an instance: `const tarjeta = client.Tarjeta()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const tarjeta = await client.Tarjeta().load({ id: 'tarjeta_id' })
+const tarjeta = await client.Tarjeta().load()
 ```
 
 
@@ -904,26 +934,30 @@ Create an instance: `const uyu = client.Uyu()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `number` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `number` |  |
 
 #### Example: Load
 
 ```ts
-const uyu = await client.Uyu().load({ id: 'uyu_id' })
+const uyu = await client.Uyu().load()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -940,11 +974,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller.
-
-An unexpected exception triggers the `PreUnexpected` hook before
-propagating.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -986,10 +1018,10 @@ calls on the same instance can rely on this state.
 
 ```ts
 const blue = client.Blue()
-await blue.load({ id: "example_id" })
+await blue.load()
 
-// blue.data() now returns the loaded blue data
-// blue.match() returns { id: "example_id" }
+// blue.data() now returns the blue data from the last `load`
+// blue.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

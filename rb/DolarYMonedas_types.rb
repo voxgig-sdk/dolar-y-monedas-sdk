@@ -37,7 +37,7 @@ Blue = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Blue#load (any subset of Blue fields).
+# Request payload for Blue#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -95,7 +95,7 @@ Bolsa = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Bolsa#load (any subset of Bolsa fields).
+# Request payload for Bolsa#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -153,7 +153,7 @@ Brl = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Brl#load (any subset of Brl fields).
+# Request payload for Brl#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -211,7 +211,7 @@ Clp = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Clp#load (any subset of Clp fields).
+# Request payload for Clp#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -269,7 +269,7 @@ Contadoconliqui = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Contadoconliqui#load (any subset of Contadoconliqui fields).
+# Request payload for Contadoconliqui#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -331,7 +331,7 @@ CotizacionAmbito = Struct.new(
   keyword_init: true
 )
 
-# Match filter for CotizacionAmbito#load (any subset of CotizacionAmbito fields).
+# Request payload for CotizacionAmbito#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -364,7 +364,7 @@ CotizacionAmbitoLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for CotizacionAmbito#list (any subset of CotizacionAmbito fields).
+# Request payload for CotizacionAmbito#list.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -426,7 +426,7 @@ Cotizacione = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Cotizacione#list (any subset of Cotizacione fields).
+# Request payload for Cotizacione#list.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -484,7 +484,7 @@ Cripto = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Cripto#load (any subset of Cripto fields).
+# Request payload for Cripto#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -542,7 +542,7 @@ Dolare = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Dolare#list (any subset of Dolare fields).
+# Request payload for Dolare#list.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -584,7 +584,7 @@ Estado = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Estado#load (any subset of Estado fields).
+# Request payload for Estado#load.
 #
 # @!attribute [rw] aleatorio
 #   @return [Integer, nil]
@@ -626,7 +626,7 @@ Eur = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Eur#load (any subset of Eur fields).
+# Request payload for Eur#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -684,7 +684,7 @@ Mayorista = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Mayorista#load (any subset of Mayorista fields).
+# Request payload for Mayorista#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -742,7 +742,7 @@ Oficial = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Oficial#load (any subset of Oficial fields).
+# Request payload for Oficial#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -800,7 +800,7 @@ Tarjeta = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Tarjeta#load (any subset of Tarjeta fields).
+# Request payload for Tarjeta#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]
@@ -858,7 +858,7 @@ Uyu = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Uyu#load (any subset of Uyu fields).
+# Request payload for Uyu#load.
 #
 # @!attribute [rw] casa
 #   @return [String, nil]

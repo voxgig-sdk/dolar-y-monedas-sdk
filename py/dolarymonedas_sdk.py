@@ -221,91 +221,91 @@ class DolarYMonedasSDK:
 
 
     def Blue(self, data=None) -> "BlueEntity":
-        """Entity factory: client.Blue().list({}) / client.Blue().load({"id": ...})."""
+        """Entity factory: client.Blue().list() / client.Blue().load({"id": ...})."""
         from entity.blue_entity import BlueEntity
         return BlueEntity(self, data)
 
 
     def Bolsa(self, data=None) -> "BolsaEntity":
-        """Entity factory: client.Bolsa().list({}) / client.Bolsa().load({"id": ...})."""
+        """Entity factory: client.Bolsa().list() / client.Bolsa().load({"id": ...})."""
         from entity.bolsa_entity import BolsaEntity
         return BolsaEntity(self, data)
 
 
     def Brl(self, data=None) -> "BrlEntity":
-        """Entity factory: client.Brl().list({}) / client.Brl().load({"id": ...})."""
+        """Entity factory: client.Brl().list() / client.Brl().load({"id": ...})."""
         from entity.brl_entity import BrlEntity
         return BrlEntity(self, data)
 
 
     def Clp(self, data=None) -> "ClpEntity":
-        """Entity factory: client.Clp().list({}) / client.Clp().load({"id": ...})."""
+        """Entity factory: client.Clp().list() / client.Clp().load({"id": ...})."""
         from entity.clp_entity import ClpEntity
         return ClpEntity(self, data)
 
 
     def Contadoconliqui(self, data=None) -> "ContadoconliquiEntity":
-        """Entity factory: client.Contadoconliqui().list({}) / client.Contadoconliqui().load({"id": ...})."""
+        """Entity factory: client.Contadoconliqui().list() / client.Contadoconliqui().load({"id": ...})."""
         from entity.contadoconliqui_entity import ContadoconliquiEntity
         return ContadoconliquiEntity(self, data)
 
 
     def CotizacionAmbito(self, data=None) -> "CotizacionAmbitoEntity":
-        """Entity factory: client.CotizacionAmbito().list({}) / client.CotizacionAmbito().load({"id": ...})."""
+        """Entity factory: client.CotizacionAmbito().list() / client.CotizacionAmbito().load({"id": ...})."""
         from entity.cotizacion_ambito_entity import CotizacionAmbitoEntity
         return CotizacionAmbitoEntity(self, data)
 
 
     def Cotizacione(self, data=None) -> "CotizacioneEntity":
-        """Entity factory: client.Cotizacione().list({}) / client.Cotizacione().load({"id": ...})."""
+        """Entity factory: client.Cotizacione().list() / client.Cotizacione().load({"id": ...})."""
         from entity.cotizacione_entity import CotizacioneEntity
         return CotizacioneEntity(self, data)
 
 
     def Cripto(self, data=None) -> "CriptoEntity":
-        """Entity factory: client.Cripto().list({}) / client.Cripto().load({"id": ...})."""
+        """Entity factory: client.Cripto().list() / client.Cripto().load({"id": ...})."""
         from entity.cripto_entity import CriptoEntity
         return CriptoEntity(self, data)
 
 
     def Dolare(self, data=None) -> "DolareEntity":
-        """Entity factory: client.Dolare().list({}) / client.Dolare().load({"id": ...})."""
+        """Entity factory: client.Dolare().list() / client.Dolare().load({"id": ...})."""
         from entity.dolare_entity import DolareEntity
         return DolareEntity(self, data)
 
 
     def Estado(self, data=None) -> "EstadoEntity":
-        """Entity factory: client.Estado().list({}) / client.Estado().load({"id": ...})."""
+        """Entity factory: client.Estado().list() / client.Estado().load({"id": ...})."""
         from entity.estado_entity import EstadoEntity
         return EstadoEntity(self, data)
 
 
     def Eur(self, data=None) -> "EurEntity":
-        """Entity factory: client.Eur().list({}) / client.Eur().load({"id": ...})."""
+        """Entity factory: client.Eur().list() / client.Eur().load({"id": ...})."""
         from entity.eur_entity import EurEntity
         return EurEntity(self, data)
 
 
     def Mayorista(self, data=None) -> "MayoristaEntity":
-        """Entity factory: client.Mayorista().list({}) / client.Mayorista().load({"id": ...})."""
+        """Entity factory: client.Mayorista().list() / client.Mayorista().load({"id": ...})."""
         from entity.mayorista_entity import MayoristaEntity
         return MayoristaEntity(self, data)
 
 
     def Oficial(self, data=None) -> "OficialEntity":
-        """Entity factory: client.Oficial().list({}) / client.Oficial().load({"id": ...})."""
+        """Entity factory: client.Oficial().list() / client.Oficial().load({"id": ...})."""
         from entity.oficial_entity import OficialEntity
         return OficialEntity(self, data)
 
 
     def Tarjeta(self, data=None) -> "TarjetaEntity":
-        """Entity factory: client.Tarjeta().list({}) / client.Tarjeta().load({"id": ...})."""
+        """Entity factory: client.Tarjeta().list() / client.Tarjeta().load({"id": ...})."""
         from entity.tarjeta_entity import TarjetaEntity
         return TarjetaEntity(self, data)
 
 
     def Uyu(self, data=None) -> "UyuEntity":
-        """Entity factory: client.Uyu().list({}) / client.Uyu().load({"id": ...})."""
+        """Entity factory: client.Uyu().list() / client.Uyu().load({"id": ...})."""
         from entity.uyu_entity import UyuEntity
         return UyuEntity(self, data)
 

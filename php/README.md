@@ -4,6 +4,8 @@
 
 The PHP SDK for the DolarYMonedas API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Blue()` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -34,10 +36,41 @@ $client = new DolarYMonedasSDK();
 ```php
 try {
     // load() returns the bare Blue record (throws on error).
-    $blue = $client->Blue()->load(["id" => "example_id"]);
+    $blue = $client->Blue()->load();
     print_r($blue);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $blue = $client->Blue()->load();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -61,7 +94,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -82,16 +118,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = DolarYMonedasSDK::test([
-    "entity" => ["blue" => ["test01" => ["id" => "test01"]]],
-]);
+$client = DolarYMonedasSDK::test();
 
-// load() returns the bare mock record (throws on error).
-$blue = $client->Blue()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$blue = $client->Blue()->load();
 print_r($blue);
 ```
 
@@ -194,10 +227,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -466,18 +496,18 @@ Create an instance: `$blue = $client->Blue();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Blue record (throws on error).
-$blue = $client->Blue()->load(["id" => "blue_id"]);
+$blue = $client->Blue()->load();
 ```
 
 
@@ -495,18 +525,18 @@ Create an instance: `$bolsa = $client->Bolsa();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Bolsa record (throws on error).
-$bolsa = $client->Bolsa()->load(["id" => "bolsa_id"]);
+$bolsa = $client->Bolsa()->load();
 ```
 
 
@@ -524,18 +554,18 @@ Create an instance: `$brl = $client->Brl();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Brl record (throws on error).
-$brl = $client->Brl()->load(["id" => "brl_id"]);
+$brl = $client->Brl()->load();
 ```
 
 
@@ -553,18 +583,18 @@ Create an instance: `$clp = $client->Clp();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Clp record (throws on error).
-$clp = $client->Clp()->load(["id" => "clp_id"]);
+$clp = $client->Clp()->load();
 ```
 
 
@@ -582,18 +612,18 @@ Create an instance: `$contadoconliqui = $client->Contadoconliqui();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Contadoconliqui record (throws on error).
-$contadoconliqui = $client->Contadoconliqui()->load(["id" => "contadoconliqui_id"]);
+$contadoconliqui = $client->Contadoconliqui()->load();
 ```
 
 
@@ -612,19 +642,19 @@ Create an instance: `$cotizacion_ambito = $client->CotizacionAmbito();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `variacion` | ``$NUMBER`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `variacion` | `float` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare CotizacionAmbito record (throws on error).
-$cotizacion_ambito = $client->CotizacionAmbito()->load(["id" => "cotizacion_ambito_id"]);
+$cotizacion_ambito = $client->CotizacionAmbito()->load();
 ```
 
 #### Example: List
@@ -649,12 +679,12 @@ Create an instance: `$cotizacione = $client->Cotizacione();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: List
 
@@ -678,18 +708,18 @@ Create an instance: `$cripto = $client->Cripto();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Cripto record (throws on error).
-$cripto = $client->Cripto()->load(["id" => "cripto_id"]);
+$cripto = $client->Cripto()->load();
 ```
 
 
@@ -707,12 +737,12 @@ Create an instance: `$dolare = $client->Dolare();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: List
 
@@ -736,14 +766,14 @@ Create an instance: `$estado = $client->Estado();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` |  |
-| `estado` | ``$STRING`` |  |
+| `aleatorio` | `int` |  |
+| `estado` | `string` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Estado record (throws on error).
-$estado = $client->Estado()->load(["id" => "estado_id"]);
+$estado = $client->Estado()->load();
 ```
 
 
@@ -761,18 +791,18 @@ Create an instance: `$eur = $client->Eur();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Eur record (throws on error).
-$eur = $client->Eur()->load(["id" => "eur_id"]);
+$eur = $client->Eur()->load();
 ```
 
 
@@ -790,18 +820,18 @@ Create an instance: `$mayorista = $client->Mayorista();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Mayorista record (throws on error).
-$mayorista = $client->Mayorista()->load(["id" => "mayorista_id"]);
+$mayorista = $client->Mayorista()->load();
 ```
 
 
@@ -819,18 +849,18 @@ Create an instance: `$oficial = $client->Oficial();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Oficial record (throws on error).
-$oficial = $client->Oficial()->load(["id" => "oficial_id"]);
+$oficial = $client->Oficial()->load();
 ```
 
 
@@ -848,18 +878,18 @@ Create an instance: `$tarjeta = $client->Tarjeta();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Tarjeta record (throws on error).
-$tarjeta = $client->Tarjeta()->load(["id" => "tarjeta_id"]);
+$tarjeta = $client->Tarjeta()->load();
 ```
 
 
@@ -877,27 +907,31 @@ Create an instance: `$uyu = $client->Uyu();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `casa` | ``$STRING`` |  |
-| `compra` | ``$NUMBER`` |  |
-| `fecha_actualizacion` | ``$STRING`` |  |
-| `moneda` | ``$STRING`` |  |
-| `nombre` | ``$STRING`` |  |
-| `venta` | ``$NUMBER`` |  |
+| `casa` | `string` |  |
+| `compra` | `float` |  |
+| `fecha_actualizacion` | `string` |  |
+| `moneda` | `string` |  |
+| `nombre` | `string` |  |
+| `venta` | `float` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Uyu record (throws on error).
-$uyu = $client->Uyu()->load(["id" => "uyu_id"]);
+$uyu = $client->Uyu()->load();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -914,8 +948,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -964,10 +999,10 @@ stores the returned data and match criteria internally.
 
 ```php
 $blue = $client->Blue();
-$blue->load(["id" => "example_id"]);
+$blue->load();
 
-// $blue->dataGet() now returns the loaded blue data
-// $blue->matchGet() returns the last match criteria
+// $blue->data_get() now returns the blue data from the last load
+// $blue->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

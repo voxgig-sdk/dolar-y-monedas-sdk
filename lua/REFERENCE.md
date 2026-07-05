@@ -146,12 +146,12 @@ local blue = client:Blue(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -160,7 +160,7 @@ local blue = client:Blue(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Blue():load({ id = "blue_id" })
+local result, err = client:Blue():load()
 ```
 
 ### Common Methods
@@ -203,12 +203,12 @@ local bolsa = client:Bolsa(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -217,7 +217,7 @@ local bolsa = client:Bolsa(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Bolsa():load({ id = "bolsa_id" })
+local result, err = client:Bolsa():load()
 ```
 
 ### Common Methods
@@ -260,12 +260,12 @@ local brl = client:Brl(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -274,7 +274,7 @@ local brl = client:Brl(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Brl():load({ id = "brl_id" })
+local result, err = client:Brl():load()
 ```
 
 ### Common Methods
@@ -317,12 +317,12 @@ local clp = client:Clp(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -331,7 +331,7 @@ local clp = client:Clp(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Clp():load({ id = "clp_id" })
+local result, err = client:Clp():load()
 ```
 
 ### Common Methods
@@ -374,12 +374,12 @@ local contadoconliqui = client:Contadoconliqui(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -388,7 +388,7 @@ local contadoconliqui = client:Contadoconliqui(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Contadoconliqui():load({ id = "contadoconliqui_id" })
+local result, err = client:Contadoconliqui():load()
 ```
 
 ### Common Methods
@@ -431,13 +431,13 @@ local cotizacion_ambito = client:CotizacionAmbito(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `variacion` | `number` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -454,7 +454,7 @@ local results, err = client:CotizacionAmbito():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:CotizacionAmbito():load({ id = "cotizacion_ambito_id" })
+local result, err = client:CotizacionAmbito():load()
 ```
 
 ### Common Methods
@@ -497,12 +497,12 @@ local cotizacione = client:Cotizacione(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -554,12 +554,12 @@ local cripto = client:Cripto(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -568,7 +568,7 @@ local cripto = client:Cripto(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Cripto():load({ id = "cripto_id" })
+local result, err = client:Cripto():load()
 ```
 
 ### Common Methods
@@ -611,12 +611,12 @@ local dolare = client:Dolare(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -668,8 +668,8 @@ local estado = client:Estado(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `number` | No |  |
+| `estado` | `string` | No |  |
 
 ### Operations
 
@@ -678,7 +678,7 @@ local estado = client:Estado(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Estado():load({ id = "estado_id" })
+local result, err = client:Estado():load()
 ```
 
 ### Common Methods
@@ -721,12 +721,12 @@ local eur = client:Eur(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -735,7 +735,7 @@ local eur = client:Eur(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Eur():load({ id = "eur_id" })
+local result, err = client:Eur():load()
 ```
 
 ### Common Methods
@@ -778,12 +778,12 @@ local mayorista = client:Mayorista(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -792,7 +792,7 @@ local mayorista = client:Mayorista(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Mayorista():load({ id = "mayorista_id" })
+local result, err = client:Mayorista():load()
 ```
 
 ### Common Methods
@@ -835,12 +835,12 @@ local oficial = client:Oficial(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -849,7 +849,7 @@ local oficial = client:Oficial(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Oficial():load({ id = "oficial_id" })
+local result, err = client:Oficial():load()
 ```
 
 ### Common Methods
@@ -892,12 +892,12 @@ local tarjeta = client:Tarjeta(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -906,7 +906,7 @@ local tarjeta = client:Tarjeta(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Tarjeta():load({ id = "tarjeta_id" })
+local result, err = client:Tarjeta():load()
 ```
 
 ### Common Methods
@@ -949,12 +949,12 @@ local uyu = client:Uyu(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `string` | Yes |  |
+| `compra` | `number` | No |  |
+| `fecha_actualizacion` | `string` | Yes |  |
+| `moneda` | `string` | Yes |  |
+| `nombre` | `string` | Yes |  |
+| `venta` | `number` | Yes |  |
 
 ### Operations
 
@@ -963,7 +963,7 @@ local uyu = client:Uyu(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Uyu():load({ id = "uyu_id" })
+local result, err = client:Uyu():load()
 ```
 
 ### Common Methods

@@ -8,7 +8,7 @@ Complete API reference for the DolarYMonedas Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'dolar-y-monedas_sdk'
+require_relative 'DolarYMonedas_sdk'
 
 client = DolarYMonedasSDK.new(options)
 ```
@@ -149,12 +149,12 @@ blue = client.Blue
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -163,7 +163,7 @@ blue = client.Blue
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Blue.load({ "id" => "blue_id" })
+result = client.Blue.load()
 ```
 
 ### Common Methods
@@ -206,12 +206,12 @@ bolsa = client.Bolsa
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -220,7 +220,7 @@ bolsa = client.Bolsa
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Bolsa.load({ "id" => "bolsa_id" })
+result = client.Bolsa.load()
 ```
 
 ### Common Methods
@@ -263,12 +263,12 @@ brl = client.Brl
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -277,7 +277,7 @@ brl = client.Brl
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Brl.load({ "id" => "brl_id" })
+result = client.Brl.load()
 ```
 
 ### Common Methods
@@ -320,12 +320,12 @@ clp = client.Clp
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -334,7 +334,7 @@ clp = client.Clp
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Clp.load({ "id" => "clp_id" })
+result = client.Clp.load()
 ```
 
 ### Common Methods
@@ -377,12 +377,12 @@ contadoconliqui = client.Contadoconliqui
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -391,7 +391,7 @@ contadoconliqui = client.Contadoconliqui
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Contadoconliqui.load({ "id" => "contadoconliqui_id" })
+result = client.Contadoconliqui.load()
 ```
 
 ### Common Methods
@@ -434,22 +434,22 @@ cotizacion_ambito = client.CotizacionAmbito
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `variacion` | ``$NUMBER`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `variacion` | `Float` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.CotizacionAmbito.list(nil)
+results = client.CotizacionAmbito.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -457,7 +457,7 @@ results = client.CotizacionAmbito.list(nil)
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.CotizacionAmbito.load({ "id" => "cotizacion_ambito_id" })
+result = client.CotizacionAmbito.load()
 ```
 
 ### Common Methods
@@ -500,21 +500,21 @@ cotizacione = client.Cotizacione
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Cotizacione.list(nil)
+results = client.Cotizacione.list
 ```
 
 ### Common Methods
@@ -557,12 +557,12 @@ cripto = client.Cripto
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -571,7 +571,7 @@ cripto = client.Cripto
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Cripto.load({ "id" => "cripto_id" })
+result = client.Cripto.load()
 ```
 
 ### Common Methods
@@ -614,21 +614,21 @@ dolare = client.Dolare
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Dolare.list(nil)
+results = client.Dolare.list
 ```
 
 ### Common Methods
@@ -671,8 +671,8 @@ estado = client.Estado
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aleatorio` | ``$INTEGER`` | No |  |
-| `estado` | ``$STRING`` | No |  |
+| `aleatorio` | `Integer` | No |  |
+| `estado` | `String` | No |  |
 
 ### Operations
 
@@ -681,7 +681,7 @@ estado = client.Estado
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Estado.load({ "id" => "estado_id" })
+result = client.Estado.load()
 ```
 
 ### Common Methods
@@ -724,12 +724,12 @@ eur = client.Eur
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -738,7 +738,7 @@ eur = client.Eur
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Eur.load({ "id" => "eur_id" })
+result = client.Eur.load()
 ```
 
 ### Common Methods
@@ -781,12 +781,12 @@ mayorista = client.Mayorista
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -795,7 +795,7 @@ mayorista = client.Mayorista
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Mayorista.load({ "id" => "mayorista_id" })
+result = client.Mayorista.load()
 ```
 
 ### Common Methods
@@ -838,12 +838,12 @@ oficial = client.Oficial
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -852,7 +852,7 @@ oficial = client.Oficial
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Oficial.load({ "id" => "oficial_id" })
+result = client.Oficial.load()
 ```
 
 ### Common Methods
@@ -895,12 +895,12 @@ tarjeta = client.Tarjeta
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -909,7 +909,7 @@ tarjeta = client.Tarjeta
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Tarjeta.load({ "id" => "tarjeta_id" })
+result = client.Tarjeta.load()
 ```
 
 ### Common Methods
@@ -952,12 +952,12 @@ uyu = client.Uyu
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `casa` | ``$STRING`` | Yes |  |
-| `compra` | ``$NUMBER`` | No |  |
-| `fecha_actualizacion` | ``$STRING`` | Yes |  |
-| `moneda` | ``$STRING`` | Yes |  |
-| `nombre` | ``$STRING`` | Yes |  |
-| `venta` | ``$NUMBER`` | Yes |  |
+| `casa` | `String` | Yes |  |
+| `compra` | `Float` | No |  |
+| `fecha_actualizacion` | `String` | Yes |  |
+| `moneda` | `String` | Yes |  |
+| `nombre` | `String` | Yes |  |
+| `venta` | `Float` | Yes |  |
 
 ### Operations
 
@@ -966,7 +966,7 @@ uyu = client.Uyu
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Uyu.load({ "id" => "uyu_id" })
+result = client.Uyu.load()
 ```
 
 ### Common Methods
