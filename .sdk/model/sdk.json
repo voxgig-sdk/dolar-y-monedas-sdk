@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -1763,14 +1760,17 @@
       "info": {
         "auth": false,
         "description": "<div class=\"flex flex-col\">\n\nAPI desarrollada en <a href=\"https://es.js.org?ref=dolarapi.com\" target=\"_blank\">EsJS</a> que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n\n¿Encontraste útil esta API? <strong>¡Dejá tu ⭐ en <a href=\"https://github.com/enzonotario/esjs-dolar-api\" alt=\"GitHub\" target=\"_blank\">GitHub</a>!</strong>\n\n## Demo\n[App.DolarApi.com](https://app.dolarapi.com)",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Producción",
             "url": "https://dolarapi.com"
           }
         ],
+        "summary": "<div class=\"flex flex-col\">",
         "title": "DolarApi.com",
-        "version": "1.1.0"
+        "version": "1.1.0",
+        "website": "https://dolarapi.com"
       },
       "option": {},
       "target": {
@@ -1823,6 +1823,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1873,6 +1876,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

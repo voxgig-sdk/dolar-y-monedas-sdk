@@ -19,9 +19,9 @@ API desarrollada en <a href="https://es.js.org?ref=dolarapi.com" target="_blank"
           url: "https://dolarapi.com"
         }
       ]
+      summary: "<div class=\"flex flex-col\">"
       title: "DolarApi.com"
       version: "1.1.0"
+      website: "https://dolarapi.com"
     }
   }
-}
-

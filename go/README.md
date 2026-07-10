@@ -659,7 +659,7 @@ fmt.Println(contadoconliqui) // the loaded record
 
 ### CotizacionAmbito
 
-Create an instance: `cotizacion_ambito := client.CotizacionAmbito(nil)`
+Create an instance: `cotizacionAmbito := client.CotizacionAmbito(nil)`
 
 #### Operations
 
@@ -683,21 +683,21 @@ Create an instance: `cotizacion_ambito := client.CotizacionAmbito(nil)`
 #### Example: Load
 
 ```go
-cotizacion_ambito, err := client.CotizacionAmbito(nil).Load(nil, nil)
+cotizacionAmbito, err := client.CotizacionAmbito(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cotizacion_ambito) // the loaded record
+fmt.Println(cotizacionAmbito) // the loaded record
 ```
 
 #### Example: List
 
 ```go
-cotizacion_ambitos, err := client.CotizacionAmbito(nil).List(nil, nil)
+cotizacionAmbitos, err := client.CotizacionAmbito(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cotizacion_ambitos) // the array of records
+fmt.Println(cotizacionAmbitos) // the array of records
 ```
 
 

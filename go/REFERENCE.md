@@ -147,6 +147,7 @@ same parameters as `Direct()`.
 
 ```go
 blue := client.Blue(nil)
+fmt.Println(blue.GetName()) // "blue"
 ```
 
 ### Fields
@@ -168,6 +169,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Blue(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -198,6 +203,7 @@ Return the entity name.
 
 ```go
 bolsa := client.Bolsa(nil)
+fmt.Println(bolsa.GetName()) // "bolsa"
 ```
 
 ### Fields
@@ -219,6 +225,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Bolsa(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -249,6 +259,7 @@ Return the entity name.
 
 ```go
 brl := client.Brl(nil)
+fmt.Println(brl.GetName()) // "brl"
 ```
 
 ### Fields
@@ -270,6 +281,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Brl(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -300,6 +315,7 @@ Return the entity name.
 
 ```go
 clp := client.Clp(nil)
+fmt.Println(clp.GetName()) // "clp"
 ```
 
 ### Fields
@@ -321,6 +337,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Clp(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -351,6 +371,7 @@ Return the entity name.
 
 ```go
 contadoconliqui := client.Contadoconliqui(nil)
+fmt.Println(contadoconliqui.GetName()) // "contadoconliqui"
 ```
 
 ### Fields
@@ -372,6 +393,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Contadoconliqui(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -401,7 +426,8 @@ Return the entity name.
 ## CotizacionAmbitoEntity
 
 ```go
-cotizacion_ambito := client.CotizacionAmbito(nil)
+cotizacionAmbito := client.CotizacionAmbito(nil)
+fmt.Println(cotizacionAmbito.GetName()) // "cotizacion_ambito"
 ```
 
 ### Fields
@@ -424,6 +450,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.CotizacionAmbito(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 #### `Load(reqmatch, ctrl map[string]any) (any, error)`
@@ -432,6 +462,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.CotizacionAmbito(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -462,6 +496,7 @@ Return the entity name.
 
 ```go
 cotizacione := client.Cotizacione(nil)
+fmt.Println(cotizacione.GetName()) // "cotizacione"
 ```
 
 ### Fields
@@ -483,6 +518,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Cotizacione(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -513,6 +552,7 @@ Return the entity name.
 
 ```go
 cripto := client.Cripto(nil)
+fmt.Println(cripto.GetName()) // "cripto"
 ```
 
 ### Fields
@@ -534,6 +574,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Cripto(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -564,6 +608,7 @@ Return the entity name.
 
 ```go
 dolare := client.Dolare(nil)
+fmt.Println(dolare.GetName()) // "dolare"
 ```
 
 ### Fields
@@ -585,6 +630,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Dolare(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -615,6 +664,7 @@ Return the entity name.
 
 ```go
 estado := client.Estado(nil)
+fmt.Println(estado.GetName()) // "estado"
 ```
 
 ### Fields
@@ -632,6 +682,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Estado(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -662,6 +716,7 @@ Return the entity name.
 
 ```go
 eur := client.Eur(nil)
+fmt.Println(eur.GetName()) // "eur"
 ```
 
 ### Fields
@@ -683,6 +738,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Eur(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -713,6 +772,7 @@ Return the entity name.
 
 ```go
 mayorista := client.Mayorista(nil)
+fmt.Println(mayorista.GetName()) // "mayorista"
 ```
 
 ### Fields
@@ -734,6 +794,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Mayorista(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -764,6 +828,7 @@ Return the entity name.
 
 ```go
 oficial := client.Oficial(nil)
+fmt.Println(oficial.GetName()) // "oficial"
 ```
 
 ### Fields
@@ -785,6 +850,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Oficial(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -815,6 +884,7 @@ Return the entity name.
 
 ```go
 tarjeta := client.Tarjeta(nil)
+fmt.Println(tarjeta.GetName()) // "tarjeta"
 ```
 
 ### Fields
@@ -836,6 +906,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Tarjeta(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -866,6 +940,7 @@ Return the entity name.
 
 ```go
 uyu := client.Uyu(nil)
+fmt.Println(uyu.GetName()) // "uyu"
 ```
 
 ### Fields
@@ -887,6 +962,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Uyu(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
