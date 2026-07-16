@@ -37,7 +37,20 @@ func main() {
 	addr := flag.String("addr", ":8080", "listen address for http transport")
 	flag.Parse()
 
-	client := sdk.NewDolarYMonedasSDK(nil)
+	// Configure from the environment: DOLAR_Y_MONEDAS_APIKEY carries the API key and
+	// DOLAR_Y_MONEDAS_BASE optionally overrides the API base URL (e.g. production).
+	// Both injectable by a secrets vault. Unset -> nil config defaults.
+	var opts map[string]any
+	if apikey := os.Getenv("DOLAR_Y_MONEDAS_APIKEY"); apikey != "" {
+		opts = map[string]any{"apikey": apikey}
+	}
+	if base := os.Getenv("DOLAR_Y_MONEDAS_BASE"); base != "" {
+		if opts == nil {
+			opts = map[string]any{}
+		}
+		opts["base"] = base
+	}
+	client := sdk.NewDolarYMonedasSDK(opts)
 	server := mcp.NewServer(
 		&mcp.Implementation{
 			Name:    "dolar-y-monedas",
