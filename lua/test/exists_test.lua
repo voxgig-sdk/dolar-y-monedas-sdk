@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- DolarYMonedas SDK exists test
 
 local sdk = require("dolar-y-monedas_sdk")
 
