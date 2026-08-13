@@ -54,7 +54,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -90,6 +90,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/blue",
                 ["parts"] = {
@@ -130,7 +131,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -166,6 +167,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/bolsa",
                 ["parts"] = {
@@ -206,7 +208,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -242,6 +244,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/brl",
                 ["parts"] = {
@@ -282,7 +285,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -318,6 +321,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/clp",
                 ["parts"] = {
@@ -358,7 +362,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -394,6 +398,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/contadoconliqui",
                 ["parts"] = {
@@ -434,7 +439,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -477,6 +482,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares",
                 ["parts"] = {
@@ -501,6 +507,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/blue",
                 ["parts"] = {
@@ -519,6 +526,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/bolsa",
                 ["parts"] = {
@@ -537,6 +545,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/contadoconliqui",
                 ["parts"] = {
@@ -555,6 +564,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/cripto",
                 ["parts"] = {
@@ -573,6 +583,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/mayorista",
                 ["parts"] = {
@@ -591,6 +602,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/oficial",
                 ["parts"] = {
@@ -609,6 +621,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/tarjeta",
                 ["parts"] = {
@@ -650,7 +663,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -686,6 +699,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones",
                 ["parts"] = {
@@ -725,7 +739,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -761,6 +775,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/cripto",
                 ["parts"] = {
@@ -801,7 +816,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -837,6 +852,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares",
                 ["parts"] = {
@@ -884,6 +900,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/estado",
                 ["parts"] = {
@@ -923,7 +940,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -959,6 +976,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/eur",
                 ["parts"] = {
@@ -999,7 +1017,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -1035,6 +1053,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/mayorista",
                 ["parts"] = {
@@ -1075,7 +1094,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -1111,6 +1130,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/oficial",
                 ["parts"] = {
@@ -1151,7 +1171,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -1187,6 +1207,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/tarjeta",
                 ["parts"] = {
@@ -1227,7 +1248,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "fecha_actualizacion",
+            ["name"] = "fechaActualizacion",
             ["req"] = true,
             ["type"] = "`$STRING`",
             ["index$"] = 2,
@@ -1263,6 +1284,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/uyu",
                 ["parts"] = {

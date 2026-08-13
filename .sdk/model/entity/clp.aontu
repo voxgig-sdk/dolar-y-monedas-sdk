@@ -16,7 +16,7 @@ main: kit: entity: clp: {
       type: "`$NUMBER`"
     }
     {
-      name: "fecha_actualizacion"
+      name: "fechaActualizacion"
       req: true
       type: "`$STRING`"
     }

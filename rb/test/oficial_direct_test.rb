@@ -59,11 +59,11 @@ def oficial_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "DOLARYMONEDAS_TEST_OFICIAL_ENTID" => {},
-    "DOLARYMONEDAS_TEST_LIVE" => "FALSE",
+    "DOLAR_Y_MONEDAS_TEST_OFICIAL_ENTID" => {},
+    "DOLAR_Y_MONEDAS_TEST_LIVE" => "FALSE",
   })
 
-  live = env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
+  live = env["DOLAR_Y_MONEDAS_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

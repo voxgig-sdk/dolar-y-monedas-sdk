@@ -16,7 +16,7 @@
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -30,7 +30,7 @@
 Blue = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -45,7 +45,7 @@ Blue = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -59,7 +59,7 @@ Blue = Struct.new(
 BlueLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -74,7 +74,7 @@ BlueLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -88,7 +88,7 @@ BlueLoadMatch = Struct.new(
 Bolsa = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -103,7 +103,7 @@ Bolsa = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -117,7 +117,7 @@ Bolsa = Struct.new(
 BolsaLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -132,7 +132,7 @@ BolsaLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -146,7 +146,7 @@ BolsaLoadMatch = Struct.new(
 Brl = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -161,7 +161,7 @@ Brl = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -175,7 +175,7 @@ Brl = Struct.new(
 BrlLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -190,7 +190,7 @@ BrlLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -204,7 +204,7 @@ BrlLoadMatch = Struct.new(
 Clp = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -219,7 +219,7 @@ Clp = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -233,7 +233,7 @@ Clp = Struct.new(
 ClpLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -248,7 +248,7 @@ ClpLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -262,7 +262,7 @@ ClpLoadMatch = Struct.new(
 Contadoconliqui = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -277,7 +277,7 @@ Contadoconliqui = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -291,7 +291,7 @@ Contadoconliqui = Struct.new(
 ContadoconliquiLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -306,7 +306,7 @@ ContadoconliquiLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -323,7 +323,7 @@ ContadoconliquiLoadMatch = Struct.new(
 CotizacionAmbito = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :variacion,
@@ -339,7 +339,7 @@ CotizacionAmbito = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -356,7 +356,7 @@ CotizacionAmbito = Struct.new(
 CotizacionAmbitoLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :variacion,
@@ -372,7 +372,7 @@ CotizacionAmbitoLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -389,7 +389,7 @@ CotizacionAmbitoLoadMatch = Struct.new(
 CotizacionAmbitoListMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :variacion,
@@ -405,7 +405,7 @@ CotizacionAmbitoListMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -419,7 +419,7 @@ CotizacionAmbitoListMatch = Struct.new(
 Cotizacione = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -434,7 +434,7 @@ Cotizacione = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -448,7 +448,7 @@ Cotizacione = Struct.new(
 CotizacioneListMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -463,7 +463,7 @@ CotizacioneListMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -477,7 +477,7 @@ CotizacioneListMatch = Struct.new(
 Cripto = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -492,7 +492,7 @@ Cripto = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -506,7 +506,7 @@ Cripto = Struct.new(
 CriptoLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -521,7 +521,7 @@ CriptoLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -535,7 +535,7 @@ CriptoLoadMatch = Struct.new(
 Dolare = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -550,7 +550,7 @@ Dolare = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -564,7 +564,7 @@ Dolare = Struct.new(
 DolareListMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -605,7 +605,7 @@ EstadoLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -619,7 +619,7 @@ EstadoLoadMatch = Struct.new(
 Eur = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -634,7 +634,7 @@ Eur = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -648,7 +648,7 @@ Eur = Struct.new(
 EurLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -663,7 +663,7 @@ EurLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -677,7 +677,7 @@ EurLoadMatch = Struct.new(
 Mayorista = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -692,7 +692,7 @@ Mayorista = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -706,7 +706,7 @@ Mayorista = Struct.new(
 MayoristaLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -721,7 +721,7 @@ MayoristaLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -735,7 +735,7 @@ MayoristaLoadMatch = Struct.new(
 Oficial = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -750,7 +750,7 @@ Oficial = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -764,7 +764,7 @@ Oficial = Struct.new(
 OficialLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -779,7 +779,7 @@ OficialLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -793,7 +793,7 @@ OficialLoadMatch = Struct.new(
 Tarjeta = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -808,7 +808,7 @@ Tarjeta = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -822,7 +822,7 @@ Tarjeta = Struct.new(
 TarjetaLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -837,7 +837,7 @@ TarjetaLoadMatch = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String]
 #
 # @!attribute [rw] moneda
@@ -851,7 +851,7 @@ TarjetaLoadMatch = Struct.new(
 Uyu = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,
@@ -866,7 +866,7 @@ Uyu = Struct.new(
 # @!attribute [rw] compra
 #   @return [Float, nil]
 #
-# @!attribute [rw] fecha_actualizacion
+# @!attribute [rw] fechaActualizacion
 #   @return [String, nil]
 #
 # @!attribute [rw] moneda
@@ -880,7 +880,7 @@ Uyu = Struct.new(
 UyuLoadMatch = Struct.new(
   :casa,
   :compra,
-  :fecha_actualizacion,
+  :fechaActualizacion,
   :moneda,
   :nombre,
   :venta,

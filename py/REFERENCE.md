@@ -145,7 +145,7 @@ blue = client.Blue()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -201,7 +201,7 @@ bolsa = client.Bolsa()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -257,7 +257,7 @@ brl = client.Brl()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -313,7 +313,7 @@ clp = client.Clp()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -369,7 +369,7 @@ contadoconliqui = client.Contadoconliqui()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -425,7 +425,7 @@ cotizacion_ambito = client.CotizacionAmbito()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `variacion` | `float` | Yes |  |
@@ -492,7 +492,7 @@ cotizacione = client.Cotizacione()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -550,7 +550,7 @@ cripto = client.Cripto()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -606,7 +606,7 @@ dolare = client.Dolare()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -716,7 +716,7 @@ eur = client.Eur()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -772,7 +772,7 @@ mayorista = client.Mayorista()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -828,7 +828,7 @@ oficial = client.Oficial()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -884,7 +884,7 @@ tarjeta = client.Tarjeta()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -940,7 +940,7 @@ uyu = client.Uyu()
 | --- | --- | --- | --- |
 | `casa` | `str` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `str` | Yes |  |
+| `fechaActualizacion` | `str` | Yes |  |
 | `moneda` | `str` | Yes |  |
 | `nombre` | `str` | Yes |  |
 | `venta` | `float` | Yes |  |

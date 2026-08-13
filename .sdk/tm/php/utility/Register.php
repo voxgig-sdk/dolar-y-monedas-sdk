@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ DolarYMonedasUtility::setRegistrar(function (DolarYMonedasUtility $u): void {
     $u->prepare_params = [DolarYMonedasPrepareParams::class, 'call'];
     $u->prepare_path = [DolarYMonedasPreparePath::class, 'call'];
     $u->prepare_query = [DolarYMonedasPrepareQuery::class, 'call'];
+    $u->graphql_body = [DolarYMonedasGraphql::class, 'body'];
+    $u->graphql_errors = [DolarYMonedasGraphql::class, 'errors'];
     $u->result_basic = [DolarYMonedasResultBasic::class, 'call'];
     $u->result_body = [DolarYMonedasResultBody::class, 'call'];
     $u->result_headers = [DolarYMonedasResultHeaders::class, 'call'];

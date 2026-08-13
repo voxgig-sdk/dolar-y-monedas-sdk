@@ -26,8 +26,8 @@ import {
 describe('CotizacionAmbitoEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DolarYMonedasSDK.test()
@@ -63,12 +63,12 @@ describe('CotizacionAmbitoEntity', async () => {
     const cotizacion_ambito_ref01_ent = client.CotizacionAmbito()
     const cotizacion_ambito_ref01_match: any = {}
 
-    const cotizacion_ambito_ref01_list = await cotizacion_ambito_ref01_ent.list(cotizacion_ambito_ref01_match)
+    const cotizacion_ambito_ref01_list = (await cotizacion_ambito_ref01_ent.list(cotizacion_ambito_ref01_match)).map((e: any) => e.data())
 
 
     // LOAD
     const cotizacion_ambito_ref01_match_dt0: any = {}
-    const cotizacion_ambito_ref01_data_dt0 = await cotizacion_ambito_ref01_ent.load(cotizacion_ambito_ref01_match_dt0)
+    const cotizacion_ambito_ref01_data_dt0 = (await cotizacion_ambito_ref01_ent.load(cotizacion_ambito_ref01_match_dt0)).data()
     assert(null != cotizacion_ambito_ref01_data_dt0)
 
 

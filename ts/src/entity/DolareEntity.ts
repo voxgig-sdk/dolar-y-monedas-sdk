@@ -37,7 +37,7 @@ class DolareEntity extends DolarYMonedasEntityBase<Dolare> {
 
 
 
-  async list(this: any, reqmatch?: DolareListMatch, ctrl?: Control): Promise<Dolare[]> {
+  async list(this: any, reqmatch?: DolareListMatch, ctrl?: Control): Promise<DolareEntity[]> {
 
     const utility = this._utility
 

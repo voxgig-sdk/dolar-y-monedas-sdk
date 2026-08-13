@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import DolarYMonedasSDK
-from core.error import DolarYMonedasError
-from core.result import DolarYMonedasResult
-from core.response import DolarYMonedasResponse
-from core.spec import DolarYMonedasSpec
-from feature.base_feature import DolarYMonedasBaseFeature
+from projectname_sdk.core.error import DolarYMonedasError
+from projectname_sdk.core.result import DolarYMonedasResult
+from projectname_sdk.core.response import DolarYMonedasResponse
+from projectname_sdk.core.spec import DolarYMonedasSpec
+from projectname_sdk.feature.base_feature import DolarYMonedasBaseFeature
 
 
 def _client():

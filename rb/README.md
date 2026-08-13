@@ -34,7 +34,7 @@ client = DolarYMonedasSDK.new
 
 ```ruby
 begin
-  # load returns the bare Blue record (raises on error).
+  # load returns the ENTITY — call data_get for the Blue record (raises on error).
   blue = client.Blue.load()
   puts blue
 rescue => err
@@ -49,7 +49,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  blue = client.Blue.load()
+  cripto = client.Cripto.load()
 rescue => err
   warn "load failed: #{err}"
 end
@@ -117,9 +117,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = DolarYMonedasSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-blue = client.Blue.load()
-puts blue
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+cripto = client.Cripto.load()
+puts cripto
 ```
 
 ### Use a custom fetch function
@@ -251,7 +252,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -266,7 +267,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -281,7 +282,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -296,7 +297,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -311,7 +312,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -326,7 +327,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `variacion` |  |
@@ -342,7 +343,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -357,7 +358,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -372,7 +373,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -398,7 +399,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -413,7 +414,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -428,7 +429,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -443,7 +444,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -458,7 +459,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -488,7 +489,7 @@ Create an instance: `blue = client.Blue`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -496,7 +497,7 @@ Create an instance: `blue = client.Blue`
 #### Example: Load
 
 ```ruby
-# load returns the bare Blue record (raises on error).
+# load returns the ENTITY — call data_get for the Blue record (raises on error).
 blue = client.Blue.load()
 ```
 
@@ -517,7 +518,7 @@ Create an instance: `bolsa = client.Bolsa`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -525,7 +526,7 @@ Create an instance: `bolsa = client.Bolsa`
 #### Example: Load
 
 ```ruby
-# load returns the bare Bolsa record (raises on error).
+# load returns the ENTITY — call data_get for the Bolsa record (raises on error).
 bolsa = client.Bolsa.load()
 ```
 
@@ -546,7 +547,7 @@ Create an instance: `brl = client.Brl`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -554,7 +555,7 @@ Create an instance: `brl = client.Brl`
 #### Example: Load
 
 ```ruby
-# load returns the bare Brl record (raises on error).
+# load returns the ENTITY — call data_get for the Brl record (raises on error).
 brl = client.Brl.load()
 ```
 
@@ -575,7 +576,7 @@ Create an instance: `clp = client.Clp`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -583,7 +584,7 @@ Create an instance: `clp = client.Clp`
 #### Example: Load
 
 ```ruby
-# load returns the bare Clp record (raises on error).
+# load returns the ENTITY — call data_get for the Clp record (raises on error).
 clp = client.Clp.load()
 ```
 
@@ -604,7 +605,7 @@ Create an instance: `contadoconliqui = client.Contadoconliqui`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -612,7 +613,7 @@ Create an instance: `contadoconliqui = client.Contadoconliqui`
 #### Example: Load
 
 ```ruby
-# load returns the bare Contadoconliqui record (raises on error).
+# load returns the ENTITY — call data_get for the Contadoconliqui record (raises on error).
 contadoconliqui = client.Contadoconliqui.load()
 ```
 
@@ -634,7 +635,7 @@ Create an instance: `cotizacion_ambito = client.CotizacionAmbito`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `variacion` | `Float` |  |
@@ -643,7 +644,7 @@ Create an instance: `cotizacion_ambito = client.CotizacionAmbito`
 #### Example: Load
 
 ```ruby
-# load returns the bare CotizacionAmbito record (raises on error).
+# load returns the ENTITY — call data_get for the CotizacionAmbito record (raises on error).
 cotizacion_ambito = client.CotizacionAmbito.load()
 ```
 
@@ -671,7 +672,7 @@ Create an instance: `cotizacione = client.Cotizacione`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -700,7 +701,7 @@ Create an instance: `cripto = client.Cripto`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -708,7 +709,7 @@ Create an instance: `cripto = client.Cripto`
 #### Example: Load
 
 ```ruby
-# load returns the bare Cripto record (raises on error).
+# load returns the ENTITY — call data_get for the Cripto record (raises on error).
 cripto = client.Cripto.load()
 ```
 
@@ -729,7 +730,7 @@ Create an instance: `dolare = client.Dolare`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -762,7 +763,7 @@ Create an instance: `estado = client.Estado`
 #### Example: Load
 
 ```ruby
-# load returns the bare Estado record (raises on error).
+# load returns the ENTITY — call data_get for the Estado record (raises on error).
 estado = client.Estado.load()
 ```
 
@@ -783,7 +784,7 @@ Create an instance: `eur = client.Eur`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -791,7 +792,7 @@ Create an instance: `eur = client.Eur`
 #### Example: Load
 
 ```ruby
-# load returns the bare Eur record (raises on error).
+# load returns the ENTITY — call data_get for the Eur record (raises on error).
 eur = client.Eur.load()
 ```
 
@@ -812,7 +813,7 @@ Create an instance: `mayorista = client.Mayorista`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -820,7 +821,7 @@ Create an instance: `mayorista = client.Mayorista`
 #### Example: Load
 
 ```ruby
-# load returns the bare Mayorista record (raises on error).
+# load returns the ENTITY — call data_get for the Mayorista record (raises on error).
 mayorista = client.Mayorista.load()
 ```
 
@@ -841,7 +842,7 @@ Create an instance: `oficial = client.Oficial`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -849,7 +850,7 @@ Create an instance: `oficial = client.Oficial`
 #### Example: Load
 
 ```ruby
-# load returns the bare Oficial record (raises on error).
+# load returns the ENTITY — call data_get for the Oficial record (raises on error).
 oficial = client.Oficial.load()
 ```
 
@@ -870,7 +871,7 @@ Create an instance: `tarjeta = client.Tarjeta`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -878,7 +879,7 @@ Create an instance: `tarjeta = client.Tarjeta`
 #### Example: Load
 
 ```ruby
-# load returns the bare Tarjeta record (raises on error).
+# load returns the ENTITY — call data_get for the Tarjeta record (raises on error).
 tarjeta = client.Tarjeta.load()
 ```
 
@@ -899,7 +900,7 @@ Create an instance: `uyu = client.Uyu`
 | --- | --- | --- |
 | `casa` | `String` |  |
 | `compra` | `Float` |  |
-| `fecha_actualizacion` | `String` |  |
+| `fechaActualizacion` | `String` |  |
 | `moneda` | `String` |  |
 | `nombre` | `String` |  |
 | `venta` | `Float` |  |
@@ -907,7 +908,7 @@ Create an instance: `uyu = client.Uyu`
 #### Example: Load
 
 ```ruby
-# load returns the bare Uyu record (raises on error).
+# load returns the ENTITY — call data_get for the Uyu record (raises on error).
 uyu = client.Uyu.load()
 ```
 
@@ -988,11 +989,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-blue = client.Blue
-blue.load()
+cripto = client.Cripto
+cripto.load()
 
-# blue.data_get now returns the blue data from the last load
-# blue.match_get returns the last match criteria
+# cripto.data_get now returns the cripto data from the last load
+# cripto.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

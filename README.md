@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = DolarYMonedasSDK.test()
-const blue = await client.Blue().load()
-// blue is a bare Blue populated with mock data
-console.log(blue)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = DolarYMonedasSDK.test({
+  entity: {
+    cripto: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const cripto = await client.Cripto().load()
+// cripto is the Cripto entity, populated with mock data
+// — call cripto.data() for the record itself
+console.log(cripto)
 ```
 
 ### Python
 
 ```python
 client = DolarYMonedasSDK.test()
-blue = client.Blue().load()
-print(blue)
+cripto = client.Cripto().load()
+print(cripto)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(blue)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = DolarYMonedasSDK::test([
-    "entity" => ["blue" => ["test01" => []]],
+    "entity" => ["cripto" => ["test01" => []]],
 ]);
-$blue = $client->Blue()->load();
+$cripto = $client->Cripto()->load();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.Blue(nil).Load(
+result, err := client.Cripto(nil).Load(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.Blue(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = DolarYMonedasSDK.test({
-  "entity" => { "blue" => { "test01" => {} } },
+  "entity" => { "cripto" => { "test01" => {} } },
 })
-blue = client.Blue.load()
+cripto = client.Cripto.load()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:Blue():load()
+local result, err = client:Cripto():load()
 ```
 
 ## Packages
@@ -196,7 +205,7 @@ require_once 'dolarymonedas_sdk.php';
 $client = new DolarYMonedasSDK();
 
 
-// Load a specific blue (returns the bare record; throws on error)
+// Load a specific blue (returns the ENTITY; call data_get() for the record; throws on error)
 $blue = $client->Blue()->load();
 print_r($blue);
 ```
@@ -224,7 +233,7 @@ require_relative "DolarYMonedas_sdk"
 client = DolarYMonedasSDK.new
 
 
-# Load a specific blue (returns the bare record; raises on error)
+# Load a specific blue (returns the ENTITY; call data_get for the record)
 blue = client.Blue.load()
 puts blue
 ```
@@ -358,6 +367,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://dolarapi.com](https://dolarapi.com)
 

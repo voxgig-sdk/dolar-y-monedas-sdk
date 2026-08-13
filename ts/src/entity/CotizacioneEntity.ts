@@ -37,7 +37,7 @@ class CotizacioneEntity extends DolarYMonedasEntityBase<Cotizacione> {
 
 
 
-  async list(this: any, reqmatch?: CotizacioneListMatch, ctrl?: Control): Promise<Cotizacione[]> {
+  async list(this: any, reqmatch?: CotizacioneListMatch, ctrl?: Control): Promise<CotizacioneEntity[]> {
 
     const utility = this._utility
 

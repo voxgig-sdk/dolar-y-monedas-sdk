@@ -26,8 +26,8 @@ import {
 describe('MayoristaEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DolarYMonedasSDK.test()
@@ -62,7 +62,7 @@ describe('MayoristaEntity', async () => {
     // LOAD
     const mayorista_ref01_ent = client.Mayorista()
     const mayorista_ref01_match_dt0: any = {}
-    const mayorista_ref01_data_dt0 = await mayorista_ref01_ent.load(mayorista_ref01_match_dt0)
+    const mayorista_ref01_data_dt0 = (await mayorista_ref01_ent.load(mayorista_ref01_match_dt0)).data()
     assert(null != mayorista_ref01_data_dt0)
 
 

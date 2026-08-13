@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'DolarYMonedas',
   }
 
 
@@ -112,7 +112,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -148,6 +148,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/blue",
               "parts": [
@@ -188,7 +189,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -224,6 +225,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/bolsa",
               "parts": [
@@ -264,7 +266,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -300,6 +302,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/brl",
               "parts": [
@@ -340,7 +343,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -376,6 +379,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/clp",
               "parts": [
@@ -416,7 +420,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -452,6 +456,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/contadoconliqui",
               "parts": [
@@ -492,7 +497,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -535,6 +540,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares",
               "parts": [
@@ -559,6 +565,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/blue",
               "parts": [
@@ -577,6 +584,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/bolsa",
               "parts": [
@@ -595,6 +603,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/contadoconliqui",
               "parts": [
@@ -613,6 +622,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/cripto",
               "parts": [
@@ -631,6 +641,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/mayorista",
               "parts": [
@@ -649,6 +660,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/oficial",
               "parts": [
@@ -667,6 +679,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/tarjeta",
               "parts": [
@@ -708,7 +721,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -744,6 +757,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones",
               "parts": [
@@ -783,7 +797,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -819,6 +833,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/cripto",
               "parts": [
@@ -859,7 +874,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -895,6 +910,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares",
               "parts": [
@@ -942,6 +958,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/estado",
               "parts": [
@@ -981,7 +998,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1017,6 +1034,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/eur",
               "parts": [
@@ -1057,7 +1075,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1093,6 +1111,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/mayorista",
               "parts": [
@@ -1133,7 +1152,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1169,6 +1188,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/oficial",
               "parts": [
@@ -1209,7 +1229,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1245,6 +1265,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/tarjeta",
               "parts": [
@@ -1285,7 +1306,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "fecha_actualizacion",
+          "name": "fechaActualizacion",
           "req": true,
           "type": "`$STRING`",
           "index$": 2
@@ -1321,6 +1342,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/uyu",
               "parts": [

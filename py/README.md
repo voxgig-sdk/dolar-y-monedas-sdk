@@ -38,7 +38,7 @@ client = DolarYMonedasSDK()
 
 ### 3. Load a blue
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -55,8 +55,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    blue = client.Blue().load()
-    print(blue)
+    cripto = client.Cripto().load()
+    print(cripto)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -122,9 +122,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = DolarYMonedasSDK.test()
 
-# Entity ops return the bare record and raise on error.
-blue = client.Blue().load()
-# blue contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+cripto = client.Cripto().load()
+# cripto contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -233,7 +234,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -257,7 +258,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -272,7 +273,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -287,7 +288,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -302,7 +303,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -317,7 +318,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -332,7 +333,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `variacion` |  |
@@ -348,7 +349,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -363,7 +364,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -378,7 +379,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -404,7 +405,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -419,7 +420,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -434,7 +435,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -449,7 +450,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -464,7 +465,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -494,7 +495,7 @@ Create an instance: `blue = client.Blue()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -522,7 +523,7 @@ Create an instance: `bolsa = client.Bolsa()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -550,7 +551,7 @@ Create an instance: `brl = client.Brl()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -578,7 +579,7 @@ Create an instance: `clp = client.Clp()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -606,7 +607,7 @@ Create an instance: `contadoconliqui = client.Contadoconliqui()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -635,7 +636,7 @@ Create an instance: `cotizacion_ambito = client.CotizacionAmbito()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `variacion` | `float` |  |
@@ -670,7 +671,7 @@ Create an instance: `cotizacione = client.Cotizacione()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -698,7 +699,7 @@ Create an instance: `cripto = client.Cripto()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -726,7 +727,7 @@ Create an instance: `dolare = client.Dolare()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -778,7 +779,7 @@ Create an instance: `eur = client.Eur()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -806,7 +807,7 @@ Create an instance: `mayorista = client.Mayorista()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -834,7 +835,7 @@ Create an instance: `oficial = client.Oficial()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -862,7 +863,7 @@ Create an instance: `tarjeta = client.Tarjeta()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -890,7 +891,7 @@ Create an instance: `uyu = client.Uyu()`
 | --- | --- | --- |
 | `casa` | `str` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `str` |  |
+| `fechaActualizacion` | `str` |  |
 | `moneda` | `str` |  |
 | `nombre` | `str` |  |
 | `venta` | `float` |  |
@@ -977,11 +978,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-blue = client.Blue()
-blue.load()
+cripto = client.Cripto()
+cripto.load()
 
-# blue.data_get() now returns the blue data from the last load
-# blue.match_get() returns the last match criteria
+# cripto.data_get() now returns the cripto data from the last load
+# cripto.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -4,7 +4,7 @@
       "BRL00": {
         "casa": "s3c",
         "compra": 61,
-        "fecha_actualizacion": "s3e",
+        "fechaActualizacion": "s3e",
         "moneda": "s3f",
         "nombre": "s40",
         "venta": 65,
@@ -13,7 +13,7 @@
       "BRL01": {
         "casa": "s78",
         "compra": 121,
-        "fecha_actualizacion": "s7a",
+        "fechaActualizacion": "s7a",
         "moneda": "s7b",
         "nombre": "s7c",
         "venta": 125,
@@ -22,7 +22,7 @@
       "BRL02": {
         "casa": "sb4",
         "compra": 181,
-        "fecha_actualizacion": "sb6",
+        "fechaActualizacion": "sb6",
         "moneda": "sb7",
         "nombre": "sb8",
         "venta": 185,
@@ -35,7 +35,7 @@
       "brl_ref01": {
         "casa": "sf0",
         "compra": 241,
-        "fecha_actualizacion": "sf2",
+        "fechaActualizacion": "sf2",
         "moneda": "sf3",
         "nombre": "sf4",
         "venta": 245

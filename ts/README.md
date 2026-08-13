@@ -53,8 +53,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const blue = await client.Blue().load()
-  console.log(blue)
+  const cripto = await client.Cripto().load()
+  console.log(cripto)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -120,9 +120,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = DolarYMonedasSDK.test()
 
-const blue = await client.Blue().load()
-// blue is a bare entity populated with mock response data
-console.log(blue)
+const cripto = await client.Cripto().load()
+// cripto is the entity, populated with mock response data
+// — call cripto.data() for the record itself
+console.log(cripto)
 ```
 
 You can also use the instance method:
@@ -137,7 +138,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Blue()
+const entity = client.Cripto()
 
 // First call runs the operation and stores its result
 await entity.load()
@@ -303,7 +304,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -318,7 +319,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -333,7 +334,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -348,7 +349,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -363,7 +364,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -378,7 +379,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `variacion` |  |
@@ -394,7 +395,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -409,7 +410,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -424,7 +425,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -450,7 +451,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -465,7 +466,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -480,7 +481,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -495,7 +496,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -510,7 +511,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -540,7 +541,7 @@ Create an instance: `const blue = client.Blue()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -568,7 +569,7 @@ Create an instance: `const bolsa = client.Bolsa()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -596,7 +597,7 @@ Create an instance: `const brl = client.Brl()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -624,7 +625,7 @@ Create an instance: `const clp = client.Clp()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -652,7 +653,7 @@ Create an instance: `const contadoconliqui = client.Contadoconliqui()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -681,7 +682,7 @@ Create an instance: `const cotizacion_ambito = client.CotizacionAmbito()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `variacion` | `number` |  |
@@ -716,7 +717,7 @@ Create an instance: `const cotizacione = client.Cotizacione()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -744,7 +745,7 @@ Create an instance: `const cripto = client.Cripto()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -772,7 +773,7 @@ Create an instance: `const dolare = client.Dolare()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -824,7 +825,7 @@ Create an instance: `const eur = client.Eur()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -852,7 +853,7 @@ Create an instance: `const mayorista = client.Mayorista()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -880,7 +881,7 @@ Create an instance: `const oficial = client.Oficial()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -908,7 +909,7 @@ Create an instance: `const tarjeta = client.Tarjeta()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -936,7 +937,7 @@ Create an instance: `const uyu = client.Uyu()`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -1017,11 +1018,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const blue = client.Blue()
-await blue.load()
+const cripto = client.Cripto()
+await cripto.load()
 
-// blue.data() now returns the blue data from the last `load`
-// blue.match() returns the last match criteria
+// cripto.data() now returns the cripto data from the last `load`
+// cripto.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

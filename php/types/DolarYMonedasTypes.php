@@ -17,7 +17,7 @@ class Blue
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -28,7 +28,7 @@ class BlueLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -39,7 +39,7 @@ class Bolsa
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -50,7 +50,7 @@ class BolsaLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -61,7 +61,7 @@ class Brl
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -72,7 +72,7 @@ class BrlLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -83,7 +83,7 @@ class Clp
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -94,7 +94,7 @@ class ClpLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -105,7 +105,7 @@ class Contadoconliqui
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -116,7 +116,7 @@ class ContadoconliquiLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -127,7 +127,7 @@ class CotizacionAmbito
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $variacion;
@@ -139,7 +139,7 @@ class CotizacionAmbitoLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $variacion = null;
@@ -151,7 +151,7 @@ class CotizacionAmbitoListMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $variacion = null;
@@ -163,7 +163,7 @@ class Cotizacione
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -174,7 +174,7 @@ class CotizacioneListMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -185,7 +185,7 @@ class Cripto
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -196,7 +196,7 @@ class CriptoLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -207,7 +207,7 @@ class Dolare
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -218,7 +218,7 @@ class DolareListMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -243,7 +243,7 @@ class Eur
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -254,7 +254,7 @@ class EurLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -265,7 +265,7 @@ class Mayorista
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -276,7 +276,7 @@ class MayoristaLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -287,7 +287,7 @@ class Oficial
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -298,7 +298,7 @@ class OficialLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -309,7 +309,7 @@ class Tarjeta
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -320,7 +320,7 @@ class TarjetaLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;
@@ -331,7 +331,7 @@ class Uyu
 {
     public string $casa;
     public ?float $compra = null;
-    public string $fecha_actualizacion;
+    public string $fechaActualizacion;
     public string $moneda;
     public string $nombre;
     public float $venta;
@@ -342,7 +342,7 @@ class UyuLoadMatch
 {
     public ?string $casa = null;
     public ?float $compra = null;
-    public ?string $fecha_actualizacion = null;
+    public ?string $fechaActualizacion = null;
     public ?string $moneda = null;
     public ?string $nombre = null;
     public ?float $venta = null;

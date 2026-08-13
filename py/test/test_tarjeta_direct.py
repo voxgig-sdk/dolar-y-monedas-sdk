@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from dolarymonedas_sdk.utility.voxgig_struct import voxgig_struct as vs
 from dolarymonedas_sdk import DolarYMonedasSDK
-from core import helpers
+from dolarymonedas_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _tarjeta_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "DOLARYMONEDAS_TEST_TARJETA_ENTID": {},
-        "DOLARYMONEDAS_TEST_LIVE": "FALSE",
+        "DOLAR_Y_MONEDAS_TEST_TARJETA_ENTID": {},
+        "DOLAR_Y_MONEDAS_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("DOLARYMONEDAS_TEST_LIVE") == "TRUE"
+    live = env.get("DOLAR_Y_MONEDAS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

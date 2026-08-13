@@ -26,8 +26,8 @@ import {
 describe('TarjetaEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DolarYMonedasSDK.test()
@@ -62,7 +62,7 @@ describe('TarjetaEntity', async () => {
     // LOAD
     const tarjeta_ref01_ent = client.Tarjeta()
     const tarjeta_ref01_match_dt0: any = {}
-    const tarjeta_ref01_data_dt0 = await tarjeta_ref01_ent.load(tarjeta_ref01_match_dt0)
+    const tarjeta_ref01_data_dt0 = (await tarjeta_ref01_ent.load(tarjeta_ref01_match_dt0)).data()
     assert(null != tarjeta_ref01_data_dt0)
 
 

@@ -156,7 +156,7 @@ fmt.Println(blue.GetName()) // "blue"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -212,7 +212,7 @@ fmt.Println(bolsa.GetName()) // "bolsa"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -268,7 +268,7 @@ fmt.Println(brl.GetName()) // "brl"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -324,7 +324,7 @@ fmt.Println(clp.GetName()) // "clp"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -380,7 +380,7 @@ fmt.Println(contadoconliqui.GetName()) // "contadoconliqui"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -436,7 +436,7 @@ fmt.Println(cotizacionAmbito.GetName()) // "cotizacion_ambito"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `variacion` | `float64` | Yes |  |
@@ -505,7 +505,7 @@ fmt.Println(cotizacione.GetName()) // "cotizacione"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -561,7 +561,7 @@ fmt.Println(cripto.GetName()) // "cripto"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -617,7 +617,7 @@ fmt.Println(dolare.GetName()) // "dolare"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -725,7 +725,7 @@ fmt.Println(eur.GetName()) // "eur"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -781,7 +781,7 @@ fmt.Println(mayorista.GetName()) // "mayorista"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -837,7 +837,7 @@ fmt.Println(oficial.GetName()) // "oficial"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -893,7 +893,7 @@ fmt.Println(tarjeta.GetName()) // "tarjeta"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |
@@ -949,7 +949,7 @@ fmt.Println(uyu.GetName()) // "uyu"
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float64` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float64` | Yes |  |

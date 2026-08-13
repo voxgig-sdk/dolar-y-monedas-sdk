@@ -26,8 +26,8 @@ import {
 describe('CotizacioneEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DolarYMonedasSDK.test()
@@ -63,7 +63,7 @@ describe('CotizacioneEntity', async () => {
     const cotizacione_ref01_ent = client.Cotizacione()
     const cotizacione_ref01_match: any = {}
 
-    const cotizacione_ref01_list = await cotizacione_ref01_ent.list(cotizacione_ref01_match)
+    const cotizacione_ref01_list = (await cotizacione_ref01_ent.list(cotizacione_ref01_match)).map((e: any) => e.data())
 
 
   })

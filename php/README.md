@@ -35,7 +35,7 @@ $client = new DolarYMonedasSDK();
 
 ```php
 try {
-    // load() returns the bare Blue record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Blue record (throws on error).
     $blue = $client->Blue()->load();
     print_r($blue);
 } catch (\Throwable $err) {
@@ -51,7 +51,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $blue = $client->Blue()->load();
+    $cripto = $client->Cripto()->load();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -123,9 +123,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = DolarYMonedasSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$blue = $client->Blue()->load();
-print_r($blue);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$cripto = $client->Cripto()->load();
+print_r($cripto);
 ```
 
 ### Use a custom fetch function
@@ -237,7 +238,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -261,7 +262,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -276,7 +277,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -291,7 +292,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -306,7 +307,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -321,7 +322,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -336,7 +337,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `variacion` |  |
@@ -352,7 +353,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -367,7 +368,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -382,7 +383,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -408,7 +409,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -423,7 +424,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -438,7 +439,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -453,7 +454,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -468,7 +469,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -498,7 +499,7 @@ Create an instance: `$blue = $client->Blue();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -506,7 +507,7 @@ Create an instance: `$blue = $client->Blue();`
 #### Example: Load
 
 ```php
-// load() returns the bare Blue record (throws on error).
+// load() returns the ENTITY — call data_get() for the Blue record (throws on error).
 $blue = $client->Blue()->load();
 ```
 
@@ -527,7 +528,7 @@ Create an instance: `$bolsa = $client->Bolsa();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -535,7 +536,7 @@ Create an instance: `$bolsa = $client->Bolsa();`
 #### Example: Load
 
 ```php
-// load() returns the bare Bolsa record (throws on error).
+// load() returns the ENTITY — call data_get() for the Bolsa record (throws on error).
 $bolsa = $client->Bolsa()->load();
 ```
 
@@ -556,7 +557,7 @@ Create an instance: `$brl = $client->Brl();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -564,7 +565,7 @@ Create an instance: `$brl = $client->Brl();`
 #### Example: Load
 
 ```php
-// load() returns the bare Brl record (throws on error).
+// load() returns the ENTITY — call data_get() for the Brl record (throws on error).
 $brl = $client->Brl()->load();
 ```
 
@@ -585,7 +586,7 @@ Create an instance: `$clp = $client->Clp();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -593,7 +594,7 @@ Create an instance: `$clp = $client->Clp();`
 #### Example: Load
 
 ```php
-// load() returns the bare Clp record (throws on error).
+// load() returns the ENTITY — call data_get() for the Clp record (throws on error).
 $clp = $client->Clp()->load();
 ```
 
@@ -614,7 +615,7 @@ Create an instance: `$contadoconliqui = $client->Contadoconliqui();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -622,7 +623,7 @@ Create an instance: `$contadoconliqui = $client->Contadoconliqui();`
 #### Example: Load
 
 ```php
-// load() returns the bare Contadoconliqui record (throws on error).
+// load() returns the ENTITY — call data_get() for the Contadoconliqui record (throws on error).
 $contadoconliqui = $client->Contadoconliqui()->load();
 ```
 
@@ -644,7 +645,7 @@ Create an instance: `$cotizacion_ambito = $client->CotizacionAmbito();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `variacion` | `float` |  |
@@ -653,7 +654,7 @@ Create an instance: `$cotizacion_ambito = $client->CotizacionAmbito();`
 #### Example: Load
 
 ```php
-// load() returns the bare CotizacionAmbito record (throws on error).
+// load() returns the ENTITY — call data_get() for the CotizacionAmbito record (throws on error).
 $cotizacion_ambito = $client->CotizacionAmbito()->load();
 ```
 
@@ -681,7 +682,7 @@ Create an instance: `$cotizacione = $client->Cotizacione();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -710,7 +711,7 @@ Create an instance: `$cripto = $client->Cripto();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -718,7 +719,7 @@ Create an instance: `$cripto = $client->Cripto();`
 #### Example: Load
 
 ```php
-// load() returns the bare Cripto record (throws on error).
+// load() returns the ENTITY — call data_get() for the Cripto record (throws on error).
 $cripto = $client->Cripto()->load();
 ```
 
@@ -739,7 +740,7 @@ Create an instance: `$dolare = $client->Dolare();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -772,7 +773,7 @@ Create an instance: `$estado = $client->Estado();`
 #### Example: Load
 
 ```php
-// load() returns the bare Estado record (throws on error).
+// load() returns the ENTITY — call data_get() for the Estado record (throws on error).
 $estado = $client->Estado()->load();
 ```
 
@@ -793,7 +794,7 @@ Create an instance: `$eur = $client->Eur();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -801,7 +802,7 @@ Create an instance: `$eur = $client->Eur();`
 #### Example: Load
 
 ```php
-// load() returns the bare Eur record (throws on error).
+// load() returns the ENTITY — call data_get() for the Eur record (throws on error).
 $eur = $client->Eur()->load();
 ```
 
@@ -822,7 +823,7 @@ Create an instance: `$mayorista = $client->Mayorista();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -830,7 +831,7 @@ Create an instance: `$mayorista = $client->Mayorista();`
 #### Example: Load
 
 ```php
-// load() returns the bare Mayorista record (throws on error).
+// load() returns the ENTITY — call data_get() for the Mayorista record (throws on error).
 $mayorista = $client->Mayorista()->load();
 ```
 
@@ -851,7 +852,7 @@ Create an instance: `$oficial = $client->Oficial();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -859,7 +860,7 @@ Create an instance: `$oficial = $client->Oficial();`
 #### Example: Load
 
 ```php
-// load() returns the bare Oficial record (throws on error).
+// load() returns the ENTITY — call data_get() for the Oficial record (throws on error).
 $oficial = $client->Oficial()->load();
 ```
 
@@ -880,7 +881,7 @@ Create an instance: `$tarjeta = $client->Tarjeta();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -888,7 +889,7 @@ Create an instance: `$tarjeta = $client->Tarjeta();`
 #### Example: Load
 
 ```php
-// load() returns the bare Tarjeta record (throws on error).
+// load() returns the ENTITY — call data_get() for the Tarjeta record (throws on error).
 $tarjeta = $client->Tarjeta()->load();
 ```
 
@@ -909,7 +910,7 @@ Create an instance: `$uyu = $client->Uyu();`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float` |  |
@@ -917,7 +918,7 @@ Create an instance: `$uyu = $client->Uyu();`
 #### Example: Load
 
 ```php
-// load() returns the bare Uyu record (throws on error).
+// load() returns the ENTITY — call data_get() for the Uyu record (throws on error).
 $uyu = $client->Uyu()->load();
 ```
 
@@ -998,11 +999,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$blue = $client->Blue();
-$blue->load();
+$cripto = $client->Cripto();
+$cripto->load();
 
-// $blue->data_get() now returns the blue data from the last load
-// $blue->match_get() returns the last match criteria
+// $cripto->data_get() now returns the cripto data from the last load
+// $cripto->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

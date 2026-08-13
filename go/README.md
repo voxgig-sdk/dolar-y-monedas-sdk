@@ -66,12 +66,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-blue, err := client.Blue(nil).Load(nil, nil)
+cripto, err := client.Cripto(nil).Load(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = blue
+_ = cripto
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-blue, err := client.Blue(nil).Load(
+cripto, err := client.Cripto(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(blue) // the returned mock data
+fmt.Println(cripto) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -276,7 +276,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -291,7 +291,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -306,7 +306,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -321,7 +321,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -336,7 +336,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -351,7 +351,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"variacion"` |  |
@@ -367,7 +367,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -382,7 +382,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -397,7 +397,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -423,7 +423,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -438,7 +438,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -453,7 +453,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -468,7 +468,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -483,7 +483,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `"casa"` |  |
 | `"compra"` |  |
-| `"fecha_actualizacion"` |  |
+| `"fechaActualizacion"` |  |
 | `"moneda"` |  |
 | `"nombre"` |  |
 | `"venta"` |  |
@@ -513,7 +513,7 @@ Create an instance: `blue := client.Blue(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -545,7 +545,7 @@ Create an instance: `bolsa := client.Bolsa(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -577,7 +577,7 @@ Create an instance: `brl := client.Brl(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -609,7 +609,7 @@ Create an instance: `clp := client.Clp(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -641,7 +641,7 @@ Create an instance: `contadoconliqui := client.Contadoconliqui(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -674,7 +674,7 @@ Create an instance: `cotizacionAmbito := client.CotizacionAmbito(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `variacion` | `float64` |  |
@@ -717,7 +717,7 @@ Create an instance: `cotizacione := client.Cotizacione(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -749,7 +749,7 @@ Create an instance: `cripto := client.Cripto(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -781,7 +781,7 @@ Create an instance: `dolare := client.Dolare(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -841,7 +841,7 @@ Create an instance: `eur := client.Eur(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -873,7 +873,7 @@ Create an instance: `mayorista := client.Mayorista(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -905,7 +905,7 @@ Create an instance: `oficial := client.Oficial(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -937,7 +937,7 @@ Create an instance: `tarjeta := client.Tarjeta(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -969,7 +969,7 @@ Create an instance: `uyu := client.Uyu(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `float64` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `float64` |  |
@@ -1058,11 +1058,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-blue := client.Blue(nil)
-blue.Load(nil, nil)
+cripto := client.Cripto(nil)
+cripto.Load(nil, nil)
 
-// blue.Data() now returns the blue data from the last load
-// blue.Match() returns the last match criteria
+// cripto.Data() now returns the cripto data from the last load
+// cripto.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

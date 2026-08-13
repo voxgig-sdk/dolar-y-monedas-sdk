@@ -6,13 +6,17 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
 
-import "encoding/json"
+import (
+	"encoding/json"
+
+	"github.com/voxgig-sdk/dolar-y-monedas-sdk/go/core"
+)
 
 // Blue is the typed data model for the blue entity.
 type Blue struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -22,7 +26,7 @@ type Blue struct {
 type BlueLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -32,7 +36,7 @@ type BlueLoadMatch struct {
 type Bolsa struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -42,7 +46,7 @@ type Bolsa struct {
 type BolsaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -52,7 +56,7 @@ type BolsaLoadMatch struct {
 type Brl struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -62,7 +66,7 @@ type Brl struct {
 type BrlLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -72,7 +76,7 @@ type BrlLoadMatch struct {
 type Clp struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -82,7 +86,7 @@ type Clp struct {
 type ClpLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -92,7 +96,7 @@ type ClpLoadMatch struct {
 type Contadoconliqui struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -102,7 +106,7 @@ type Contadoconliqui struct {
 type ContadoconliquiLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -112,7 +116,7 @@ type ContadoconliquiLoadMatch struct {
 type CotizacionAmbito struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Variacion float64 `json:"variacion"`
@@ -123,7 +127,7 @@ type CotizacionAmbito struct {
 type CotizacionAmbitoLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Variacion *float64 `json:"variacion,omitempty"`
@@ -134,7 +138,7 @@ type CotizacionAmbitoLoadMatch struct {
 type CotizacionAmbitoListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Variacion *float64 `json:"variacion,omitempty"`
@@ -145,7 +149,7 @@ type CotizacionAmbitoListMatch struct {
 type Cotizacione struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -155,7 +159,7 @@ type Cotizacione struct {
 type CotizacioneListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -165,7 +169,7 @@ type CotizacioneListMatch struct {
 type Cripto struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -175,7 +179,7 @@ type Cripto struct {
 type CriptoLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -185,7 +189,7 @@ type CriptoLoadMatch struct {
 type Dolare struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -195,7 +199,7 @@ type Dolare struct {
 type DolareListMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -217,7 +221,7 @@ type EstadoLoadMatch struct {
 type Eur struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -227,7 +231,7 @@ type Eur struct {
 type EurLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -237,7 +241,7 @@ type EurLoadMatch struct {
 type Mayorista struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -247,7 +251,7 @@ type Mayorista struct {
 type MayoristaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -257,7 +261,7 @@ type MayoristaLoadMatch struct {
 type Oficial struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -267,7 +271,7 @@ type Oficial struct {
 type OficialLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -277,7 +281,7 @@ type OficialLoadMatch struct {
 type Tarjeta struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -287,7 +291,7 @@ type Tarjeta struct {
 type TarjetaLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -297,7 +301,7 @@ type TarjetaLoadMatch struct {
 type Uyu struct {
 	Casa string `json:"casa"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fecha_actualizacion"`
+	FechaActualizacion string `json:"fechaActualizacion"`
 	Moneda string `json:"moneda"`
 	Nombre string `json:"nombre"`
 	Venta float64 `json:"venta"`
@@ -307,7 +311,7 @@ type Uyu struct {
 type UyuLoadMatch struct {
 	Casa *string `json:"casa,omitempty"`
 	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion *string `json:"fecha_actualizacion,omitempty"`
+	FechaActualizacion *string `json:"fechaActualizacion,omitempty"`
 	Moneda *string `json:"moneda,omitempty"`
 	Nombre *string `json:"nombre,omitempty"`
 	Venta *float64 `json:"venta,omitempty"`
@@ -325,12 +329,26 @@ func asMap(v any) map[string]any {
 	return out
 }
 
-// typedFrom decodes a runtime value (a map[string]any produced by the op
-// pipeline) into a typed model T via a JSON round-trip. On any error it
-// returns the zero value of T; the op's own (value, error) tuple carries the
-// real error.
+// entityData unwraps an entity to its data map.
+//
+// Operations resolve to the ENTITY, not the raw data (see AGENTS.md), and an
+// entity's fields are UNEXPORTED — marshalling one directly yields `{}`, so
+// every typed accessor would silently hand back a zero-valued struct. The
+// typed boundary therefore takes the data hop first.
+func entityData(v any) any {
+	if ent, ok := v.(core.Entity); ok {
+		return ent.Data()
+	}
+	return v
+}
+
+// typedFrom decodes a runtime value (an entity, or the map[string]any the op
+// pipeline produced) into a typed model T via a JSON round-trip. On any error
+// it returns the zero value of T; the op's own (value, error) tuple carries
+// the real error.
 func typedFrom[T any](v any) T {
 	var out T
+	v = entityData(v)
 	if v == nil {
 		return out
 	}
@@ -342,12 +360,20 @@ func typedFrom[T any](v any) T {
 	return out
 }
 
-// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
-// slice []T via a JSON round-trip, for list ops.
+// typedSliceFrom decodes a runtime list value into a typed slice []T via a
+// JSON round-trip, for list ops. `list` resolves to a slice of ENTITY
+// instances, so each element takes the data hop.
 func typedSliceFrom[T any](v any) []T {
 	var out []T
 	if v == nil {
 		return out
+	}
+	if list, ok := v.([]any); ok {
+		unwrapped := make([]any, 0, len(list))
+		for _, item := range list {
+			unwrapped = append(unwrapped, entityData(item))
+		}
+		v = unwrapped
 	}
 	b, err := json.Marshal(v)
 	if err != nil {

@@ -26,8 +26,8 @@ import {
 describe('DolareEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = DolarYMonedasSDK.test()
@@ -63,7 +63,7 @@ describe('DolareEntity', async () => {
     const dolare_ref01_ent = client.Dolare()
     const dolare_ref01_match: any = {}
 
-    const dolare_ref01_list = await dolare_ref01_ent.list(dolare_ref01_match)
+    const dolare_ref01_list = (await dolare_ref01_ent.list(dolare_ref01_match)).map((e: any) => e.data())
 
 
   })

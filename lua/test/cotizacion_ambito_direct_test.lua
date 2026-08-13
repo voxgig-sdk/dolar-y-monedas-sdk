@@ -105,11 +105,11 @@ function cotizacion_ambito_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["DOLARYMONEDAS_TEST_COTIZACION_AMBITO_ENTID"] = {},
-    ["DOLARYMONEDAS_TEST_LIVE"] = "FALSE",
+    ["DOLAR_Y_MONEDAS_TEST_COTIZACION_AMBITO_ENTID"] = {},
+    ["DOLAR_Y_MONEDAS_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["DOLARYMONEDAS_TEST_LIVE"] == "TRUE"
+  local live = env["DOLAR_Y_MONEDAS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

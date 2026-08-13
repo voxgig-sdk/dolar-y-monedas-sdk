@@ -19,11 +19,15 @@ import {
 describe('MayoristaDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOLARYMONEDAS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOLARYMONEDAS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOLAR_Y_MONEDAS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOLAR_Y_MONEDAS_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new DolarYMonedasSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'DOLARYMONEDAS_TEST_MAYORISTA_ENTID': {},
-    'DOLARYMONEDAS_TEST_LIVE': 'FALSE',
+    'DOLAR_Y_MONEDAS_TEST_MAYORISTA_ENTID': {},
+    'DOLAR_Y_MONEDAS_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.DOLARYMONEDAS_TEST_LIVE
+  const live = 'TRUE' === env.DOLAR_Y_MONEDAS_TEST_LIVE
 
   if (live) {
     const client = new DolarYMonedasSDK({
     })
 
-    let idmap: any = env['DOLARYMONEDAS_TEST_MAYORISTA_ENTID']
+    let idmap: any = env['DOLAR_Y_MONEDAS_TEST_MAYORISTA_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

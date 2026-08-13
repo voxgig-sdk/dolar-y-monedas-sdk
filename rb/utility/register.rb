@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ DolarYMonedasUtility.registrar = ->(u) {
   u.prepare_params = DolarYMonedasUtilities::PrepareParams
   u.prepare_path = DolarYMonedasUtilities::PreparePath
   u.prepare_query = DolarYMonedasUtilities::PrepareQuery
+  u.graphql_body = DolarYMonedasUtilities::GraphqlBody
+  u.graphql_errors = DolarYMonedasUtilities::GraphqlErrors
   u.result_basic = DolarYMonedasUtilities::ResultBasic
   u.result_body = DolarYMonedasUtilities::ResultBody
   u.result_headers = DolarYMonedasUtilities::ResultHeaders

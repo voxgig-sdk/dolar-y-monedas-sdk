@@ -43,8 +43,8 @@ class DolarYMonedasTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('DOLARYMONEDAS_TEST_LIVE');
-        $override = self::getenv('DOLARYMONEDAS_TEST_OVERRIDE');
+        $live = self::getenv('DOLAR_Y_MONEDAS_TEST_LIVE');
+        $override = self::getenv('DOLAR_Y_MONEDAS_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class DolarYMonedasTestRunner
             }
         }
 
-        $explain = self::getenv('DOLARYMONEDAS_TEST_EXPLAIN');
+        $explain = self::getenv('DOLAR_Y_MONEDAS_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['DOLARYMONEDAS_TEST_EXPLAIN'] = $explain;
+            $m['DOLAR_Y_MONEDAS_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

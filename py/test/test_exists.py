@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# DolarYMonedas SDK exists test
 
 import pytest
 from dolarymonedas_sdk import DolarYMonedasSDK

@@ -148,7 +148,7 @@ local blue = client:Blue(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -205,7 +205,7 @@ local bolsa = client:Bolsa(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -262,7 +262,7 @@ local brl = client:Brl(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -319,7 +319,7 @@ local clp = client:Clp(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -376,7 +376,7 @@ local contadoconliqui = client:Contadoconliqui(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -433,7 +433,7 @@ local cotizacion_ambito = client:CotizacionAmbito(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `variacion` | `number` | Yes |  |
@@ -499,7 +499,7 @@ local cotizacione = client:Cotizacione(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -556,7 +556,7 @@ local cripto = client:Cripto(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -613,7 +613,7 @@ local dolare = client:Dolare(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -723,7 +723,7 @@ local eur = client:Eur(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -780,7 +780,7 @@ local mayorista = client:Mayorista(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -837,7 +837,7 @@ local oficial = client:Oficial(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -894,7 +894,7 @@ local tarjeta = client:Tarjeta(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -951,7 +951,7 @@ local uyu = client:Uyu(nil)
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |

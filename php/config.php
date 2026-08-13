@@ -60,7 +60,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -96,6 +96,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/blue',
                   'parts' => [
@@ -136,7 +137,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -172,6 +173,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/bolsa',
                   'parts' => [
@@ -212,7 +214,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -248,6 +250,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/cotizaciones/brl',
                   'parts' => [
@@ -288,7 +291,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -324,6 +327,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/cotizaciones/clp',
                   'parts' => [
@@ -364,7 +368,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -400,6 +404,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/contadoconliqui',
                   'parts' => [
@@ -440,7 +445,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -483,6 +488,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares',
                   'parts' => [
@@ -507,6 +513,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/blue',
                   'parts' => [
@@ -525,6 +532,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/bolsa',
                   'parts' => [
@@ -543,6 +551,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/contadoconliqui',
                   'parts' => [
@@ -561,6 +570,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/cripto',
                   'parts' => [
@@ -579,6 +589,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/mayorista',
                   'parts' => [
@@ -597,6 +608,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/oficial',
                   'parts' => [
@@ -615,6 +627,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/ambito/dolares/tarjeta',
                   'parts' => [
@@ -656,7 +669,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -692,6 +705,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/cotizaciones',
                   'parts' => [
@@ -731,7 +745,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -767,6 +781,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/cripto',
                   'parts' => [
@@ -807,7 +822,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -843,6 +858,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares',
                   'parts' => [
@@ -890,6 +906,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/estado',
                   'parts' => [
@@ -929,7 +946,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -965,6 +982,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/cotizaciones/eur',
                   'parts' => [
@@ -1005,7 +1023,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -1041,6 +1059,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/mayorista',
                   'parts' => [
@@ -1081,7 +1100,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -1117,6 +1136,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/oficial',
                   'parts' => [
@@ -1157,7 +1177,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -1193,6 +1213,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/dolares/tarjeta',
                   'parts' => [
@@ -1233,7 +1254,7 @@ class DolarYMonedasConfig
             ],
             [
               'active' => true,
-              'name' => 'fecha_actualizacion',
+              'name' => 'fechaActualizacion',
               'req' => true,
               'type' => '`$STRING`',
               'index$' => 2,
@@ -1269,6 +1290,7 @@ class DolarYMonedasConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/v1/cotizaciones/uyu',
                   'parts' => [

@@ -4,7 +4,7 @@
       "COTIZACION_AMBITO00": {
         "casa": "s46",
         "compra": 71,
-        "fecha_actualizacion": "s48",
+        "fechaActualizacion": "s48",
         "moneda": "s49",
         "nombre": "s4a",
         "variacion": 75,
@@ -14,7 +14,7 @@
       "COTIZACION_AMBITO01": {
         "casa": "s8c",
         "compra": 141,
-        "fecha_actualizacion": "s8e",
+        "fechaActualizacion": "s8e",
         "moneda": "s8f",
         "nombre": "s90",
         "variacion": 145,
@@ -24,7 +24,7 @@
       "COTIZACION_AMBITO02": {
         "casa": "sd2",
         "compra": 211,
-        "fecha_actualizacion": "sd4",
+        "fechaActualizacion": "sd4",
         "moneda": "sd5",
         "nombre": "sd6",
         "variacion": 215,
@@ -38,7 +38,7 @@
       "cotizacion_ambito_ref01": {
         "casa": "s118",
         "compra": 281,
-        "fecha_actualizacion": "s11a",
+        "fechaActualizacion": "s11a",
         "moneda": "s11b",
         "nombre": "s11c",
         "variacion": 285,

@@ -150,7 +150,7 @@ $blue = $client->Blue();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -207,7 +207,7 @@ $bolsa = $client->Bolsa();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -264,7 +264,7 @@ $brl = $client->Brl();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -321,7 +321,7 @@ $clp = $client->Clp();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -378,7 +378,7 @@ $contadoconliqui = $client->Contadoconliqui();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -435,7 +435,7 @@ $cotizacion_ambito = $client->CotizacionAmbito();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `variacion` | `float` | Yes |  |
@@ -501,7 +501,7 @@ $cotizacione = $client->Cotizacione();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -558,7 +558,7 @@ $cripto = $client->Cripto();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -615,7 +615,7 @@ $dolare = $client->Dolare();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -725,7 +725,7 @@ $eur = $client->Eur();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -782,7 +782,7 @@ $mayorista = $client->Mayorista();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -839,7 +839,7 @@ $oficial = $client->Oficial();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -896,7 +896,7 @@ $tarjeta = $client->Tarjeta();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |
@@ -953,7 +953,7 @@ $uyu = $client->Uyu();
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `float` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `float` | Yes |  |

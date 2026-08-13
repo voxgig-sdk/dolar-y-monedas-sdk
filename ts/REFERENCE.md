@@ -286,7 +286,7 @@ const blue = client.Blue()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -341,7 +341,7 @@ const bolsa = client.Bolsa()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -396,7 +396,7 @@ const brl = client.Brl()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -451,7 +451,7 @@ const clp = client.Clp()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -506,7 +506,7 @@ const contadoconliqui = client.Contadoconliqui()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -561,7 +561,7 @@ const cotizacion_ambito = client.CotizacionAmbito()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `variacion` | `number` | Yes |  |
@@ -625,7 +625,7 @@ const cotizacione = client.Cotizacione()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -680,7 +680,7 @@ const cripto = client.Cripto()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -735,7 +735,7 @@ const dolare = client.Dolare()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -841,7 +841,7 @@ const eur = client.Eur()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -896,7 +896,7 @@ const mayorista = client.Mayorista()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -951,7 +951,7 @@ const oficial = client.Oficial()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -1006,7 +1006,7 @@ const tarjeta = client.Tarjeta()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |
@@ -1061,7 +1061,7 @@ const uyu = client.Uyu()
 | --- | --- | --- | --- |
 | `casa` | `string` | Yes |  |
 | `compra` | `number` | No |  |
-| `fecha_actualizacion` | `string` | Yes |  |
+| `fechaActualizacion` | `string` | Yes |  |
 | `moneda` | `string` | Yes |  |
 | `nombre` | `string` | Yes |  |
 | `venta` | `number` | Yes |  |

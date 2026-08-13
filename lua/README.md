@@ -48,7 +48,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local blue, err = client:Blue():load()
+local cripto, err = client:Cripto():load()
 if err then error(err) end
 ```
 
@@ -106,7 +106,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Blue():load()
+local result, err = client:Cripto():load()
 -- result is the returned data; err is set on failure
 ```
 
@@ -243,7 +243,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -258,7 +258,7 @@ API path: `/v1/dolares/blue`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -273,7 +273,7 @@ API path: `/v1/dolares/bolsa`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -288,7 +288,7 @@ API path: `/v1/cotizaciones/brl`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -303,7 +303,7 @@ API path: `/v1/cotizaciones/clp`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -318,7 +318,7 @@ API path: `/v1/dolares/contadoconliqui`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `variacion` |  |
@@ -334,7 +334,7 @@ API path: `/v1/ambito/dolares`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -349,7 +349,7 @@ API path: `/v1/cotizaciones`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -364,7 +364,7 @@ API path: `/v1/dolares/cripto`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -390,7 +390,7 @@ API path: `/v1/estado`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -405,7 +405,7 @@ API path: `/v1/cotizaciones/eur`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -420,7 +420,7 @@ API path: `/v1/dolares/mayorista`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -435,7 +435,7 @@ API path: `/v1/dolares/oficial`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -450,7 +450,7 @@ API path: `/v1/dolares/tarjeta`
 | --- | --- |
 | `casa` |  |
 | `compra` |  |
-| `fecha_actualizacion` |  |
+| `fechaActualizacion` |  |
 | `moneda` |  |
 | `nombre` |  |
 | `venta` |  |
@@ -480,7 +480,7 @@ Create an instance: `local blue = client:Blue(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -508,7 +508,7 @@ Create an instance: `local bolsa = client:Bolsa(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -536,7 +536,7 @@ Create an instance: `local brl = client:Brl(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -564,7 +564,7 @@ Create an instance: `local clp = client:Clp(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -592,7 +592,7 @@ Create an instance: `local contadoconliqui = client:Contadoconliqui(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -621,7 +621,7 @@ Create an instance: `local cotizacion_ambito = client:CotizacionAmbito(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `variacion` | `number` |  |
@@ -656,7 +656,7 @@ Create an instance: `local cotizacione = client:Cotizacione(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -684,7 +684,7 @@ Create an instance: `local cripto = client:Cripto(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -712,7 +712,7 @@ Create an instance: `local dolare = client:Dolare(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -764,7 +764,7 @@ Create an instance: `local eur = client:Eur(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -792,7 +792,7 @@ Create an instance: `local mayorista = client:Mayorista(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -820,7 +820,7 @@ Create an instance: `local oficial = client:Oficial(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -848,7 +848,7 @@ Create an instance: `local tarjeta = client:Tarjeta(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -876,7 +876,7 @@ Create an instance: `local uyu = client:Uyu(nil)`
 | --- | --- | --- |
 | `casa` | `string` |  |
 | `compra` | `number` |  |
-| `fecha_actualizacion` | `string` |  |
+| `fechaActualizacion` | `string` |  |
 | `moneda` | `string` |  |
 | `nombre` | `string` |  |
 | `venta` | `number` |  |
@@ -964,11 +964,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local blue = client:Blue()
-blue:load()
+local cripto = client:Cripto()
+cripto:load()
 
--- blue:data_get() now returns the blue data from the last load
--- blue:match_get() returns the last match criteria
+-- cripto:data_get() now returns the cripto data from the last load
+-- cripto:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

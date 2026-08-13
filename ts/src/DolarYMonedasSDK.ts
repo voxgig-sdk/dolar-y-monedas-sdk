@@ -160,8 +160,29 @@ class DolarYMonedasSDK {
   }
 
 
+  // Raw endpoint access is operator-controllable, like every entity op.
+  // Blocking it means denying BOTH the 'direct' and 'graphql' tokens, since
+  // either one reaches the same endpoint.
   async direct(fetchargs?: any) {
+    if (!this._options.allow.op.includes('direct')) {
+      return {
+        ok: false,
+        err: new Error('DolarYMonedasSDK: direct: operation not allowed by' +
+          ' SDK option allow.op value: "' + this._options.allow.op + '"'),
+      }
+    }
+
+    return this._rawRequest(fetchargs)
+  }
+
+
+  // Ungated request path shared by direct() and graphql(), each of which
+  // checks its own allow.op token first. Private, rather than a flag on
+  // fetchargs: a caller-supplied marker would let anyone opt straight back
+  // out of the gate by passing it.
+  async _rawRequest(fetchargs?: any) {
     const utility = this._utility
+
     const fetcher = utility.fetcher
     const makeContext = utility.makeContext
 
@@ -222,108 +243,192 @@ class DolarYMonedasSDK {
 
 
 
+  // Raw GraphQL access: the pressure valve that makes the generated
+  // surface's deliberate omissions (per-call selection sets, typed filter
+  // builders, batching, subscriptions) livable — the whole schema stays
+  // reachable.
+  //
+  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
+  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
+  // HTTP 200 as a top-level `errors` array, so status alone would report a
+  // failed query as ok.
+  //
+  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
+  // ratelimit or paging features apply.
+  async graphql(query: string, variables?: any, ctrl?: any) {
+    const options = this._options
+
+    if (!options.allow.op.includes('graphql')) {
+      return {
+        ok: false,
+        err: new Error('DolarYMonedasSDK: graphql: operation not allowed by' +
+          ' SDK option allow.op value: "' + options.allow.op + '"'),
+      }
+    }
+
+    const res: any = await this._rawRequest({
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: { query, variables: variables || {} },
+      ctrl,
+    })
+
+    if (res instanceof Error) {
+      return res
+    }
+
+    // Errors are read BEFORE any status check: a GraphQL parse or validation
+    // failure comes back as HTTP 400 carrying the standard { errors: [...] }
+    // body, and the raw path represents a non-2xx as { ok: false } with no
+    // err — so returning early on status would discard the server's own
+    // diagnostics, which are the only useful part of that response.
+    const errors = null == res.data ? undefined : res.data.errors
+
+    if (null != errors && Array.isArray(errors) && 0 < errors.length) {
+      const first = errors[0] || {}
+      const err: any = new Error('DolarYMonedasSDK: graphql: ' +
+        (first.message || 'graphql error'))
+      err.graphql = errors
+      return { ok: false, status: res.status, headers: res.headers, err, data: res.data }
+    }
+
+    return res
+  }
+
+
+
   // Entity access: `client.Blue().list()` / `client.Blue().load({ id })`.
-  Blue(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Blue(entopts?: Record<string, any>) {
     const self = this
-    return new BlueEntity(self,data)
+    return new BlueEntity(self, entopts)
   }
 
 
   // Entity access: `client.Bolsa().list()` / `client.Bolsa().load({ id })`.
-  Bolsa(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Bolsa(entopts?: Record<string, any>) {
     const self = this
-    return new BolsaEntity(self,data)
+    return new BolsaEntity(self, entopts)
   }
 
 
   // Entity access: `client.Brl().list()` / `client.Brl().load({ id })`.
-  Brl(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Brl(entopts?: Record<string, any>) {
     const self = this
-    return new BrlEntity(self,data)
+    return new BrlEntity(self, entopts)
   }
 
 
   // Entity access: `client.Clp().list()` / `client.Clp().load({ id })`.
-  Clp(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Clp(entopts?: Record<string, any>) {
     const self = this
-    return new ClpEntity(self,data)
+    return new ClpEntity(self, entopts)
   }
 
 
   // Entity access: `client.Contadoconliqui().list()` / `client.Contadoconliqui().load({ id })`.
-  Contadoconliqui(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Contadoconliqui(entopts?: Record<string, any>) {
     const self = this
-    return new ContadoconliquiEntity(self,data)
+    return new ContadoconliquiEntity(self, entopts)
   }
 
 
   // Entity access: `client.CotizacionAmbito().list()` / `client.CotizacionAmbito().load({ id })`.
-  CotizacionAmbito(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  CotizacionAmbito(entopts?: Record<string, any>) {
     const self = this
-    return new CotizacionAmbitoEntity(self,data)
+    return new CotizacionAmbitoEntity(self, entopts)
   }
 
 
   // Entity access: `client.Cotizacione().list()` / `client.Cotizacione().load({ id })`.
-  Cotizacione(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Cotizacione(entopts?: Record<string, any>) {
     const self = this
-    return new CotizacioneEntity(self,data)
+    return new CotizacioneEntity(self, entopts)
   }
 
 
   // Entity access: `client.Cripto().list()` / `client.Cripto().load({ id })`.
-  Cripto(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Cripto(entopts?: Record<string, any>) {
     const self = this
-    return new CriptoEntity(self,data)
+    return new CriptoEntity(self, entopts)
   }
 
 
   // Entity access: `client.Dolare().list()` / `client.Dolare().load({ id })`.
-  Dolare(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Dolare(entopts?: Record<string, any>) {
     const self = this
-    return new DolareEntity(self,data)
+    return new DolareEntity(self, entopts)
   }
 
 
   // Entity access: `client.Estado().list()` / `client.Estado().load({ id })`.
-  Estado(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Estado(entopts?: Record<string, any>) {
     const self = this
-    return new EstadoEntity(self,data)
+    return new EstadoEntity(self, entopts)
   }
 
 
   // Entity access: `client.Eur().list()` / `client.Eur().load({ id })`.
-  Eur(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Eur(entopts?: Record<string, any>) {
     const self = this
-    return new EurEntity(self,data)
+    return new EurEntity(self, entopts)
   }
 
 
   // Entity access: `client.Mayorista().list()` / `client.Mayorista().load({ id })`.
-  Mayorista(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Mayorista(entopts?: Record<string, any>) {
     const self = this
-    return new MayoristaEntity(self,data)
+    return new MayoristaEntity(self, entopts)
   }
 
 
   // Entity access: `client.Oficial().list()` / `client.Oficial().load({ id })`.
-  Oficial(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Oficial(entopts?: Record<string, any>) {
     const self = this
-    return new OficialEntity(self,data)
+    return new OficialEntity(self, entopts)
   }
 
 
   // Entity access: `client.Tarjeta().list()` / `client.Tarjeta().load({ id })`.
-  Tarjeta(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Tarjeta(entopts?: Record<string, any>) {
     const self = this
-    return new TarjetaEntity(self,data)
+    return new TarjetaEntity(self, entopts)
   }
 
 
   // Entity access: `client.Uyu().list()` / `client.Uyu().load({ id })`.
-  Uyu(data?: any) {
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  Uyu(entopts?: Record<string, any>) {
     const self = this
-    return new UyuEntity(self,data)
+    return new UyuEntity(self, entopts)
   }
 
 

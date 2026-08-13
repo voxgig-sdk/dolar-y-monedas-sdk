@@ -23,8 +23,8 @@ module DolarYMonedasTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("DOLARYMONEDAS_TEST_LIVE")
-    override = getenv("DOLARYMONEDAS_TEST_OVERRIDE")
+    live = getenv("DOLAR_Y_MONEDAS_TEST_LIVE")
+    override = getenv("DOLAR_Y_MONEDAS_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module DolarYMonedasTestRunner
       end
     end
 
-    explain = getenv("DOLARYMONEDAS_TEST_EXPLAIN")
-    m["DOLARYMONEDAS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("DOLAR_Y_MONEDAS_TEST_EXPLAIN")
+    m["DOLAR_Y_MONEDAS_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

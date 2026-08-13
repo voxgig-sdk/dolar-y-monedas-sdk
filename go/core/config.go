@@ -54,7 +54,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -90,6 +90,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/blue",
 								"parts": []any{
@@ -105,7 +106,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -130,7 +130,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -166,6 +166,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/bolsa",
 								"parts": []any{
@@ -181,7 +182,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -206,7 +206,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -242,6 +242,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/cotizaciones/brl",
 								"parts": []any{
@@ -257,7 +258,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -282,7 +282,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -318,6 +318,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/cotizaciones/clp",
 								"parts": []any{
@@ -333,7 +334,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -358,7 +358,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -394,6 +394,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/contadoconliqui",
 								"parts": []any{
@@ -409,7 +410,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -434,7 +434,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -477,6 +477,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares",
 								"parts": []any{
@@ -492,7 +493,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 					"load": map[string]any{
 						"input": "data",
@@ -501,6 +501,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/blue",
 								"parts": []any{
@@ -519,6 +520,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/bolsa",
 								"parts": []any{
@@ -537,6 +539,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/contadoconliqui",
 								"parts": []any{
@@ -555,6 +558,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/cripto",
 								"parts": []any{
@@ -573,6 +577,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/mayorista",
 								"parts": []any{
@@ -591,6 +596,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/oficial",
 								"parts": []any{
@@ -609,6 +615,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/ambito/dolares/tarjeta",
 								"parts": []any{
@@ -625,7 +632,6 @@ func MakeConfig() map[string]any {
 								"index$": 6,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -650,7 +656,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -686,6 +692,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/cotizaciones",
 								"parts": []any{
@@ -700,7 +707,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -725,7 +731,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -761,6 +767,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/cripto",
 								"parts": []any{
@@ -776,7 +783,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -801,7 +807,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -837,6 +843,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares",
 								"parts": []any{
@@ -851,7 +858,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -884,6 +890,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/estado",
 								"parts": []any{
@@ -898,7 +905,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -923,7 +929,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -959,6 +965,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/cotizaciones/eur",
 								"parts": []any{
@@ -974,7 +981,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -999,7 +1005,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -1035,6 +1041,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/mayorista",
 								"parts": []any{
@@ -1050,7 +1057,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -1075,7 +1081,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -1111,6 +1117,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/oficial",
 								"parts": []any{
@@ -1126,7 +1133,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -1151,7 +1157,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -1187,6 +1193,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/dolares/tarjeta",
 								"parts": []any{
@@ -1202,7 +1209,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{
@@ -1227,7 +1233,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "fecha_actualizacion",
+						"name": "fechaActualizacion",
 						"req": true,
 						"type": "`$STRING`",
 						"index$": 2,
@@ -1263,6 +1269,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/v1/cotizaciones/uyu",
 								"parts": []any{
@@ -1278,7 +1285,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "load",
 					},
 				},
 				"relations": map[string]any{

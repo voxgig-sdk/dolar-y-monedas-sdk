@@ -55,7 +55,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -91,6 +91,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/blue",
                   "parts" => [
@@ -131,7 +132,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -167,6 +168,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/bolsa",
                   "parts" => [
@@ -207,7 +209,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -243,6 +245,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/cotizaciones/brl",
                   "parts" => [
@@ -283,7 +286,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -319,6 +322,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/cotizaciones/clp",
                   "parts" => [
@@ -359,7 +363,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -395,6 +399,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/contadoconliqui",
                   "parts" => [
@@ -435,7 +440,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -478,6 +483,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares",
                   "parts" => [
@@ -502,6 +508,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/blue",
                   "parts" => [
@@ -520,6 +527,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/bolsa",
                   "parts" => [
@@ -538,6 +546,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/contadoconliqui",
                   "parts" => [
@@ -556,6 +565,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/cripto",
                   "parts" => [
@@ -574,6 +584,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/mayorista",
                   "parts" => [
@@ -592,6 +603,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/oficial",
                   "parts" => [
@@ -610,6 +622,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/ambito/dolares/tarjeta",
                   "parts" => [
@@ -651,7 +664,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -687,6 +700,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/cotizaciones",
                   "parts" => [
@@ -726,7 +740,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -762,6 +776,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/cripto",
                   "parts" => [
@@ -802,7 +817,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -838,6 +853,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares",
                   "parts" => [
@@ -885,6 +901,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/estado",
                   "parts" => [
@@ -924,7 +941,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -960,6 +977,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/cotizaciones/eur",
                   "parts" => [
@@ -1000,7 +1018,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -1036,6 +1054,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/mayorista",
                   "parts" => [
@@ -1076,7 +1095,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -1112,6 +1131,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/oficial",
                   "parts" => [
@@ -1152,7 +1172,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -1188,6 +1208,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/dolares/tarjeta",
                   "parts" => [
@@ -1228,7 +1249,7 @@ module DolarYMonedasConfig
             },
             {
               "active" => true,
-              "name" => "fecha_actualizacion",
+              "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
               "index$" => 2,
@@ -1264,6 +1285,7 @@ module DolarYMonedasConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/v1/cotizaciones/uyu",
                   "parts" => [

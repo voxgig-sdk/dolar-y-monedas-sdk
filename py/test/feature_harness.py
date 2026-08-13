@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import DolarYMonedasControl
-from core.error import DolarYMonedasError
-from core.result import DolarYMonedasResult
-from core.spec import DolarYMonedasSpec
+from dolarymonedas_sdk.config import make_config
+from dolarymonedas_sdk.features import _make_feature
+from dolarymonedas_sdk.core.control import DolarYMonedasControl
+from dolarymonedas_sdk.core.error import DolarYMonedasError
+from dolarymonedas_sdk.core.result import DolarYMonedasResult
+from dolarymonedas_sdk.core.spec import DolarYMonedasSpec
 
 
 # True when this SDK was generated with the named feature.
