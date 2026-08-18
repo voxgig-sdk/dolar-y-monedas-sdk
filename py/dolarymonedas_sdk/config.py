@@ -1,7 +1,30 @@
 # DolarYMonedas SDK configuration
 
 
+_shared_config = None
+
+
+def shared_config():
+    """Return the process-wide config, built once on first use.
+
+    The SDK reads the config on every request and never writes to it, so one
+    instance is shared by every client rather than rebuilt per client.
+
+    The returned dict is shared: treat it as read-only. Callers that need to
+    mutate should use make_config, which always returns a fresh copy.
+    """
+    global _shared_config
+    if _shared_config is None:
+        _shared_config = make_config()
+    return _shared_config
+
+
 def make_config():
+    """Build a fresh, fully materialised config dict.
+
+    Every call rebuilds the whole structure, so prefer shared_config unless
+    you need a private copy you intend to mutate.
+    """
     return {
         "main": {
             "name": "DolarYMonedas",
@@ -40,46 +63,33 @@ def make_config():
       "blue": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "blue",
@@ -89,7 +99,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -104,10 +113,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -117,46 +124,33 @@ def make_config():
       "bolsa": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "bolsa",
@@ -166,7 +160,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -181,10 +174,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -194,46 +185,33 @@ def make_config():
       "brl": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "brl",
@@ -243,7 +221,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -258,10 +235,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -271,46 +246,33 @@ def make_config():
       "clp": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "clp",
@@ -320,7 +282,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -335,10 +296,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -348,46 +307,33 @@ def make_config():
       "contadoconliqui": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "contadoconliqui",
@@ -397,7 +343,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -412,10 +357,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -425,53 +368,38 @@ def make_config():
       "cotizacion_ambito": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "variacion",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 6,
           },
         ],
         "name": "cotizacion_ambito",
@@ -481,7 +409,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -496,17 +423,14 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
           "load": {
             "input": "data",
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -522,10 +446,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -541,10 +463,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 1,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -560,10 +480,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 2,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -579,10 +497,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 3,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -598,10 +514,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 4,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -617,10 +531,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 5,
               },
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -636,10 +548,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 6,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -649,46 +559,33 @@ def make_config():
       "cotizacione": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "cotizacione",
@@ -698,7 +595,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -712,10 +608,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
         },
         "relations": {
@@ -725,46 +619,33 @@ def make_config():
       "cripto": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "cripto",
@@ -774,7 +655,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -789,10 +669,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -802,46 +680,33 @@ def make_config():
       "dolare": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "dolare",
@@ -851,7 +716,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -865,10 +729,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "list",
           },
         },
         "relations": {
@@ -878,18 +740,12 @@ def make_config():
       "estado": {
         "fields": [
           {
-            "active": True,
             "name": "aleatorio",
-            "req": False,
             "type": "`$INTEGER`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "estado",
-            "req": False,
             "type": "`$STRING`",
-            "index$": 1,
           },
         ],
         "name": "estado",
@@ -899,7 +755,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -913,10 +768,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -926,46 +779,33 @@ def make_config():
       "eur": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "eur",
@@ -975,7 +815,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -990,10 +829,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1003,46 +840,33 @@ def make_config():
       "mayorista": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "mayorista",
@@ -1052,7 +876,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -1067,10 +890,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1080,46 +901,33 @@ def make_config():
       "oficial": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "oficial",
@@ -1129,7 +937,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -1144,10 +951,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1157,46 +962,33 @@ def make_config():
       "tarjeta": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "tarjeta",
@@ -1206,7 +998,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -1221,10 +1012,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {
@@ -1234,46 +1023,33 @@ def make_config():
       "uyu": {
         "fields": [
           {
-            "active": True,
             "name": "casa",
             "req": True,
             "type": "`$STRING`",
-            "index$": 0,
           },
           {
-            "active": True,
             "name": "compra",
-            "req": False,
             "type": "`$NUMBER`",
-            "index$": 1,
           },
           {
-            "active": True,
             "name": "fechaActualizacion",
             "req": True,
             "type": "`$STRING`",
-            "index$": 2,
           },
           {
-            "active": True,
             "name": "moneda",
             "req": True,
             "type": "`$STRING`",
-            "index$": 3,
           },
           {
-            "active": True,
             "name": "nombre",
             "req": True,
             "type": "`$STRING`",
-            "index$": 4,
           },
           {
-            "active": True,
             "name": "venta",
             "req": True,
             "type": "`$NUMBER`",
-            "index$": 5,
           },
         ],
         "name": "uyu",
@@ -1283,7 +1059,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "active": True,
                 "args": {},
                 "kind": "http",
                 "method": "GET",
@@ -1298,10 +1073,8 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "index$": 0,
               },
             ],
-            "key$": "load",
           },
         },
         "relations": {

@@ -40,7 +40,7 @@ class DolarYMonedasSDK
         $utility = new DolarYMonedasUtility();
         $this->_utility = $utility;
 
-        $config = DolarYMonedasConfig::make_config();
+        $config = DolarYMonedasConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

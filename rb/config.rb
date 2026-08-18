@@ -1,6 +1,20 @@
 # DolarYMonedas SDK configuration
 
 module DolarYMonedasConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -40,46 +54,33 @@ module DolarYMonedasConfig
         "blue" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "blue",
@@ -89,7 +90,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -104,10 +104,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -117,46 +115,33 @@ module DolarYMonedasConfig
         "bolsa" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "bolsa",
@@ -166,7 +151,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -181,10 +165,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -194,46 +176,33 @@ module DolarYMonedasConfig
         "brl" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "brl",
@@ -243,7 +212,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -258,10 +226,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -271,46 +237,33 @@ module DolarYMonedasConfig
         "clp" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "clp",
@@ -320,7 +273,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -335,10 +287,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -348,46 +298,33 @@ module DolarYMonedasConfig
         "contadoconliqui" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "contadoconliqui",
@@ -397,7 +334,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -412,10 +348,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -425,53 +359,38 @@ module DolarYMonedasConfig
         "cotizacion_ambito" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "variacion",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 6,
             },
           ],
           "name" => "cotizacion_ambito",
@@ -481,7 +400,6 @@ module DolarYMonedasConfig
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -496,17 +414,14 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
             "load" => {
               "input" => "data",
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -522,10 +437,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -541,10 +454,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 1,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -560,10 +471,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 2,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -579,10 +488,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 3,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -598,10 +505,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 4,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -617,10 +522,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 5,
                 },
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -636,10 +539,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 6,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -649,46 +550,33 @@ module DolarYMonedasConfig
         "cotizacione" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "cotizacione",
@@ -698,7 +586,6 @@ module DolarYMonedasConfig
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -712,10 +599,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
           },
           "relations" => {
@@ -725,46 +610,33 @@ module DolarYMonedasConfig
         "cripto" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "cripto",
@@ -774,7 +646,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -789,10 +660,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -802,46 +671,33 @@ module DolarYMonedasConfig
         "dolare" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "dolare",
@@ -851,7 +707,6 @@ module DolarYMonedasConfig
               "name" => "list",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -865,10 +720,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "list",
             },
           },
           "relations" => {
@@ -878,18 +731,12 @@ module DolarYMonedasConfig
         "estado" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "aleatorio",
-              "req" => false,
               "type" => "`$INTEGER`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "estado",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "estado",
@@ -899,7 +746,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -913,10 +759,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -926,46 +770,33 @@ module DolarYMonedasConfig
         "eur" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "eur",
@@ -975,7 +806,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -990,10 +820,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -1003,46 +831,33 @@ module DolarYMonedasConfig
         "mayorista" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "mayorista",
@@ -1052,7 +867,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -1067,10 +881,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -1080,46 +892,33 @@ module DolarYMonedasConfig
         "oficial" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "oficial",
@@ -1129,7 +928,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -1144,10 +942,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -1157,46 +953,33 @@ module DolarYMonedasConfig
         "tarjeta" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "tarjeta",
@@ -1206,7 +989,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -1221,10 +1003,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -1234,46 +1014,33 @@ module DolarYMonedasConfig
         "uyu" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "casa",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "compra",
-              "req" => false,
               "type" => "`$NUMBER`",
-              "index$" => 1,
             },
             {
-              "active" => true,
               "name" => "fechaActualizacion",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 2,
             },
             {
-              "active" => true,
               "name" => "moneda",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 3,
             },
             {
-              "active" => true,
               "name" => "nombre",
               "req" => true,
               "type" => "`$STRING`",
-              "index$" => 4,
             },
             {
-              "active" => true,
               "name" => "venta",
               "req" => true,
               "type" => "`$NUMBER`",
-              "index$" => 5,
             },
           ],
           "name" => "uyu",
@@ -1283,7 +1050,6 @@ module DolarYMonedasConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -1298,10 +1064,8 @@ module DolarYMonedasConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {

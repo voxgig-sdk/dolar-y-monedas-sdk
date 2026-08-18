@@ -28,7 +28,7 @@ class DolarYMonedasSDK
     utility = DolarYMonedasUtility.new
     @_utility = utility
 
-    config = DolarYMonedasConfig.make_config
+    config = DolarYMonedasConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
