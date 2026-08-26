@@ -42,6 +42,7 @@ class DolarYMonedasConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
