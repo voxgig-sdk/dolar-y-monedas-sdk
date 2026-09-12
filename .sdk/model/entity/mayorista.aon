@@ -45,10 +45,16 @@ main: kit: entity: mayorista: {
         {
           method: "GET"
           orig: "/v1/dolares/mayorista"
-          parts: [
-            "v1"
-            "dolares"
-            "mayorista"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "mayorista"
+            }
           ]
           transform: {
             req: "`reqdata`"

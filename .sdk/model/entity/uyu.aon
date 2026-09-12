@@ -45,10 +45,16 @@ main: kit: entity: uyu: {
         {
           method: "GET"
           orig: "/v1/cotizaciones/uyu"
-          parts: [
-            "v1"
-            "cotizaciones"
-            "uyu"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "cotizaciones"
+            }
+            {
+              lit: "uyu"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -45,10 +45,16 @@ main: kit: entity: tarjeta: {
         {
           method: "GET"
           orig: "/v1/dolares/tarjeta"
-          parts: [
-            "v1"
-            "dolares"
-            "tarjeta"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "tarjeta"
+            }
           ]
           transform: {
             req: "`reqdata`"

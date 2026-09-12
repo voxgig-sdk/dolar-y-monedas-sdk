@@ -45,9 +45,13 @@ main: kit: entity: cotizacione: {
         {
           method: "GET"
           orig: "/v1/cotizaciones"
-          parts: [
-            "v1"
-            "cotizaciones"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "cotizaciones"
+            }
           ]
           transform: {
             req: "`reqdata`"

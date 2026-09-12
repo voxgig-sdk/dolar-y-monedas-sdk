@@ -1,0 +1,85 @@
+import { BlueEntity } from './entity/BlueEntity';
+import { BolsaEntity } from './entity/BolsaEntity';
+import { BrlEntity } from './entity/BrlEntity';
+import { ClpEntity } from './entity/ClpEntity';
+import { ContadoconliquiEntity } from './entity/ContadoconliquiEntity';
+import { CotizacionAmbitoEntity } from './entity/CotizacionAmbitoEntity';
+import { CotizacioneEntity } from './entity/CotizacioneEntity';
+import { CriptoEntity } from './entity/CriptoEntity';
+import { DolareEntity } from './entity/DolareEntity';
+import { EstadoEntity } from './entity/EstadoEntity';
+import { EurEntity } from './entity/EurEntity';
+import { MayoristaEntity } from './entity/MayoristaEntity';
+import { OficialEntity } from './entity/OficialEntity';
+import { TarjetaEntity } from './entity/TarjetaEntity';
+import { UyuEntity } from './entity/UyuEntity';
+export type * from './DolarYMonedasTypes';
+import { inspect } from 'node:util';
+import type { Context, Feature } from './types';
+import { config } from './Config';
+import { DolarYMonedasEntityBase } from './DolarYMonedasEntityBase';
+import { Utility } from './utility/Utility';
+import { BaseFeature } from './feature/base/BaseFeature';
+declare const stdutil: Utility;
+declare class DolarYMonedasSDK {
+    _mode: string;
+    _options: any;
+    _utility: Utility;
+    _features: Feature[];
+    _rootctx: Context;
+    constructor(options?: any);
+    options(): any;
+    utility(): any;
+    prepare(fetchargs?: any): Promise<any>;
+    direct(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    _rawRequest(fetchargs?: any): Promise<Error | {
+        ok: boolean;
+        status: number;
+        headers: any;
+        data: any;
+        err?: undefined;
+    } | {
+        ok: boolean;
+        err: any;
+        status?: undefined;
+        headers?: undefined;
+        data?: undefined;
+    }>;
+    graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
+    Blue(entopts?: Record<string, any>): BlueEntity;
+    Bolsa(entopts?: Record<string, any>): BolsaEntity;
+    Brl(entopts?: Record<string, any>): BrlEntity;
+    Clp(entopts?: Record<string, any>): ClpEntity;
+    Contadoconliqui(entopts?: Record<string, any>): ContadoconliquiEntity;
+    CotizacionAmbito(entopts?: Record<string, any>): CotizacionAmbitoEntity;
+    Cotizacione(entopts?: Record<string, any>): CotizacioneEntity;
+    Cripto(entopts?: Record<string, any>): CriptoEntity;
+    Dolare(entopts?: Record<string, any>): DolareEntity;
+    Estado(entopts?: Record<string, any>): EstadoEntity;
+    Eur(entopts?: Record<string, any>): EurEntity;
+    Mayorista(entopts?: Record<string, any>): MayoristaEntity;
+    Oficial(entopts?: Record<string, any>): OficialEntity;
+    Tarjeta(entopts?: Record<string, any>): TarjetaEntity;
+    Uyu(entopts?: Record<string, any>): UyuEntity;
+    static test(testoptsarg?: any, sdkoptsarg?: any): DolarYMonedasSDK;
+    tester(testopts?: any, sdkopts?: any): DolarYMonedasSDK;
+    toJSON(): {
+        name: string;
+    };
+    toString(): string;
+    [inspect.custom](): string;
+}
+declare const SDK: typeof DolarYMonedasSDK;
+export { stdutil, config, BaseFeature, DolarYMonedasEntityBase, DolarYMonedasSDK, SDK, };

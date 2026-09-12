@@ -45,10 +45,16 @@ main: kit: entity: bolsa: {
         {
           method: "GET"
           orig: "/v1/dolares/bolsa"
-          parts: [
-            "v1"
-            "dolares"
-            "bolsa"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "bolsa"
+            }
           ]
           transform: {
             req: "`reqdata`"

@@ -45,10 +45,16 @@ main: kit: entity: blue: {
         {
           method: "GET"
           orig: "/v1/dolares/blue"
-          parts: [
-            "v1"
-            "dolares"
-            "blue"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "blue"
+            }
           ]
           transform: {
             req: "`reqdata`"

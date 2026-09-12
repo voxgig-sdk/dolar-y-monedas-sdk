@@ -45,10 +45,16 @@ main: kit: entity: oficial: {
         {
           method: "GET"
           orig: "/v1/dolares/oficial"
-          parts: [
-            "v1"
-            "dolares"
-            "oficial"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "oficial"
+            }
           ]
           transform: {
             req: "`reqdata`"

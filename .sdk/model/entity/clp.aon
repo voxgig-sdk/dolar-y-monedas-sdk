@@ -45,10 +45,16 @@ main: kit: entity: clp: {
         {
           method: "GET"
           orig: "/v1/cotizaciones/clp"
-          parts: [
-            "v1"
-            "cotizaciones"
-            "clp"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "cotizaciones"
+            }
+            {
+              lit: "clp"
+            }
           ]
           transform: {
             req: "`reqdata`"

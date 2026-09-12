@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -149,16 +160,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/blue",
-              "parts": [
-                "v1",
-                "dolares",
-                "blue"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "blue"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "blue"
+              ]
             }
           ]
         }
@@ -210,16 +232,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/bolsa",
-              "parts": [
-                "v1",
-                "dolares",
-                "bolsa"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "bolsa"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "bolsa"
+              ]
             }
           ]
         }
@@ -271,16 +304,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/brl",
-              "parts": [
-                "v1",
-                "cotizaciones",
-                "brl"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "cotizaciones"
+                },
+                {
+                  "lit": "brl"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "cotizaciones",
+                "brl"
+              ]
             }
           ]
         }
@@ -332,16 +376,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/clp",
-              "parts": [
-                "v1",
-                "cotizaciones",
-                "clp"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "cotizaciones"
+                },
+                {
+                  "lit": "clp"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "cotizaciones",
+                "clp"
+              ]
             }
           ]
         }
@@ -393,16 +448,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/contadoconliqui",
-              "parts": [
-                "v1",
-                "dolares",
-                "contadoconliqui"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "contadoconliqui"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "contadoconliqui"
+              ]
             }
           ]
         }
@@ -459,16 +525,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares"
+              ]
             }
           ]
         },
@@ -481,119 +558,217 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/blue",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "blue"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "blue"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "blue"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/bolsa",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "bolsa"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "bolsa"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "bolsa"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/contadoconliqui",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "contadoconliqui"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "contadoconliqui"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "contadoconliqui"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/cripto",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "cripto"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "cripto"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "cripto"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/mayorista",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "mayorista"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "mayorista"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "mayorista"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/oficial",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "oficial"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "oficial"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "oficial"
+              ]
             },
             {
               "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/tarjeta",
-              "parts": [
-                "v1",
-                "ambito",
-                "dolares",
-                "tarjeta"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "ambito"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "tarjeta"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "ambito",
+                "dolares",
+                "tarjeta"
+              ]
             }
           ]
         }
@@ -645,15 +820,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones",
-              "parts": [
-                "v1",
-                "cotizaciones"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "cotizaciones"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "cotizaciones"
+              ]
             }
           ]
         }
@@ -705,16 +888,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/cripto",
-              "parts": [
-                "v1",
-                "dolares",
-                "cripto"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "cripto"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "cripto"
+              ]
             }
           ]
         }
@@ -766,15 +960,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares",
-              "parts": [
-                "v1",
-                "dolares"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares"
+              ]
             }
           ]
         }
@@ -805,15 +1007,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/estado",
-              "parts": [
-                "v1",
-                "estado"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "estado"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "estado"
+              ]
             }
           ]
         }
@@ -865,16 +1075,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/eur",
-              "parts": [
-                "v1",
-                "cotizaciones",
-                "eur"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "cotizaciones"
+                },
+                {
+                  "lit": "eur"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "cotizaciones",
+                "eur"
+              ]
             }
           ]
         }
@@ -926,16 +1147,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/mayorista",
-              "parts": [
-                "v1",
-                "dolares",
-                "mayorista"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "mayorista"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "mayorista"
+              ]
             }
           ]
         }
@@ -987,16 +1219,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/oficial",
-              "parts": [
-                "v1",
-                "dolares",
-                "oficial"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "oficial"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "oficial"
+              ]
             }
           ]
         }
@@ -1048,16 +1291,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/tarjeta",
-              "parts": [
-                "v1",
-                "dolares",
-                "tarjeta"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "dolares"
+                },
+                {
+                  "lit": "tarjeta"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "dolares",
+                "tarjeta"
+              ]
             }
           ]
         }
@@ -1109,16 +1363,27 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/uyu",
-              "parts": [
-                "v1",
-                "cotizaciones",
-                "uyu"
+              "segments": [
+                {
+                  "lit": "v1"
+                },
+                {
+                  "lit": "cotizaciones"
+                },
+                {
+                  "lit": "uyu"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "v1",
+                "cotizaciones",
+                "uyu"
+              ]
             }
           ]
         }
@@ -1134,6 +1399,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

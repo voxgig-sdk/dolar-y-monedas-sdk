@@ -81,10 +81,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/blue",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "blue"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "blue"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -154,10 +160,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/bolsa",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "bolsa"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "bolsa"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -227,10 +239,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/cotizaciones/brl",
-                  "parts": [
-                    "v1",
-                    "cotizaciones",
-                    "brl"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "cotizaciones"
+                    },
+                    {
+                      "lit": "brl"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -300,10 +318,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/cotizaciones/clp",
-                  "parts": [
-                    "v1",
-                    "cotizaciones",
-                    "clp"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "cotizaciones"
+                    },
+                    {
+                      "lit": "clp"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -373,10 +397,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/contadoconliqui",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "contadoconliqui"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "contadoconliqui"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -452,10 +482,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -475,11 +511,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/blue",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "blue"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "blue"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -493,11 +537,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/bolsa",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "bolsa"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "bolsa"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -511,11 +563,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/contadoconliqui",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "contadoconliqui"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "contadoconliqui"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -529,11 +589,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/cripto",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "cripto"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "cripto"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -547,11 +615,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/mayorista",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "mayorista"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "mayorista"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -565,11 +641,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/oficial",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "oficial"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "oficial"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -583,11 +667,19 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/ambito/dolares/tarjeta",
-                  "parts": [
-                    "v1",
-                    "ambito",
-                    "dolares",
-                    "tarjeta"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "ambito"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "tarjeta"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -657,9 +749,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/cotizaciones",
-                  "parts": [
-                    "v1",
-                    "cotizaciones"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "cotizaciones"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -729,10 +825,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/cripto",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "cripto"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "cripto"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -802,9 +904,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares",
-                  "parts": [
-                    "v1",
-                    "dolares"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -850,9 +956,13 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/estado",
-                  "parts": [
-                    "v1",
-                    "estado"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "estado"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -922,10 +1032,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/cotizaciones/eur",
-                  "parts": [
-                    "v1",
-                    "cotizaciones",
-                    "eur"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "cotizaciones"
+                    },
+                    {
+                      "lit": "eur"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -995,10 +1111,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/mayorista",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "mayorista"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "mayorista"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1068,10 +1190,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/oficial",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "oficial"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "oficial"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1141,10 +1269,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/dolares/tarjeta",
-                  "parts": [
-                    "v1",
-                    "dolares",
-                    "tarjeta"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "dolares"
+                    },
+                    {
+                      "lit": "tarjeta"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1214,10 +1348,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/v1/cotizaciones/uyu",
-                  "parts": [
-                    "v1",
-                    "cotizaciones",
-                    "uyu"
+                  "segments": [
+                    {
+                      "lit": "v1"
+                    },
+                    {
+                      "lit": "cotizaciones"
+                    },
+                    {
+                      "lit": "uyu"
+                    }
                   ],
                   "select": {},
                   "transform": {
@@ -1297,8 +1437,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "go": {
               "deps": {}
@@ -1845,6 +1988,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1870,6 +2016,10 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -1921,6 +2071,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -1945,6 +2096,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -1996,6 +2148,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -2020,6 +2173,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
         },
         "lua": {
@@ -2060,6 +2214,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2085,6 +2242,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "php": {
@@ -2119,6 +2279,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2144,6 +2307,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -2184,6 +2350,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2209,6 +2378,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -2254,6 +2426,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2279,6 +2454,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "ts": {
@@ -2296,11 +2474,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -2329,6 +2502,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2353,6 +2529,14 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         }
       },

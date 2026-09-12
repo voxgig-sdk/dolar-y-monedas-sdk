@@ -45,10 +45,16 @@ main: kit: entity: brl: {
         {
           method: "GET"
           orig: "/v1/cotizaciones/brl"
-          parts: [
-            "v1"
-            "cotizaciones"
-            "brl"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "cotizaciones"
+            }
+            {
+              lit: "brl"
+            }
           ]
           transform: {
             req: "`reqdata`"

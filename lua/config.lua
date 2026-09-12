@@ -86,15 +86,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/blue",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "blue",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "blue",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "blue",
                 },
               },
             },
@@ -147,15 +158,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/bolsa",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "bolsa",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "bolsa",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "bolsa",
                 },
               },
             },
@@ -208,15 +230,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/brl",
-                ["parts"] = {
-                  "v1",
-                  "cotizaciones",
-                  "brl",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "cotizaciones",
+                  },
+                  {
+                    ["lit"] = "brl",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "cotizaciones",
+                  "brl",
                 },
               },
             },
@@ -269,15 +302,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/clp",
-                ["parts"] = {
-                  "v1",
-                  "cotizaciones",
-                  "clp",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "cotizaciones",
+                  },
+                  {
+                    ["lit"] = "clp",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "cotizaciones",
+                  "clp",
                 },
               },
             },
@@ -330,15 +374,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/contadoconliqui",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "contadoconliqui",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "contadoconliqui",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "contadoconliqui",
                 },
               },
             },
@@ -396,15 +451,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
                 },
               },
             },
@@ -418,16 +484,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/blue",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "blue",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "blue",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "blue",
                 },
               },
               {
@@ -435,16 +515,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/bolsa",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "bolsa",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "bolsa",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "bolsa",
                 },
               },
               {
@@ -452,16 +546,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/contadoconliqui",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "contadoconliqui",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "contadoconliqui",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "contadoconliqui",
                 },
               },
               {
@@ -469,16 +577,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/cripto",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "cripto",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "cripto",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "cripto",
                 },
               },
               {
@@ -486,16 +608,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/mayorista",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "mayorista",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "mayorista",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "mayorista",
                 },
               },
               {
@@ -503,16 +639,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/oficial",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "oficial",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "oficial",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "oficial",
                 },
               },
               {
@@ -520,16 +670,30 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/ambito/dolares/tarjeta",
-                ["parts"] = {
-                  "v1",
-                  "ambito",
-                  "dolares",
-                  "tarjeta",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "ambito",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "tarjeta",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "ambito",
+                  "dolares",
+                  "tarjeta",
                 },
               },
             },
@@ -582,14 +746,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones",
-                ["parts"] = {
-                  "v1",
-                  "cotizaciones",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "cotizaciones",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "cotizaciones",
                 },
               },
             },
@@ -642,15 +814,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/cripto",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "cripto",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "cripto",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "cripto",
                 },
               },
             },
@@ -703,14 +886,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
                 },
               },
             },
@@ -742,14 +933,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/estado",
-                ["parts"] = {
-                  "v1",
-                  "estado",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "estado",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "estado",
                 },
               },
             },
@@ -802,15 +1001,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/eur",
-                ["parts"] = {
-                  "v1",
-                  "cotizaciones",
-                  "eur",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "cotizaciones",
+                  },
+                  {
+                    ["lit"] = "eur",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "cotizaciones",
+                  "eur",
                 },
               },
             },
@@ -863,15 +1073,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/mayorista",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "mayorista",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "mayorista",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "mayorista",
                 },
               },
             },
@@ -924,15 +1145,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/oficial",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "oficial",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "oficial",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "oficial",
                 },
               },
             },
@@ -985,15 +1217,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/dolares/tarjeta",
-                ["parts"] = {
-                  "v1",
-                  "dolares",
-                  "tarjeta",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "dolares",
+                  },
+                  {
+                    ["lit"] = "tarjeta",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "dolares",
+                  "tarjeta",
                 },
               },
             },
@@ -1046,15 +1289,26 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/v1/cotizaciones/uyu",
-                ["parts"] = {
-                  "v1",
-                  "cotizaciones",
-                  "uyu",
+                ["segments"] = {
+                  {
+                    ["lit"] = "v1",
+                  },
+                  {
+                    ["lit"] = "cotizaciones",
+                  },
+                  {
+                    ["lit"] = "uyu",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "v1",
+                  "cotizaciones",
+                  "uyu",
                 },
               },
             },

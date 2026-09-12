@@ -45,10 +45,16 @@ main: kit: entity: cripto: {
         {
           method: "GET"
           orig: "/v1/dolares/cripto"
-          parts: [
-            "v1"
-            "dolares"
-            "cripto"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "cripto"
+            }
           ]
           transform: {
             req: "`reqdata`"

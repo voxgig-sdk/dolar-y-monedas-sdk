@@ -50,10 +50,16 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -68,11 +74,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/blue"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "blue"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "blue"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -82,11 +96,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/bolsa"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "bolsa"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "bolsa"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -96,11 +118,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/contadoconliqui"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "contadoconliqui"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "contadoconliqui"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -110,11 +140,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/cripto"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "cripto"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "cripto"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -124,11 +162,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/mayorista"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "mayorista"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "mayorista"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -138,11 +184,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/oficial"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "oficial"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "oficial"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -152,11 +206,19 @@ main: kit: entity: cotizacion_ambito: {
         {
           method: "GET"
           orig: "/v1/ambito/dolares/tarjeta"
-          parts: [
-            "v1"
-            "ambito"
-            "dolares"
-            "tarjeta"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "tarjeta"
+            }
           ]
           transform: {
             req: "`reqdata`"

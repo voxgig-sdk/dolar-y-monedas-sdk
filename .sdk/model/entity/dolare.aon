@@ -45,9 +45,13 @@ main: kit: entity: dolare: {
         {
           method: "GET"
           orig: "/v1/dolares"
-          parts: [
-            "v1"
-            "dolares"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
           ]
           transform: {
             req: "`reqdata`"

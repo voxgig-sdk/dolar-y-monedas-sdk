@@ -45,10 +45,16 @@ main: kit: entity: contadoconliqui: {
         {
           method: "GET"
           orig: "/v1/dolares/contadoconliqui"
-          parts: [
-            "v1"
-            "dolares"
-            "contadoconliqui"
+          segments: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "contadoconliqui"
+            }
           ]
           transform: {
             req: "`reqdata`"
