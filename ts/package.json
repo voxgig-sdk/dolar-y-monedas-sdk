@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/dolar-y-monedas",
+  "name": "@voxgig-sdk/dolar-y-monedas-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the DolarApi.com public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

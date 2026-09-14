@@ -105,7 +105,7 @@ local result, err = client:Cripto():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
+| TypeScript | `@voxgig-sdk/dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
 | Python | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
 | PHP | `voxgig-sdk/dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go` | `go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Cripto():load()
 ### TypeScript
 
 ```ts
-import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
+import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas-sdk'
 
 const client = new DolarYMonedasSDK()
 

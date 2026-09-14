@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
+import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas-sdk'
 
 const client = new DolarYMonedasSDK()
 ```
@@ -1031,7 +1031,7 @@ dolar-y-monedas/
 Import the SDK from the package root:
 
 ```ts
-import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas'
+import { DolarYMonedasSDK } from '@voxgig-sdk/dolar-y-monedas-sdk'
 ```
 
 ### Entity state
