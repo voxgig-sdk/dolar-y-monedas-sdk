@@ -48,6 +48,12 @@ main: kit: entity: cotizacion_ambito: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /v1/ambito/dolares"
+            json: "{\"operationId\":\"get-ambito-dolares\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Devuelve todas las cotizaciones\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares"
           segments: [
@@ -72,6 +78,12 @@ main: kit: entity: cotizacion_ambito: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/blue"
+            json: "{\"operationId\":\"get-ambito-dolar-blue\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Blue\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/blue"
           segments: [
@@ -94,6 +106,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/bolsa"
+            json: "{\"operationId\":\"get-ambito-dolar-bolsa\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Bolsa\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/bolsa"
           segments: [
@@ -116,6 +134,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/contadoconliqui"
+            json: "{\"operationId\":\"get-ambito-dolar-contadoconliqui\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Contado con liquidación\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/contadoconliqui"
           segments: [
@@ -138,6 +162,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/cripto"
+            json: "{\"operationId\":\"get-ambito-dolar-cripto\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Cripto\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/cripto"
           segments: [
@@ -160,6 +190,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/mayorista"
+            json: "{\"operationId\":\"get-ambito-dolar-mayorista\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Mayorista\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/mayorista"
           segments: [
@@ -182,6 +218,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/oficial"
+            json: "{\"operationId\":\"get-ambito-dolar-oficial\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Oficial\",\"headers\":{}}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/oficial"
           segments: [
@@ -204,6 +246,12 @@ main: kit: entity: cotizacion_ambito: {
           }
         }
         {
+          contract: {
+            id: "GET /v1/ambito/dolares/tarjeta"
+            json: "{\"operationId\":\"get-ambito-dolar-tarjeta\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve el valor del Dólar Tarjeta\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/ambito/dolares/tarjeta"
           segments: [

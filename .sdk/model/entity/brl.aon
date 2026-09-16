@@ -43,6 +43,12 @@ main: kit: entity: brl: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /v1/cotizaciones/brl"
+            json: "{\"operationId\":\"get-cotizacion-brl\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Real Brasileño\",\"headers\":{}}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/v1/cotizaciones/brl"
           segments: [

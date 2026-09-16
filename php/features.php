@@ -4,7 +4,10 @@ declare(strict_types=1);
 // DolarYMonedas SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class DolarYMonedasFeatures
@@ -14,8 +17,14 @@ class DolarYMonedasFeatures
         switch ($name) {
             case "base":
                 return new DolarYMonedasBaseFeature();
+            case "ratelimit":
+                return new DolarYMonedasRatelimitFeature();
+            case "retry":
+                return new DolarYMonedasRetryFeature();
             case "test":
                 return new DolarYMonedasTestFeature();
+            case "timeout":
+                return new DolarYMonedasTimeoutFeature();
             default:
                 return new DolarYMonedasBaseFeature();
         }
@@ -31,7 +40,10 @@ class DolarYMonedasFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

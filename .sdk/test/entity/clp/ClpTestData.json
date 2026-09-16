@@ -41,5 +41,57 @@
         "venta": 245
       }
     }
+  },
+  "requests": {
+    "GET /v1/cotizaciones/clp": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-cotizacion-clp",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "fechaActualizacion"
+                  ],
+                  "title": "Cotizacion",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Peso Chileno",
+            "headers": {}
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

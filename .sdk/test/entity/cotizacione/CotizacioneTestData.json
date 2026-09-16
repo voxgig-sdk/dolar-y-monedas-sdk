@@ -38,5 +38,59 @@
         "venta": 245
       }
     }
+  },
+  "requests": {
+    "GET /v1/cotizaciones": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-cotizaciones",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "casa": {
+                        "type": "string"
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      },
+                      "moneda": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "venta": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "venta",
+                      "casa",
+                      "nombre",
+                      "moneda",
+                      "fechaActualizacion"
+                    ],
+                    "title": "Cotizacion",
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Devuelve todas las cotizaciones"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

@@ -1,12 +1,18 @@
 # DolarYMonedas SDK feature factory
 
 from dolarymonedas_sdk.feature.base_feature import DolarYMonedasBaseFeature
+from dolarymonedas_sdk.feature.ratelimit_feature import DolarYMonedasRatelimitFeature
+from dolarymonedas_sdk.feature.retry_feature import DolarYMonedasRetryFeature
 from dolarymonedas_sdk.feature.test_feature import DolarYMonedasTestFeature
+from dolarymonedas_sdk.feature.timeout_feature import DolarYMonedasTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: DolarYMonedasBaseFeature(),
+    "ratelimit": lambda: DolarYMonedasRatelimitFeature(),
+    "retry": lambda: DolarYMonedasRetryFeature(),
     "test": lambda: DolarYMonedasTestFeature(),
+    "timeout": lambda: DolarYMonedasTimeoutFeature(),
 }
 
 

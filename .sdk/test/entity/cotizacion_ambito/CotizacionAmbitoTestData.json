@@ -45,5 +45,435 @@
         "venta": 286
       }
     }
+  },
+  "requests": {
+    "GET /v1/ambito/dolares": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolares",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "properties": {
+                      "casa": {
+                        "type": "string"
+                      },
+                      "compra": {
+                        "type": "number"
+                      },
+                      "fechaActualizacion": {
+                        "type": "string"
+                      },
+                      "moneda": {
+                        "type": "string"
+                      },
+                      "nombre": {
+                        "type": "string"
+                      },
+                      "variacion": {
+                        "type": "number"
+                      },
+                      "venta": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "venta",
+                      "casa",
+                      "nombre",
+                      "moneda",
+                      "variacion",
+                      "fechaActualizacion"
+                    ],
+                    "title": "CotizacionAmbito",
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Devuelve todas las cotizaciones"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/blue": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-blue",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Blue"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/bolsa": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-bolsa",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Bolsa"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/contadoconliqui": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-contadoconliqui",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Contado con liquidación"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/cripto": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-cripto",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Cripto"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/mayorista": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-mayorista",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Mayorista"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/oficial": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-oficial",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Oficial",
+            "headers": {}
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /v1/ambito/dolares/tarjeta": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-ambito-dolar-tarjeta",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "variacion": {
+                      "type": "number"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "variacion",
+                    "fechaActualizacion"
+                  ],
+                  "title": "CotizacionAmbito",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve el valor del Dólar Tarjeta"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

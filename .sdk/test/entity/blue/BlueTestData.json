@@ -41,5 +41,56 @@
         "venta": 245
       }
     }
+  },
+  "requests": {
+    "GET /v1/dolares/blue": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "get-dolar-blue",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "casa": {
+                      "type": "string"
+                    },
+                    "compra": {
+                      "type": "number"
+                    },
+                    "fechaActualizacion": {
+                      "type": "string"
+                    },
+                    "moneda": {
+                      "type": "string"
+                    },
+                    "nombre": {
+                      "type": "string"
+                    },
+                    "venta": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "venta",
+                    "casa",
+                    "nombre",
+                    "moneda",
+                    "fechaActualizacion"
+                  ],
+                  "title": "Cotizacion",
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Devuelve la cotización del Dólar Blue"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }
