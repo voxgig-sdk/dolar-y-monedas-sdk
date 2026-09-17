@@ -105,12 +105,12 @@ local result, err = client:Cripto():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
-| Python | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
-| PHP | `voxgig-sdk/dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
+| TypeScript | `@voxgig-sdk/dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| Python | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| PHP | `voxgig-sdk/dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go` | `go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go@latest` |
-| Ruby | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
-| Lua | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) |
+| Ruby | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| Lua | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go-cli` | `go install github.com/voxgig-sdk/dolar-y-monedas-sdk/go-cli/cmd/dolar-y-monedas@latest` |
 | Go MCP server | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go-mcp` | `go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go-mcp@latest` |
 

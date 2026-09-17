@@ -127,51 +127,51 @@ class Config {
 
     entity: {
       
-      blue: {
-      },
-
-      bolsa: {
-      },
-
-      brl: {
-      },
-
-      clp: {
-      },
-
-      contadoconliqui: {
-      },
-
-      cotizacion_ambito: {
-      },
-
-      cotizacione: {
-      },
-
-      cripto: {
-      },
-
-      dolare: {
-      },
-
-      estado: {
-      },
-
-      eur: {
-      },
-
-      mayorista: {
-      },
-
-      oficial: {
-      },
-
-      tarjeta: {
-      },
-
-      uyu: {
-      },
-
+        blue: {
+        },
+  
+        bolsa: {
+        },
+  
+        brl: {
+        },
+  
+        clp: {
+        },
+  
+        contadoconliqui: {
+        },
+  
+        cotizacion_ambito: {
+        },
+  
+        cotizacione: {
+        },
+  
+        cripto: {
+        },
+  
+        dolare: {
+        },
+  
+        estado: {
+        },
+  
+        eur: {
+        },
+  
+        mayorista: {
+        },
+  
+        oficial: {
+        },
+  
+        tarjeta: {
+        },
+  
+        uyu: {
+        },
+  
     }
   }
 
