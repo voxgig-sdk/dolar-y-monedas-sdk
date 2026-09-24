@@ -1,0 +1,28 @@
+# BasicContadoconliquiFlow
+
+main: kit: flow: BasicContadoconliquiFlow:
+{
+  entity: "contadoconliqui",
+  kind: "basic",
+  name: "BasicContadoconliquiFlow",
+  step: [
+    {
+      i: {
+        ref: "contadoconliqui_ref01",
+        srcdatavar: "contadoconliqui_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-contadoconliqui_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicContadoconliquiFlow"
+}

@@ -1,0 +1,22 @@
+# BasicDolareFlow
+
+main: kit: flow: BasicDolareFlow:
+{
+  entity: "dolare",
+  kind: "basic",
+  name: "BasicDolareFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "dolare_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDolareFlow"
+}

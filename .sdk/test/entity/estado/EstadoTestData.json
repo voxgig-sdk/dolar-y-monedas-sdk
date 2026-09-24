@@ -29,33 +29,8 @@
   "requests": {
     "GET /v1/estado": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "get-estado",
-        "parameters": [],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "aleatorio": {
-                      "type": "integer"
-                    },
-                    "estado": {
-                      "type": "string"
-                    }
-                  },
-                  "title": "Estado",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Devuelve el estado de la API"
-          }
-        },
-        "securitySource": "unspecified"
-      }
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

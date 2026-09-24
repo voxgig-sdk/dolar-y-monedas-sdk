@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -181,32 +174,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "blue",
@@ -216,7 +215,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/blue",
@@ -231,16 +229,18 @@ class Config {
                   "lit": "blue"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "blue"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -253,32 +253,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "bolsa",
@@ -288,7 +294,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/bolsa",
@@ -303,16 +308,18 @@ class Config {
                   "lit": "bolsa"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "bolsa"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -325,32 +332,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "brl",
@@ -360,7 +373,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/brl",
@@ -375,16 +387,18 @@ class Config {
                   "lit": "brl"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "cotizaciones",
                 "brl"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -397,32 +411,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "clp",
@@ -432,7 +452,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/clp",
@@ -447,16 +466,18 @@ class Config {
                   "lit": "clp"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "cotizaciones",
                 "clp"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -469,32 +490,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "contadoconliqui",
@@ -504,7 +531,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/contadoconliqui",
@@ -519,16 +545,18 @@ class Config {
                   "lit": "contadoconliqui"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "contadoconliqui"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -541,37 +569,44 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "variacion",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Variacion",
+          "type": "`$NUMBER`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "cotizacion_ambito",
@@ -581,7 +616,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares",
@@ -596,16 +630,18 @@ class Config {
                   "lit": "dolares"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         },
@@ -614,7 +650,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/blue",
@@ -632,20 +667,21 @@ class Config {
                   "lit": "blue"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "blue"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/bolsa",
@@ -663,20 +699,21 @@ class Config {
                   "lit": "bolsa"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "bolsa"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/contadoconliqui",
@@ -694,20 +731,21 @@ class Config {
                   "lit": "contadoconliqui"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "contadoconliqui"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/cripto",
@@ -725,20 +763,21 @@ class Config {
                   "lit": "cripto"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "cripto"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/mayorista",
@@ -756,20 +795,21 @@ class Config {
                   "lit": "mayorista"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "mayorista"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/oficial",
@@ -787,20 +827,21 @@ class Config {
                   "lit": "oficial"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "oficial"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             },
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/ambito/dolares/tarjeta",
@@ -818,17 +859,19 @@ class Config {
                   "lit": "tarjeta"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "ambito",
                 "dolares",
                 "tarjeta"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -841,32 +884,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "cotizacione",
@@ -876,7 +925,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones",
@@ -888,15 +936,17 @@ class Config {
                   "lit": "cotizaciones"
                 }
               ],
-              "select": {},
+              "parts": [
+                "v1",
+                "cotizaciones"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "v1",
-                "cotizaciones"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -909,32 +959,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "cripto",
@@ -944,7 +1000,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/cripto",
@@ -959,16 +1014,18 @@ class Config {
                   "lit": "cripto"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "cripto"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -981,32 +1038,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "dolare",
@@ -1016,7 +1079,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares",
@@ -1028,15 +1090,17 @@ class Config {
                   "lit": "dolares"
                 }
               ],
-              "select": {},
+              "parts": [
+                "v1",
+                "dolares"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "v1",
-                "dolares"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1049,10 +1113,12 @@ class Config {
       "fields": [
         {
           "name": "aleatorio",
+          "title": "Aleatorio",
           "type": "`$INTEGER`"
         },
         {
           "name": "estado",
+          "title": "Estado",
           "type": "`$STRING`"
         }
       ],
@@ -1063,7 +1129,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/estado",
@@ -1075,15 +1140,17 @@ class Config {
                   "lit": "estado"
                 }
               ],
-              "select": {},
+              "parts": [
+                "v1",
+                "estado"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "v1",
-                "estado"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1096,32 +1163,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "eur",
@@ -1131,7 +1204,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/eur",
@@ -1146,16 +1218,18 @@ class Config {
                   "lit": "eur"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "cotizaciones",
                 "eur"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1168,32 +1242,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "mayorista",
@@ -1203,7 +1283,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/mayorista",
@@ -1218,16 +1297,18 @@ class Config {
                   "lit": "mayorista"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "mayorista"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1240,32 +1321,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "oficial",
@@ -1275,7 +1362,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/oficial",
@@ -1290,16 +1376,18 @@ class Config {
                   "lit": "oficial"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "oficial"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1312,32 +1400,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "tarjeta",
@@ -1347,7 +1441,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/dolares/tarjeta",
@@ -1362,16 +1455,18 @@ class Config {
                   "lit": "tarjeta"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "dolares",
                 "tarjeta"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }
@@ -1384,32 +1479,38 @@ class Config {
       "fields": [
         {
           "name": "casa",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Casa",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "compra",
+          "title": "Compra",
           "type": "`$NUMBER`"
         },
         {
           "name": "fechaActualizacion",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Fecha Actualizacion",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "moneda",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Moneda",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "nombre",
-          "req": true,
-          "type": "`$STRING`"
+          "title": "Nombre",
+          "type": "`$STRING`",
+          "req": true
         },
         {
           "name": "venta",
-          "req": true,
-          "type": "`$NUMBER`"
+          "title": "Venta",
+          "type": "`$NUMBER`",
+          "req": true
         }
       ],
       "name": "uyu",
@@ -1419,7 +1520,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "GET",
               "orig": "/v1/cotizaciones/uyu",
@@ -1434,16 +1534,18 @@ class Config {
                   "lit": "uyu"
                 }
               ],
-              "select": {},
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
               "parts": [
                 "v1",
                 "cotizaciones",
                 "uyu"
-              ]
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {},
+              "select": {}
             }
           ]
         }

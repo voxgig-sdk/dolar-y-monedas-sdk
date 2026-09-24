@@ -1,7 +1,7 @@
 // Typed models for the DolarYMonedas SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,12 +14,6 @@ import (
 
 // Blue is the typed data model for the blue entity.
 type Blue struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // BlueLoadMatch is the typed request payload for Blue.LoadTyped.
@@ -34,12 +28,6 @@ type BlueLoadMatch struct {
 
 // Bolsa is the typed data model for the bolsa entity.
 type Bolsa struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // BolsaLoadMatch is the typed request payload for Bolsa.LoadTyped.
@@ -54,12 +42,6 @@ type BolsaLoadMatch struct {
 
 // Brl is the typed data model for the brl entity.
 type Brl struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // BrlLoadMatch is the typed request payload for Brl.LoadTyped.
@@ -74,12 +56,6 @@ type BrlLoadMatch struct {
 
 // Clp is the typed data model for the clp entity.
 type Clp struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // ClpLoadMatch is the typed request payload for Clp.LoadTyped.
@@ -94,12 +70,6 @@ type ClpLoadMatch struct {
 
 // Contadoconliqui is the typed data model for the contadoconliqui entity.
 type Contadoconliqui struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // ContadoconliquiLoadMatch is the typed request payload for Contadoconliqui.LoadTyped.
@@ -114,13 +84,6 @@ type ContadoconliquiLoadMatch struct {
 
 // CotizacionAmbito is the typed data model for the cotizacion_ambito entity.
 type CotizacionAmbito struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Variacion float64 `json:"variacion"`
-	Venta float64 `json:"venta"`
 }
 
 // CotizacionAmbitoLoadMatch is the typed request payload for CotizacionAmbito.LoadTyped.
@@ -147,12 +110,6 @@ type CotizacionAmbitoListMatch struct {
 
 // Cotizacione is the typed data model for the cotizacione entity.
 type Cotizacione struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // CotizacioneListMatch is the typed request payload for Cotizacione.ListTyped.
@@ -167,12 +124,6 @@ type CotizacioneListMatch struct {
 
 // Cripto is the typed data model for the cripto entity.
 type Cripto struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // CriptoLoadMatch is the typed request payload for Cripto.LoadTyped.
@@ -187,12 +138,6 @@ type CriptoLoadMatch struct {
 
 // Dolare is the typed data model for the dolare entity.
 type Dolare struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // DolareListMatch is the typed request payload for Dolare.ListTyped.
@@ -207,8 +152,6 @@ type DolareListMatch struct {
 
 // Estado is the typed data model for the estado entity.
 type Estado struct {
-	Aleatorio *int `json:"aleatorio,omitempty"`
-	Estado *string `json:"estado,omitempty"`
 }
 
 // EstadoLoadMatch is the typed request payload for Estado.LoadTyped.
@@ -219,12 +162,6 @@ type EstadoLoadMatch struct {
 
 // Eur is the typed data model for the eur entity.
 type Eur struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // EurLoadMatch is the typed request payload for Eur.LoadTyped.
@@ -239,12 +176,6 @@ type EurLoadMatch struct {
 
 // Mayorista is the typed data model for the mayorista entity.
 type Mayorista struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // MayoristaLoadMatch is the typed request payload for Mayorista.LoadTyped.
@@ -259,12 +190,6 @@ type MayoristaLoadMatch struct {
 
 // Oficial is the typed data model for the oficial entity.
 type Oficial struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // OficialLoadMatch is the typed request payload for Oficial.LoadTyped.
@@ -279,12 +204,6 @@ type OficialLoadMatch struct {
 
 // Tarjeta is the typed data model for the tarjeta entity.
 type Tarjeta struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // TarjetaLoadMatch is the typed request payload for Tarjeta.LoadTyped.
@@ -299,12 +218,6 @@ type TarjetaLoadMatch struct {
 
 // Uyu is the typed data model for the uyu entity.
 type Uyu struct {
-	Casa string `json:"casa"`
-	Compra *float64 `json:"compra,omitempty"`
-	FechaActualizacion string `json:"fechaActualizacion"`
-	Moneda string `json:"moneda"`
-	Nombre string `json:"nombre"`
-	Venta float64 `json:"venta"`
 }
 
 // UyuLoadMatch is the typed request payload for Uyu.LoadTyped.

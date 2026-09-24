@@ -1,0 +1,28 @@
+# BasicBrlFlow
+
+main: kit: flow: BasicBrlFlow:
+{
+  entity: "brl",
+  kind: "basic",
+  name: "BasicBrlFlow",
+  step: [
+    {
+      i: {
+        ref: "brl_ref01",
+        srcdatavar: "brl_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-brl_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicBrlFlow"
+}

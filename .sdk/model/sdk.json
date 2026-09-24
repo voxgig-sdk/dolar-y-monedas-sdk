@@ -24,50 +24,122 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "blue": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "blue",
           "op": {
             "load": {
@@ -75,18 +147,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/blue",
-                    "json": "{\"operationId\":\"get-dolar-blue\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Blue\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/blue",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/blue",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -97,8 +170,7 @@
                       "lit": "blue"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -115,44 +187,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "bolsa",
           "op": {
             "load": {
@@ -160,18 +238,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/bolsa",
-                    "json": "{\"operationId\":\"get-dolar-bolsa\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Bolsa\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/bolsa",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/bolsa",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -182,8 +261,7 @@
                       "lit": "bolsa"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -200,44 +278,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "brl",
           "op": {
             "load": {
@@ -245,18 +329,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/cotizaciones/brl",
-                    "json": "{\"operationId\":\"get-cotizacion-brl\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Real Brasileño\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/cotizaciones/brl",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/cotizaciones/brl",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -267,8 +352,7 @@
                       "lit": "brl"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -285,44 +369,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "clp",
           "op": {
             "load": {
@@ -330,18 +420,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/cotizaciones/clp",
-                    "json": "{\"operationId\":\"get-cotizacion-clp\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Peso Chileno\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/cotizaciones/clp",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/cotizaciones/clp",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -352,8 +443,7 @@
                       "lit": "clp"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -370,44 +460,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "contadoconliqui",
           "op": {
             "load": {
@@ -415,18 +511,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/contadoconliqui",
-                    "json": "{\"operationId\":\"get-dolar-contadoconliqui\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Contado con liquidación\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/contadoconliqui",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/contadoconliqui",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -437,8 +534,7 @@
                       "lit": "contadoconliqui"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -455,50 +551,57 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "variacion",
-              "req": true,
-              "type": "`$NUMBER`"
+            "variacion": {
+              "a": true,
+              "h": "Variacion",
+              "n": "variacion",
+              "r": true,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "cotizacion_ambito",
           "op": {
             "list": {
@@ -506,18 +609,19 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares",
-                    "json": "{\"operationId\":\"get-ambito-dolares\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Devuelve todas las cotizaciones\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -528,8 +632,7 @@
                       "lit": "dolares"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -541,18 +644,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/blue",
-                    "json": "{\"operationId\":\"get-ambito-dolar-blue\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Blue\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/blue",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/blue",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -566,25 +670,25 @@
                       "lit": "blue"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/bolsa",
-                    "json": "{\"operationId\":\"get-ambito-dolar-bolsa\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Bolsa\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/bolsa",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/bolsa",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -598,25 +702,25 @@
                       "lit": "bolsa"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/contadoconliqui",
-                    "json": "{\"operationId\":\"get-ambito-dolar-contadoconliqui\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Contado con liquidación\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/contadoconliqui",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/contadoconliqui",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -630,25 +734,25 @@
                       "lit": "contadoconliqui"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/cripto",
-                    "json": "{\"operationId\":\"get-ambito-dolar-cripto\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Cripto\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/cripto",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/cripto",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -662,25 +766,25 @@
                       "lit": "cripto"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/mayorista",
-                    "json": "{\"operationId\":\"get-ambito-dolar-mayorista\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Mayorista\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/mayorista",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/mayorista",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -694,25 +798,25 @@
                       "lit": "mayorista"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/oficial",
-                    "json": "{\"operationId\":\"get-ambito-dolar-oficial\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Oficial\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/oficial",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/oficial",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -726,25 +830,25 @@
                       "lit": "oficial"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/ambito/dolares/tarjeta",
-                    "json": "{\"operationId\":\"get-ambito-dolar-tarjeta\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"variacion\":{\"type\":\"number\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"variacion\",\"fechaActualizacion\"],\"title\":\"CotizacionAmbito\",\"type\":\"object\"}}},\"description\":\"Devuelve el valor del Dólar Tarjeta\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/ambito/dolares/tarjeta",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/ambito/dolares/tarjeta",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -758,8 +862,7 @@
                       "lit": "tarjeta"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -776,44 +879,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "cotizacione",
           "op": {
             "list": {
@@ -821,18 +930,19 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/cotizaciones",
-                    "json": "{\"operationId\":\"get-cotizaciones\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Devuelve todas las cotizaciones\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/cotizaciones",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/cotizaciones",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -840,8 +950,7 @@
                       "lit": "cotizaciones"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -858,44 +967,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "cripto",
           "op": {
             "load": {
@@ -903,18 +1018,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/cripto",
-                    "json": "{\"operationId\":\"get-dolar-cripto\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Cripto\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/cripto",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/cripto",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -925,8 +1041,7 @@
                       "lit": "cripto"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -943,44 +1058,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "dolare",
           "op": {
             "list": {
@@ -988,18 +1109,19 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares",
-                    "json": "{\"operationId\":\"get-dolares\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"items\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"},\"type\":\"array\"}}},\"description\":\"Devuelve todas las cotizaciones\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1007,8 +1129,7 @@
                       "lit": "dolares"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1025,20 +1146,22 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "aleatorio",
-              "req": false,
-              "type": "`$INTEGER`"
+          "fields": {
+            "aleatorio": {
+              "a": true,
+              "h": "Aleatorio",
+              "n": "aleatorio",
+              "r": false,
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "estado",
-              "req": false,
-              "type": "`$STRING`"
+            "estado": {
+              "a": true,
+              "h": "Estado",
+              "n": "estado",
+              "r": false,
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "estado",
           "op": {
             "load": {
@@ -1046,18 +1169,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/estado",
-                    "json": "{\"operationId\":\"get-estado\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"aleatorio\":{\"type\":\"integer\"},\"estado\":{\"type\":\"string\"}},\"title\":\"Estado\",\"type\":\"object\"}}},\"description\":\"Devuelve el estado de la API\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/estado",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/estado",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1065,8 +1189,7 @@
                       "lit": "estado"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1083,44 +1206,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "eur",
           "op": {
             "load": {
@@ -1128,18 +1257,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/cotizaciones/eur",
-                    "json": "{\"operationId\":\"get-cotizacion-eur\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Euro\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/cotizaciones/eur",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/cotizaciones/eur",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1150,8 +1280,7 @@
                       "lit": "eur"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1168,44 +1297,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "mayorista",
           "op": {
             "load": {
@@ -1213,18 +1348,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/mayorista",
-                    "json": "{\"operationId\":\"get-dolar-mayorista\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Mayorista\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/mayorista",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/mayorista",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1235,8 +1371,7 @@
                       "lit": "mayorista"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1253,44 +1388,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "oficial",
           "op": {
             "load": {
@@ -1298,18 +1439,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/oficial",
-                    "json": "{\"operationId\":\"get-dolar-oficial\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Dólar Oficial\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/oficial",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/oficial",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1320,8 +1462,7 @@
                       "lit": "oficial"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1338,44 +1479,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "tarjeta",
           "op": {
             "load": {
@@ -1383,18 +1530,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/dolares/tarjeta",
-                    "json": "{\"operationId\":\"get-dolar-tarjeta\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve el valor del Dólar Tarjeta\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/dolares/tarjeta",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/dolares/tarjeta",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1405,8 +1553,7 @@
                       "lit": "tarjeta"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1423,44 +1570,50 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "casa",
-              "req": true,
-              "type": "`$STRING`"
+          "fields": {
+            "casa": {
+              "a": true,
+              "h": "Casa",
+              "n": "casa",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "compra",
-              "req": false,
-              "type": "`$NUMBER`"
+            "compra": {
+              "a": true,
+              "h": "Compra",
+              "n": "compra",
+              "r": false,
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "fechaActualizacion",
-              "req": true,
-              "type": "`$STRING`"
+            "fechaActualizacion": {
+              "a": true,
+              "h": "Fecha Actualizacion",
+              "n": "fechaActualizacion",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "moneda",
-              "req": true,
-              "type": "`$STRING`"
+            "moneda": {
+              "a": true,
+              "h": "Moneda",
+              "n": "moneda",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "nombre",
-              "req": true,
-              "type": "`$STRING`"
+            "nombre": {
+              "a": true,
+              "h": "Nombre",
+              "n": "nombre",
+              "r": true,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "venta",
-              "req": true,
-              "type": "`$NUMBER`"
+            "venta": {
+              "a": true,
+              "h": "Venta",
+              "n": "venta",
+              "r": true,
+              "t": "`$NUMBER`"
             }
-          ],
+          },
           "name": "uyu",
           "op": {
             "load": {
@@ -1468,18 +1621,19 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /v1/cotizaciones/uyu",
-                    "json": "{\"operationId\":\"get-cotizacion-uyu\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"casa\":{\"type\":\"string\"},\"compra\":{\"type\":\"number\"},\"fechaActualizacion\":{\"type\":\"string\"},\"moneda\":{\"type\":\"string\"},\"nombre\":{\"type\":\"string\"},\"venta\":{\"type\":\"number\"}},\"required\":[\"venta\",\"casa\",\"nombre\",\"moneda\",\"fechaActualizacion\"],\"title\":\"Cotizacion\",\"type\":\"object\"}}},\"description\":\"Devuelve la cotización del Peso Uruguayo\",\"headers\":{}}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/v1/cotizaciones/uyu",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/v1/cotizaciones/uyu",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "v1"
                     },
@@ -1490,8 +1644,7 @@
                       "lit": "uyu"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1920,17 +2073,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "blue_ref01",
                 "srcdatavar": "blue_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1950,17 +2103,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "bolsa_ref01",
                 "srcdatavar": "bolsa_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1980,17 +2133,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "brl_ref01",
                 "srcdatavar": "brl_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2010,17 +2163,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "clp_ref01",
                 "srcdatavar": "clp_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2040,17 +2193,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "contadoconliqui_ref01",
                 "srcdatavar": "contadoconliqui_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2070,13 +2223,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2086,17 +2239,17 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "cotizacion_ambito_ref01",
                 "srcdatavar": "cotizacion_ambito_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2116,13 +2269,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2142,17 +2295,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "cripto_ref01",
                 "srcdatavar": "cripto_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2172,13 +2325,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2198,17 +2351,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "estado_ref01",
                 "srcdatavar": "estado_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2228,17 +2381,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "eur_ref01",
                 "srcdatavar": "eur_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2258,17 +2411,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "mayorista_ref01",
                 "srcdatavar": "mayorista_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2288,17 +2441,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "oficial_ref01",
                 "srcdatavar": "oficial_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2318,17 +2471,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "tarjeta_ref01",
                 "srcdatavar": "tarjeta_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2348,17 +2501,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "uyu_ref01",
                 "srcdatavar": "uyu_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

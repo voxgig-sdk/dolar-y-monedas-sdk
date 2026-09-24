@@ -45,52 +45,8 @@
   "requests": {
     "GET /v1/dolares/contadoconliqui": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "get-dolar-contadoconliqui",
-        "parameters": [],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "casa": {
-                      "type": "string"
-                    },
-                    "compra": {
-                      "type": "number"
-                    },
-                    "fechaActualizacion": {
-                      "type": "string"
-                    },
-                    "moneda": {
-                      "type": "string"
-                    },
-                    "nombre": {
-                      "type": "string"
-                    },
-                    "venta": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "venta",
-                    "casa",
-                    "nombre",
-                    "moneda",
-                    "fechaActualizacion"
-                  ],
-                  "title": "Cotizacion",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Devuelve la cotización del Dólar Contado con liquidación"
-          }
-        },
-        "securitySource": "unspecified"
-      }
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

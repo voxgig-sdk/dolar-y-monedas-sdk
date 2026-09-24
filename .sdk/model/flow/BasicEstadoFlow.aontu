@@ -1,0 +1,28 @@
+# BasicEstadoFlow
+
+main: kit: flow: BasicEstadoFlow:
+{
+  entity: "estado",
+  kind: "basic",
+  name: "BasicEstadoFlow",
+  step: [
+    {
+      i: {
+        ref: "estado_ref01",
+        srcdatavar: "estado_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-estado_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEstadoFlow"
+}

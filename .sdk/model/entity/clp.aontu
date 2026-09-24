@@ -1,0 +1,81 @@
+# Entity: clp
+
+main: kit: entity: clp: {
+
+  alias: field: {}
+
+  fields: {
+    casa: {
+      h: "Casa"
+      n: "casa"
+      r: true
+      t: "`$STRING`"
+    }
+    compra: {
+      h: "Compra"
+      n: "compra"
+      r: false
+      t: "`$NUMBER`"
+    }
+    fechaActualizacion: {
+      h: "Fecha Actualizacion"
+      n: "fechaActualizacion"
+      r: true
+      t: "`$STRING`"
+    }
+    moneda: {
+      h: "Moneda"
+      n: "moneda"
+      r: true
+      t: "`$STRING`"
+    }
+    nombre: {
+      h: "Nombre"
+      n: "nombre"
+      r: true
+      t: "`$STRING`"
+    }
+    venta: {
+      h: "Venta"
+      n: "venta"
+      r: true
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "clp"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/cotizaciones/clp"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/cotizaciones/clp"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "cotizaciones"
+            }
+            {
+              lit: "clp"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

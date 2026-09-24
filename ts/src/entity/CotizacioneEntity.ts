@@ -19,7 +19,6 @@ import type {
   CotizacioneListMatch,
 } from '../DolarYMonedasTypes'
 
-// TODO: needs Entity superclass
 class CotizacioneEntity extends DolarYMonedasEntityBase<Cotizacione> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {

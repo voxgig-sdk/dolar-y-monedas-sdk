@@ -1,0 +1,281 @@
+# Entity: cotizacion_ambito
+
+main: kit: entity: cotizacion_ambito: {
+
+  alias: field: {}
+
+  fields: {
+    casa: {
+      h: "Casa"
+      n: "casa"
+      r: true
+      t: "`$STRING`"
+    }
+    compra: {
+      h: "Compra"
+      n: "compra"
+      r: false
+      t: "`$NUMBER`"
+    }
+    fechaActualizacion: {
+      h: "Fecha Actualizacion"
+      n: "fechaActualizacion"
+      r: true
+      t: "`$STRING`"
+    }
+    moneda: {
+      h: "Moneda"
+      n: "moneda"
+      r: true
+      t: "`$STRING`"
+    }
+    nombre: {
+      h: "Nombre"
+      n: "nombre"
+      r: true
+      t: "`$STRING`"
+    }
+    variacion: {
+      h: "Variacion"
+      n: "variacion"
+      r: true
+      t: "`$NUMBER`"
+    }
+    venta: {
+      h: "Venta"
+      n: "venta"
+      r: true
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "cotizacion_ambito"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /v1/ambito/dolares"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/blue"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/blue"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "blue"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/bolsa"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/bolsa"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "bolsa"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/contadoconliqui"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/contadoconliqui"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "contadoconliqui"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/cripto"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/cripto"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "cripto"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/mayorista"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/mayorista"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "mayorista"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/oficial"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/oficial"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "oficial"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /v1/ambito/dolares/tarjeta"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/ambito/dolares/tarjeta"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "ambito"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "tarjeta"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

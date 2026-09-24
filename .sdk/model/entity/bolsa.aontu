@@ -1,0 +1,81 @@
+# Entity: bolsa
+
+main: kit: entity: bolsa: {
+
+  alias: field: {}
+
+  fields: {
+    casa: {
+      h: "Casa"
+      n: "casa"
+      r: true
+      t: "`$STRING`"
+    }
+    compra: {
+      h: "Compra"
+      n: "compra"
+      r: false
+      t: "`$NUMBER`"
+    }
+    fechaActualizacion: {
+      h: "Fecha Actualizacion"
+      n: "fechaActualizacion"
+      r: true
+      t: "`$STRING`"
+    }
+    moneda: {
+      h: "Moneda"
+      n: "moneda"
+      r: true
+      t: "`$STRING`"
+    }
+    nombre: {
+      h: "Nombre"
+      n: "nombre"
+      r: true
+      t: "`$STRING`"
+    }
+    venta: {
+      h: "Venta"
+      n: "venta"
+      r: true
+      t: "`$NUMBER`"
+    }
+  }
+
+  name: "bolsa"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/dolares/bolsa"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/dolares/bolsa"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "dolares"
+            }
+            {
+              lit: "bolsa"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

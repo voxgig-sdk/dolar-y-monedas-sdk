@@ -1,0 +1,54 @@
+# Entity: estado
+
+main: kit: entity: estado: {
+
+  alias: field: {}
+
+  fields: {
+    aleatorio: {
+      h: "Aleatorio"
+      n: "aleatorio"
+      r: false
+      t: "`$INTEGER`"
+    }
+    estado: {
+      h: "Estado"
+      n: "estado"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  name: "estado"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /v1/estado"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/v1/estado"
+          s: [
+            {
+              lit: "v1"
+            }
+            {
+              lit: "estado"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

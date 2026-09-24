@@ -45,53 +45,8 @@
   "requests": {
     "GET /v1/cotizaciones/brl": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "get-cotizacion-brl",
-        "parameters": [],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "casa": {
-                      "type": "string"
-                    },
-                    "compra": {
-                      "type": "number"
-                    },
-                    "fechaActualizacion": {
-                      "type": "string"
-                    },
-                    "moneda": {
-                      "type": "string"
-                    },
-                    "nombre": {
-                      "type": "string"
-                    },
-                    "venta": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "venta",
-                    "casa",
-                    "nombre",
-                    "moneda",
-                    "fechaActualizacion"
-                  ],
-                  "title": "Cotizacion",
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Devuelve la cotización del Real Brasileño",
-            "headers": {}
-          }
-        },
-        "securitySource": "unspecified"
-      }
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

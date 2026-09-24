@@ -19,7 +19,6 @@ import type {
   DolareListMatch,
 } from '../DolarYMonedasTypes'
 
-// TODO: needs Entity superclass
 class DolareEntity extends DolarYMonedasEntityBase<Dolare> {
 
   constructor(client: DolarYMonedasSDK, entopts: any) {

@@ -1,0 +1,28 @@
+# BasicTarjetaFlow
+
+main: kit: flow: BasicTarjetaFlow:
+{
+  entity: "tarjeta",
+  kind: "basic",
+  name: "BasicTarjetaFlow",
+  step: [
+    {
+      i: {
+        ref: "tarjeta_ref01",
+        srcdatavar: "tarjeta_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tarjeta_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTarjetaFlow"
+}

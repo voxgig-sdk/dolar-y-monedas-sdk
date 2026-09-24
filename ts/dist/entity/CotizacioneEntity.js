@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CotizacioneEntity = void 0;
 const DolarYMonedasEntityBase_1 = require("../DolarYMonedasEntityBase");
-// TODO: needs Entity superclass
 class CotizacioneEntity extends DolarYMonedasEntityBase_1.DolarYMonedasEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

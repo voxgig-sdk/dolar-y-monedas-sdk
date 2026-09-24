@@ -1,0 +1,28 @@
+# BasicMayoristaFlow
+
+main: kit: flow: BasicMayoristaFlow:
+{
+  entity: "mayorista",
+  kind: "basic",
+  name: "BasicMayoristaFlow",
+  step: [
+    {
+      i: {
+        ref: "mayorista_ref01",
+        srcdatavar: "mayorista_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-mayorista_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMayoristaFlow"
+}
