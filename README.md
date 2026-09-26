@@ -106,11 +106,11 @@ local result, err = client:Cripto():load()
 | Language | Package | Install |
 | --- | --- | --- |
 | TypeScript | `@voxgig-sdk/dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
-| Python | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
-| PHP | `voxgig-sdk/dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| Python | `voxgig-sdk-dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| PHP | `voxgig-sdk/dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go` | `go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go@latest` |
-| Ruby | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
-| Lua | `voxgig-sdk-dolar-y-monedas` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| Ruby | `voxgig-sdk-dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
+| Lua | `voxgig-sdk-dolar-y-monedas-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go-cli` | `go install github.com/voxgig-sdk/dolar-y-monedas-sdk/go-cli/cmd/dolar-y-monedas@latest` |
 | Go MCP server | `github.com/voxgig-sdk/dolar-y-monedas-sdk/go-mcp` | `go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go-mcp@latest` |
 
@@ -354,10 +354,10 @@ forking the SDK.
 
 | Feature | Purpose |
 | --- | --- |
-| **RatelimitFeature** | Client-side rate limiting via a token bucket |
-| **RetryFeature** | Automatic retry of transient failures with exponential backoff |
-| **TestFeature** | In-memory mock transport for testing without a live server |
-| **TimeoutFeature** | Per-request timeout with transport abort |
+| **RatelimitFeature** | Rate limiting |
+| **RetryFeature** | Retry |
+| **TestFeature** | Test transport |
+| **TimeoutFeature** | Timeout |
 
 Pass custom features via the `extend` option at construction time.
 
