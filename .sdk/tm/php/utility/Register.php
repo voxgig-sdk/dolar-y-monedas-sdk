@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 DolarYMonedasUtility::setRegistrar(function (DolarYMonedasUtility $u): void {
     $u->clean = [DolarYMonedasClean::class, 'call'];
+    $u->clean_add = [DolarYMonedasClean::class, 'add'];
+    $u->clean_explain = [DolarYMonedasDone::class, 'clean_explain'];
     $u->done = [DolarYMonedasDone::class, 'call'];
     $u->make_error = [DolarYMonedasMakeError::class, 'call'];
     $u->feature_add = [DolarYMonedasFeatureAdd::class, 'call'];

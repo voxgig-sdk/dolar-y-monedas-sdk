@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 DolarYMonedasUtility.registrar = ->(u) {
   u.clean = DolarYMonedasUtilities::Clean
+  u.clean_add = DolarYMonedasUtilities::CleanAdd
+  u.clean_explain = DolarYMonedasUtilities::CleanExplain
   u.done = DolarYMonedasUtilities::Done
   u.make_error = DolarYMonedasUtilities::MakeError
   u.feature_add = DolarYMonedasUtilities::FeatureAdd
