@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { DolarYMonedasSDK, BaseFeature, stdutil } from '../../..'
+import { DolarYMonedasSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('CriptoEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = DolarYMonedasSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Cripto().load({"casa":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.DOLAR_Y_MONEDAS_TEST_LIVE
@@ -51,7 +63,7 @@ describe('CriptoEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"casa":{"a":true,"h":"Casa","n":"casa","r":true,"t":"`$STRING`","key$":"casa","index$":0},"compra":{"a":true,"h":"Compra","n":"compra","r":false,"t":"`$NUMBER`","key$":"compra","index$":1},"fechaActualizacion":{"a":true,"h":"Fecha Actualizacion","n":"fechaActualizacion","r":true,"t":"`$STRING`","key$":"fechaActualizacion","index$":2},"moneda":{"a":true,"h":"Moneda","n":"moneda","r":true,"t":"`$STRING`","key$":"moneda","index$":3},"nombre":{"a":true,"h":"Nombre","n":"nombre","r":true,"t":"`$STRING`","key$":"nombre","index$":4},"venta":{"a":true,"h":"Venta","n":"venta","r":true,"t":"`$NUMBER`","key$":"venta","index$":5}},"name":"cripto","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/dolares/cripto","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/v1/dolares/cripto","q":{},"r":{},"s":[{"lit":"v1"},{"lit":"dolares"},{"lit":"cripto"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"cripto","name__orig":"cripto","Name":"Cripto","name_":"cripto","name-":"cripto","NAME":"CRIPTO","index$":7}, {"active":true,"entity":"cripto","key$":"BasicCriptoFlow","kind":"basic","name":"BasicCriptoFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"cripto_ref01","srcdatavar":"cripto_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-cripto_ref01"}}],"index$":0}]}, 'Cripto', {"GET /v1/dolares/cripto":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"casa":{"a":true,"h":"Casa","n":"casa","r":true,"t":"`$STRING`","key$":"casa","index$":0},"compra":{"a":true,"h":"Compra","n":"compra","r":false,"t":"`$NUMBER`","key$":"compra","index$":1},"fechaActualizacion":{"a":true,"h":"Fecha Actualizacion","n":"fechaActualizacion","r":true,"t":"`$STRING`","key$":"fechaActualizacion","index$":2},"moneda":{"a":true,"h":"Moneda","n":"moneda","r":true,"t":"`$STRING`","key$":"moneda","index$":3},"nombre":{"a":true,"h":"Nombre","n":"nombre","r":true,"t":"`$STRING`","key$":"nombre","index$":4},"venta":{"a":true,"h":"Venta","n":"venta","r":true,"t":"`$NUMBER`","key$":"venta","index$":5}},"name":"cripto","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/dolares/cripto","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/v1/dolares/cripto","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"v1"},{"lit":"dolares"},{"lit":"cripto"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"cripto","name__orig":"cripto","Name":"Cripto","name_":"cripto","name-":"cripto","NAME":"CRIPTO","index$":7}, {"active":true,"entity":"cripto","key$":"BasicCriptoFlow","kind":"basic","name":"BasicCriptoFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"cripto_ref01","srcdatavar":"cripto_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-cripto_ref01"}}],"index$":0}]}, 'Cripto', {"GET /v1/dolares/cripto":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('CriptoEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

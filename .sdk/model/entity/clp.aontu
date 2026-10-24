@@ -56,6 +56,10 @@ main: kit: entity: clp: {
           }
           m: "GET"
           o: "/v1/cotizaciones/clp"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

@@ -32,6 +32,10 @@ main: kit: entity: estado: {
           }
           m: "GET"
           o: "/v1/estado"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

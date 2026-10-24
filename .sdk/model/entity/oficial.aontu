@@ -56,6 +56,10 @@ main: kit: entity: oficial: {
           }
           m: "GET"
           o: "/v1/dolares/oficial"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

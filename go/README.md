@@ -16,7 +16,7 @@ go get github.com/voxgig-sdk/dolar-y-monedas-sdk/go@latest
 ```
 
 The Go module proxy resolves the version from the `go/vX.Y.Z` GitHub
-release tag — see [Releases](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/releases) for the available versions.
+release tag — see [Tags](https://github.com/voxgig-sdk/dolar-y-monedas-sdk/tags) for the available versions.
 
 To vendor from a local checkout instead, clone this repo alongside your
 project and add a `replace` directive pointing at the checked-out
@@ -35,9 +35,10 @@ loading a specific record.
 ### Quickstart
 
 A complete program: create a client, then call the entity operations.
-Each operation returns `(value, error)` — the value is the data itself
-(there is no `{ok, data}` wrapper), so check `err` and use the value
-directly.
+Each operation returns `(value, error)` — the value is the entity, and for
+`List` a `[]any` of entities, one per record (there is no `{ok, data}`
+wrapper), so check `err` and read a record through the entity's
+`Data()`.
 
 ```go
 package main
@@ -50,12 +51,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // Load a single blue — the value is the loaded record.
+    // Load a single blue — the value is the entity; Data() reads its record.
     blue, err := client.Blue(nil).Load(nil, nil)
     if err != nil {
         panic(err)
     }
-    fmt.Println(blue)
+    fmt.Println(blue.(sdk.Entity).Data())
 }
 ```
 
@@ -141,7 +142,7 @@ cripto, err := client.Cripto(nil).Load(
 if err != nil {
     panic(err)
 }
-fmt.Println(cripto) // the returned mock data
+fmt.Println(cripto.(sdk.Entity).Data()) // the entity's mock record
 ```
 
 ### Use a custom fetch function
@@ -240,8 +241,8 @@ All entities implement the `DolarYMonedasEntity` interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria. |
-| `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria. |
+| `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria, and return it. |
+| `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria, one per record. |
 | `Data` | `(args ...any) any` | Get or set entity data. |
 | `Match` | `(args ...any) any` | Get or set entity match criteria. |
 | `Make` | `() Entity` | Create a new instance with the same options. |
@@ -249,13 +250,13 @@ All entities implement the `DolarYMonedasEntity` interface.
 
 ### Result shape
 
-Entity operations return `(value, error)`. The `value` is the
-operation's data **directly** — there is no wrapper:
+Entity operations return `(value, error)`. The `value` is the entity
+itself — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `Load` | the entity record (`map[string]any`) |
-| `List` | a `[]any` of entity records |
+| `Load` | the entity, whose `Data()` reads its record (`map[string]any`) |
+| `List` | a `[]any` of entities, one per record |
 
 Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
@@ -263,7 +264,7 @@ slice):
 
     blue, err := client.Blue(nil).Load(nil, nil)
     if err != nil { /* handle */ }
-    // blue is the returned record
+    // blue is the entity; blue.(sdk.Entity).Data() reads its record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -525,7 +526,7 @@ blue, err := client.Blue(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(blue) // the loaded record
+fmt.Println(blue.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -557,7 +558,7 @@ bolsa, err := client.Bolsa(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(bolsa) // the loaded record
+fmt.Println(bolsa.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -589,7 +590,7 @@ brl, err := client.Brl(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(brl) // the loaded record
+fmt.Println(brl.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -621,7 +622,7 @@ clp, err := client.Clp(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(clp) // the loaded record
+fmt.Println(clp.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -653,7 +654,7 @@ contadoconliqui, err := client.Contadoconliqui(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(contadoconliqui) // the loaded record
+fmt.Println(contadoconliqui.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -687,7 +688,7 @@ cotizacionAmbito, err := client.CotizacionAmbito(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cotizacionAmbito) // the loaded record
+fmt.Println(cotizacionAmbito.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 #### Example: List
@@ -697,7 +698,10 @@ cotizacionAmbitos, err := client.CotizacionAmbito(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cotizacionAmbitos) // the array of records
+// A []any of entities, one per record.
+for _, item := range cotizacionAmbitos.([]any) {
+    fmt.Println(item.(sdk.Entity).Data())
+}
 ```
 
 
@@ -729,7 +733,10 @@ cotizaciones, err := client.Cotizacione(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cotizaciones) // the array of records
+// A []any of entities, one per record.
+for _, item := range cotizaciones.([]any) {
+    fmt.Println(item.(sdk.Entity).Data())
+}
 ```
 
 
@@ -761,7 +768,7 @@ cripto, err := client.Cripto(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(cripto) // the loaded record
+fmt.Println(cripto.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -793,7 +800,10 @@ dolares, err := client.Dolare(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(dolares) // the array of records
+// A []any of entities, one per record.
+for _, item := range dolares.([]any) {
+    fmt.Println(item.(sdk.Entity).Data())
+}
 ```
 
 
@@ -821,7 +831,7 @@ estado, err := client.Estado(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(estado) // the loaded record
+fmt.Println(estado.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -853,7 +863,7 @@ eur, err := client.Eur(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(eur) // the loaded record
+fmt.Println(eur.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -885,7 +895,7 @@ mayorista, err := client.Mayorista(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(mayorista) // the loaded record
+fmt.Println(mayorista.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -917,7 +927,7 @@ oficial, err := client.Oficial(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(oficial) // the loaded record
+fmt.Println(oficial.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -949,7 +959,7 @@ tarjeta, err := client.Tarjeta(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(tarjeta) // the loaded record
+fmt.Println(tarjeta.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 
@@ -981,7 +991,7 @@ uyu, err := client.Uyu(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(uyu) // the loaded record
+fmt.Println(uyu.(sdk.Entity).Data()) // the loaded entity's record
 ```
 
 ## Features
@@ -1118,7 +1128,9 @@ The Go SDK uses `map[string]any` throughout rather than typed structs.
 This mirrors the dynamic nature of the API and keeps the SDK
 flexible — no code generation is needed when the API schema changes.
 
-Use `core.ToMapAny()` to safely cast results and nested data.
+An operation returns the entity, and its `Data()` returns the record. Use
+`core.ToMapAny()` to safely cast that record, or data nested in it, to
+`map[string]any`: it returns `nil` for anything else, an entity included.
 
 ### Package structure
 

@@ -54,6 +54,53 @@ const utility_1 = require("../../utility");
         const ent = testsdk.CotizacionAmbito();
         (0, node_assert_1.default)(null != ent);
     });
+    class FailHook extends __1.BaseFeature {
+        name = 'failhook';
+        version = '0.0.1';
+        active = true;
+        unexpected = 0;
+        init() { }
+        PreSpec() { throw new Error('cotizacion_ambito hook failed'); }
+        PreUnexpected() { this.unexpected++; }
+    }
+    (0, node_test_1.test)('stream-error', async () => {
+        const offline = { net: { offline: true } };
+        await node_assert_1.default.rejects(async () => {
+            for await (const _item of __1.DolarYMonedasSDK.test(offline).CotizacionAmbito().stream('list')) { }
+        }, /offline/);
+        for await (const _item of __1.DolarYMonedasSDK.test(offline).CotizacionAmbito()
+            .stream('list', undefined, { ctrl: { throw: false } })) { }
+        if (null != __1.config.feature?.rbac) {
+            const denied = __1.DolarYMonedasSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } });
+            await node_assert_1.default.rejects(async () => {
+                for await (const _item of denied.CotizacionAmbito().stream('list')) { }
+            }, (err) => 'rbac_denied' === err.code);
+        }
+    });
+    (0, node_test_1.test)('stream-ctrl', async () => {
+        const explain = {};
+        const ctrl = { explain };
+        for await (const _item of __1.DolarYMonedasSDK.test().CotizacionAmbito().stream('list', undefined, { ctrl })) { }
+        node_assert_1.default.deepStrictEqual(Object.keys(ctrl), ['explain']);
+        (0, node_assert_1.default)(explain === ctrl.explain && 0 < Object.keys(explain).length);
+    });
+    (0, node_test_1.test)('unexpected', async () => {
+        const hook = new FailHook();
+        const client = new __1.DolarYMonedasSDK({ feature: { test: { active: true } }, extend: [hook] });
+        await node_assert_1.default.rejects(client.CotizacionAmbito().list(), /hook failed/);
+        (0, node_assert_1.default)(0 < hook.unexpected);
+        const fired = hook.unexpected;
+        node_assert_1.default.strictEqual(await client.CotizacionAmbito().list(undefined, { throw: false }), undefined);
+        (0, node_assert_1.default)(fired < hook.unexpected);
+    });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.DolarYMonedasSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.CotizacionAmbito().list({ "casa": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.DOLAR_Y_MONEDAS_TEST_LIVE;
         for (const op of ['list', 'load']) {
@@ -62,7 +109,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "casa": { "a": true, "h": "Casa", "n": "casa", "r": true, "t": "`$STRING`", "key$": "casa", "index$": 0 }, "compra": { "a": true, "h": "Compra", "n": "compra", "r": false, "t": "`$NUMBER`", "key$": "compra", "index$": 1 }, "fechaActualizacion": { "a": true, "h": "Fecha Actualizacion", "n": "fechaActualizacion", "r": true, "t": "`$STRING`", "key$": "fechaActualizacion", "index$": 2 }, "moneda": { "a": true, "h": "Moneda", "n": "moneda", "r": true, "t": "`$STRING`", "key$": "moneda", "index$": 3 }, "nombre": { "a": true, "h": "Nombre", "n": "nombre", "r": true, "t": "`$STRING`", "key$": "nombre", "index$": 4 }, "variacion": { "a": true, "h": "Variacion", "n": "variacion", "r": true, "t": "`$NUMBER`", "key$": "variacion", "index$": 5 }, "venta": { "a": true, "h": "Venta", "n": "venta", "r": true, "t": "`$NUMBER`", "key$": "venta", "index$": 6 } }, "name": "cotizacion_ambito", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /v1/ambito/dolares", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" }, "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /v1/ambito/dolares/blue", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/blue", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "blue" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/bolsa", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/bolsa", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "bolsa" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 1 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/contadoconliqui", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/contadoconliqui", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "contadoconliqui" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 2 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/cripto", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/cripto", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "cripto" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 3 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/mayorista", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/mayorista", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "mayorista" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 4 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/oficial", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/oficial", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "oficial" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 5 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/tarjeta", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/tarjeta", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "tarjeta" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 6 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "cotizacion_ambito", "name__orig": "cotizacion_ambito", "Name": "CotizacionAmbito", "name_": "cotizacion_ambito", "name-": "cotizacion-ambito", "NAME": "COTIZACION_AMBITO", "index$": 5 }, { "active": true, "entity": "cotizacion_ambito", "key$": "BasicCotizacionAmbitoFlow", "kind": "basic", "name": "BasicCotizacionAmbitoFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "cotizacion_ambito_ref01" } }], "index$": 0 }, { "a": true, "d": {}, "i": { "ref": "cotizacion_ambito_ref01", "srcdatavar": "cotizacion_ambito_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-cotizacion_ambito_ref01" } }], "index$": 1 }] }, 'CotizacionAmbito', { "GET /v1/ambito/dolares": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/blue": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/bolsa": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/contadoconliqui": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/cripto": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/mayorista": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/oficial": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/tarjeta": { "protocol": "http", "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "casa": { "a": true, "h": "Casa", "n": "casa", "r": true, "t": "`$STRING`", "key$": "casa", "index$": 0 }, "compra": { "a": true, "h": "Compra", "n": "compra", "r": false, "t": "`$NUMBER`", "key$": "compra", "index$": 1 }, "fechaActualizacion": { "a": true, "h": "Fecha Actualizacion", "n": "fechaActualizacion", "r": true, "t": "`$STRING`", "key$": "fechaActualizacion", "index$": 2 }, "moneda": { "a": true, "h": "Moneda", "n": "moneda", "r": true, "t": "`$STRING`", "key$": "moneda", "index$": 3 }, "nombre": { "a": true, "h": "Nombre", "n": "nombre", "r": true, "t": "`$STRING`", "key$": "nombre", "index$": 4 }, "variacion": { "a": true, "h": "Variacion", "n": "variacion", "r": true, "t": "`$NUMBER`", "key$": "variacion", "index$": 5 }, "venta": { "a": true, "h": "Venta", "n": "venta", "r": true, "t": "`$NUMBER`", "key$": "venta", "index$": 6 } }, "name": "cotizacion_ambito", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /v1/ambito/dolares", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" }, "load": { "input": "data", "name": "load", "points": [{ "a": true, "co": { "id": "GET /v1/ambito/dolares/blue", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/blue", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "blue" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/bolsa", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/bolsa", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "bolsa" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 1 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/contadoconliqui", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/contadoconliqui", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "contadoconliqui" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 2 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/cripto", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/cripto", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "cripto" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 3 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/mayorista", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/mayorista", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "mayorista" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 4 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/oficial", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/oficial", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "oficial" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 5 }, { "a": true, "co": { "id": "GET /v1/ambito/dolares/tarjeta", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/ambito/dolares/tarjeta", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "ambito" }, { "lit": "dolares" }, { "lit": "tarjeta" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 6 }], "key$": "load" } }, "relations": { "ancestors": [] }, "key$": "cotizacion_ambito", "name__orig": "cotizacion_ambito", "Name": "CotizacionAmbito", "name_": "cotizacion_ambito", "name-": "cotizacion-ambito", "NAME": "COTIZACION_AMBITO", "index$": 5 }, { "active": true, "entity": "cotizacion_ambito", "key$": "BasicCotizacionAmbitoFlow", "kind": "basic", "name": "BasicCotizacionAmbitoFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "cotizacion_ambito_ref01" } }], "index$": 0 }, { "a": true, "d": {}, "i": { "ref": "cotizacion_ambito_ref01", "srcdatavar": "cotizacion_ambito_ref01_data", "suffix": "_dt0" }, "m": {}, "o": "load", "s": [], "v": [{ "apply": "TextFieldMark", "def": { "mark": "Mark01-cotizacion_ambito_ref01" } }], "index$": 1 }] }, 'CotizacionAmbito', { "GET /v1/ambito/dolares": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/blue": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/bolsa": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/contadoconliqui": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/cripto": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/mayorista": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/oficial": { "protocol": "http", "parameters": [] }, "GET /v1/ambito/dolares/tarjeta": { "protocol": "http", "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -79,6 +126,11 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)(null != cotizacion_ambito_ref01_data_dt0);
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

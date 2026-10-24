@@ -21,6 +21,7 @@ export DOLAR_Y_MONEDAS_APIKEY=sk_live_xxx
 # 4. Each command line is ONE boru expression, run against the API:
 ./dolar-y-monedas-cli load 1 blue            # {id:1} shorthand
 ./dolar-y-monedas-cli load '{id:1}' blue       # explicit match map
+./dolar-y-monedas-cli list cotizacion_ambito
 
 # 5. Override the API base URL for a single call
 DOLAR_Y_MONEDAS_BASE=https://api.example.com ./dolar-y-monedas-cli load 1 blue

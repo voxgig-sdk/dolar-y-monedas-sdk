@@ -1,0 +1,16 @@
+{
+  point: "warning"
+  note: "Points GET /v1/ambito/dolares/blue, GET /v1/ambito/dolares/bolsa, GET /v1/ambito/dolares/contadoconliqui, GET /v1/ambito/dolares/cripto, GET /v1/ambito/dolares/mayorista, GET /v1/ambito/dolares/oficial and GET /v1/ambito/dolares/tarjeta on entity=cotizacion_ambito op=load have the same selector (exist: none), so only GET /v1/ambito/dolares/blue is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "cotizacion_ambito"
+  op: "load"
+  points: [
+    "GET /v1/ambito/dolares/blue"
+    "GET /v1/ambito/dolares/bolsa"
+    "GET /v1/ambito/dolares/contadoconliqui"
+    "GET /v1/ambito/dolares/cripto"
+    "GET /v1/ambito/dolares/mayorista"
+    "GET /v1/ambito/dolares/oficial"
+    "GET /v1/ambito/dolares/tarjeta"
+  ]
+
+}

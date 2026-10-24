@@ -3,5 +3,24 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "> &lt;div class=&quot;flex flex-col&quot;&gt;\n>\n> API desarrollada en &lt;a href=&quot;https://es.js.org?ref=dolarapi.com&quot; target=&quot;`_blank`&quot;&gt;EsJS&lt;/a&gt; que brinda información actualizada sobre las cotizaciones del Dólar en Argentina.\n>\n> ¿Encontraste útil esta API? &lt;strong&gt;¡Dejá tu ⭐ en &lt;a href=&quot;https://github.com/enzonotario/esjs-dolar-api&quot; alt=&quot;GitHub&quot; target=&quot;`_blank`&quot;&gt;GitHub&lt;/a&gt;!&lt;/strong&gt;\n>\n> ## Demo\n> [`App.DolarApi.com`](https://app.dolarapi.com)",
+      "Devuelve el estado de la API",
+      "Devuelve el valor del Dólar Tarjeta",
+      "Devuelve la cotización del Dólar Blue",
+      "Devuelve la cotización del Dólar Bolsa",
+      "Devuelve la cotización del Dólar Contado con liquidación",
+      "Devuelve la cotización del Dólar Cripto",
+      "Devuelve la cotización del Dólar Mayorista",
+      "Devuelve la cotización del Dólar Oficial",
+      "Devuelve la cotización del Euro",
+      "Devuelve la cotización del Peso Chileno",
+      "Devuelve la cotización del Peso Uruguayo",
+      "Devuelve la cotización del Real Brasileño",
+      "Devuelve todas las cotizaciones",
+      "Producción"
+    ]
+  }
 }

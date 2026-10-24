@@ -56,6 +56,10 @@ main: kit: entity: contadoconliqui: {
           }
           m: "GET"
           o: "/v1/dolares/contadoconliqui"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

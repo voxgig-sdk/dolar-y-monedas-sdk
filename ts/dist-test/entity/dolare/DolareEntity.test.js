@@ -54,6 +54,53 @@ const utility_1 = require("../../utility");
         const ent = testsdk.Dolare();
         (0, node_assert_1.default)(null != ent);
     });
+    class FailHook extends __1.BaseFeature {
+        name = 'failhook';
+        version = '0.0.1';
+        active = true;
+        unexpected = 0;
+        init() { }
+        PreSpec() { throw new Error('dolare hook failed'); }
+        PreUnexpected() { this.unexpected++; }
+    }
+    (0, node_test_1.test)('stream-error', async () => {
+        const offline = { net: { offline: true } };
+        await node_assert_1.default.rejects(async () => {
+            for await (const _item of __1.DolarYMonedasSDK.test(offline).Dolare().stream('list')) { }
+        }, /offline/);
+        for await (const _item of __1.DolarYMonedasSDK.test(offline).Dolare()
+            .stream('list', undefined, { ctrl: { throw: false } })) { }
+        if (null != __1.config.feature?.rbac) {
+            const denied = __1.DolarYMonedasSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } });
+            await node_assert_1.default.rejects(async () => {
+                for await (const _item of denied.Dolare().stream('list')) { }
+            }, (err) => 'rbac_denied' === err.code);
+        }
+    });
+    (0, node_test_1.test)('stream-ctrl', async () => {
+        const explain = {};
+        const ctrl = { explain };
+        for await (const _item of __1.DolarYMonedasSDK.test().Dolare().stream('list', undefined, { ctrl })) { }
+        node_assert_1.default.deepStrictEqual(Object.keys(ctrl), ['explain']);
+        (0, node_assert_1.default)(explain === ctrl.explain && 0 < Object.keys(explain).length);
+    });
+    (0, node_test_1.test)('unexpected', async () => {
+        const hook = new FailHook();
+        const client = new __1.DolarYMonedasSDK({ feature: { test: { active: true } }, extend: [hook] });
+        await node_assert_1.default.rejects(client.Dolare().list(), /hook failed/);
+        (0, node_assert_1.default)(0 < hook.unexpected);
+        const fired = hook.unexpected;
+        node_assert_1.default.strictEqual(await client.Dolare().list(undefined, { throw: false }), undefined);
+        (0, node_assert_1.default)(fired < hook.unexpected);
+    });
+    (0, node_test_1.test)('validate', async (t) => {
+        if (null == __1.config.feature?.validate) {
+            t.skip('feature not present in this SDK: validate');
+            return;
+        }
+        const client = __1.DolarYMonedasSDK.test(undefined, { feature: { validate: { active: true } } });
+        await node_assert_1.default.rejects(client.Dolare().list({ "casa": 1 }), (err) => 'validate_failed' === err.code);
+    });
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.DOLAR_Y_MONEDAS_TEST_LIVE;
         for (const op of ['list']) {
@@ -62,7 +109,7 @@ const utility_1 = require("../../utility");
         }
         const setup = basicSetup();
         if (setup.live) {
-            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "casa": { "a": true, "h": "Casa", "n": "casa", "r": true, "t": "`$STRING`", "key$": "casa", "index$": 0 }, "compra": { "a": true, "h": "Compra", "n": "compra", "r": false, "t": "`$NUMBER`", "key$": "compra", "index$": 1 }, "fechaActualizacion": { "a": true, "h": "Fecha Actualizacion", "n": "fechaActualizacion", "r": true, "t": "`$STRING`", "key$": "fechaActualizacion", "index$": 2 }, "moneda": { "a": true, "h": "Moneda", "n": "moneda", "r": true, "t": "`$STRING`", "key$": "moneda", "index$": 3 }, "nombre": { "a": true, "h": "Nombre", "n": "nombre", "r": true, "t": "`$STRING`", "key$": "nombre", "index$": 4 }, "venta": { "a": true, "h": "Venta", "n": "venta", "r": true, "t": "`$NUMBER`", "key$": "venta", "index$": 5 } }, "name": "dolare", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /v1/dolares", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/dolares", "q": {}, "r": {}, "s": [{ "lit": "v1" }, { "lit": "dolares" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "dolare", "name__orig": "dolare", "Name": "Dolare", "name_": "dolare", "name-": "dolare", "NAME": "DOLARE", "index$": 8 }, { "active": true, "entity": "dolare", "key$": "BasicDolareFlow", "kind": "basic", "name": "BasicDolareFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "dolare_ref01" } }], "index$": 0 }] }, 'Dolare', { "GET /v1/dolares": { "protocol": "http", "parameters": [] } });
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": { "casa": { "a": true, "h": "Casa", "n": "casa", "r": true, "t": "`$STRING`", "key$": "casa", "index$": 0 }, "compra": { "a": true, "h": "Compra", "n": "compra", "r": false, "t": "`$NUMBER`", "key$": "compra", "index$": 1 }, "fechaActualizacion": { "a": true, "h": "Fecha Actualizacion", "n": "fechaActualizacion", "r": true, "t": "`$STRING`", "key$": "fechaActualizacion", "index$": 2 }, "moneda": { "a": true, "h": "Moneda", "n": "moneda", "r": true, "t": "`$STRING`", "key$": "moneda", "index$": 3 }, "nombre": { "a": true, "h": "Nombre", "n": "nombre", "r": true, "t": "`$STRING`", "key$": "nombre", "index$": 4 }, "venta": { "a": true, "h": "Venta", "n": "venta", "r": true, "t": "`$NUMBER`", "key$": "venta", "index$": 5 } }, "name": "dolare", "op": { "list": { "input": "data", "name": "list", "points": [{ "a": true, "co": { "id": "GET /v1/dolares", "source": "openapi3", "version": 2 }, "g": {}, "k": "http", "m": "GET", "o": "/v1/dolares", "q": {}, "r": {}, "rs": { "kind": "json", "media": "application/json" }, "s": [{ "lit": "v1" }, { "lit": "dolares" }], "t": { "req": "`reqdata`", "res": "`body`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "dolare", "name__orig": "dolare", "Name": "Dolare", "name_": "dolare", "name-": "dolare", "NAME": "DOLARE", "index$": 8 }, { "active": true, "entity": "dolare", "key$": "BasicDolareFlow", "kind": "basic", "name": "BasicDolareFlow", "param": {}, "step": [{ "a": true, "d": {}, "i": {}, "m": {}, "o": "list", "s": [], "v": [{ "apply": "ItemExists", "def": { "ref": "dolare_ref01" } }], "index$": 0 }] }, 'Dolare', { "GET /v1/dolares": { "protocol": "http", "parameters": [] } }, { strict: LIVE_STRICT, t });
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -75,6 +122,11 @@ const utility_1 = require("../../utility");
         const dolare_ref01_list = (await dolare_ref01_ent.list(dolare_ref01_match)).map((e) => e.data());
     });
 });
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true;
 function basicSetup(extra) {
     // TODO: fix test def options
     const options = {}; // null

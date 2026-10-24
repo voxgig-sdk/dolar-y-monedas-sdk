@@ -56,6 +56,10 @@ main: kit: entity: dolare: {
           }
           m: "GET"
           o: "/v1/dolares"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

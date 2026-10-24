@@ -1,6 +1,9 @@
 # DolarYMonedas SDK utility: prepare_body
+require_relative 'media'
 module DolarYMonedasUtilities
   PrepareBody = ->(ctx) {
-    ctx.op.input == "data" ? ctx.utility.transform_request.call(ctx) : nil
+    return nil unless ctx.op.input == "data"
+    return DolarYMonedasUtilities.raw_body(ctx.reqdata) if DolarYMonedasUtilities.raw_request?(ctx.point)
+    ctx.utility.transform_request.call(ctx)
   }
 end

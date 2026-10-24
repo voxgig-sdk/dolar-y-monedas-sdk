@@ -56,6 +56,10 @@ main: kit: entity: brl: {
           }
           m: "GET"
           o: "/v1/cotizaciones/brl"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "v1"

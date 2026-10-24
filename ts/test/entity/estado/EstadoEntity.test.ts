@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { DolarYMonedasSDK, BaseFeature, stdutil } from '../../..'
+import { DolarYMonedasSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('EstadoEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = DolarYMonedasSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Estado().load({"aleatorio":"x"} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.DOLAR_Y_MONEDAS_TEST_LIVE
@@ -51,7 +63,7 @@ describe('EstadoEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"aleatorio":{"a":true,"h":"Aleatorio","n":"aleatorio","r":false,"t":"`$INTEGER`","key$":"aleatorio","index$":0},"estado":{"a":true,"h":"Estado","n":"estado","r":false,"t":"`$STRING`","key$":"estado","index$":1}},"name":"estado","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/estado","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/v1/estado","q":{},"r":{},"s":[{"lit":"v1"},{"lit":"estado"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"estado","name__orig":"estado","Name":"Estado","name_":"estado","name-":"estado","NAME":"ESTADO","index$":9}, {"active":true,"entity":"estado","key$":"BasicEstadoFlow","kind":"basic","name":"BasicEstadoFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"estado_ref01","srcdatavar":"estado_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-estado_ref01"}}],"index$":0}]}, 'Estado', {"GET /v1/estado":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"aleatorio":{"a":true,"h":"Aleatorio","n":"aleatorio","r":false,"t":"`$INTEGER`","key$":"aleatorio","index$":0},"estado":{"a":true,"h":"Estado","n":"estado","r":false,"t":"`$STRING`","key$":"estado","index$":1}},"name":"estado","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /v1/estado","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/v1/estado","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"v1"},{"lit":"estado"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"estado","name__orig":"estado","Name":"Estado","name_":"estado","name-":"estado","NAME":"ESTADO","index$":9}, {"active":true,"entity":"estado","key$":"BasicEstadoFlow","kind":"basic","name":"BasicEstadoFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"estado_ref01","srcdatavar":"estado_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-estado_ref01"}}],"index$":0}]}, 'Estado', {"GET /v1/estado":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('EstadoEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options
